@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdnyfi6r48wm5"
+path="res://.godot/imported/Coins 1.mp3-39abcd8bcbe2ded40388d7cf208ccb44.mp3str"
+
+[deps]
+
+source_file="res://ART/sound/Coins 1.mp3"
+dest_files=["res://.godot/imported/Coins 1.mp3-39abcd8bcbe2ded40388d7cf208ccb44.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

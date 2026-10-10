@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://7u2xyb61s6bu"]
+
+[ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://whereDoIPutTheseAaaa/star_1.png" id="1_un20x"]
+[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://whereDoIPutTheseAaaa/platformer_shadow_spring_arm.tscn" id="2_4v1pg"]
+[ext_resource type="AudioStream" uid="uid://cdnyfi6r48wm5" path="res://ART/sound/Coins 1.mp3" id="3_4v1pg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2lak"]
+height = 1.0
+
+[node name="Collectable" type="Node3D" unique_id=970564733]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1894290276]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)
+cast_shadow = 0
+billboard = 1
+texture = ExtResource("1_un20x")
+
+[node name="PlatformerShadowSpringArm" parent="." unique_id=1024933116 instance=ExtResource("2_4v1pg")]
+transform = Transform3D(1, -1.74846e-07, 1.74846e-07, 1.74846e-07, -4.371139e-08, -1, 1.74846e-07, 1, -4.3711356e-08, -8.675185e-08, 0.49616146, 2.168789e-08)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1891688518]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=685676281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_e2lak")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1707752232]
+stream = ExtResource("3_4v1pg")
