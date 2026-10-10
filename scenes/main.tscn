@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0nrh4cpw7kah"]
 
 [ext_resource type="MeshLibrary" uid="uid://w1bmtowrn0li" path="res://assets/kenney_tiles.tres" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://fdyxnvp8v3w3" path="res://scenes/character_ball.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://fdyxnvp8v3w3" path="res://scenes/playas/character_ball.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud.gd" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_tbgi4"]
