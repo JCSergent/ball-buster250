@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyxrwubqp0ei0"]
+
+[ext_resource type="Texture2D" uid="uid://bty808ibnckkp" path="res://ART/mats/DummyCheckers.png" id="1_apv06"]
+
+[resource]
+shading_mode = 2
+albedo_texture = ExtResource("1_apv06")
+uv1_triplanar = true
+uv1_world_triplanar = true

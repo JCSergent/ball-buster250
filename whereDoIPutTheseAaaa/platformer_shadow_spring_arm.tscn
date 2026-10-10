@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://0b6g5jc4sunn"]
+
+[ext_resource type="Script" uid="uid://cl8ayp00lh6ty" path="res://whereDoIPutTheseAaaa/platformer_shadow_spring_arm.gd" id="1_vans1"]
+
+[sub_resource type="Gradient" id="Gradient_8nth8"]
+offsets = PackedFloat32Array(0.3724227, 0.6198454)
+colors = PackedColorArray(0, 0, 0, 0.6901961, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8tqfn"]
+gradient = SubResource("Gradient_8nth8")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[node name="PlatformerShadowSpringArm" type="SpringArm3D" unique_id=1024933116]
+transform = Transform3D(1, -1.74846e-07, 1.74846e-07, 1.74846e-07, -4.371139e-08, -1, 1.74846e-07, 1, -4.3711356e-08, 0, 0, 0)
+spring_length = 4.0
+script = ExtResource("1_vans1")
+
+[node name="ShadowDecal" type="Decal" parent="." unique_id=1332689272]
+transform = Transform3D(1, 1.7484598e-07, 1.7484598e-07, -1.7484598e-07, -4.371139e-08, 1, 1.7484598e-07, -1, -4.3711356e-08, 0, 0, 0)
+size = Vector3(1, 0.97265625, 1)
+texture_albedo = SubResource("GradientTexture2D_8tqfn")
+cull_mask = 1048573

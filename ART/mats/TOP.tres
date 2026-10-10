@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dh12fh442i135"]
+
+[resource]
+resource_name = "TOP"
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.9063355, 0.009002589, 0.022047536, 0.25)
+disable_receive_shadows = true

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://i6idx2bqvdnl"]
+
+[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://whereDoIPutTheseAaaa/platformer_shadow_spring_arm.tscn" id="1_htkti"]
+[ext_resource type="PackedScene" uid="uid://dvuvb4304u3uk" path="res://ART/TestBall.glb" id="3_88748"]
+[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://ART/PlaceholderMartin.png" id="4_5quci"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e2lak"]
+
+[node name="PlayerBall1" type="RigidBody3D" unique_id=120720000]
+collision_layer = 2
+
+[node name="PlatformerShadowSpringArm" parent="." unique_id=1024933116 instance=ExtResource("1_htkti")]
+spring_length = 25.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1845802375]
+shape = SubResource("SphereShape3D_e2lak")
+
+[node name="GFX" type="Node3D" parent="." unique_id=783769946]
+
+[node name="TestBall" parent="GFX" unique_id=1676188717 instance=ExtResource("3_88748")]
+
+[node name="Sphere" parent="GFX/TestBall" index="0" unique_id=274587611]
+cast_shadow = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="GFX" unique_id=1211860704]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
+cast_shadow = 0
+billboard = 1
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_5quci")
+
+[editable path="GFX/TestBall"]
