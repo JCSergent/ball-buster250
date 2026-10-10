@@ -1,12 +1,11 @@
 # BallBusters 250
+Roll around as balls collecting 250 of a thing AND GETTING TOO BIG.
 
 ## Genre
 - Multiplayer (1 -4 Players)
 - Arcade
 - Rolling Around Type Game
 - Getting Too Big Type Game
-## Premise
-Roll around as balls collecting 250 of a thing AND GETTING TOO BIG.
 
 ## Gameplay
 - Everyone spawns in in their balls.
