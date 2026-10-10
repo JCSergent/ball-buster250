@@ -13,7 +13,15 @@ config_version=5
 config/name="ball-buster250"
 run/main_scene="uid://c0nrh4cpw7kah"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="uid://d25ygwjc4dcwu"
+boot_splash/bg_color=Color(0.78933626, 0.15278566, 0.42805234, 1)
+boot_splash/use_filter=false
+boot_splash/image="uid://d25ygwjc4dcwu"
+config/icon="uid://dx4m8rpydnncg"
+
+[autoload]
+
+EventBus="*uid://cnoxydx2ita3i"
+Scorekeeper="*uid://chxhwfdso54xc"
 
 [display]
 
@@ -65,5 +73,3 @@ jump_p1={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

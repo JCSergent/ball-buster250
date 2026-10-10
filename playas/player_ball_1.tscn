@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://i6idx2bqvdnl"]
 
-[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://whereDoIPutTheseAaaa/platformer_shadow_spring_arm.tscn" id="1_htkti"]
-[ext_resource type="PackedScene" uid="uid://dvuvb4304u3uk" path="res://ART/TestBall.glb" id="3_88748"]
-[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://ART/PlaceholderMartin.png" id="4_5quci"]
+[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="1_htkti"]
+[ext_resource type="PackedScene" uid="uid://dvuvb4304u3uk" path="res://art/models/TestBall.glb" id="3_88748"]
+[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="4_5quci"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e2lak"]
 

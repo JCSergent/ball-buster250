@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gal082uki2l0"]
 
-[ext_resource type="Material" uid="uid://dyxrwubqp0ei0" path="res://ART/mats/TestLevelMat1.tres" id="1_fp6qb"]
-[ext_resource type="PackedScene" uid="uid://i6idx2bqvdnl" path="res://player_ball_1.tscn" id="2_ygndp"]
+[ext_resource type="Material" uid="uid://dyxrwubqp0ei0" path="res://art/mats/TestLevelMat1.tres" id="1_fp6qb"]
+[ext_resource type="PackedScene" uid="uid://i6idx2bqvdnl" path="res://playas/player_ball_1.tscn" id="2_ygndp"]
 
 [node name="Node3D" type="Node3D" unique_id=677202035]
 

@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clxj86teadjdq"
-path.s3tc="res://.godot/imported/star_1.png-6871d78ad3f5ba9cf0dddd3c5713551e.s3tc.ctex"
+uid="uid://d25ygwjc4dcwu"
+path="res://.godot/imported/PlaceholderMartin.png-3456b9cc4c40f18ab354519628ea98a2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://whereDoIPutTheseAaaa/star_1.png"
-dest_files=["res://.godot/imported/star_1.png-6871d78ad3f5ba9cf0dddd3c5713551e.s3tc.ctex"]
+source_file="res://art/sprites/PlaceholderMartin.png"
+dest_files=["res://.godot/imported/PlaceholderMartin.png-3456b9cc4c40f18ab354519628ea98a2.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

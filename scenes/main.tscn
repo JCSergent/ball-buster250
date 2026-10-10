@@ -2,6 +2,10 @@
 
 [ext_resource type="MeshLibrary" uid="uid://w1bmtowrn0li" path="res://assets/kenney_tiles.tres" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://fdyxnvp8v3w3" path="res://scenes/character_ball.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud.gd" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://7u2xyb61s6bu" path="res://pickups/collectable.tscn" id="6_tefeu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t0wu7"]
 sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
@@ -19,7 +23,101 @@ sky = SubResource("Sky_pa8il")
 ambient_light_source = 2
 ambient_light_color = Color(0.98039216, 0.9882353, 0.9019608, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_qrn2j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
+font = SubResource("FontVariation_qrn2j")
+font_size = 8
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node3D" unique_id=1286111738]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1788998683]
+environment = SubResource("Environment_gipfl")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2104154882]
+script = ExtResource("3_jyhfs")
+
+[node name="P1" type="Control" parent="HUD" unique_id=1199710563]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(5, 5)
+
+[node name="Player Color" type="ColorRect" parent="HUD/P1" unique_id=1951270790]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 30.0
+offset_bottom = 24.0
+color = Color(1, 0.43166667, 0.38, 1)
+
+[node name="Character" type="Sprite2D" parent="HUD/P1" unique_id=2028024173]
+position = Vector2(15.000002, 16.000002)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("4_tbgi4")
+
+[node name="Score" type="Label" parent="HUD/P1" unique_id=812719610]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 27.0
+offset_right = 36.0
+offset_bottom = 40.0
+text = "NULL"
+label_settings = SubResource("LabelSettings_e2lak")
+horizontal_alignment = 1
+
+[node name="Player" type="Label" parent="HUD/P1" unique_id=257054181]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 14.0
+offset_bottom = 19.0
+text = "P1"
+label_settings = SubResource("LabelSettings_e2lak")
+horizontal_alignment = 1
+
+[node name="P2" type="Control" parent="HUD" unique_id=1818262200]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 217.99998
+offset_right = 258.0
+offset_bottom = 40.0
+scale = Vector2(5, 5)
+
+[node name="Player Color" type="ColorRect" parent="HUD/P2" unique_id=98437672]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 30.0
+offset_bottom = 24.0
+color = Color(0.087181844, 0.6755854, 0.9999998, 1)
+
+[node name="Character" type="Sprite2D" parent="HUD/P2" unique_id=374536023]
+texture_filter = 1
+position = Vector2(16.000002, 17)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_tbgi4")
+
+[node name="Score" type="Label" parent="HUD/P2" unique_id=259980433]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 89.0
+offset_bottom = 54.0
+scale = Vector2(0.3569084, 1.0175518)
+text = "this one is fake :)"
+label_settings = SubResource("LabelSettings_e2lak")
+horizontal_alignment = 1
+
+[node name="Player" type="Label" parent="HUD/P2" unique_id=1224820346]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 14.0
+offset_bottom = 19.0
+text = "P2"
+label_settings = SubResource("LabelSettings_e2lak")
+horizontal_alignment = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=891127870]
 transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.16382037, 0, 41.609707, 56.6689)
@@ -39,5 +137,82 @@ fov = 50.0
 [node name="CharacterBall" parent="." unique_id=324011426 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5979156, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1788998683]
-environment = SubResource("Environment_gipfl")
+[node name="collectables" type="Node3D" parent="." unique_id=906390489]
+
+[node name="Collectable" parent="collectables" unique_id=970564733 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6466007, 1.2500005, 0.45223618)
+
+[node name="Collectable2" parent="collectables" unique_id=1278343956 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6466007, 1.2500005, 1.4522362)
+
+[node name="Collectable3" parent="collectables" unique_id=926622418 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6466007, 1.2500005, 2.4522362)
+
+[node name="Collectable4" parent="collectables" unique_id=950676329 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6466007, 1.2500005, 3.4522362)
+
+[node name="Collectable5" parent="collectables" unique_id=307393714 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6466007, 1.2500005, 4.452236)
+
+[node name="Collectable6" parent="collectables" unique_id=2114054168 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6466007, 1.2500005, 5.452236)
+
+[node name="Collectable19" parent="collectables" unique_id=1113804282 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3533993, 1.2500005, 5.452236)
+
+[node name="Collectable20" parent="collectables" unique_id=21949396 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3533993, 1.2500005, 3.4522362)
+
+[node name="Collectable21" parent="collectables" unique_id=1189090155 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3533993, 1.2500005, 3.4522362)
+
+[node name="Collectable22" parent="collectables" unique_id=2010497646 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3533993, 1.2500005, 2.4522362)
+
+[node name="Collectable23" parent="collectables" unique_id=1799359840 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.353399, 1.2500005, 2.4522362)
+
+[node name="Collectable24" parent="collectables" unique_id=665050822 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.353399, 1.2500005, 4.452236)
+
+[node name="Collectable25" parent="collectables" unique_id=1198562317 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3533993, 1.2500005, 4.452236)
+
+[node name="Collectable26" parent="collectables" unique_id=666791955 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3533993, 1.2500005, 7.452236)
+
+[node name="Collectable7" parent="collectables" unique_id=1709264386 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6466007, 1.2500005, 0.45223618)
+
+[node name="Collectable8" parent="collectables" unique_id=2119496002 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6466007, 1.2500005, 1.4522362)
+
+[node name="Collectable9" parent="collectables" unique_id=525323269 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6466007, 1.2500005, 2.4522362)
+
+[node name="Collectable10" parent="collectables" unique_id=1138627428 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6466007, 1.2500005, 3.4522362)
+
+[node name="Collectable11" parent="collectables" unique_id=1374405008 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6466007, 1.2500005, 4.452236)
+
+[node name="Collectable12" parent="collectables" unique_id=561630565 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6466007, 1.2500005, 5.452236)
+
+[node name="Collectable13" parent="collectables" unique_id=1808454900 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6466007, 1.2500005, 0.45223618)
+
+[node name="Collectable14" parent="collectables" unique_id=695868984 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6466007, 1.2500005, 1.4522362)
+
+[node name="Collectable15" parent="collectables" unique_id=1152787640 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6466007, 1.2500005, 2.4522362)
+
+[node name="Collectable16" parent="collectables" unique_id=1007385521 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6466007, 1.2500005, 3.4522362)
+
+[node name="Collectable17" parent="collectables" unique_id=1470700893 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6466007, 1.2500005, 4.452236)
+
+[node name="Collectable18" parent="collectables" unique_id=902958235 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6466007, 1.2500005, 5.452236)
