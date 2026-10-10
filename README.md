@@ -1,1 +1,17 @@
-# ball-buster250
+# Assets
+- Character Art
+	- Portraits (three versions: default, distressed and victorious)
+	- Player Sprites (either running-in-place or just stuck to inside wall of sphere)
+- Graphic Designs
+	- Start Screen
+		- Logo
+	- Character Select Screen
+		- Auto-adjusts number of players based on controller inputs
+		- Players select character and/or sphere color
+	- Player HUD
+		- Boxed portrait next to Player thingie score
+- Textures
+	- Surfaces (ground, obstacles, bottomless void below)
+	- Effects
+		- Sphere glowing / flashing upon thingie collect
+		- Collision particle effect for bumping
