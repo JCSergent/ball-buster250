@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://fdyxnvp8v3w3"]
+
+[ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/character_ball.gd" id="1_bsyiq"]
+[ext_resource type="Texture2D" uid="uid://cmir5nr8y0j4c" path="res://assets/ball-line.png" id="1_y65km"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gipfl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsyiq"]
+albedo_texture = ExtResource("1_y65km")
+
+[sub_resource type="SphereMesh" id="SphereMesh_gipfl"]
+material = SubResource("StandardMaterial3D_bsyiq")
+
+[node name="CharacterBall" type="RigidBody3D" unique_id=324011426]
+script = ExtResource("1_bsyiq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1330334942]
+shape = SubResource("SphereShape3D_gipfl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2079311429]
+mesh = SubResource("SphereMesh_gipfl")

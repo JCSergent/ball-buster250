@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cvwqf7c7pkivo"
+path="res://.godot/imported/block-grass-hexagon.obj-89c389c3b647076fc7a9d6f487d3e80a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/block-grass-hexagon.obj-89c389c3b647076fc7a9d6f487d3e80a.mesh"]
+
+source_file="res://assets/kenney_platformer-kit/Models/OBJ format/block-grass-hexagon.obj"
+dest_files=["res://.godot/imported/block-grass-hexagon.obj-89c389c3b647076fc7a9d6f487d3e80a.mesh", "res://.godot/imported/block-grass-hexagon.obj-89c389c3b647076fc7a9d6f487d3e80a.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
