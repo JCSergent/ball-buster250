@@ -47,7 +47,6 @@ func get_collectable(collectable: Collectable) -> void:
     GameKeeper.add_item(player_id, current_collectable)
 
 func use_collectable() -> void:
-    print('hello')
     GameKeeper.remove_item(player_id)
 
     if current_collectable.type == Collectable.Type.SpeedBoost:
