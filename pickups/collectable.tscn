@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://7u2xyb61s6bu"]
 
-[ext_resource type="Script" uid="uid://dk0harjn3we0n" path="res://scripts/collectable.gd" id="1_te2od"]
+[ext_resource type="Script" uid="uid://dk0harjn3we0n" path="res://scripts/collectable_node.gd" id="1_te2od"]
 [ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="1_un20x"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_4v1pg"]
 [ext_resource type="Resource" uid="uid://bjtet7qer1tyt" path="res://resources/collectables/point_1.tres" id="2_v7q7g"]

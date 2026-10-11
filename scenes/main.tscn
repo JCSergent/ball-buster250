@@ -2,6 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://w1bmtowrn0li" path="res://assets/kenney_tiles.tres" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://fdyxnvp8v3w3" path="res://scenes/playas/character_ball.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://bymuhlhtnxvgv" path="res://assets/kenney_platformer-kit/Previews/star.png" id="3_choun"]
 [ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud.gd" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_tbgi4"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://jcd7d1k6q018" path="res://scenes/world elements/bouncer.tscn" id="7_o6xl0"]
 [ext_resource type="Resource" uid="uid://buf65lhbnr7vn" path="res://resources/collectables/point_5.tres" id="7_tipki"]
 [ext_resource type="Resource" uid="uid://dnkklqru2x0d6" path="res://resources/collectables/point_10.tres" id="8_85g3d"]
+[ext_resource type="Resource" uid="uid://dohfrdbpk8hnn" path="res://resources/collectables/speed_boost.tres" id="8_ya4ey"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t0wu7"]
 sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
@@ -81,6 +83,25 @@ text = "P1"
 label_settings = SubResource("LabelSettings_e2lak")
 horizontal_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="HUD/P1" unique_id=1898126473]
+layout_mode = 0
+offset_left = 26.199999
+offset_top = 3.2000046
+offset_right = 37.399998
+offset_bottom = 14.400003
+color = Color(0, 0, 0, 1)
+
+[node name="StoredItem" type="TextureRect" parent="HUD/P1" unique_id=1089951850]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 23.8
+offset_top = 0.19999999
+offset_right = 39.8
+offset_bottom = 16.2
+offset_transform_enabled = true
+texture = ExtResource("3_choun")
+
 [node name="P2" type="Control" parent="HUD" unique_id=1818262200]
 layout_mode = 3
 anchors_preset = 0
@@ -121,6 +142,24 @@ offset_bottom = 19.0
 text = "P2"
 label_settings = SubResource("LabelSettings_e2lak")
 horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HUD/P2" unique_id=191955774]
+layout_mode = 0
+offset_left = 26.199999
+offset_top = 3.2000046
+offset_right = 37.399998
+offset_bottom = 14.400003
+color = Color(0, 0, 0, 1)
+
+[node name="StoredItem" type="TextureRect" parent="HUD/P2" unique_id=1916389651]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 23.8
+offset_top = 0.19999999
+offset_right = 39.8
+offset_bottom = 16.2
+offset_transform_enabled = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=891127870]
 transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.16382037, 0, 41.609707, 56.6689)
@@ -165,6 +204,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3533993, 1.2500005, 5.45223
 
 [node name="Collectable20" parent="collectables" unique_id=21949396 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3533993, 1.2500005, 3.4522362)
+
+[node name="Collectable36" parent="collectables" unique_id=1473330789 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52816343, 1.2500005, 3.9050403)
+collectable = ExtResource("8_ya4ey")
+
+[node name="Collectable38" parent="collectables" unique_id=2110329893 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6228745, 1.2500005, -4.9861703)
+collectable = ExtResource("8_ya4ey")
+
+[node name="Collectable37" parent="collectables" unique_id=1588694790 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.514613, 2.4576392, 7.9430485)
+collectable = ExtResource("8_ya4ey")
 
 [node name="Collectable21" parent="collectables" unique_id=1189090155 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3533993, 1.2500005, 3.4522362)

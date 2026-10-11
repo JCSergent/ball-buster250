@@ -32,7 +32,6 @@ AudioManager="*uid://17k057u37nhb"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [file_customization]
 

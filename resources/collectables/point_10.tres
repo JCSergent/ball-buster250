@@ -8,5 +8,5 @@
 script = ExtResource("1_mlfdo")
 type = 2
 texture = ExtResource("2_mlfdo")
-sound_effect = ExtResource("2_aggub")
+pickup_sound_effect = ExtResource("2_aggub")
 metadata/_custom_type_script = "uid://cnivdkbjtit6y"

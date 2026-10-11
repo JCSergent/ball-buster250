@@ -16,15 +16,14 @@ func _ready() -> void:
 func _on_area_3d_body_entered(body : Node3D) -> void:
     if body is PlayerRigidBody:
         if collectable.type == Collectable.Type.Point1:
-            EventBus.add_score.emit(1)
+            Scorekeeper.add_score(1)
         elif collectable.type == Collectable.Type.Point5:
-            EventBus.add_score.emit(5)
+            Scorekeeper.add_score(5)
         elif collectable.type == Collectable.Type.Point10:
-            EventBus.add_score.emit(10)
+            Scorekeeper.add_score(10)
         else:
             body.player_ball.get_collectable(collectable)
 
-        if collectable.sound_effect:
-            AudioManager.play_sfx(collectable.sound_effect)
-
+        if collectable.pickup_sound_effect:
+            AudioManager.play_sfx(collectable.pickup_sound_effect)
         self.queue_free()

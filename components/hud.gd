@@ -1,18 +1,16 @@
+class_name HUD
 extends CanvasLayer
-class_name hud
 
 @onready var p1_score := $P1/Score
+@onready var p1_item: TextureRect = $P1/StoredItem
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	EventBus.connect("update_score_hud" , on_score_updated)
-	
-	#this seems weird:
-	p1_score.text = str(Scorekeeper.p1_score)
+    EventBus.update_score_hud.connect(update_hud)
+    update_hud()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func on_score_updated(value : int):
-	p1_score.text = str(value)
+func update_hud() -> void:
+    p1_score.text = str(Scorekeeper.p1_score)
+    if Scorekeeper.p1_item:
+        p1_item.texture = Scorekeeper.p1_item.texture
+    else:
+        p1_item.texture = null

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Collectable" format=3 uid="uid://dohfrdbpk8hnn"]
+
+[ext_resource type="Script" uid="uid://cnivdkbjtit6y" path="res://scripts/resources/collectable.gd" id="1_nuutl"]
+[ext_resource type="Texture2D" uid="uid://dmnb6e7o451o4" path="res://assets/kenney_platformer-kit/Previews/mushrooms.png" id="2_ctorb"]
+
+[resource]
+script = ExtResource("1_nuutl")
+type = 3
+texture = ExtResource("2_ctorb")
+use_duration = 5.0
+metadata/_custom_type_script = "uid://cnivdkbjtit6y"

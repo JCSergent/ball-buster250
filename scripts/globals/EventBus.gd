@@ -1,7 +1,5 @@
 extends Node
 
-signal add_score(value : int)
-
 signal update_score_hud()
 
 ## NOTES:
