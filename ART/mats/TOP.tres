@@ -5,5 +5,5 @@ resource_name = "TOP"
 transparency = 4
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0.9063355, 0.009002589, 0.022047536, 0.25)
+albedo_color = Color(0.90588236, 0.007843138, 0.023529412, 0.49411765)
 disable_receive_shadows = true

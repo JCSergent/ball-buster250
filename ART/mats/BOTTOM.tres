@@ -5,4 +5,4 @@ resource_name = "BOTTOM"
 transparency = 4
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0.68423665, 0.8491139, 0.90633965, 0.25)
+albedo_color = Color(0.68235296, 0.8509804, 0.90588236, 0.59607846)

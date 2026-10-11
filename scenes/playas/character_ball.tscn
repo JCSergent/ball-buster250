@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://fdyxnvp8v3w3"]
 
-[ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/character_ball.gd" id="1_bsyiq"]
+[ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/player_ball.gd" id="1_bsyiq"]
 [ext_resource type="Texture2D" uid="uid://cmir5nr8y0j4c" path="res://assets/ball-line.png" id="1_y65km"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_4sqf5"]
+[ext_resource type="Script" uid="uid://d2fmo76m4fgfg" path="res://scripts/player_rigid_body.gd" id="2_g3k4b"]
 [ext_resource type="PackedScene" uid="uid://dvuvb4304u3uk" path="res://art/models/TestBall.glb" id="3_30tsg"]
 [ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="5_4sqf5"]
 
@@ -14,29 +15,33 @@ albedo_texture = ExtResource("1_y65km")
 [sub_resource type="SphereMesh" id="SphereMesh_gipfl"]
 material = SubResource("StandardMaterial3D_bsyiq")
 
-[node name="CharacterBall" type="RigidBody3D" unique_id=324011426]
-collision_layer = 2
+[node name="PlayerBall" type="Node3D" unique_id=149867139]
 script = ExtResource("1_bsyiq")
 
-[node name="PlatformerShadowSpringArm" parent="." unique_id=1024933116 instance=ExtResource("2_4sqf5")]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=324011426]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_g3k4b")
+
+[node name="PlatformerShadowSpringArm" parent="RigidBody3D" unique_id=1024933116 instance=ExtResource("2_4sqf5")]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1330334942]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1330334942]
 shape = SubResource("SphereShape3D_gipfl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2079311429]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=2079311429]
 visible = false
 mesh = SubResource("SphereMesh_gipfl")
 
-[node name="GFX" type="Node3D" parent="." unique_id=1906208102]
+[node name="GFX" type="Node3D" parent="RigidBody3D" unique_id=1906208102]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="TestBall" parent="GFX" unique_id=1676188717 instance=ExtResource("3_30tsg")]
+[node name="TestBall" parent="RigidBody3D/GFX" unique_id=1676188717 instance=ExtResource("3_30tsg")]
 
-[node name="Sphere" parent="GFX/TestBall" index="0" unique_id=1093860790]
+[node name="Sphere" parent="RigidBody3D/GFX/TestBall" index="0" unique_id=1251197998]
 cast_shadow = 0
 
-[node name="Sprite3D" type="Sprite3D" parent="GFX" unique_id=1998351604]
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/GFX" unique_id=1998351604]
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0, 0)
 cast_shadow = 0
 billboard = 1
@@ -44,4 +49,16 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("5_4sqf5")
 
-[editable path="GFX/TestBall"]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="RigidBody3D" unique_id=1609265345]
+remote_path = NodePath("../../NonRotatingNodes")
+update_rotation = false
+
+[node name="NonRotatingNodes" type="Node3D" parent="." unique_id=323607809]
+
+[node name="FloorCast" type="RayCast3D" parent="NonRotatingNodes" unique_id=1958607363]
+unique_name_in_owner = true
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_thickness = 5
+
+[editable path="RigidBody3D/GFX/TestBall"]

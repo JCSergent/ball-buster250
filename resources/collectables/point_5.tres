@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Collectable" format=3 uid="uid://buf65lhbnr7vn"]
+
+[ext_resource type="Script" uid="uid://cnivdkbjtit6y" path="res://scripts/resources/collectable.gd" id="1_urtef"]
+[ext_resource type="Resource" uid="uid://dfaxn1v51ft50" path="res://resources/SFX/point_1.tres" id="2_o1x0a"]
+[ext_resource type="Texture2D" uid="uid://bfihi6wdymd4c" path="res://art/sprites/star_5.png" id="2_urtef"]
+
+[resource]
+script = ExtResource("1_urtef")
+type = 1
+texture = ExtResource("2_urtef")
+sound_effect = ExtResource("2_o1x0a")
+metadata/_custom_type_script = "uid://cnivdkbjtit6y"

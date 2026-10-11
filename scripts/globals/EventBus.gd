@@ -1,5 +1,4 @@
 extends Node
-#class_name EventBuss
 
 signal add_score(value : int)
 
