@@ -173,8 +173,9 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=787982072]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 9.368, 17.598)
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 14.124, 24.311)
 keep_aspect = 0
+fov = 50.0
 
 [node name="PlayerBall" parent="." unique_id=324011426 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41676903, 4.5979156, 0.4943037)

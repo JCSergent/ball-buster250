@@ -78,17 +78,23 @@ func shoot_gun() -> void:
 
 func get_collectable(collectable: Collectable) -> bool:
     if collectable.type == Collectable.Type.Point1:
+        if current_gems >= max_gem_capacity:
+            return false
         increase_gems(1)
     elif collectable.type == Collectable.Type.Point5:
+        if current_gems >= max_gem_capacity:
+            return false
         increase_gems(5)
     elif collectable.type == Collectable.Type.Point10:
+        if current_gems >= max_gem_capacity:
+            return false
         increase_gems(10)
     else:
-        if not current_collectable:
-            current_collectable = collectable
-            GameKeeper.add_item(player_id, current_collectable)
-        else:
+        if current_collectable:
             return false
+        current_collectable = collectable
+        GameKeeper.add_item(player_id, current_collectable)
+
     return true
 
 func use_collectable() -> void:
