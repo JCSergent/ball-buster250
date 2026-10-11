@@ -22,9 +22,11 @@ func reset_game() -> void:
     game_state.phase = GameState.Phase.PlayerSelect
     # SceneKeeper.load_scene(SceneKeeper.Scene.PlayerSelectScene)
 
-func add_score(player_id: int, value: int) -> void:
+func update_score(player_id: int, value: int) -> void:
     var player: Player = players.get(player_id)
-    player.score += value
+    player.score = value
+    if player.score < 0:
+        player.score = 0
     player_state_changed.emit(player)
 
 func add_item(player_id: int, collectable: Collectable) -> void:
@@ -35,5 +37,4 @@ func add_item(player_id: int, collectable: Collectable) -> void:
 func remove_item(player_id: int) -> void:
     var player: Player = players.get(player_id)
     player.held_item = null
-    print('null held item')
     player_state_changed.emit(player)

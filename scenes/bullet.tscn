@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bdyqv1qrycbk1"]
+
+[ext_resource type="Script" uid="uid://dl18i71dv0gmp" path="res://scripts/bullet.gd" id="1_l5glv"]
+[ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="1_y25gk"]
+[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_l5glv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eoqba"]
+radius = 0.22998047
+height = 0.5437012
+
+[node name="Bullet" type="Node3D" unique_id=908987006]
+script = ExtResource("1_l5glv")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1887527983]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+cast_shadow = 0
+billboard = 1
+texture = ExtResource("1_y25gk")
+
+[node name="PlatformerShadowSpringArm" parent="." unique_id=1024933116 instance=ExtResource("2_l5glv")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=869026354]
+collision_layer = 8
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=179259323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025512695, 0)
+shape = SubResource("CapsuleShape3D_eoqba")
