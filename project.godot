@@ -26,8 +26,9 @@ buses/default_bus_layout=""
 [autoload]
 
 EventBus="*uid://cnoxydx2ita3i"
-Scorekeeper="*uid://chxhwfdso54xc"
-AudioManager="*uid://17k057u37nhb"
+GameKeeper="*uid://5q83or5i8wgu"
+AudioKeeper="*uid://17k057u37nhb"
+SceneKeeper="*uid://dbo5eckf1biul"
 
 [display]
 

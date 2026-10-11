@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dbo5eckf1biul"]
+
+[ext_resource type="Script" uid="uid://cdudhlbpb7tk8" path="res://scripts/globals/scene_keeper.gd" id="1_oo7j1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gipfl"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="SceneManager" type="Control" unique_id=542546204]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oo7j1")
+
+[node name="LoadingScreen" type="CanvasLayer" parent="." unique_id=1869791386]
+process_mode = 4
+layer = 0
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="LoadingScreen" unique_id=1196866946]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gipfl")
+
+[node name="MarginContainer" type="MarginContainer" parent="LoadingScreen" unique_id=1843860968]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="LoadingScreen/MarginContainer" unique_id=868405980]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LoadingScreen/MarginContainer/CenterContainer" unique_id=729116532]
+layout_mode = 2
+text = "COOL SCENE TRANSITION"

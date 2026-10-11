@@ -19,7 +19,7 @@ shape = SubResource("SphereShape3D_e2lak")
 
 [node name="TestBall" parent="GFX" unique_id=1676188717 instance=ExtResource("3_88748")]
 
-[node name="Sphere" parent="GFX/TestBall" index="0" unique_id=274587611]
+[node name="Sphere" parent="GFX/TestBall" index="0" unique_id=1251197998]
 cast_shadow = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="GFX" unique_id=1211860704]

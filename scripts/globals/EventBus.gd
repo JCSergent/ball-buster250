@@ -1,7 +1,5 @@
 extends Node
 
-signal update_score_hud()
-
 ## NOTES:
 #some examples from a kind soul on discord
 

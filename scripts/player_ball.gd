@@ -1,6 +1,8 @@
 class_name PlayerBall
 extends Node3D
 
+@export var player_id: int = 1
+
 @export var rolling_force := 10
 @export var jump_impulse := 6
 
@@ -42,10 +44,11 @@ func _physics_process(delta: float) -> void:
 
 func get_collectable(collectable: Collectable) -> void:
     current_collectable = collectable
-    Scorekeeper.add_item(current_collectable)
+    GameKeeper.add_item(player_id, current_collectable)
 
 func use_collectable() -> void:
-    Scorekeeper.remove_item()
+    print('hello')
+    GameKeeper.remove_item(player_id)
 
     if current_collectable.type == Collectable.Type.SpeedBoost:
         speed_boost_duration = current_collectable.use_duration
