@@ -7,7 +7,7 @@ const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 
 @export var rolling_force := 16
 @export var jump_impulse := 6
-@export var gun_rotate_speed := 0.4
+@export var gun_rotate_speed := 0.8
 
 @export_group("Grow Stats")
 @export var max_gem_capacity := 40
@@ -15,7 +15,9 @@ const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 @export var min_rolling_force := 8
 
 @export_group("Item Variables")
+@export var speed_boost_impulse: float = 6.
 @export var speed_boost_power: float = 10.
+@export var spring_impulse: float = 10.
 
 @onready var rigid_body_3d: RigidBody3D = $RigidBody3D
 @onready var floor_cast: RayCast3D = %FloorCast
@@ -45,28 +47,21 @@ func _physics_process(delta: float) -> void:
         rolling_velocity += speed_boost_power * delta
         speed_boost_duration -= delta
 
-    if Input.is_action_pressed("forward_p1"):
-        rigid_body_3d.angular_velocity.x -= rolling_velocity
-        rotate_gun(-90, delta)
-    if Input.is_action_pressed("back_p1"):
-        rigid_body_3d.angular_velocity.x += rolling_velocity
-        rotate_gun(90, delta)
-    if Input.is_action_pressed("left_p1"):
-        rigid_body_3d.angular_velocity.z += rolling_velocity
-        rotate_gun(0, delta)
-    if Input.is_action_pressed("right_p1"):
-        rigid_body_3d.angular_velocity.z -= rolling_velocity
-        rotate_gun(180, delta)
+    var roll_direction = Input.get_vector("right_p1", "left_p1", "forward_p1", "back_p1")
+
+    rigid_body_3d.angular_velocity.x += roll_direction.y * rolling_velocity
+    rigid_body_3d.angular_velocity.z += roll_direction.x * rolling_velocity
+    if roll_direction != Vector2.ZERO:
+        rotate_gun(roll_direction.angle(), delta)
 
     # if Input.is_action_just_pressed("jump_p1"):
         # rigid_body_3d.apply_central_impulse(Vector3.UP * jump_impulse)
 
-func rotate_gun(target_deg: int, delta: float) -> void:
-    var target_rad := deg_to_rad(target_deg)
+func rotate_gun(target_rad: float, delta: float) -> void:
     if gun_rotate_point.rotation.y != target_rad:
         var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
         gun_rotate_point.rotation.y += delta * TAU * gun_rotate_speed * sign(angle_diff)
-        if abs(gun_rotate_point.rotation.y - target_rad) <= 0.05:
+        if abs(gun_rotate_point.rotation.y - target_rad) <= 0.1:
             gun_rotate_point.rotation.y = target_rad
 
 func shoot_gun() -> void:
@@ -76,12 +71,12 @@ func shoot_gun() -> void:
 
     var bullet: Bullet = BULLET_SCENE.instantiate()
     bullet.global_position = gun_fire_point.global_position
-    bullet.fire_direction = gun_rotate_point.global_position.direction_to(gun_fire_point.global_position)
+    bullet.fire_direction = get_gun_direction()
     get_parent().add_child(bullet)
 
     increase_gems(-1)
 
-func get_collectable(collectable: Collectable) -> void:
+func get_collectable(collectable: Collectable) -> bool:
     if collectable.type == Collectable.Type.Point1:
         increase_gems(1)
     elif collectable.type == Collectable.Type.Point5:
@@ -89,14 +84,21 @@ func get_collectable(collectable: Collectable) -> void:
     elif collectable.type == Collectable.Type.Point10:
         increase_gems(10)
     else:
-        current_collectable = collectable
-        GameKeeper.add_item(player_id, current_collectable)
+        if not current_collectable:
+            current_collectable = collectable
+            GameKeeper.add_item(player_id, current_collectable)
+        else:
+            return false
+    return true
 
 func use_collectable() -> void:
     GameKeeper.remove_item(player_id)
 
     if current_collectable.type == Collectable.Type.SpeedBoost:
-        speed_boost_duration = current_collectable.use_duration
+        rigid_body_3d.apply_central_impulse(get_gun_direction() * speed_boost_impulse)
+        # speed_boost_duration = current_collectable.use_duration
+    elif current_collectable.type == Collectable.Type.Spring:
+        rigid_body_3d.apply_central_impulse(Vector3.UP * spring_impulse)
 
     current_collectable = null
 
@@ -105,3 +107,6 @@ func increase_gems(amount: int) -> void:
     var new_scale: float = ((float(current_gems) / max_gem_capacity) * (max_scale_increase - 1.)) + 1.
     rigid_body_3d.scale = Vector3.ONE * new_scale
     GameKeeper.update_score(player_id, current_gems)
+
+func get_gun_direction() -> Vector3:
+    return gun_rotate_point.global_position.direction_to(gun_fire_point.global_position)

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://jcd7d1k6q018"]
 
-[ext_resource type="Script" uid="uid://wndqe74l5xme" path="res://scripts/bouncer.gd" id="1_6blj6"]
+[ext_resource type="Script" uid="uid://wndqe74l5xme" path="res://scripts/world_elements/bumper.gd" id="1_p7lbf"]
 [ext_resource type="Texture2D" uid="uid://i6v6wbpfytru" path="res://assets/kenney_platformer-kit/Models/GLB format/Textures/colormap.png" id="1_v6fbk"]
 [ext_resource type="Resource" uid="uid://dvalxvjgtdcyx" path="res://resources/SFX/bouncer_sound.tres" id="2_u4fgj"]
 
@@ -53,9 +53,10 @@ data = PackedVector3Array(0.45, 0.14999999, 0.5, 0.5, 0.14999999, 0.45, 0.45, 0.
 [sub_resource type="BoxShape3D" id="BoxShape3D_gipfl"]
 size = Vector3(1.9399796, 0.56531525, 0.42886162)
 
-[node name="Bouncer" type="Node3D" unique_id=1146697986]
-script = ExtResource("1_6blj6")
-bounce_sfx = ExtResource("2_u4fgj")
+[node name="Bumper" type="Node3D" unique_id=1146697986]
+script = ExtResource("1_p7lbf")
+bumper_force = 11
+bump_sfx = ExtResource("2_u4fgj")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=717128513]
 transform = Transform3D(2, 0, 0, 0, -4.371139e-08, -2, 0, 1, -8.742278e-08, 0, 1, 0)

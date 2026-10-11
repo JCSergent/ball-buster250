@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Collectable" format=3 uid="uid://ct8yfuwbho6jv"]
+
+[ext_resource type="Script" uid="uid://cnivdkbjtit6y" path="res://scripts/resources/collectable.gd" id="1_aavgu"]
+[ext_resource type="Texture2D" uid="uid://b0ea50f75w7nt" path="res://assets/kenney_platformer-kit/Previews/spring.png" id="2_86xbl"]
+
+[resource]
+script = ExtResource("1_aavgu")
+type = 4
+texture = ExtResource("2_86xbl")
+metadata/_custom_type_script = "uid://cnivdkbjtit6y"

@@ -6,10 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://7u2xyb61s6bu" path="res://pickups/collectable.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://jcd7d1k6q018" path="res://scenes/world elements/bouncer.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://jcd7d1k6q018" path="res://scenes/world_elements/bumper.tscn" id="7_o6xl0"]
 [ext_resource type="Resource" uid="uid://buf65lhbnr7vn" path="res://resources/collectables/point_5.tres" id="7_tipki"]
 [ext_resource type="Resource" uid="uid://dnkklqru2x0d6" path="res://resources/collectables/point_10.tres" id="8_85g3d"]
+[ext_resource type="Resource" uid="uid://ct8yfuwbho6jv" path="res://resources/collectables/spring.tres" id="8_eb6dy"]
 [ext_resource type="Resource" uid="uid://dohfrdbpk8hnn" path="res://resources/collectables/speed_boost.tres" id="8_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://d3kk3bxmcawo1" path="res://scenes/world_elements/bounce_pad.tscn" id="12_eb6dy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t0wu7"]
 sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
@@ -207,6 +209,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3533993, 1.2500005, 3.45223
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52816343, 1.2500005, 3.9050403)
 collectable = ExtResource("8_ya4ey")
 
+[node name="Collectable39" parent="collectables" unique_id=570478857 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.68511, 1.2500005, 3.9050403)
+collectable = ExtResource("8_eb6dy")
+
+[node name="Collectable40" parent="collectables" unique_id=1580305739 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8363457, 1.2500005, -0.8472781)
+collectable = ExtResource("8_eb6dy")
+
+[node name="Collectable41" parent="collectables" unique_id=2004644940 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6041641, 1.2500005, 8.231657)
+collectable = ExtResource("8_eb6dy")
+
 [node name="Collectable38" parent="collectables" unique_id=2110329893 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6228745, 1.2500005, -4.9861703)
 collectable = ExtResource("8_ya4ey")
@@ -345,3 +359,15 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.48
 
 [node name="Bouncer6" parent="." unique_id=1115144433 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5056047, 1.5472043, -4.531862)
+
+[node name="BouncePad" parent="." unique_id=1557065904 instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4699697, 1.5141423, -2.5561948)
+
+[node name="BouncePad2" parent="." unique_id=345205490 instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4719033, 1.5141423, -6.3977156)
+
+[node name="BouncePad3" parent="." unique_id=714807426 instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.502614, 1.5141423, 5.4752464)
+
+[node name="BouncePad4" parent="." unique_id=1748457068 instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0996788, 1.5141423, 5.2401867)

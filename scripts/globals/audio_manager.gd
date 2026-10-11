@@ -33,4 +33,3 @@ func play_sfx(sound_effect: SoundEffect) -> void:
         #     new_2D_audio.finished.connect(sound_effect.on_audio_finished)
         #     new_2D_audio.finished.connect(new_2D_audio.queue_free)
         #     new_2D_audio.play()
-

@@ -15,7 +15,10 @@ func _ready() -> void:
 
 func _on_area_3d_body_entered(body : Node3D) -> void:
     if body is PlayerRigidBody and body.player_ball:
-        body.player_ball.get_collectable(collectable)
+        var is_collected: bool = body.player_ball.get_collectable(collectable)
+
+        if not is_collected:
+            return
 
         if collectable.pickup_sound_effect:
             AudioKeeper.play_sfx(collectable.pickup_sound_effect)

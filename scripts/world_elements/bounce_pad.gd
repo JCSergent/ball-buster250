@@ -1,20 +1,19 @@
-class_name Bouncer
+class_name BouncePad
 extends Node3D
 
-@export var bouncer_force := 10
+@export var bounce_force := 10
 @export var bounce_sfx: SoundEffect
 
 @onready var area_3d: Area3D = $Area3D
 @onready var mesh: MeshInstance3D = $Mesh
-@onready var direction_marker: Marker3D = $DirectionMarker
 
 func _ready() -> void:
     area_3d.body_entered.connect(on_body_entered)
 
 func on_body_entered(body: Node3D) -> void:
     if body is PlayerRigidBody:
-        var direction := global_position.direction_to(direction_marker.global_position)
-        body.apply_central_impulse(direction * bouncer_force)
+        # var direction := global_position.direction_to(direction_marker.global_position)
+        body.apply_central_impulse(Vector3.UP * bounce_force)
         AudioKeeper.play_sfx(bounce_sfx)
 
         var tween: Tween = create_tween()

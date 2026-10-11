@@ -12,7 +12,11 @@ enum Type {
     Point5,
     Point10,
     SpeedBoost,
+    Spring,
+    # Below are not implemented
     GrappleHook,
+    Bomb,
+    FreezeRay,
     StarFall,
     # TBD - come up with more collectables
 }
