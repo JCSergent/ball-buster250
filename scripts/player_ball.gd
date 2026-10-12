@@ -24,21 +24,34 @@ const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 @onready var gun_rotate_point: Node3D = %GunRotatePoint
 @onready var gun_fire_point: Node3D = %GunFirePoint
 
+@onready var sprite_3d: Sprite3D = %Sprite3D
+@onready var ball: MeshInstance3D = %Ball
+
+var player: Player
+
 var current_collectable: Collectable
 var current_gems: int = 0
 
 var speed_boost_duration: float = 0.0
 
+func _ready() -> void:
+    player = GameKeeper.players.get(player_id)
+    sprite_3d.texture = player.sprite
+    var ball_color: Color = player.color
+    ball_color.a = 0.5
+    ball.mesh.surface_get_material(1).albedo_color = ball_color
+    
+
 func _physics_process(delta: float) -> void:
-    if Input.is_action_pressed("item_p1") and current_collectable != null:
+    if Input.is_action_pressed("item_" + player.string_id) and current_collectable != null:
         use_collectable()
 
-    if Input.is_action_just_pressed("jump_p1"):
+    if Input.is_action_just_pressed("jump_" + player.string_id):
         shoot_gun()
 
     var is_on_floor := floor_cast.is_colliding()
-    if not is_on_floor:
-        return
+    # if not is_on_floor:
+    #     return
 
     var adjusted_rolling_force: float = ((float(current_gems) / max_gem_capacity) * (min_rolling_force - rolling_force)) + rolling_force
     var rolling_velocity := adjusted_rolling_force * delta
@@ -47,10 +60,16 @@ func _physics_process(delta: float) -> void:
         rolling_velocity += speed_boost_power * delta
         speed_boost_duration -= delta
 
-    var roll_direction = Input.get_vector("right_p1", "left_p1", "forward_p1", "back_p1")
+    var roll_direction = Input.get_vector("right_" + player.string_id, "left_" + player.string_id, "forward_" + player.string_id, "back_" + player.string_id)
 
-    rigid_body_3d.angular_velocity.x += roll_direction.y * rolling_velocity
-    rigid_body_3d.angular_velocity.z += roll_direction.x * rolling_velocity
+    if is_on_floor:
+        rigid_body_3d.angular_velocity.x += roll_direction.y * rolling_velocity
+        rigid_body_3d.angular_velocity.z += roll_direction.x * rolling_velocity
+    else:
+        var offset: float = 0.15
+        rigid_body_3d.linear_velocity.x -= roll_direction.x * rolling_velocity * offset
+        rigid_body_3d.linear_velocity.z += roll_direction.y * rolling_velocity * offset
+
     if roll_direction != Vector2.ZERO:
         rotate_gun(roll_direction.angle(), delta)
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmir5nr8y0j4c" path="res://assets/ball-line.png" id="1_y65km"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_4sqf5"]
 [ext_resource type="Script" uid="uid://d2fmo76m4fgfg" path="res://scripts/player_rigid_body.gd" id="2_g3k4b"]
-[ext_resource type="PackedScene" uid="uid://dvuvb4304u3uk" path="res://art/models/TestBall.glb" id="3_30tsg"]
+[ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://ART/mats/BOTTOM.tres" id="4_oel5b"]
 [ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="5_4sqf5"]
 [ext_resource type="Texture2D" uid="uid://i6v6wbpfytru" path="res://assets/kenney_platformer-kit/Models/GLB format/Textures/colormap.png" id="7_fxi12"]
 
@@ -15,6 +15,74 @@ albedo_texture = ExtResource("1_y65km")
 
 [sub_resource type="SphereMesh" id="SphereMesh_gipfl"]
 material = SubResource("StandardMaterial3D_bsyiq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r278s"]
+resource_local_to_scene = true
+resource_name = "TOP"
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.90588236, 0.007843138, 0.023529412, 0.49411765)
+disable_receive_shadows = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_htsnb"]
+_surfaces = [{
+"aabb": AABB(-0.9999999, -1, -1, 1.9999998, 1, 1.9999999),
+"format": 34896613377,
+"index_count": 120,
+"index_data": PackedByteArray("AAAPABAAEAAPABEAAAALAA8ADwALABIADwASABEAEQASAAMAEgAFAAMAEQADAAEAEgATAAUACwATABIAEwAHAAUAFAARAAEAEAARABQAFAABAAIACgAQABQAAAAQAAoAFQAUAAIACgAUABUAFQACAAQAFgAKABUAAAAKABYADAAVAAQAFgAVAAwADAAEAAYAAAAWAA0ADQAWAAwAFwAMAAYADQAMABcAFwAGAAgAAAANAAkACQANABcAAAAJAA4AAAAOAAsACwAOABMADgAJABgACQAXABgADgAYABMAGAAXAAgAEwAYAAcAGAAIAAcA"),
+"lods": [0.299144, PackedByteArray("AAABAAIAAAADAAEACgAAAAIACgACAAQAAAALAAMACwAFAAMADAAKAAQAAAAKAAwADAAEAAYACAAMAAYAAAAMAA0ADQAMAAgACwAOAAUAAAAOAAsADgAHAAUAAAANAAkAAAAJAA4ACQANAAgADgAJAAcACQAIAAcA"), 0.53881276, PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAFAAMABgAAAAQAAAAHAAUAAAAGAAgACQAIAAcACQAAAAgAAAAJAAcA")],
+"name": "BOTTOM",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("/38AAP9/AACB2v//fSUAAP9///8AAAAA//////9/AAB9Jf//fSUAAIHa//+B2gAAAAD///9/AAD/f/////8AAH0l//+B2gAA/39MIv+/AAC+UkwivlIAAP+/TCL/fwAAJhH/f/9/AAC+UkwiQK0AAECtTCJArQAAQK1MIr5SAAD/f0wi/z8AAGHO/3+dMQAA2O7/f/9/AABhzv9/Yc4AAP9//38mEQAAnTH/f50xAAD/P0wi/38AAJ0x/39hzgAA/3//f9juAAA=")
+}, {
+"aabb": AABB(-0.9999999, 0, -1, 1.9999998, 1, 1.9999999),
+"format": 34896613377,
+"index_count": 120,
+"index_data": PackedByteArray("AAAPABAAAAABAA8ABAAAABAAAQARAA8AAQADABEABAAQABIABgAEABIAEAAPAAoABgASAA4ACQAGAA4AEgAQABMAEAAKABMADgASAA0AEgATAA0ACQAOABQABwAJABQADgANABUAFAAOABUADQATAAIAEwAKAAIAFQANAAIADwAWAAoACgAWAAIADwARABYACAAVAAIAFAAVAAgAFgALAAIAEQALABYADAAIAAIACwAMAAIAFwAUAAgAFwAIAAwABwAUABcABQAHABcAEQAYAAsAGAAMAAsAGAAXAAwABQAXABgAAwAYABEAAwAFABgA"),
+"lods": [0.299144, PackedByteArray("AAAKAAIAAAABAAoAAQACAAoAAQADAAIABAAAAAIAAwALAAIAAwAFAAsABQAMAAsACwAMAAIABQAHAAwABwAIAAwADAAIAAIABwAJAAgABAACAA0ACQAOAAgACAAOAAIADgANAAIADgAEAA0ACQAGAA4ABgAEAA4A"), 0.5388201, PackedByteArray("AAABAAIAAQADAAIABAAAAAIAAwAFAAIABgAEAAIABQAHAAIACAAGAAIABwAIAAIACQAGAAgABwAJAAgA")],
+"name": "TOP",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("/38AAAAAAACB2gAAfSUAAP9/////fwAA//8AAP9/AAB9JQAAfSUAAIHaAACB2gAAAAAAAP9/AAD/fwAA//8AAL5Sst1ArQAAfSUAAIHaAABArbLdvlIAAECtst1ArQAA/3+y3f+/AAC+UrLdvlIAACYR/3//fwAAYc7/f50xAAD/f/9/JhEAANju/3//fwAAnTH/f50xAAD/f7Ld/z8AAJ0x/39hzgAA/z+y3f9/AAD/v7Ld/38AAP9//3/Y7gAAYc7/f2HOAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kf4vv"]
+resource_local_to_scene = true
+resource_name = "TestBall_Sphere"
+_surfaces = [{
+"aabb": AABB(-0.9999999, -1, -1, 1.9999998, 1, 1.9999999),
+"attribute_data": PackedByteArray("/8////+f/3//v/9//6////9//3//X/9//+/////f/3////9//2////8//3//P1TV/x//f/8v//8AAP9//99U1f//qqr/f1TV/19U1f9P////H1TVAACqqv8P////n1TV/79U1f+fqqr/j////3+qqv9fqqr/v6qq/9+qqv//VNX/P6qq/x+qqgAAVNU="),
+"format": 34896613399,
+"index_count": 120,
+"index_data": PackedByteArray("AwAXABgAGAAXABkAGgARABcAFwARABsAFwAbABkAGQAbAAQAGwAFAAQAGQAEAAEAGwAcAAUAEQAcABsAHAAKAAUAHQAZAAEAGAAZAB0AHQABAAIADwAYAB0AAAAYAA8AHgAdAAIADwAdAB4AHgACAAcAHwAPAB4ABgAPAB8AHwAeABAAEAAeAAcAEAAHAAgAHAAgAAoAIAAMAAoAEgAgABwAEQASABwACQASABEAEgALACAAEwALABIAIAAhAAwACwAhACAAIQAOAAwAIQAVAA4ACwAUACEAFAAVACEADQAUAAsAFAAiABUAFgAiABQA"),
+"lods": [0.299144, PackedByteArray("AAABAAIADwAAAAIADwACAAcAEAAPAAcABgAPABAAEAAHAAgAAwAEAAEAAwARAAQAEQAFAAQAEQASAAUACQASABEAEgAKAAUAEgALAAoAEwALABIACwAMAAoACwAUAAwADQAUAAsAFAAVAAwADAAVAA4AFgAVABQA"), 0.53881276, PackedByteArray("AAABAAIAAwAEAAEAAwAFAAQABgACAAcACAAGAAcACQAKAAUACQALAAoACwAMAAoACwANAAwADQAOAAwA")],
+"material": ExtResource("4_oel5b"),
+"name": "BOTTOM",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 35,
+"vertex_data": PackedByteArray("/38AAP9/uPSB2v//fSX/3/9///8AAP///38AAP9/uPT//////3//v4Ha//+B2v+f/38AAP9/Gd99Jf//fSX/3wAA////f/+//38AAP9/yMz/f/////8AgP9/TCL/v4CofSX//4Ha/5//fwAA/3+MwQAA////f/+/vlJMIr5SCuQmEf9//3+lxP+/TCL/f1jJQK1MIkCtxbL/fwAA/3+Mwb5STCJArcWyJhH/f/9/6MD/fwAA/3/IzECtTCK+Ugrk/39MIv8///9hzv9/nTEE4f9/AAD/fxnf2O7/f/9/b8Jhzv9/Yc6Gpf9//38mEf//nTH/f50xBOH/P0wi/3/gz/9//3/Y7iOUnTH/f2HOhqX/P0wi/39IxDU6avT/fwAA/3///2t0yUX/fwAA/38AAPgv8d//f////3///zZJZFv/f///AAD/f/9///82Em2k/3///21IuO/CVQbzsV6bQjhFH1NtJMht4Cw4xVtUwuGbJDXJuG+SN/pS//8jdqgh8V8GUIhq7SodVjs7yZn//1ZeI/YwQALqAAD/f8NEHNZUOlXS")
+}, {
+"aabb": AABB(-0.9999999, 0, -1, 1.9999998, 1, 1.9999999),
+"attribute_data": PackedByteArray("/7//f/+f/3//zwAA/9//f////3//f/9//28AAP9f/3//TwAA/z//f/8vAAD/H6oq/x//fwAA/3//DwAA/5+qKv9fqir/36oq//9UVf/vAAD/P6oqAABUVf+fVFX/v1RV/39UVf/fVFX/X1RV//+qKv+/qir/rwAA/3+qKv+PAAD/P1RV/x9UVQAAqio="),
+"format": 34896613399,
+"index_count": 120,
+"index_data": PackedByteArray("AAAWABcAAAABABYAAwAAABcAAQAYABYAAQAFABgAAwAXABkABAADABkABAAZABIABQAaABgABQAHABoAEgAZABEAEgARABsAGwARABMAGQAcABEAGQAXABwAEQAcAAIAFwAPABwAHAAPAB0AFwAWAA8AFgAeAA8ADwAeAB8AFgAYAB4AGAAQAB4AHgAQAAYAGAAaABAAGgAUABAAEAAUAAgAGgAgABQABwAgABoABwAJACAAIAALABQAFAALAAoACQAhACAAIAAhAAsACQAMACEAIQAiAAsACwAiAA4AIQAVACIADAAVACEADAANABUA"),
+"lods": [0.299144, PackedByteArray("AAAPAAIAAAABAA8AAwAAAAIAAQAGAA8AAQAFAAYABQAQAAYAAwACABEABQAHABAAEgADABEABAADABIAEgARABMABwAUABAAEAAUAAgABwAJABQACQALABQAFAALAAoACQAMAAsADAAVAAsACwAVAA4ADAANABUA"), 0.5388201, PackedByteArray("AAABAAIAAwAAAAIABAADAAIAAQAFAAYABQAHAAgABwAJAAoACQALAAoACQAMAAsADAANAAsACwANAA4A")],
+"material": SubResource("StandardMaterial3D_r278s"),
+"name": "TOP",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 35,
+"vertex_data": PackedByteArray("/38AAAAA//+B2gAAfSX/3/9/////f7j0fSUAAH0l/98AAAAA/3//v///AAD/f/+//3////9/yMyB2gAAgdr/n/9/////f4zB/38AAP//AID/f////3+Mwb5Sst1ArcWyfSUAAIHa/58AAAAA/3//v/9/////f8jMQK2y3b5SCuRArbLdQK3Fsr5Sst2+UgrkJhH/f/9/pcT/f////38Z3/9/st3/v4CoJhH/f/9/6MBhzv9/nTEE4f9//38mEf//2O7/f/9/b8KdMf9/nTEE4WHO/39hzoal/z+y3f9/4M//f7Ld/z////9/////f7j0/7+y3f9/WMn/f////38Z3/9//3/Y7iOUnTH/f2HOhqX/P7Ld/39IxP9/////fwAAk4s1uv9/////f////38AAGPbyTb/fwAAyO2RW/9///+R2zaSxrrfrP9/////f///yLaapJG3RhAe08Y6RpBsyPiMwtUNoPiv////fzueW9SoodsJ/3815uyqdhXbiVbeO7viKfuVL8D/f/rSycWUC5vCTSEG0A0g////f+Gpw8SprVS6")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_htsnb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbtt1"]
 resource_name = "colormap"
@@ -75,12 +143,13 @@ mesh = SubResource("SphereMesh_gipfl")
 [node name="GFX" type="Node3D" parent="RigidBody3D" unique_id=1906208102]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="TestBall" parent="RigidBody3D/GFX" unique_id=1676188717 instance=ExtResource("3_30tsg")]
-
-[node name="Sphere" parent="RigidBody3D/GFX/TestBall" index="0" unique_id=263328277]
+[node name="Ball" type="MeshInstance3D" parent="RigidBody3D/GFX" unique_id=263328277]
+unique_name_in_owner = true
 cast_shadow = 0
+mesh = SubResource("ArrayMesh_kf4vv")
 
 [node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/GFX" unique_id=1998351604]
+unique_name_in_owner = true
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0, 0)
 cast_shadow = 0
 billboard = 1
@@ -112,5 +181,3 @@ mesh = SubResource("ArrayMesh_xisrv")
 [node name="GunFirePoint" type="Marker3D" parent="NonRotatingNodes/GunRotatePoint" unique_id=1301492511]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8302495, 0, 0)
-
-[editable path="RigidBody3D/GFX/TestBall"]

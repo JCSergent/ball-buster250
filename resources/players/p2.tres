@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Player" format=3 uid="uid://dml1ufdssfbpp"]
+
+[ext_resource type="Script" uid="uid://l17mp3lfii6e" path="res://scripts/resources/player.gd" id="1_qr44l"]
+[ext_resource type="Texture2D" uid="uid://bkj6vukuhyd0j" path="res://art/sprites/big_martin.png" id="2_qr44l"]
+
+[resource]
+script = ExtResource("1_qr44l")
+id = 2
+color = Color(0.08627451, 0.6745098, 1, 1)
+sprite = ExtResource("2_qr44l")
+metadata/_custom_type_script = "uid://l17mp3lfii6e"
