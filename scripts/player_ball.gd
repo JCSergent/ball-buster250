@@ -116,3 +116,11 @@ func increase_gems(amount: int) -> void:
 
 func get_gun_direction() -> Vector3:
     return gun_rotate_point.global_position.direction_to(gun_fire_point.global_position)
+
+func fall_off_map() -> void:
+    rigid_body_3d.global_position = Vector3(0, 6, 0)
+    rigid_body_3d.angular_velocity = Vector3.ZERO
+    rigid_body_3d.linear_velocity = Vector3.ZERO
+    rigid_body_3d.apply_central_impulse(Vector3.DOWN * 30.)
+    # cut gems in half
+    increase_gems(-int((float(current_gems)/2)))
