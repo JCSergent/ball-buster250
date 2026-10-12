@@ -166,7 +166,7 @@ offset_transform_enabled = true
 transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.16382037, 0, 41.609707, 56.6689)
 
 [node name="TestMap1" parent="." unique_id=1485098902 instance=ExtResource("4_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.0566173, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9713025, 0)
 visible = false
 
 [node name="GridMap" type="GridMap" parent="." unique_id=73248366]

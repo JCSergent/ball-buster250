@@ -15,7 +15,7 @@ const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 @export var min_rolling_force := 8
 
 @export_group("Item Variables")
-@export var speed_boost_impulse: float = 6.
+@export var speed_boost_impulse: float = 12.
 @export var speed_boost_power: float = 10.
 @export var spring_impulse: float = 10.
 
@@ -101,7 +101,7 @@ func use_collectable() -> void:
     GameKeeper.remove_item(player_id)
 
     if current_collectable.type == Collectable.Type.SpeedBoost:
-        rigid_body_3d.apply_central_impulse(get_gun_direction() * speed_boost_impulse)
+        rigid_body_3d.apply_central_impulse(-1 * get_gun_direction() * speed_boost_impulse)
         # speed_boost_duration = current_collectable.use_duration
     elif current_collectable.type == Collectable.Type.Spring:
         rigid_body_3d.apply_central_impulse(Vector3.UP * spring_impulse)
