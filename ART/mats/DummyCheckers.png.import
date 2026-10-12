@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bty808ibnckkp"
-path.s3tc="res://.godot/imported/DummyCheckers.png-5d8bedd01bbca0cb2653797ad0dd80e4.s3tc.ctex"
+path.s3tc="res://.godot/imported/DummyCheckers.png-22063eb6347df1b00fcd8440280a4453.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://ART/mats/DummyCheckers.png"
-dest_files=["res://.godot/imported/DummyCheckers.png-5d8bedd01bbca0cb2653797ad0dd80e4.s3tc.ctex"]
+source_file="res://art/mats/DummyCheckers.png"
+dest_files=["res://.godot/imported/DummyCheckers.png-22063eb6347df1b00fcd8440280a4453.s3tc.ctex"]
 
 [params]
 
