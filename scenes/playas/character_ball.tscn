@@ -64,9 +64,6 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("2_g3k4b")
 
-[node name="PlatformerShadowSpringArm" parent="RigidBody3D" unique_id=1024933116 instance=ExtResource("2_4sqf5")]
-visible = false
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1330334942]
 shape = SubResource("SphereShape3D_gipfl")
 
@@ -79,7 +76,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="TestBall" parent="RigidBody3D/GFX" unique_id=1676188717 instance=ExtResource("3_30tsg")]
 
-[node name="Sphere" parent="RigidBody3D/GFX/TestBall" index="0" unique_id=1251197998]
+[node name="Sphere" parent="RigidBody3D/GFX/TestBall" index="0" unique_id=323631559]
 cast_shadow = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/GFX" unique_id=1998351604]
@@ -95,6 +92,8 @@ remote_path = NodePath("../../NonRotatingNodes")
 update_rotation = false
 
 [node name="NonRotatingNodes" type="Node3D" parent="." unique_id=323607809]
+
+[node name="PlatformerShadowSpringArm" parent="NonRotatingNodes" unique_id=1024933116 instance=ExtResource("2_4sqf5")]
 
 [node name="FloorCast" type="RayCast3D" parent="NonRotatingNodes" unique_id=1958607363]
 unique_name_in_owner = true

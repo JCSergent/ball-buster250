@@ -30,89 +30,89 @@ var current_gems: int = 0
 var speed_boost_duration: float = 0.0
 
 func _physics_process(delta: float) -> void:
-    if Input.is_action_pressed("item_p1") and current_collectable != null:
-        use_collectable()
+	if Input.is_action_pressed("item_p1") and current_collectable != null:
+		use_collectable()
 
-    if Input.is_action_just_pressed("jump_p1"):
-        shoot_gun()
+	if Input.is_action_just_pressed("jump_p1"):
+		shoot_gun()
 
-    var is_on_floor := floor_cast.is_colliding()
-    if not is_on_floor:
-        return
+	var is_on_floor := floor_cast.is_colliding()
+	if not is_on_floor:
+		return
 
-    var adjusted_rolling_force: float = ((float(current_gems) / max_gem_capacity) * (min_rolling_force - rolling_force)) + rolling_force
-    var rolling_velocity := adjusted_rolling_force * delta
+	var adjusted_rolling_force: float = ((float(current_gems) / max_gem_capacity) * (min_rolling_force - rolling_force)) + rolling_force
+	var rolling_velocity := adjusted_rolling_force * delta
 
-    if speed_boost_duration > 0.:
-        rolling_velocity += speed_boost_power * delta
-        speed_boost_duration -= delta
+	if speed_boost_duration > 0.:
+		rolling_velocity += speed_boost_power * delta
+		speed_boost_duration -= delta
 
-    var roll_direction = Input.get_vector("right_p1", "left_p1", "forward_p1", "back_p1")
+	var roll_direction = Input.get_vector("right_p1", "left_p1", "forward_p1", "back_p1")
 
-    rigid_body_3d.angular_velocity.x += roll_direction.y * rolling_velocity
-    rigid_body_3d.angular_velocity.z += roll_direction.x * rolling_velocity
-    if roll_direction != Vector2.ZERO:
-        rotate_gun(roll_direction.angle(), delta)
+	rigid_body_3d.angular_velocity.x += roll_direction.y * rolling_velocity
+	rigid_body_3d.angular_velocity.z += roll_direction.x * rolling_velocity
+	if roll_direction != Vector2.ZERO:
+		rotate_gun(roll_direction.angle(), delta)
 
-    # if Input.is_action_just_pressed("jump_p1"):
-        # rigid_body_3d.apply_central_impulse(Vector3.UP * jump_impulse)
+	# if Input.is_action_just_pressed("jump_p1"):
+		# rigid_body_3d.apply_central_impulse(Vector3.UP * jump_impulse)
 
 func rotate_gun(target_rad: float, delta: float) -> void:
-    if gun_rotate_point.rotation.y != target_rad:
-        var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
-        gun_rotate_point.rotation.y += delta * TAU * gun_rotate_speed * sign(angle_diff)
-        if abs(gun_rotate_point.rotation.y - target_rad) <= 0.1:
-            gun_rotate_point.rotation.y = target_rad
+	if gun_rotate_point.rotation.y != target_rad:
+		var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
+		gun_rotate_point.rotation.y += delta * TAU * gun_rotate_speed * sign(angle_diff)
+		if abs(gun_rotate_point.rotation.y - target_rad) <= 0.1:
+			gun_rotate_point.rotation.y = target_rad
 
 func shoot_gun() -> void:
-    if current_gems < 1:
-        # TODO: maybe play a little animation showing there is nothing to shoot
-        return
+	if current_gems < 1:
+		# TODO: maybe play a little animation showing there is nothing to shoot
+		return
 
-    var bullet: Bullet = BULLET_SCENE.instantiate()
-    bullet.global_position = gun_fire_point.global_position
-    bullet.fire_direction = get_gun_direction()
-    get_parent().add_child(bullet)
+	var bullet: Bullet = BULLET_SCENE.instantiate()
+	bullet.global_position = gun_fire_point.global_position
+	bullet.fire_direction = get_gun_direction()
+	get_parent().add_child(bullet)
 
-    increase_gems(-1)
+	increase_gems(-1)
 
 func get_collectable(collectable: Collectable) -> bool:
-    if collectable.type == Collectable.Type.Point1:
-        if current_gems >= max_gem_capacity:
-            return false
-        increase_gems(1)
-    elif collectable.type == Collectable.Type.Point5:
-        if current_gems >= max_gem_capacity:
-            return false
-        increase_gems(5)
-    elif collectable.type == Collectable.Type.Point10:
-        if current_gems >= max_gem_capacity:
-            return false
-        increase_gems(10)
-    else:
-        if current_collectable:
-            return false
-        current_collectable = collectable
-        GameKeeper.add_item(player_id, current_collectable)
+	if collectable.type == Collectable.Type.Point1:
+		if current_gems >= max_gem_capacity:
+			return false
+		increase_gems(1)
+	elif collectable.type == Collectable.Type.Point5:
+		if current_gems >= max_gem_capacity:
+			return false
+		increase_gems(5)
+	elif collectable.type == Collectable.Type.Point10:
+		if current_gems >= max_gem_capacity:
+			return false
+		increase_gems(10)
+	else:
+		if current_collectable:
+			return false
+		current_collectable = collectable
+		GameKeeper.add_item(player_id, current_collectable)
 
-    return true
+	return true
 
 func use_collectable() -> void:
-    GameKeeper.remove_item(player_id)
+	GameKeeper.remove_item(player_id)
 
-    if current_collectable.type == Collectable.Type.SpeedBoost:
-        rigid_body_3d.apply_central_impulse(get_gun_direction() * speed_boost_impulse)
-        # speed_boost_duration = current_collectable.use_duration
-    elif current_collectable.type == Collectable.Type.Spring:
-        rigid_body_3d.apply_central_impulse(Vector3.UP * spring_impulse)
+	if current_collectable.type == Collectable.Type.SpeedBoost:
+		rigid_body_3d.apply_central_impulse(get_gun_direction() * speed_boost_impulse)
+		# speed_boost_duration = current_collectable.use_duration
+	elif current_collectable.type == Collectable.Type.Spring:
+		rigid_body_3d.apply_central_impulse(Vector3.UP * spring_impulse)
 
-    current_collectable = null
+	current_collectable = null
 
 func increase_gems(amount: int) -> void:
-    current_gems = clampi(current_gems + amount, 0, max_gem_capacity)
-    var new_scale: float = ((float(current_gems) / max_gem_capacity) * (max_scale_increase - 1.)) + 1.
-    rigid_body_3d.scale = Vector3.ONE * new_scale
-    GameKeeper.update_score(player_id, current_gems)
+	current_gems = clampi(current_gems + amount, 0, max_gem_capacity)
+	var new_scale: float = ((float(current_gems) / max_gem_capacity) * (max_scale_increase - 1.)) + 1.
+	rigid_body_3d.scale = Vector3.ONE * new_scale
+	GameKeeper.update_score(player_id, current_gems)
 
 func get_gun_direction() -> Vector3:
-    return gun_rotate_point.global_position.direction_to(gun_fire_point.global_position)
+	return gun_rotate_point.global_position.direction_to(gun_fire_point.global_position)
