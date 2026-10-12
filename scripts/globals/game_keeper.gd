@@ -9,17 +9,20 @@ var game_state: GameState
 
 var players: Dictionary[int, Player]
 
+var is_two_player: bool = true
+
 func _ready() -> void:
     game_state = GameState.new()
+    players.set(1, ResourceLoader.load("res://resources/players/p1.tres", "Player", ResourceLoader.CacheMode.CACHE_MODE_IGNORE))
+    players.set(2, ResourceLoader.load("res://resources/players/p2.tres", "Player", ResourceLoader.CacheMode.CACHE_MODE_IGNORE))
     reset_game()
 
 func reset_game() -> void:
-    players.clear()
-    players.set(1, Player.create(1))
-    players.set(2, Player.create(2))
-    players.set(3, Player.create(3))
-    players.set(4, Player.create(4))
-    game_state.phase = GameState.Phase.PlayerSelect
+    for player: Player in players.values():
+        player.reset_state()
+
+    # TODO: Go to Player Select Screen
+    # game_state.phase = GameState.Phase.PlayerSelect
     # SceneKeeper.load_scene(SceneKeeper.Scene.PlayerSelectScene)
 
 func update_score(player_id: int, value: int) -> void:

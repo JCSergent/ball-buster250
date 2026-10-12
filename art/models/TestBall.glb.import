@@ -43,12 +43,12 @@ _subresources={
 "materials": {
 "BOTTOM": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://art/mats/BOTTOM.tres",
+"use_external/fallback_path": "res://ART/mats/BOTTOM.tres",
 "use_external/path": "uid://bjh5sd1h3myb6"
 },
 "TOP": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://art/mats/TOP.tres",
+"use_external/fallback_path": "res://ART/mats/TOP.tres",
 "use_external/path": "uid://dh12fh442i135"
 }
 }

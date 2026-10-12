@@ -1,7 +1,7 @@
 class_name Bumper
 extends Node3D
 
-@export var bumper_force := 10
+@export var bumper_force := 15
 @export var bump_sfx: SoundEffect
 
 @onready var area_3d: Area3D = $Area3D
