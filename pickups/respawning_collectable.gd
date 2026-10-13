@@ -14,41 +14,44 @@ class_name respawning_collectable extends Node3D
 @onready var area : Area3D = $Area3D
 
 func init(_collectable: Collectable) -> void:
-	collectable = _collectable
+    collectable = _collectable
 
 func _ready() -> void:
-	sprite.texture = collectable.texture
-	animation_player.play('idle')
+    sprite.texture = collectable.texture
+    animation_player.play('idle')
 
 func _on_area_3d_body_entered(body:Node3D) -> void:
-	if body is PlayerBall:
-		
-		
-		if is_respawnable:
-			despawn_me()
-			respawn_me()
-		else:
-			atomize_me()
+    if body is PlayerRigidBody and body.player_ball:
+        var is_collected: bool = body.player_ball.get_collectable(collectable)
+
+        if not is_collected:
+            return
+
+        if collectable.pickup_sound_effect:
+            AudioKeeper.play_sfx(collectable.pickup_sound_effect)
+        
+        despawn_me()
+        respawn_me()
 
 func despawn_me():
-	sprite.visible = false
-	area.set_collision_layer_value(1, false)
-	area.set_collision_layer_value(2, false)
-	area.set_collision_mask_value(1, false)
-	area.set_collision_mask_value(2, false)
+    sprite.visible = false
+    area.set_collision_layer_value(1, false)
+    area.set_collision_layer_value(2, false)
+    area.set_collision_mask_value(1, false)
+    area.set_collision_mask_value(2, false)
 
 func respawn_me():
-	timer.stop()
-	timer.wait_time = respawn_time
-	timer.one_shot = true
-	timer.start()
-	
-	await timer.timeout
-	sprite.visible = true
-	area.set_collision_layer_value(1, true)
-	area.set_collision_layer_value(2, true)
-	area.set_collision_mask_value(1, true)
-	area.set_collision_mask_value(2, true)
+    timer.stop()
+    timer.wait_time = respawn_time
+    timer.one_shot = true
+    timer.start()
+    
+    await timer.timeout
+    sprite.visible = true
+    area.set_collision_layer_value(1, true)
+    area.set_collision_layer_value(2, true)
+    area.set_collision_mask_value(1, true)
+    area.set_collision_mask_value(2, true)
 
 func atomize_me():
-	self.queue_free()
+    self.queue_free()

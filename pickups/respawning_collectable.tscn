@@ -71,6 +71,7 @@ _data = {
 
 [node name="Respawn_Collectable" type="Node3D" unique_id=970564733]
 script = ExtResource("1_ay5tx")
+value = null
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1894290276]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)

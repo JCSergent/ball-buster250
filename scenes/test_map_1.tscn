@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://buf65lhbnr7vn" path="res://resources/collectables/point_5.tres" id="12_og7nd"]
 [ext_resource type="Resource" uid="uid://ct8yfuwbho6jv" path="res://resources/collectables/spring.tres" id="14_0kca3"]
 [ext_resource type="Resource" uid="uid://dohfrdbpk8hnn" path="res://resources/collectables/speed_boost.tres" id="15_u018e"]
+[ext_resource type="PackedScene" uid="uid://dwket6reb0144" path="res://pickups/respawning_collectable.tscn" id="16_5afa1"]
 [ext_resource type="PackedScene" uid="uid://c7lobu1q5rjk4" path="res://scenes/graybox_delete_later/graybox_large_tall_platform.tscn" id="16_x4ns3"]
 [ext_resource type="PackedScene" uid="uid://c8bugatpauyup" path="res://scenes/graybox_delete_later/graybox_large_platform.tscn" id="17_gpvyf"]
 [ext_resource type="Resource" uid="uid://dnkklqru2x0d6" path="res://resources/collectables/point_10.tres" id="18_5afa1"]
@@ -2721,55 +2722,75 @@ transform = Transform3D(-0.70710665, 0, -0.70710665, 0, 1, 0, 0.70710665, 0, -0.
 
 [node name="Collectables" type="Node3D" parent="." unique_id=786905365]
 
-[node name="Collectable" parent="Collectables" unique_id=970564733 instance=ExtResource("11_3mjpi")]
+[node name="Collectable" parent="Collectables" unique_id=1444723067 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 4)
+visible = false
 
 [node name="Collectable2" parent="Collectables" unique_id=171938220 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 4)
+visible = false
 
 [node name="Collectable3" parent="Collectables" unique_id=1295466748 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -1, 4)
+visible = false
 collectable = ExtResource("12_og7nd")
 
 [node name="Collectable7" parent="Collectables" unique_id=2063545560 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -0.1, 8.800001)
+visible = false
 collectable = ExtResource("14_0kca3")
 
 [node name="Collectable4" parent="Collectables" unique_id=1726949021 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 4)
+visible = false
 collectable = ExtResource("12_og7nd")
 
 [node name="Collectable5" parent="Collectables" unique_id=1504937794 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -1, 4)
+visible = false
 
 [node name="Collectable6" parent="Collectables" unique_id=1188689496 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 4)
+visible = false
 
 [node name="Collectable8" parent="Collectables" unique_id=1330307602 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 11)
+visible = false
 collectable = ExtResource("14_0kca3")
 
 [node name="Collectable9" parent="Collectables" unique_id=817847478 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 7)
+visible = false
 
 [node name="Collectable10" parent="Collectables" unique_id=962269671 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 7)
+visible = false
 
 [node name="Collectable11" parent="Collectables" unique_id=440245974 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 9)
+visible = false
 collectable = ExtResource("12_og7nd")
 
 [node name="Collectable12" parent="Collectables" unique_id=2021081168 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 9)
+visible = false
 
 [node name="Collectable13" parent="Collectables" unique_id=605184061 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.9)
+visible = false
 
 [node name="Collectable14" parent="Collectables" unique_id=268067024 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 7.9)
+visible = false
 
 [node name="Collectable15" parent="Collectables" unique_id=2021263679 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 8.9)
+visible = false
+
+[node name="Respawn_Collectable2" parent="Collectables" unique_id=970564733 instance=ExtResource("16_5afa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+collectable = ExtResource("14_0kca3")
+value = 1
 
 [node name="platforms" type="Node3D" parent="." unique_id=468683410]
 
