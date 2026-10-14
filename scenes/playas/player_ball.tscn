@@ -167,6 +167,7 @@ update_rotation = false
 
 [node name="FloorCast" type="RayCast3D" parent="NonRotatingNodes" unique_id=1958607363]
 unique_name_in_owner = true
+target_position = Vector3(0, -0.54, 0)
 hit_from_inside = true
 collide_with_areas = true
 debug_shape_thickness = 5

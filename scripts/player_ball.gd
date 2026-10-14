@@ -7,7 +7,12 @@ const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 
 @export var rolling_force := 16
 @export var jump_impulse := 6
-@export var gun_rotate_speed := 0.8
+@export var gun_rotate_speed := 1.5
+
+@export_group("Boost")
+@export var boost_dampening := 5
+@export var boost_max_force := 10
+@export var boost_drift_clamp := 2
 
 @export_group("Grow Stats")
 @export var max_gem_capacity := 40
@@ -43,15 +48,32 @@ func _ready() -> void:
     
 
 func _physics_process(delta: float) -> void:
-    if Input.is_action_pressed("item_" + player.string_id) and current_collectable != null:
-        use_collectable()
+    # if Input.is_action_pressed("item_" + player.string_id) and current_collectable != null:
+    #     use_collectable()
 
     if Input.is_action_just_pressed("jump_" + player.string_id):
         shoot_gun()
+    #     rigid_body_3d.angular_velocity = Vector3.ONE * 100
+    #     rigid_body_3d.linear_velocity = Vector3.ZERO
 
     var is_on_floor := floor_cast.is_colliding()
     # if not is_on_floor:
     #     return
+
+    if is_on_floor and Input.is_action_just_pressed("item_" + player.string_id):
+        rigid_body_3d.linear_damp = boost_dampening
+
+    if is_on_floor and Input.is_action_pressed("item_" + player.string_id):
+        print('charging')
+        if rigid_body_3d.linear_velocity.length() < boost_drift_clamp:
+            rigid_body_3d.linear_velocity = Vector3.ZERO
+            rigid_body_3d.angular_velocity = Vector3.ONE * 100
+        # if rigid_body_3d.linear_velocity == Vector3.ZERO:
+    if is_on_floor and Input.is_action_just_released("item_" + player.string_id):
+        rigid_body_3d.linear_damp = 0.
+        rigid_body_3d.angular_velocity = Vector3.ZERO
+        rigid_body_3d.apply_central_impulse(get_gun_direction() * boost_max_force)
+        pass
 
     var adjusted_rolling_force: float = ((float(current_gems) / max_gem_capacity) * (min_rolling_force - rolling_force)) + rolling_force
     var rolling_velocity := adjusted_rolling_force * delta
