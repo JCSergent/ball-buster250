@@ -16,11 +16,11 @@ extends Node
 #@export var teleport_destination: Vector2 = Vector2(100, 100)
 #
 #func _ready() -> void:
-	#body_entered.connect(_on_body_entered)
+    #body_entered.connect(_on_body_entered)
 #
 #func _on_body_entered(body: Node2D) -> void:
-	#if body is Player:
-		#EventBus.request_teleport.emit(teleport_destination)
+    #if body is Player:
+        #EventBus.request_teleport.emit(teleport_destination)
 #
 #
 ## Player.gd
@@ -28,7 +28,7 @@ extends Node
 #class_name Player
 #
 #func _ready() -> void:
-	#EventBus.request_teleport.connect(_on_teleport_requested)
+    #EventBus.request_teleport.connect(_on_teleport_requested)
 #
 #func _on_teleport_requested(target_pos: Vector2) -> void:
-	#global_position = target_pos
+    #global_position = target_pos

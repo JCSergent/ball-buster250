@@ -46,6 +46,10 @@ folder_colors={
 "res://shaders/": "pink"
 }
 
+[global_group]
+
+TravelNodes=""
+
 [input]
 
 forward_p1={

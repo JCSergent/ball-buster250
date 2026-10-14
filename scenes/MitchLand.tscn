@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://gal082uki2l0"]
 
 [ext_resource type="Material" uid="uid://dyxrwubqp0ei0" path="res://art/mats/TestLevelMat1.tres" id="1_fp6qb"]
+[ext_resource type="PackedScene" uid="uid://b74cekrtstofu" path="res://scenes/sunsucctest.tscn" id="1_vme0n"]
 [ext_resource type="PackedScene" uid="uid://i6idx2bqvdnl" path="res://scenes/playas/player_ball_1.tscn" id="2_ygndp"]
+[ext_resource type="PackedScene" uid="uid://j5wss7n8ww5y" path="res://scenes/travel_node.tscn" id="3_n1x0g"]
 
 [node name="Node3D" type="Node3D" unique_id=677202035]
+
+[node name="sunsucctest" parent="." unique_id=988882479 instance=ExtResource("1_vme0n")]
 
 [node name="Ground" type="CSGBox3D" parent="." unique_id=415637985]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23999023, 0)
 use_collision = true
-size = Vector3(10, 0.5, 10)
+size = Vector3(20, 0.5, 20)
 material = ExtResource("1_fp6qb")
 
 [node name="PlayerBall1" parent="." unique_id=120720000 instance=ExtResource("2_ygndp")]
@@ -19,3 +23,15 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1623138639]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8, 0)
+
+[node name="TravelNode" parent="." unique_id=2109841125 instance=ExtResource("3_n1x0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 6)
+
+[node name="TravelNode2" parent="." unique_id=1415348442 instance=ExtResource("3_n1x0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+
+[node name="TravelNode3" parent="." unique_id=1749742464 instance=ExtResource("3_n1x0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -7)
+
+[node name="TravelNode4" parent="." unique_id=959944234 instance=ExtResource("3_n1x0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -7)

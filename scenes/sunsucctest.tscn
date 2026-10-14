@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b74cekrtstofu"]
 
+[ext_resource type="Script" uid="uid://b2brlj7aadmr6" path="res://scenes/sunsucctest.gd" id="1_tcp64"]
 [ext_resource type="Texture2D" uid="uid://mcgi0j643c5" path="res://art/sprites/icon.svg" id="1_yyll4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2lak"]
@@ -7,6 +8,7 @@ transparency = 1
 albedo_color = Color(0.93155056, 0.919399, 0.66131824, 0.50980395)
 
 [node name="sunsucctest" type="Node3D" unique_id=988882479]
+script = ExtResource("1_tcp64")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1984785517]
 transform = Transform3D(2.7693233, 0, 0, 0, 2.810371, 0, 0, 0, 1, 0, 0, 0)
@@ -18,3 +20,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.6643066, 0)
 radius = 1.3945313
 height = 6.737793
 material = SubResource("StandardMaterial3D_e2lak")
+
+[node name="Timer" type="Timer" parent="." unique_id=796283899]

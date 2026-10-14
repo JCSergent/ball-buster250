@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://j5wss7n8ww5y"]
+
+[node name="TravelNode" type="Node3D" unique_id=2109841125 groups=["TravelNodes"]]

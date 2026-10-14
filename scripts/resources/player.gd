@@ -18,4 +18,3 @@ var string_id: String:
 #     player.id = _id
 #
 #     return player
-
