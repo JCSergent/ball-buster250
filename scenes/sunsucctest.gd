@@ -31,21 +31,24 @@ func _process(delta: float) -> void:
     travel_to_node(delta)
 
 func travel_to_node(delta):
-    if position.distance_to(current_target.position) > swap_threshold && dest_reached == false:
-        position = position.move_toward(current_target.position, delta * current_speed)
-    else:
-        dest_reached = true
-        print("Destination reached: ", current_target)
-        swap_timer.stop()
-        swap_timer.wait_time = time_until_swap
-        swap_timer.one_shot = true
-        print("Starting swap timer...")
-        swap_timer.start()
-            
-        await swap_timer.timeout
-        print("Time to pick a new node!")
-        current_target = pick_new_node()
-        dest_reached = false
+    # if position.distance_to(current_target.position) > swap_threshold && dest_reached == false:
+    if not dest_reached:
+        if position.distance_to(current_target.position) > swap_threshold:
+            position = position.move_toward(current_target.position, delta * current_speed)
+        else:
+            dest_reached = true
+            print("Destination reached: ", current_target)
+            swap_timer.stop()
+            swap_timer.wait_time = time_until_swap
+            swap_timer.one_shot = true
+            print("Starting swap timer...")
+            swap_timer.start()
+
+            await swap_timer.timeout
+
+            print("Time to pick a new node!")
+            current_target = pick_new_node()
+            dest_reached = false
 
 func pick_new_node():
     var n = travel_nodes.pick_random()
