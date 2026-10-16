@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://fdyxnvp8v3w3"]
 
 [ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/player_ball.gd" id="1_bsyiq"]
-[ext_resource type="Texture2D" uid="uid://cmir5nr8y0j4c" path="res://assets/ball-line.png" id="1_y65km"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_4sqf5"]
 [ext_resource type="Script" uid="uid://d2fmo76m4fgfg" path="res://scripts/player_rigid_body.gd" id="2_g3k4b"]
 [ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://ART/mats/BOTTOM.tres" id="4_oel5b"]
@@ -12,12 +11,6 @@
 [ext_resource type="Shader" uid="uid://cuqv17vikbreu" path="res://shaders/smoke.gdshader" id="8_oel5b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gipfl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsyiq"]
-albedo_texture = ExtResource("1_y65km")
-
-[sub_resource type="SphereMesh" id="SphereMesh_gipfl"]
-material = SubResource("StandardMaterial3D_bsyiq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0wu7"]
 resource_local_to_scene = true
@@ -131,7 +124,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_htsnb")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_cveut"]
-viewport_path = NodePath("NonRotatingNodes/SubViewport")
+viewport_path = NodePath("NonRotatingNodes/UIMesh/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8il"]
 resource_local_to_scene = true
@@ -144,6 +137,9 @@ billboard_keep_scale = true
 [sub_resource type="QuadMesh" id="QuadMesh_gipfl"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_pa8il")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_52f4h"]
+radius = 1.0
 
 [sub_resource type="Curve" id="Curve_52f4h"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.52323455, 0.98174167), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -186,36 +182,6 @@ shader_parameter/noiseDensity = 8.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_pa8il"]
 material = SubResource("ShaderMaterial_k48vh")
-radius = 0.1
-height = 0.2
-radial_segments = 100
-rings = 64
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w1s8w"]
-emission_shape = 1
-emission_sphere_radius = 1.0
-angle_min = 1.0728835e-05
-angle_max = 180.00002
-direction = Vector3(1, 1, 0)
-initial_velocity_max = 0.099999994
-gravity = Vector3(0.4, 0.05, 0)
-scale_curve = SubResource("CurveTexture_w1s8w")
-scale_over_velocity_min = 574.83997
-scale_over_velocity_max = 574.83997
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0vvj"]
-render_priority = 0
-next_pass = SubResource("ShaderMaterial_oel5b")
-shader = ExtResource("8_oel5b")
-shader_parameter/smoke_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
-shader_parameter/highlight_color = Color(0.96862745, 0.9764706, 0.9764706, 1)
-shader_parameter/shadow_color = Color(0.1764706, 0.26666668, 0.3019608, 1)
-shader_parameter/displacementStrength = 0.1
-shader_parameter/displacementSpeed = 0.1
-shader_parameter/noiseDensity = 8.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_i7gku"]
-material = SubResource("ShaderMaterial_s0vvj")
 radius = 0.1
 height = 0.2
 radial_segments = 100
@@ -276,10 +242,6 @@ script = ExtResource("2_g3k4b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1330334942]
 shape = SubResource("SphereShape3D_gipfl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=2079311429]
-visible = false
-mesh = SubResource("SphereMesh_gipfl")
-
 [node name="GFX" type="Node3D" parent="RigidBody3D" unique_id=1906208102]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
@@ -308,53 +270,63 @@ update_rotation = false
 
 [node name="NonRotatingNodes" type="Node3D" parent="." unique_id=323607809]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NonRotatingNodes" unique_id=1900480407]
+[node name="UIMesh" type="MeshInstance3D" parent="NonRotatingNodes" unique_id=1900480407]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0183105, 0.8511734, 0)
 mesh = SubResource("QuadMesh_gipfl")
 
-[node name="SubViewport" type="SubViewport" parent="NonRotatingNodes" unique_id=417810589]
+[node name="SubViewport" type="SubViewport" parent="NonRotatingNodes/UIMesh" unique_id=417810589]
 disable_3d = true
 transparent_bg = true
 size_2d_override = Vector2i(64, 64)
 size_2d_override_stretch = true
 
-[node name="Control" type="Control" parent="NonRotatingNodes/SubViewport" unique_id=2045284307]
+[node name="Control" type="Control" parent="NonRotatingNodes/UIMesh/SubViewport" unique_id=2045284307]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MarginContainer" type="MarginContainer" parent="NonRotatingNodes/SubViewport/Control" unique_id=38487208]
+[node name="MarginContainer" type="MarginContainer" parent="NonRotatingNodes/UIMesh/SubViewport/Control" unique_id=38487208]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="UIColor" type="ColorRect" parent="NonRotatingNodes/SubViewport/Control/MarginContainer" unique_id=762171210]
+[node name="UIColor" type="ColorRect" parent="NonRotatingNodes/UIMesh/SubViewport/Control/MarginContainer" unique_id=762171210]
 unique_name_in_owner = true
 layout_mode = 2
 color = Color(1, 0.43137255, 0.38039216, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="NonRotatingNodes/SubViewport/Control/MarginContainer" unique_id=490163691]
+[node name="MarginContainer" type="MarginContainer" parent="NonRotatingNodes/UIMesh/SubViewport/Control/MarginContainer" unique_id=490163691]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NonRotatingNodes/SubViewport/Control/MarginContainer/MarginContainer" unique_id=267091315]
+[node name="HBoxContainer" type="HBoxContainer" parent="NonRotatingNodes/UIMesh/SubViewport/Control/MarginContainer/MarginContainer" unique_id=267091315]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="StarCount" type="Label" parent="NonRotatingNodes/SubViewport/Control/MarginContainer/MarginContainer/HBoxContainer" unique_id=1686453313]
+[node name="StarCount" type="Label" parent="NonRotatingNodes/UIMesh/SubViewport/Control/MarginContainer/MarginContainer/HBoxContainer" unique_id=1686453313]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "0"
 
-[node name="TextureRect" type="TextureRect" parent="NonRotatingNodes/SubViewport/Control/MarginContainer/MarginContainer/HBoxContainer" unique_id=1564538509]
+[node name="TextureRect" type="TextureRect" parent="NonRotatingNodes/UIMesh/SubViewport/Control/MarginContainer/MarginContainer/HBoxContainer" unique_id=1564538509]
 layout_mode = 2
 texture = ExtResource("7_k48vh")
+
+[node name="SunBeamChecker" type="Area3D" parent="NonRotatingNodes" unique_id=434022337]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NonRotatingNodes/SunBeamChecker" unique_id=1357254299]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -2.9802322e-08)
+shape = SubResource("SphereShape3D_52f4h")
 
 [node name="DriftParticles" type="GPUParticles3D" parent="NonRotatingNodes" unique_id=429163203]
 unique_name_in_owner = true
@@ -364,15 +336,6 @@ lifetime = 3.0
 speed_scale = 5.0
 process_material = SubResource("ParticleProcessMaterial_k48vh")
 draw_pass_1 = SubResource("SphereMesh_pa8il")
-
-[node name="DriftParticles2" type="GPUParticles3D" parent="NonRotatingNodes" unique_id=42484620]
-unique_name_in_owner = true
-transform = Transform3D(0.118, 0, 0, 0, 0.118, 0, 0, 0, 0.118, 0, -0.4647349, 0)
-emitting = false
-lifetime = 3.0
-speed_scale = 5.0
-process_material = SubResource("ParticleProcessMaterial_w1s8w")
-draw_pass_1 = SubResource("SphereMesh_i7gku")
 
 [node name="PlatformerShadowSpringArm" parent="NonRotatingNodes" unique_id=1024933116 instance=ExtResource("2_4sqf5")]
 

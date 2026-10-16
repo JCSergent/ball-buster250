@@ -26,9 +26,9 @@ buses/default_bus_layout=""
 [autoload]
 
 EventBus="*uid://cnoxydx2ita3i"
-GameKeeper="*uid://5q83or5i8wgu"
 AudioKeeper="*uid://17k057u37nhb"
 SceneKeeper="*uid://dbo5eckf1biul"
+GameKeeper="*uid://2otdd4uyd4io"
 
 [display]
 
@@ -132,6 +132,7 @@ item_p2={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Collectable"
 3d_physics/layer_4="Projectile"
+3d_physics/layer_5="Sun Beam"
 
 [physics]
 

@@ -35,6 +35,8 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 @onready var gun_rotate_point: Node3D = %GunRotatePoint
 @onready var gun_fire_point: Node3D = %GunFirePoint
 
+@onready var sun_beam_checker: Area3D = %SunBeamChecker
+
 @onready var sprite_3d: Sprite3D = %Sprite3D
 @onready var outline: MeshInstance3D = %Outline
 @onready var ball: MeshInstance3D = %Ball
@@ -55,6 +57,8 @@ var boost_duration: float = 0.
 var is_drifting: bool = false
 var is_fell_off_map: bool = false
 
+var is_in_sunbeam: bool = false
+
 func _ready() -> void:
     player = GameKeeper.players.get(player_id)
     sprite_3d.texture = player.sprite
@@ -65,6 +69,8 @@ func _ready() -> void:
     ui_color.color = player.color
 
     rigid_body_3d.body_entered.connect(on_body_entered)
+    sun_beam_checker.area_entered.connect(on_enter_sun_beam)
+    sun_beam_checker.area_exited.connect(on_exit_sun_beam)
 
 func _physics_process(delta: float) -> void:
     var is_on_floor := floor_cast.is_colliding()
@@ -145,11 +151,16 @@ func _physics_process(delta: float) -> void:
         rotate_gun(roll_direction.angle(), delta)
 
 func rotate_gun(target_rad: float, delta: float) -> void:
-    var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
-    if abs(angle_diff) > 0.1:
-        gun_rotate_point.rotation.y += delta * TAU * gun_rotate_speed * sign(angle_diff)
-    else:
-        gun_rotate_point.rotation.y = target_rad
+    if not is_in_sunbeam:
+        var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
+        if abs(angle_diff) > 0.1:
+            gun_rotate_point.rotation.y += delta * TAU * gun_rotate_speed * sign(angle_diff)
+        else:
+            gun_rotate_point.rotation.y = target_rad
+    # else:
+    #     gun_rotate_point.rotate_x(cos(gun_rotate_point.rotation.y))
+    #     gun_rotate_point.rotate_z(sin(gun_rotate_point.rotation.y))
+        # gun_rotate_point.get_global_transform_interpolated()
 
 func shoot_gun() -> void:
     if current_collectable:
@@ -242,7 +253,6 @@ func get_shot(direction: Vector3) -> void:
     elif current_stars > 0:
         spew_stars(randi_range(2, 4), 3, 6, direction)
     
-
 func on_body_entered(body: Node3D) -> void:
     if body is PlayerRigidBody:
         var direction: Vector3 = rigid_body_3d.global_position.direction_to(body.global_position) * -1
@@ -251,3 +261,15 @@ func on_body_entered(body: Node3D) -> void:
             spew_stars(current_stars, 3, 6, direction)
         elif current_stars > 0:
             spew_stars(randi_range(2, 4), 3, 6, direction)
+
+func on_enter_sun_beam(_area: Area3D) -> void:
+    is_in_sunbeam = true
+    # gun_rotate_point.rotation.x = cos(gun_rotate_point.rotation.y)
+    # gun_rotate_point.rotation.z = sin(gun_rotate_point.rotation.y)
+    # gun_rotate_point.rotate_x(cos(gun_rotate_point.rotation.y))
+    # gun_rotate_point.rotate_z(sin(gun_rotate_point.rotation.y))
+
+func on_exit_sun_beam(_area: Area3D) -> void:
+    is_in_sunbeam = false
+    # gun_rotate_point.rotation.z = 0
+    # gun_rotate_point.rotation.x = 0

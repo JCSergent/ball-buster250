@@ -5,16 +5,14 @@ extends Node
 
 signal player_state_changed(player: Player)
 
-var game_state: GameState
+@export var players: Dictionary[int, Player]
 
-var players: Dictionary[int, Player]
+var game_state: GameState
 
 var is_two_player: bool = true
 
 func _ready() -> void:
     game_state = GameState.new()
-    players.set(1, ResourceLoader.load("res://resources/players/p1.tres", "Player", ResourceLoader.CacheMode.CACHE_MODE_IGNORE))
-    players.set(2, ResourceLoader.load("res://resources/players/p2.tres", "Player", ResourceLoader.CacheMode.CACHE_MODE_IGNORE))
     reset_game()
 
 func reset_game() -> void:
