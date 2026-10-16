@@ -31,7 +31,6 @@ func _process(delta: float) -> void:
     travel_to_node(delta)
 
 func travel_to_node(delta):
-    # if position.distance_to(current_target.position) > swap_threshold && dest_reached == false:
     if not dest_reached:
         if position.distance_to(current_target.position) > swap_threshold:
             position = position.move_toward(current_target.position, delta * current_speed)

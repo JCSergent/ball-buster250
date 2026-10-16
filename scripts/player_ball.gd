@@ -6,16 +6,18 @@ const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 @export var player_id: int = 1
 
 @export var rolling_force := 16
-@export var jump_impulse := 6
+# @export var jump_impulse := 6
 @export var gun_rotate_speed := 1.5
 
 @export_group("Boost")
-@export var boost_dampening := 5
-@export var boost_max_force := 10
-@export var boost_drift_clamp := 2
+@export var min_boost_force := 4
+@export var max_boost_force := 10
+@export var max_boost_duration := 2
+@export var drift_dampening := 8
+@export var drift_clamp := 2
 
 @export_group("Grow Stats")
-@export var max_gem_capacity := 40
+@export var max_star_capacity := 60
 @export var max_scale_increase := 2.
 @export var min_rolling_force := 8
 
@@ -24,20 +26,33 @@ const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 @export var speed_boost_power: float = 10.
 @export var spring_impulse: float = 10.
 
+@export_group("Collisions")
+@export var player_bump_force: float = 3.
+@export var star_projectile_force: float = 2.
+
 @onready var rigid_body_3d: RigidBody3D = $RigidBody3D
 @onready var floor_cast: RayCast3D = %FloorCast
 @onready var gun_rotate_point: Node3D = %GunRotatePoint
 @onready var gun_fire_point: Node3D = %GunFirePoint
 
 @onready var sprite_3d: Sprite3D = %Sprite3D
+@onready var outline: MeshInstance3D = %Outline
 @onready var ball: MeshInstance3D = %Ball
+@onready var star_count: Label = %StarCount
+@onready var ui_color: ColorRect = %UIColor
+
+@onready var drift_particles: GPUParticles3D = %DriftParticles
 
 var player: Player
 
 var current_collectable: Collectable
-var current_gems: int = 0
+var current_stars: int = 0
 
 var speed_boost_duration: float = 0.0
+
+var is_boosting: bool = false
+var boost_duration: float = 0.
+var is_drifting: bool = false
 
 func _ready() -> void:
     player = GameKeeper.players.get(player_id)
@@ -45,7 +60,10 @@ func _ready() -> void:
     var ball_color: Color = player.color
     ball_color.a = 0.5
     ball.mesh.surface_get_material(1).albedo_color = ball_color
-    
+    outline.mesh.surface_get_material(1).set_shader_parameter("outline_color", ball_color)
+    ui_color.color = player.color
+
+    rigid_body_3d.body_entered.connect(on_body_entered)
 
 func _physics_process(delta: float) -> void:
     # if Input.is_action_pressed("item_" + player.string_id) and current_collectable != null:
@@ -53,29 +71,50 @@ func _physics_process(delta: float) -> void:
 
     if Input.is_action_just_pressed("jump_" + player.string_id):
         shoot_gun()
-    #     rigid_body_3d.angular_velocity = Vector3.ONE * 100
-    #     rigid_body_3d.linear_velocity = Vector3.ZERO
 
     var is_on_floor := floor_cast.is_colliding()
-    # if not is_on_floor:
-    #     return
 
+    # DRIFT & BOOST
     if is_on_floor and Input.is_action_just_pressed("item_" + player.string_id):
-        rigid_body_3d.linear_damp = boost_dampening
+        is_drifting = true
+        rigid_body_3d.linear_damp = drift_dampening
+        rigid_body_3d.linear_velocity.y = 1.
 
-    if is_on_floor and Input.is_action_pressed("item_" + player.string_id):
-        print('charging')
-        if rigid_body_3d.linear_velocity.length() < boost_drift_clamp:
+    elif is_drifting and Input.is_action_pressed("item_" + player.string_id):
+        if is_on_floor and rigid_body_3d.linear_velocity.length() < drift_clamp:
+            is_drifting = false
+            is_boosting = true
+            boost_duration = 0.
             rigid_body_3d.linear_velocity = Vector3.ZERO
             rigid_body_3d.angular_velocity = Vector3.ONE * 100
-        # if rigid_body_3d.linear_velocity == Vector3.ZERO:
-    if is_on_floor and Input.is_action_just_released("item_" + player.string_id):
-        rigid_body_3d.linear_damp = 0.
-        rigid_body_3d.angular_velocity = Vector3.ZERO
-        rigid_body_3d.apply_central_impulse(get_gun_direction() * boost_max_force)
-        pass
+            rigid_body_3d.freeze = true
+            drift_particles.lifetime = 2.
+            drift_particles.speed_scale = 5.
+            drift_particles.emitting = true
 
-    var adjusted_rolling_force: float = ((float(current_gems) / max_gem_capacity) * (min_rolling_force - rolling_force)) + rolling_force
+    elif is_boosting and Input.is_action_pressed("item_" + player.string_id):
+        rigid_body_3d.angular_velocity = get_gun_direction() * 100
+        # rigid_body_3d.linear_velocity = Vector3.ZERO
+        if boost_duration < max_boost_duration:
+            drift_particles.speed_scale += 2. * delta
+            drift_particles.lifetime += 2. * delta
+            boost_duration += delta
+        else:
+            boost_duration = max_boost_duration
+
+    if Input.is_action_just_released("item_" + player.string_id):
+        if is_boosting:
+            drift_particles.emitting = false
+            rigid_body_3d.freeze = false
+            rigid_body_3d.linear_damp = 0.
+            rigid_body_3d.angular_velocity = Vector3.ZERO
+            var boost_force: float = min_boost_force + (boost_duration / max_boost_duration) * (max_boost_force - min_boost_force)
+            rigid_body_3d.apply_central_impulse(get_gun_direction() * boost_force)
+
+        is_drifting = false
+        is_boosting = false
+
+    var adjusted_rolling_force: float = ((float() / max_star_capacity) * (min_rolling_force - rolling_force)) + rolling_force
     var rolling_velocity := adjusted_rolling_force * delta
 
     if speed_boost_duration > 0.:
@@ -106,30 +145,33 @@ func rotate_gun(target_rad: float, delta: float) -> void:
             gun_rotate_point.rotation.y = target_rad
 
 func shoot_gun() -> void:
-    if current_gems < 1:
+    if current_collectable:
+        print("use collectable")
+        use_collectable()
+    elif  current_stars > 0:
+        var bullet: Bullet = BULLET_SCENE.instantiate()
+        get_parent().add_child(bullet)
+        bullet.global_position = gun_fire_point.global_position
+        bullet.fire_direction = get_gun_direction()
+
+        increase_stars(-1)
+    else:
         # TODO: maybe play a little animation showing there is nothing to shoot
-        return
-
-    var bullet: Bullet = BULLET_SCENE.instantiate()
-    bullet.global_position = gun_fire_point.global_position
-    bullet.fire_direction = get_gun_direction()
-    get_parent().add_child(bullet)
-
-    increase_gems(-1)
+        pass
 
 func get_collectable(collectable: Collectable) -> bool:
     if collectable.type == Collectable.Type.Point1:
-        if current_gems >= max_gem_capacity:
+        if  current_stars >= max_star_capacity:
             return false
-        increase_gems(1)
+        increase_stars(1)
     elif collectable.type == Collectable.Type.Point5:
-        if current_gems >= max_gem_capacity:
+        if  current_stars >= max_star_capacity:
             return false
-        increase_gems(5)
+        increase_stars(5)
     elif collectable.type == Collectable.Type.Point10:
-        if current_gems >= max_gem_capacity:
+        if  current_stars >= max_star_capacity:
             return false
-        increase_gems(10)
+        increase_stars(10)
     else:
         if current_collectable:
             return false
@@ -149,11 +191,12 @@ func use_collectable() -> void:
 
     current_collectable = null
 
-func increase_gems(amount: int) -> void:
-    current_gems = clampi(current_gems + amount, 0, max_gem_capacity)
-    var new_scale: float = ((float(current_gems) / max_gem_capacity) * (max_scale_increase - 1.)) + 1.
+func increase_stars(amount: int) -> void:
+    current_stars = clampi(current_stars + amount, 0, max_star_capacity)
+    var new_scale: float = ((float() / max_star_capacity) * (max_scale_increase - 1.)) + 1.
     rigid_body_3d.scale = Vector3.ONE * new_scale
-    GameKeeper.update_score(player_id, current_gems)
+    star_count.text = str(current_stars)
+    # GameKeeper.update_score(player_id, )
 
 func get_gun_direction() -> Vector3:
     return gun_rotate_point.global_position.direction_to(gun_fire_point.global_position)
@@ -163,5 +206,13 @@ func fall_off_map() -> void:
     rigid_body_3d.angular_velocity = Vector3.ZERO
     rigid_body_3d.linear_velocity = Vector3.ZERO
     rigid_body_3d.apply_central_impulse(Vector3.DOWN * 30.)
-    # cut gems in half
-    increase_gems(-int((float(current_gems)/2)))
+    # cut stars in half
+    increase_stars(-int((float()/2)))
+
+func on_body_entered(body: Node3D) -> void:
+    # print('body entered')
+    # print(body)
+    if body is PlayerRigidBody:
+        var direction: Vector3 = rigid_body_3d.global_position.direction_to(body.global_position) * -1
+        rigid_body_3d.apply_central_impulse(direction * player_bump_force)
+        

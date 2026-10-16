@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gal082uki2l0"]
 
-[ext_resource type="Material" uid="uid://dyxrwubqp0ei0" path="res://art/mats/TestLevelMat1.tres" id="1_fp6qb"]
+[ext_resource type="Material" uid="uid://dyxrwubqp0ei0" path="res://ART/mats/TestLevelMat1.tres" id="1_fp6qb"]
 [ext_resource type="PackedScene" uid="uid://b74cekrtstofu" path="res://scenes/sunsucctest.tscn" id="1_vme0n"]
 [ext_resource type="PackedScene" uid="uid://i6idx2bqvdnl" path="res://scenes/playas/player_ball_1.tscn" id="2_ygndp"]
 [ext_resource type="PackedScene" uid="uid://j5wss7n8ww5y" path="res://scenes/travel_node.tscn" id="3_n1x0g"]

@@ -79,6 +79,20 @@ shape = SubResource("WorldBoundaryShape3D_gipfl")
 
 [node name="PlayerBall" parent="." unique_id=324011426 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41676903, 4.5979156, 0.4943037)
+player_id = 1
+rolling_force = 16
+gun_rotate_speed = 1.5
+min_boost_force = 4
+max_boost_force = 10
+max_boost_duration = 2
+drift_dampening = 8
+drift_clamp = 2
+max_star_capacity = 60
+max_scale_increase = 2.0
+min_rolling_force = 8
+speed_boost_impulse = 12.0
+speed_boost_power = 10.0
+spring_impulse = 10.0
 
 [node name="collectables" type="Node3D" parent="." unique_id=906390489]
 
@@ -276,6 +290,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.502614, 1.5141423, 5.47524
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0996788, 1.5141423, 5.2401867)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=2104154882]
+visible = false
 script = ExtResource("3_jyhfs")
 
 [node name="P1" type="Control" parent="HUD" unique_id=1199710563]
@@ -336,6 +351,7 @@ offset_bottom = 16.2
 offset_transform_enabled = true
 
 [node name="P2" type="Control" parent="HUD" unique_id=1818262200]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 217.99998

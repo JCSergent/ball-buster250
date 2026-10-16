@@ -12,5 +12,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
     global_position += fire_direction * speed * delta
 
-func on_body_entered(_body: Node3D) -> void:
+func on_body_entered(body: Node3D) -> void:
+    if body is PlayerRigidBody:
+        body.apply_central_impulse(fire_direction * body.player_ball.star_projectile_force)
+        
     self.queue_free()
