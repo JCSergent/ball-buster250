@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_l5glv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eoqba"]
-radius = 0.22998047
-height = 0.5437012
+radius = 0.22058105
+height = 0.4411621
 
 [node name="Bullet" type="Node3D" unique_id=908987006]
 script = ExtResource("1_l5glv")
@@ -24,5 +24,13 @@ collision_layer = 8
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=179259323]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025512695, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05987549, 0)
 shape = SubResource("CapsuleShape3D_eoqba")
+
+[node name="FloorCast" type="RayCast3D" parent="." unique_id=419115680]
+target_position = Vector3(0, -0.8, 0)
+hit_from_inside = true
+
+[node name="ForwardCast" type="RayCast3D" parent="." unique_id=1486990696]
+target_position = Vector3(1, 0, 0)
+hit_from_inside = true

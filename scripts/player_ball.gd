@@ -7,7 +7,6 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 @export var player_id: int = 1
 
 @export var rolling_force := 16
-# @export var jump_impulse := 6
 @export var gun_rotate_speed := 1.5
 
 @export_group("Boost")
@@ -68,15 +67,16 @@ func _ready() -> void:
     rigid_body_3d.body_entered.connect(on_body_entered)
 
 func _physics_process(delta: float) -> void:
-    if Input.is_action_just_pressed("jump_" + player.string_id):
-        shoot_gun()
-
     var is_on_floor := floor_cast.is_colliding()
 
     # After falling off the map, lose half your stars
     if is_fell_off_map and is_on_floor:
         is_fell_off_map = false
         spew_stars(int((float(current_stars)/2)), 6, 10)
+
+    # Shoot Gun
+    if Input.is_action_just_pressed("jump_" + player.string_id):
+        shoot_gun()
 
     # DRIFT & BOOST
     if Input.is_action_just_pressed("item_" + player.string_id):
@@ -126,6 +126,7 @@ func _physics_process(delta: float) -> void:
     var adjusted_rolling_force: float = ((float() / max_star_capacity) * (min_rolling_force - rolling_force)) + rolling_force
     var rolling_velocity := adjusted_rolling_force * delta
 
+    # Not used anymore, can remove later
     if speed_boost_duration > 0.:
         rolling_velocity += speed_boost_power * delta
         speed_boost_duration -= delta
@@ -144,20 +145,20 @@ func _physics_process(delta: float) -> void:
         rotate_gun(roll_direction.angle(), delta)
 
 func rotate_gun(target_rad: float, delta: float) -> void:
-    if gun_rotate_point.rotation.y != target_rad:
-        var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
+    var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
+    if abs(angle_diff) > 0.1:
         gun_rotate_point.rotation.y += delta * TAU * gun_rotate_speed * sign(angle_diff)
-        if abs(gun_rotate_point.rotation.y - target_rad) <= 0.1:
-            gun_rotate_point.rotation.y = target_rad
+    else:
+        gun_rotate_point.rotation.y = target_rad
 
 func shoot_gun() -> void:
     if current_collectable:
         use_collectable()
     elif  current_stars > 0:
         var bullet: Bullet = BULLET_SCENE.instantiate()
+        bullet.fire_direction = get_gun_direction()
         get_parent().add_child(bullet)
         bullet.global_position = gun_fire_point.global_position
-        bullet.fire_direction = get_gun_direction()
 
         increase_stars(-1)
     else:
@@ -212,11 +213,12 @@ func fall_off_map() -> void:
     rigid_body_3d.global_position = Vector3(0, 6, 0)
     rigid_body_3d.angular_velocity = Vector3.ZERO
     rigid_body_3d.linear_velocity = Vector3.DOWN * 10
-    rigid_body_3d.apply_central_impulse(Vector3.DOWN * 30.)
+    rigid_body_3d.apply_central_impulse(Vector3.DOWN * 50.)
     is_fell_off_map = true
 
-func spew_stars(amount: int, min_force: float, max_force: float, direction: Vector3 = Vector3.ZERO) -> void:
+func spew_stars(amount: int, min_force: float, max_force: float, spew_direction: Vector3 = Vector3.ZERO) -> void:
     for i in amount:
+        var direction := spew_direction
         if direction == Vector3.ZERO:
             direction = Vector3(0.4, 0.6, 0)
             direction = direction.rotated(Vector3.UP, randf_range(0, 2*PI))
