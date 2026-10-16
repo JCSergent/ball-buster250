@@ -146,7 +146,6 @@ func rotate_gun(target_rad: float, delta: float) -> void:
 
 func shoot_gun() -> void:
     if current_collectable:
-        print("use collectable")
         use_collectable()
     elif  current_stars > 0:
         var bullet: Bullet = BULLET_SCENE.instantiate()
