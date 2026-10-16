@@ -6,33 +6,38 @@
 [ext_resource type="Resource" uid="uid://bjtet7qer1tyt" path="res://resources/collectables/point_1.tres" id="2_v7q7g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2lak"]
-height = 1.0
+radius = 0.24267578
+height = 0.508728
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xuypn"]
+radius = 0.26220703
+height = 0.52441406
 
 [sub_resource type="Animation" id="Animation_xuypn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/path = NodePath("RigidBody3D/Sprite3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.5, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlatformerShadowSpringArm:position")
+tracks/1/path = NodePath("RigidBody3D/PlatformerShadowSpringArm:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-8.675185e-08, 0.49616146, 2.168789e-08)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v7q7g"]
@@ -42,26 +47,26 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/path = NodePath("RigidBody3D/Sprite3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0.5, 0), Vector3(0, 0.7000446, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlatformerShadowSpringArm:position")
+tracks/1/path = NodePath("RigidBody3D/PlatformerShadowSpringArm:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-8.675185e-08, 0.49616146, 2.168789e-08), Vector3(-8.675185e-08, 0.69620603, 2.168789e-08)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_221la"]
@@ -74,24 +79,36 @@ _data = {
 script = ExtResource("1_te2od")
 collectable = ExtResource("2_v7q7g")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1894290276]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1565925072]
+collision_layer = 0
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D" unique_id=607547958]
+shape = SubResource("CapsuleShape3D_e2lak")
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D" unique_id=1894290276]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 billboard = 1
 texture = ExtResource("1_un20x")
 
-[node name="PlatformerShadowSpringArm" parent="." unique_id=1024933116 instance=ExtResource("2_4v1pg")]
-transform = Transform3D(1, -1.74846e-07, 1.74846e-07, 1.74846e-07, -4.371139e-08, -1, 1.74846e-07, 1, -4.3711356e-08, -8.675185e-08, 0.49616146, 2.168789e-08)
+[node name="PlatformerShadowSpringArm" parent="RigidBody3D" unique_id=1024933116 instance=ExtResource("2_4v1pg")]
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1891688518]
-collision_layer = 2
+[node name="Area3D" type="Area3D" parent="RigidBody3D" unique_id=1891688518]
+collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=685676281]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("CapsuleShape3D_e2lak")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" unique_id=685676281]
+shape = SubResource("CapsuleShape3D_xuypn")
+
+[node name="FloorCast" type="RayCast3D" parent="RigidBody3D" unique_id=928073777]
+unique_name_in_owner = true
+target_position = Vector3(0, -0.3, 0)
+debug_shape_thickness = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1370209357]
 libraries/ = SubResource("AnimationLibrary_221la")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="RigidBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

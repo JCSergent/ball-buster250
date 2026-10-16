@@ -205,7 +205,7 @@ offset_transform_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 
 [node name="PlayerBall2" parent="Players" unique_id=1429611543 instance=ExtResource("2_o4xlp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, 0)
 player_id = 2
 
 [node name="pipe" type="Node3D" parent="." unique_id=1922103272]
@@ -2697,7 +2697,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 8.9)
 visible = false
 
 [node name="Respawn_Collectable2" parent="Collectables" unique_id=970564733 instance=ExtResource("16_5afa1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
 collectable = ExtResource("14_0kca3")
 value = 1
 
@@ -2776,21 +2776,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 3, -9.6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 4, -11.5)
 
 [node name="Collectable" parent="." unique_id=562767837 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 4.8, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 5.8, -11.5)
 collectable = ExtResource("18_5afa1")
 
 [node name="BouncePad4" parent="." unique_id=403378424 instance=ExtResource("11_f8eag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1, -9.400001)
 
 [node name="Collectable2" parent="." unique_id=1909032415 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 3, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 4, -11.5)
 
 [node name="Collectable3" parent="." unique_id=1909075520 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7999997, 3, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7999997, 4, -11.5)
 collectable = ExtResource("12_og7nd")
 
 [node name="Collectable4" parent="." unique_id=592375661 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3999996, 3, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3999996, 4, -11.5)
 
 [node name="block-grass-large-slope-steep" parent="." unique_id=669512362 instance=ExtResource("10_o4xlp")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.720517, 2.817986, -11.6)
@@ -2802,7 +2802,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.5,
 transform = Transform3D(0.86602545, 0, -0.49999988, 0, 1, 0, 0.49999988, 0, 0.86602545, 11.9, 5, -12.2)
 
 [node name="Collectable5" parent="." unique_id=201067693 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.8, -9.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.8, -9.5)
 
 [node name="Collectable6" parent="." unique_id=657026087 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.3, 0)
@@ -2822,11 +2822,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.3, -6)
 [node name="Collectable14" parent="." unique_id=756636326 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.3, -6)
 
+[node name="Collectable33" parent="." unique_id=370047226 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, -6)
+
+[node name="Collectable34" parent="." unique_id=1519926034 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, -7)
+
+[node name="Collectable35" parent="." unique_id=941466523 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, -8)
+
+[node name="Collectable36" parent="." unique_id=640278971 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.3, -8)
+
+[node name="Collectable37" parent="." unique_id=12022504 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.3, -7)
+
+[node name="Collectable38" parent="." unique_id=822248208 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.3, -6)
+
+[node name="Collectable40" parent="." unique_id=1839452826 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, -3)
+
+[node name="Collectable41" parent="." unique_id=950081291 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, -4)
+
+[node name="Collectable42" parent="." unique_id=887098282 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, -5)
+
+[node name="Collectable43" parent="." unique_id=2072836094 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.3, -5)
+
+[node name="Collectable44" parent="." unique_id=1525018432 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.3, -4)
+
+[node name="Collectable45" parent="." unique_id=1863275663 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.3, -3)
+
+[node name="Collectable39" parent="." unique_id=134862013 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -0.19999999, 4)
+
 [node name="Collectable7" parent="." unique_id=1175182039 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.3, 0)
 
 [node name="Collectable12" parent="." unique_id=1079386832 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.3, 0)
+
+[node name="Collectable32" parent="." unique_id=1278941518 instance=ExtResource("11_3mjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4.3, 0)
 
 [node name="Collectable10" parent="." unique_id=328771833 instance=ExtResource("11_3mjpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.8, -3)
@@ -2878,7 +2920,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -8)
 
 [node name="block-grass-large19" parent="." unique_id=1156456699 instance=ExtResource("17_gpvyf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -12)
 
 [node name="block-grass-large22" parent="." unique_id=436884328 instance=ExtResource("17_gpvyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, -6)
@@ -2891,6 +2933,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -6)
 
 [node name="block-grass-large26" parent="." unique_id=1044680088 instance=ExtResource("17_gpvyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -6)
+
+[node name="block-grass-large15" parent="." unique_id=1849666776 instance=ExtResource("17_gpvyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -12)
+
+[node name="block-grass-large25" parent="." unique_id=316291428 instance=ExtResource("17_gpvyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -10)
+
+[node name="block-grass-large20" parent="." unique_id=1614201657 instance=ExtResource("17_gpvyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -8)
+
+[node name="block-grass-large27" parent="." unique_id=600082110 instance=ExtResource("17_gpvyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -6)
 
 [node name="block-grass-large28" parent="." unique_id=1412360265 instance=ExtResource("17_gpvyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, -4)
@@ -2917,13 +2971,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
 
 [node name="block-grass-large-slope-steep2" parent="." unique_id=1278334400 instance=ExtResource("10_o4xlp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.1999998, 0.8281218, -10)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.19999981, 0.8281218, -10)
 
 [node name="block-grass-large-slope-steep4" parent="." unique_id=1911923572 instance=ExtResource("10_o4xlp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.1999998, 0.8281218, -8)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.19999981, 0.8281218, -8)
 
-[node name="BouncePad5" parent="." unique_id=724783338 instance=ExtResource("11_f8eag")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -4)
+[node name="block-grass-large-slope-steep5" parent="." unique_id=919015358 instance=ExtResource("10_o4xlp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9999998, 0.8281218, -4)
 
 [node name="block-grass-large-slope-steep3" parent="." unique_id=1073518291 instance=ExtResource("10_o4xlp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.8199366, -2.2)
@@ -2941,57 +2995,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, -10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -4)
 
 [node name="Collectable19" parent="." unique_id=1889563694 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3, -10)
 
 [node name="Collectable22" parent="." unique_id=1902130159 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3, -6)
 collectable = ExtResource("14_0kca3")
 
 [node name="Collectable20" parent="." unique_id=547070619 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, -4)
 
 [node name="Collectable21" parent="." unique_id=1070368437 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, -10)
 collectable = ExtResource("15_u018e")
 
 [node name="Collectable15" parent="." unique_id=1485259848 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.19999999, 2)
 
 [node name="Collectable16" parent="." unique_id=1005335528 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -0.19999999, 2)
 
 [node name="Collectable17" parent="." unique_id=1697330405 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -1, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.19999999, 2)
 
 [node name="Collectable18" parent="." unique_id=2109325664 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.19999999, 2)
 
 [node name="Collectable23" parent="." unique_id=14296276 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.19999999, 3)
 
 [node name="Collectable24" parent="." unique_id=89602089 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.19999999, 3)
 
 [node name="Collectable25" parent="." unique_id=820329746 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -0.19999999, 3)
 
 [node name="Collectable26" parent="." unique_id=2075371668 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.19999999, 3)
 
 [node name="Collectable27" parent="." unique_id=1721939824 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 4)
-
-[node name="Collectable28" parent="." unique_id=1119373302 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.19999999, 4)
 
 [node name="Collectable29" parent="." unique_id=733632010 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.19999999, 4)
 
 [node name="Collectable30" parent="." unique_id=1022077213 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.19999999, 4)
 
 [node name="Collectable31" parent="." unique_id=271096529 instance=ExtResource("11_3mjpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -0.19999999, 3)
 collectable = ExtResource("14_0kca3")
 
 [node name="BouncePad10" parent="." unique_id=33461289 instance=ExtResource("11_f8eag")]

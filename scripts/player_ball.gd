@@ -2,6 +2,7 @@ class_name PlayerBall
 extends Node3D
 
 const BULLET_SCENE = preload("res://scenes/bullet.tscn")
+const STAR_SCENE = preload("res://pickups/collectable.tscn")
 
 @export var player_id: int = 1
 
@@ -53,6 +54,7 @@ var speed_boost_duration: float = 0.0
 var is_boosting: bool = false
 var boost_duration: float = 0.
 var is_drifting: bool = false
+var is_fell_off_map: bool = false
 
 func _ready() -> void:
     player = GameKeeper.players.get(player_id)
@@ -66,35 +68,40 @@ func _ready() -> void:
     rigid_body_3d.body_entered.connect(on_body_entered)
 
 func _physics_process(delta: float) -> void:
-    # if Input.is_action_pressed("item_" + player.string_id) and current_collectable != null:
-    #     use_collectable()
-
     if Input.is_action_just_pressed("jump_" + player.string_id):
         shoot_gun()
 
     var is_on_floor := floor_cast.is_colliding()
 
+    # After falling off the map, lose half your stars
+    if is_fell_off_map and is_on_floor:
+        is_fell_off_map = false
+        spew_stars(int((float(current_stars)/2)), 6, 10)
+
     # DRIFT & BOOST
-    if is_on_floor and Input.is_action_just_pressed("item_" + player.string_id):
+    if Input.is_action_just_pressed("item_" + player.string_id):
         is_drifting = true
-        rigid_body_3d.linear_damp = drift_dampening
-        rigid_body_3d.linear_velocity.y = 1.
 
     elif is_drifting and Input.is_action_pressed("item_" + player.string_id):
-        if is_on_floor and rigid_body_3d.linear_velocity.length() < drift_clamp:
-            is_drifting = false
-            is_boosting = true
-            boost_duration = 0.
-            rigid_body_3d.linear_velocity = Vector3.ZERO
-            rigid_body_3d.angular_velocity = Vector3.ONE * 100
-            rigid_body_3d.freeze = true
-            drift_particles.lifetime = 2.
-            drift_particles.speed_scale = 5.
-            drift_particles.emitting = true
+        if not is_on_floor:
+            rigid_body_3d.linear_damp = 0.
+        else:
+            rigid_body_3d.linear_damp = drift_dampening
+            rigid_body_3d.linear_velocity.y = 0.
+            if rigid_body_3d.linear_velocity.length() < drift_clamp:
+                is_drifting = false
+                is_boosting = true
+                boost_duration = 0.
+                rigid_body_3d.linear_damp = 0.
+                rigid_body_3d.linear_velocity = Vector3.ZERO
+                rigid_body_3d.angular_velocity = Vector3.ONE * 100
+                rigid_body_3d.freeze = true
+                drift_particles.lifetime = 2.
+                drift_particles.speed_scale = 5.
+                drift_particles.emitting = true
 
     elif is_boosting and Input.is_action_pressed("item_" + player.string_id):
         rigid_body_3d.angular_velocity = get_gun_direction() * 100
-        # rigid_body_3d.linear_velocity = Vector3.ZERO
         if boost_duration < max_boost_duration:
             drift_particles.speed_scale += 2. * delta
             drift_particles.lifetime += 2. * delta
@@ -103,10 +110,12 @@ func _physics_process(delta: float) -> void:
             boost_duration = max_boost_duration
 
     if Input.is_action_just_released("item_" + player.string_id):
-        if is_boosting:
+        if is_drifting:
+            rigid_body_3d.linear_damp = 0.
+            rigid_body_3d.linear_velocity.y = 0.
+        elif is_boosting:
             drift_particles.emitting = false
             rigid_body_3d.freeze = false
-            rigid_body_3d.linear_damp = 0.
             rigid_body_3d.angular_velocity = Vector3.ZERO
             var boost_force: float = min_boost_force + (boost_duration / max_boost_duration) * (max_boost_force - min_boost_force)
             rigid_body_3d.apply_central_impulse(get_gun_direction() * boost_force)
@@ -133,9 +142,6 @@ func _physics_process(delta: float) -> void:
 
     if roll_direction != Vector2.ZERO:
         rotate_gun(roll_direction.angle(), delta)
-
-    # if Input.is_action_just_pressed("jump_p1"):
-        # rigid_body_3d.apply_central_impulse(Vector3.UP * jump_impulse)
 
 func rotate_gun(target_rad: float, delta: float) -> void:
     if gun_rotate_point.rotation.y != target_rad:
@@ -195,23 +201,51 @@ func increase_stars(amount: int) -> void:
     var new_scale: float = ((float() / max_star_capacity) * (max_scale_increase - 1.)) + 1.
     rigid_body_3d.scale = Vector3.ONE * new_scale
     star_count.text = str(current_stars)
-    # GameKeeper.update_score(player_id, )
 
 func get_gun_direction() -> Vector3:
     return gun_rotate_point.global_position.direction_to(gun_fire_point.global_position)
 
 func fall_off_map() -> void:
+    rigid_body_3d.freeze = false
+    is_boosting = false
+    is_drifting = false
     rigid_body_3d.global_position = Vector3(0, 6, 0)
     rigid_body_3d.angular_velocity = Vector3.ZERO
-    rigid_body_3d.linear_velocity = Vector3.ZERO
+    rigid_body_3d.linear_velocity = Vector3.DOWN * 10
     rigid_body_3d.apply_central_impulse(Vector3.DOWN * 30.)
-    # cut stars in half
-    increase_stars(-int((float()/2)))
+    is_fell_off_map = true
+
+func spew_stars(amount: int, min_force: float, max_force: float, direction: Vector3 = Vector3.ZERO) -> void:
+    for i in amount:
+        if direction == Vector3.ZERO:
+            direction = Vector3(0.4, 0.6, 0)
+            direction = direction.rotated(Vector3.UP, randf_range(0, 2*PI))
+        else:
+            direction = direction.rotated(Vector3.UP, randf_range(-PI/6, PI/6))
+            direction.y += 0.4
+            direction = direction.normalized()
+            
+        var star: CollectableNode = STAR_SCENE.instantiate()
+        star.position = rigid_body_3d.position
+        star.fling(direction * randf_range(min_force, max_force))
+        add_child(star)
+
+    increase_stars(amount * -1)
+
+func get_shot(direction: Vector3) -> void:
+    rigid_body_3d.apply_central_impulse(direction * star_projectile_force)
+
+    if current_stars > 0 and current_stars < 4:
+        spew_stars(current_stars, 3, 6, direction)
+    elif current_stars > 0:
+        spew_stars(randi_range(2, 4), 3, 6, direction)
+    
 
 func on_body_entered(body: Node3D) -> void:
-    # print('body entered')
-    # print(body)
     if body is PlayerRigidBody:
         var direction: Vector3 = rigid_body_3d.global_position.direction_to(body.global_position) * -1
         rigid_body_3d.apply_central_impulse(direction * player_bump_force)
-        
+        if current_stars > 0 and current_stars < 4:
+            spew_stars(current_stars, 3, 6, direction)
+        elif current_stars > 0:
+            spew_stars(randi_range(2, 4), 3, 6, direction)
