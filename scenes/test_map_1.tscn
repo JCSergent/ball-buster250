@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://7ssa1bt4508h" path="res://scripts/map_1.gd" id="1_gpvyf"]
 [ext_resource type="Script" uid="uid://drthts6qlkxol" path="res://scripts/death_zone.gd" id="1_houx3"]
 [ext_resource type="Script" uid="uid://dvjyicbii3adr" path="res://scripts/star_spawn_master.gd" id="2_2ybj2"]
-[ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud.gd" id="3_f8eag"]
+[ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud/hud.gd" id="3_f8eag"]
 [ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_3mjpi"]
 [ext_resource type="Texture2D" uid="uid://ceqg0p3ux5b3g" path="res://assets/GreyboxTextures/greybox_grey_grid.png" id="4_5afa1"]
 [ext_resource type="PackedScene" uid="uid://cwdr1sddes514" path="res://scenes/graybox_delete_later/base_tile.tscn" id="4_q5vyl"]
@@ -2280,7 +2280,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 8, -7.2)
 curve = SubResource("Curve3D_oiceo")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="SunStuff/TopRightPath" unique_id=835804]
-transform = Transform3D(0.0694106, 0, -0.99757844, 0, 0.99999994, 0, 0.9975851, 0, 0.06941013, 0.19514894, -0.9998779, 0.08739567)
+transform = Transform3D(0.0694106, 0, -0.9975783, 0, 0.99999994, 0, 0.9975851, 0, 0.06941012, 0.19514894, -0.9998779, 0.08739567)
 cubic_interp = false
 
 [node name="block-grass718" type="MeshInstance3D" parent="SunStuff/TopRightPath" unique_id=769711117]
