@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwdr1sddes514"]
 
-[ext_resource type="Texture2D" uid="uid://ckbl4avuuqbo4" path="res://art/sprites/map_tiles/grass_3.png" id="1_88r70"]
-[ext_resource type="Texture2D" uid="uid://bsx81s6rq3ak8" path="res://art/sprites/map_tiles/grass_6.png" id="1_gknne"]
+[ext_resource type="Texture2D" uid="uid://bjwf001cfj3mt" path="res://art/sprites/map_tiles/grass_3.png" id="1_88r70"]
+[ext_resource type="Texture2D" uid="uid://dwsel3imqliy6" path="res://ART/sprites/map_tiles/grass_6.png" id="1_gknne"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gknne"]
 albedo_texture = ExtResource("1_gknne")
