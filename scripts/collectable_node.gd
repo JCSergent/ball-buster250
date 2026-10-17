@@ -19,9 +19,8 @@ func _ready() -> void:
     sprite.texture = collectable.texture
     animation_player.play('idle')
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
     if is_flung:
-        # if rigid_body_3d.linear_velocity == Vector3.ZERO:
         if init_fling:
             rigid_body_3d.apply_central_impulse(flung_impulse)
             init_fling = false

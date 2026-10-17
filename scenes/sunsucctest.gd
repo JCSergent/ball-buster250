@@ -18,13 +18,9 @@ var changing_zone: bool = false
 var current_zone_duration: float = 0.
 
 func _ready() -> void:
-    # dest_reached = false
-    # travel_nodes.append_array(get_tree().get_nodes_in_group("TravelNodes"))
     collect_area.area_entered.connect(on_area_entered)
     
     if travel_nodes.size() > 0:
-        print("NODES COLLECTED!")
-        print('travel_nodes')
         current_target = pick_new_node()
         call_deferred("reparent", current_target)
         changing_zone = true
@@ -45,7 +41,6 @@ func _process(delta: float) -> void:
         global_position = global_position.move_toward(current_target.global_position, change_zone_speed * delta)
 
         if global_position.distance_to(current_target.global_position) < swap_threshold:
-            print('stop zone')
             global_position = current_target.global_position
             changing_zone = false
             current_zone_duration = 0.
@@ -56,13 +51,10 @@ func pick_new_node() -> PathFollow3D:
     while new_node == current_target:
         new_node = travel_nodes.pick_random()
         
-    print("PICKING NEW NODE:", new_node)
     return new_node
 
 func on_area_entered(area: Area3D) -> void:
-    print('hello')
     if area is BulletArea and area.bullet:
         var bullet: Bullet = area.bullet
-        print(bullet.fired_by_player)
         GameKeeper.update_score(bullet.fired_by_player, 1)
         bullet.queue_free()
