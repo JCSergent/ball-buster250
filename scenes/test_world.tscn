@@ -1,0 +1,282 @@
+[gd_scene format=3 uid="uid://dr0bm3jbqey1"]
+
+[ext_resource type="Texture2D" uid="uid://ckbl4avuuqbo4" path="res://art/sprites/map_tiles/grass_3.png" id="1_ynswa"]
+[ext_resource type="Script" uid="uid://drthts6qlkxol" path="res://scripts/death_zone.gd" id="2_dvny0"]
+[ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud.gd" id="3_xwrkq"]
+[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_nrstc"]
+[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_7448y"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gipfl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8il"]
+albedo_texture = ExtResource("1_ynswa")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ar7ra"]
+sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
+sky_horizon_color = Color(0.48235294, 0.99607843, 1, 1)
+ground_bottom_color = Color(0, 0.76862746, 0.627451, 1)
+ground_horizon_color = Color(0.48235294, 0.99607843, 1, 1)
+ground_curve = 0.7802891
+
+[sub_resource type="Sky" id="Sky_pa8il"]
+sky_material = SubResource("ProceduralSkyMaterial_ar7ra")
+
+[sub_resource type="Environment" id="Environment_ixgyf"]
+background_mode = 2
+sky = SubResource("Sky_pa8il")
+ambient_light_source = 2
+ambient_light_color = Color(0.98039216, 0.9882353, 0.9019608, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8hcw6"]
+
+[sub_resource type="FontVariation" id="FontVariation_qrn2j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjm4b"]
+line_spacing = -10.735
+font = SubResource("FontVariation_qrn2j")
+font_size = 8
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1543927756]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1402226410]
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=977684105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=850932814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1330880117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1412069067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1768057686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=977340576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=2055759348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=962500793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=1119566293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=122639861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=1106044660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="." unique_id=264439958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="." unique_id=11936941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="." unique_id=746194581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+mesh = SubResource("PlaneMesh_gipfl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+
+[node name="ReusableElements" type="Node3D" parent="." unique_id=1253713553]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="ReusableElements" unique_id=1871175880]
+transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.16382037, 0, 41.609707, 56.6689)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ReusableElements" unique_id=2024687353]
+environment = SubResource("Environment_ixgyf")
+
+[node name="Camera3D" type="Camera3D" parent="ReusableElements" unique_id=1643215883]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 35.194, 61.251)
+fov = 15.0
+
+[node name="DeathZone" type="Area3D" parent="ReusableElements" unique_id=294096172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("2_dvny0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReusableElements/DeathZone" unique_id=199183930]
+shape = SubResource("WorldBoundaryShape3D_8hcw6")
+
+[node name="HUD" type="CanvasLayer" parent="ReusableElements" unique_id=604690542]
+script = ExtResource("3_xwrkq")
+
+[node name="P1" type="Control" parent="ReusableElements/HUD" unique_id=1061303558]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(5, 5)
+
+[node name="Player Color" type="ColorRect" parent="ReusableElements/HUD/P1" unique_id=456643437]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 30.0
+offset_bottom = 24.0
+color = Color(1, 0.43137255, 0.38039216, 1)
+
+[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P1" unique_id=459427193]
+position = Vector2(15.000002, 16.000002)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("4_nrstc")
+
+[node name="Score" type="Label" parent="ReusableElements/HUD/P1" unique_id=1875248422]
+layout_mode = 0
+offset_left = -16.6
+offset_top = 27.4
+offset_right = 35.4
+offset_bottom = 43.4
+text = "0"
+label_settings = SubResource("LabelSettings_mjm4b")
+horizontal_alignment = 1
+
+[node name="Score2" type="Label" parent="ReusableElements/HUD/P1" unique_id=1120872150]
+layout_mode = 0
+offset_left = -9.199999
+offset_top = 29.4
+offset_right = 42.800003
+offset_bottom = 45.4
+text = "   / 
+	            250"
+label_settings = SubResource("LabelSettings_mjm4b")
+horizontal_alignment = 1
+
+[node name="Player" type="Label" parent="ReusableElements/HUD/P1" unique_id=2043378222]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 14.0
+offset_bottom = 19.0
+text = "P1"
+label_settings = SubResource("LabelSettings_mjm4b")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ReusableElements/HUD/P1" unique_id=185023172]
+layout_mode = 0
+offset_left = 26.199999
+offset_top = 3.2000046
+offset_right = 37.399998
+offset_bottom = 14.400003
+color = Color(0, 0, 0, 1)
+
+[node name="StoredItem" type="TextureRect" parent="ReusableElements/HUD/P1" unique_id=1858398843]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 23.8
+offset_top = 0.19999999
+offset_right = 39.8
+offset_bottom = 16.2
+offset_transform_enabled = true
+
+[node name="P2" type="Control" parent="ReusableElements/HUD" unique_id=1581759035]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -204.0
+offset_top = 8.999999
+offset_right = -164.0
+offset_bottom = 49.0
+grow_horizontal = 0
+scale = Vector2(5, 5)
+
+[node name="Player Color" type="ColorRect" parent="ReusableElements/HUD/P2" unique_id=1411419525]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 30.0
+offset_bottom = 24.0
+color = Color(0.087181844, 0.6755854, 0.9999998, 1)
+
+[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P2" unique_id=481270052]
+texture_filter = 1
+position = Vector2(16.000002, 17)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_7448y")
+
+[node name="Player" type="Label" parent="ReusableElements/HUD/P2" unique_id=1641722640]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 14.0
+offset_bottom = 19.0
+text = "P2"
+label_settings = SubResource("LabelSettings_mjm4b")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ReusableElements/HUD/P2" unique_id=1556432466]
+layout_mode = 0
+offset_left = 26.199999
+offset_top = 3.2000046
+offset_right = 37.399998
+offset_bottom = 14.400003
+color = Color(0, 0, 0, 1)
+
+[node name="StoredItem" type="TextureRect" parent="ReusableElements/HUD/P2" unique_id=1623524262]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 23.8
+offset_top = 0.19999999
+offset_right = 39.8
+offset_bottom = 16.2
+offset_transform_enabled = true
+
+[node name="Score" type="Label" parent="ReusableElements/HUD/P2" unique_id=868980665]
+layout_mode = 0
+offset_left = -16.6
+offset_top = 27.4
+offset_right = 35.4
+offset_bottom = 43.4
+text = "0"
+label_settings = SubResource("LabelSettings_mjm4b")
+horizontal_alignment = 1
+
+[node name="Score2" type="Label" parent="ReusableElements/HUD/P2" unique_id=1567377163]
+layout_mode = 0
+offset_left = -9.199999
+offset_top = 29.4
+offset_right = 42.800003
+offset_bottom = 45.4
+text = "   / 
+	            250"
+label_settings = SubResource("LabelSettings_mjm4b")
+horizontal_alignment = 1

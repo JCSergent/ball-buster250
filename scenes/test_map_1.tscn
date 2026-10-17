@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c8bugatpauyup" path="res://scenes/graybox_delete_later/graybox_large_platform.tscn" id="17_gpvyf"]
 [ext_resource type="Resource" uid="uid://dnkklqru2x0d6" path="res://resources/collectables/point_10.tres" id="18_5afa1"]
 [ext_resource type="PackedScene" uid="uid://b74cekrtstofu" path="res://scenes/sunsucctest.tscn" id="19_gpvyf"]
+[ext_resource type="PackedScene" uid="uid://dr0bm3jbqey1" path="res://scenes/test_world.tscn" id="21_oiceo"]
 
 [sub_resource type="Curve3D" id="Curve3D_oiceo"]
 closed = true
@@ -78,22 +79,22 @@ ground_bottom_color = Color(0, 0.76862746, 0.627451, 1)
 ground_horizon_color = Color(0.48235294, 0.99607843, 1, 1)
 ground_curve = 0.7802891
 
-[sub_resource type="Sky" id="Sky_pa8il"]
+[sub_resource type="Sky" id="Sky_0a58e"]
 sky_material = SubResource("ProceduralSkyMaterial_0kca3")
 
 [sub_resource type="Environment" id="Environment_u018e"]
 background_mode = 2
-sky = SubResource("Sky_pa8il")
+sky = SubResource("Sky_0a58e")
 ambient_light_source = 2
 ambient_light_color = Color(0.98039216, 0.9882353, 0.9019608, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ybj2"]
 
-[sub_resource type="FontVariation" id="FontVariation_qrn2j"]
+[sub_resource type="FontVariation" id="FontVariation_ugy2f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2enst"]
 line_spacing = -10.735
-font = SubResource("FontVariation_qrn2j")
+font = SubResource("FontVariation_ugy2f")
 font_size = 8
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
@@ -126,7 +127,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 8, -7.2)
 curve = SubResource("Curve3D_oiceo")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="SunStuff/TopRightPath" unique_id=835804]
-transform = Transform3D(0.0694106, 0, -0.9975794, 0, 0.99999994, 0, 0.9975851, 0, 0.0694102, 0.19514894, -0.9998779, 0.08739567)
+transform = Transform3D(0.0694106, 0, -0.99757874, 0, 0.99999994, 0, 0.9975851, 0, 0.06941015, 0.19514894, -0.9998779, 0.08739567)
 cubic_interp = false
 
 [node name="block-grass718" type="MeshInstance3D" parent="SunStuff/TopRightPath" unique_id=769711117]
@@ -3216,3 +3217,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -5)
 
 [node name="Respawn_Collectable8" parent="." unique_id=121437113 instance=ExtResource("16_5afa1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -4)
+
+[node name="Node3D2" parent="." unique_id=1543927756 instance=ExtResource("21_oiceo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 1.2, 3)

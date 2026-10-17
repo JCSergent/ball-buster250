@@ -42,11 +42,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jnwsh")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owycx"]
+albedo_color = Color(0.11241267, 0.11241268, 0.1124127, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_88r70"]
 size = Vector3(1.082125, 1, 1.082125)
 
 [node name="BaseTileGrayBox" type="MeshInstance3D" unique_id=2025017146]
 mesh = SubResource("ArrayMesh_owycx")
+surface_material_override/0 = SubResource("StandardMaterial3D_owycx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1914503272]
 
