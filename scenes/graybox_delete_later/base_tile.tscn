@@ -1,14 +1,11 @@
 [gd_scene format=4 uid="uid://cwdr1sddes514"]
 
-[ext_resource type="Texture2D" uid="uid://ckbl4avuuqbo4" path="res://ART/sprites/map_tiles/grass_3.png" id="1_88r70"]
 [ext_resource type="Texture2D" uid="uid://bsx81s6rq3ak8" path="res://ART/sprites/map_tiles/grass_6.png" id="1_gknne"]
-[ext_resource type="Texture2D" uid="uid://i6v6wbpfytru" path="res://assets/kenney_platformer-kit/Models/GLB format/Textures/colormap.png" id="3_owycx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pga1x"]
-resource_name = "colormap"
-cull_mode = 2
-albedo_texture = ExtResource("3_owycx")
-metadata/_gltf_primary_texture_coord = 0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8il"]
+albedo_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(3, 0, 0)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jnwsh"]
 _surfaces = [{
@@ -34,7 +31,7 @@ _surfaces = [{
 "index_count": 276,
 "index_data": PackedByteArray("IgAyADMAMwA0ACIANAAgACIAIAA1ACIAIAAhADUAIAA2ACEANgA3ACEANgAjADcAIwA4ADcAOAAkADcAOQA6AAUABQAHADkAOwABAAIAAgA8ADsAAwA9AD4APgAGAAMAPwAKAAwADABAAD8AQQBCAAQABABDAEEARABFAEYARgAJAEQARwANAAsACwBIAEcASQBKAEsASwBMAEkATQBOAE8ATwBQAE0AUQBSAFMAUwBUAFEAVQBWAFcAVwBYAFUAWQBaAFsAWwBcAFkAXQBeACYAJgBfAF0AYABhAAgACABiAGAAYwBkAGUAZQBmAGMAZwBoAGkAaQAnAGcAagBrAGwAbABtAGoAbgBvAHAAcAAAAG4AcQByAHMAcwAlAHEAdAB1AHYAdgB3AHQAeAB5AHoAegB7AHgAfAB9AH4AfgB/AHwAgACBAIIAggCDAIAAhACFAIYAhgCHAIQADgAoAIgAiAATAA4ADwCJABIAEgAUAA8AGACKACwALAAbABgAiwCMABkAGQAcAIsAjQAuAB0AHQCOAI0AjgAtAI0AjgAvAC0ALwAfAC0ALwAwAB8AMACPAB8AMACQAI8AkAAxAI8AkAAeADEAEQApAJEAkQCSABEAkwCUAJUAlQAaAJMAlgAWACoAKgCXAJYAKwCYAJkAmQAXACsAmgCbAJwAnACdAJoAngAVABAAEACfAJ4AoAChAKIAogCjAKAApAClAKYApgCnAKQA"),
 "lods": [0.22544721, PackedByteArray("IAAhACIAIAAjACEAIwAkACEAJQABAAIAAQAlAAMABgADACUAJQAmAAYACQAGACYAJgAIAAkACQAIAAsACwAIAA0AJQACAAAABAAAAAIABQAAAAQAAAAFAAcAJwANAAgABwAnAAAAJwAMAA0ABwAKACcADAAnAAoADgAoABAAKAAOABEAEAATAA4AEQApACgAFQATABAAKQARABIAFgAVABAADwApABIAEAAqABYAEgAUAA8AGAAWACoAKwAPABQAKgAsABgAFAAXACsALAAbABgAGQArABcAGwAsABkAFwAaABkAGQAcABsAGQAaABwALQAuAB0AHQAvAC0ALwAfAC0ALwAwAB8AMAAxAB8AMAAeADEA"), 1.0278368, PackedByteArray("AAABAAIAAQAAAAMABAAAAAIABQAAAAQABgADAAAAAAAFAAcAAAAIAAYABwAIAAAACQAGAAgABwAKAAgACQAIAAsADAAIAAoACwAIAA0ACAAMAA0ADgAPABAADwAOABEADwARABIAEAATAA4AEgAUAA8AFQATABAAFgAVABAAFAAXAA8AGAAWABAAGQAPABcAEAAZABgAFwAaABkAGQAbABgAGQAaABwAGQAcABsAHQAeAB8A")],
-"material": SubResource("StandardMaterial3D_pga1x"),
+"material": SubResource("StandardMaterial3D_pa8il"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -57,11 +54,6 @@ uv1_offset = Vector3(3, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8hcw6"]
 material = SubResource("StandardMaterial3D_gknne")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8il"]
-albedo_texture = ExtResource("1_88r70")
-uv1_scale = Vector3(3, 3, 3)
-uv1_offset = Vector3(3, 0, 0)
 
 [node name="block-grass" type="MeshInstance3D" unique_id=2025017146]
 mesh = SubResource("ArrayMesh_xvwa8")
