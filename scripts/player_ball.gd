@@ -132,7 +132,7 @@ func _physics_process(delta: float) -> void:
         is_drifting = false
         is_boosting = false
 
-    var adjusted_rolling_force: float = ((float() / max_star_capacity) * (min_rolling_force - rolling_force)) + rolling_force
+    var adjusted_rolling_force: float = ((float(current_stars) / max_star_capacity) * (min_rolling_force - rolling_force)) + rolling_force
     var rolling_velocity := adjusted_rolling_force * delta
 
     # Not used anymore, can remove later
@@ -225,7 +225,8 @@ func use_collectable() -> void:
 
 func increase_stars(amount: int) -> void:
     current_stars = clampi(current_stars + amount, 0, max_star_capacity)
-    var new_scale: float = ((float() / max_star_capacity) * (max_scale_increase - 1.)) + 1.
+    var new_scale: float = ((float(current_stars) / max_star_capacity) * (max_scale_increase - 1.)) + 1.
+    print(new_scale)
     rigid_body_3d.scale = Vector3.ONE * new_scale
     star_count.text = str(current_stars)
 
@@ -289,7 +290,10 @@ func update_sun_state() -> void:
 func on_body_entered(body: Node3D) -> void:
     if body is PlayerRigidBody:
         var direction: Vector3 = rigid_body_3d.global_position.direction_to(body.global_position) * -1
-        rigid_body_3d.apply_central_impulse(direction * player_bump_force)
+        if current_stars == 0:
+            rigid_body_3d.apply_central_impulse(direction * player_bump_force * 6)
+        else:
+            rigid_body_3d.apply_central_impulse(direction * player_bump_force)
         if current_stars > 0 and current_stars < 4:
             spew_stars(current_stars, 3, 6, direction)
         elif current_stars > 0:

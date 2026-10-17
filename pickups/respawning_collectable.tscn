@@ -2,98 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dmekayaxnrgfv" path="res://pickups/respawning_collectable.gd" id="1_ay5tx"]
 [ext_resource type="Resource" uid="uid://bjtet7qer1tyt" path="res://resources/collectables/point_1.tres" id="2_0nlmw"]
-[ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="3_ivv0r"]
-[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="4_iol5t"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2lak"]
-height = 1.0
-
-[sub_resource type="Animation" id="Animation_xuypn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.5, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlatformerShadowSpringArm:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-8.675185e-08, 0.49616146, 2.168789e-08)]
-}
-
-[sub_resource type="Animation" id="Animation_v7q7g"]
-resource_name = "idle"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0.5, 0), Vector3(0, 0.7000446, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlatformerShadowSpringArm:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-8.675185e-08, 0.49616146, 2.168789e-08), Vector3(-8.675185e-08, 0.69620603, 2.168789e-08)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_221la"]
-_data = {
-&"RESET": SubResource("Animation_xuypn"),
-&"idle": SubResource("Animation_v7q7g")
-}
 
 [node name="Respawn_Collectable" type="Node3D" unique_id=970564733]
 script = ExtResource("1_ay5tx")
 collectable = ExtResource("2_0nlmw")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1894290276]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)
-cast_shadow = 0
-billboard = 1
-texture = ExtResource("3_ivv0r")
-
-[node name="PlatformerShadowSpringArm" parent="." unique_id=1024933116 instance=ExtResource("4_iol5t")]
-transform = Transform3D(1, -1.74846e-07, 1.74846e-07, 1.74846e-07, -4.371139e-08, -1, 1.74846e-07, 1, -4.3711356e-08, -8.675185e-08, 0.49616146, 2.168789e-08)
-
-[node name="Area3D" type="Area3D" parent="." unique_id=1891688518]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=685676281]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("CapsuleShape3D_e2lak")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1370209357]
-libraries/ = SubResource("AnimationLibrary_221la")
-
 [node name="Timer" type="Timer" parent="." unique_id=15718580]
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+one_shot = true
