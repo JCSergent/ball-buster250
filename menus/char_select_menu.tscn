@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://bpcpq8qhf518v"]
+
+[ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_jkv6f"]
+[ext_resource type="Script" uid="uid://crx8qu4rxmxwl" path="res://menus/char_select_menu.gd" id="2_3rtee"]
+[ext_resource type="Texture2D" uid="uid://c307834sxpqoe" path="res://menus/menu items/instructions.png" id="2_f2qo7"]
+[ext_resource type="Texture2D" uid="uid://l086vhqkqpdl" path="res://menus/menu items/frog_namebar.png" id="3_e5o7i"]
+[ext_resource type="Texture2D" uid="uid://sttr45qnfqt6" path="res://menus/menu items/frog_playercard.png" id="3_emvu2"]
+[ext_resource type="Texture2D" uid="uid://cj8s0dfqse7cv" path="res://menus/menu items/notready_indicator.png" id="5_41ep7"]
+[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="6_30gvx"]
+[ext_resource type="Texture2D" uid="uid://m1apilypje5v" path="res://menus/menu items/ready_indicator.png" id="6_d5snc"]
+[ext_resource type="Texture2D" uid="uid://cmrpjnqotsb6m" path="res://menus/menu items/bunny_namebar.png" id="7_1bsqy"]
+[ext_resource type="Texture2D" uid="uid://mufuj16q2x00" path="res://menus/menu items/bunny_playercard.png" id="8_io2e3"]
+[ext_resource type="Texture2D" uid="uid://gr6j4no6xp71" path="res://menus/menu items/mouse_namebar.png" id="9_3rtee"]
+[ext_resource type="Texture2D" uid="uid://cqq7by21i0uoi" path="res://menus/menu items/mouse_playercard.png" id="10_30gvx"]
+[ext_resource type="Texture2D" uid="uid://ojy2f6vsl4f7" path="res://art/sprites/lilRatGirl_2.png" id="11_r8134"]
+[ext_resource type="Texture2D" uid="uid://bfng6ouo7wmr8" path="res://menus/menu items/cat_namebar.png" id="11_wailv"]
+[ext_resource type="Texture2D" uid="uid://08q01a3unugd" path="res://menus/menu items/cat_playercard.png" id="12_r8134"]
+[ext_resource type="Texture2D" uid="uid://dcymvl3dr4otq" path="res://art/sprites/lilRatGirl_3.png" id="14_3xxhd"]
+[ext_resource type="Texture2D" uid="uid://bqok0b245ey8" path="res://art/sprites/lilRatGirl_4.png" id="17_iax8c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
+font_size = 92
+outline_size = 28
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MenuPanel" type="PanelContainer" unique_id=496272823]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -0.38952637
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_jkv6f")
+script = ExtResource("2_3rtee")
+
+[node name="FlowContainer" type="VBoxContainer" parent="." unique_id=1719006581]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Instruct" type="Sprite2D" parent="FlowContainer" unique_id=414061420]
+position = Vector2(460.00003, 192)
+scale = Vector2(0.81671846, 0.81671834)
+texture = ExtResource("2_f2qo7")
+
+[node name="PLAYERS" type="Control" parent="." unique_id=1451655675]
+layout_mode = 2
+
+[node name="P1" type="Control" parent="PLAYERS" unique_id=1385218573]
+anchors_preset = 0
+offset_left = 55.0
+offset_top = 550.0
+offset_right = 510.0
+offset_bottom = 984.0
+
+[node name="P1Name" type="Sprite2D" parent="PLAYERS/P1" unique_id=1285438851]
+position = Vector2(1001, -228)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_e5o7i")
+
+[node name="playerWindow" type="Sprite2D" parent="PLAYERS/P1" unique_id=132767287]
+position = Vector2(225, 215)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("3_emvu2")
+
+[node name="selectSprite" type="Sprite2D" parent="PLAYERS/P1" unique_id=1878855475]
+position = Vector2(225, 215)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("6_30gvx")
+
+[node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P1" unique_id=1105686691]
+position = Vector2(354, 420)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("5_41ep7")
+
+[node name="ReadyIND" type="Sprite2D" parent="PLAYERS/P1" unique_id=1225455715]
+visible = false
+position = Vector2(354.0807, 413.0807)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("6_d5snc")
+
+[node name="NameLabel" type="Label" parent="PLAYERS/P1" unique_id=650195581]
+layout_mode = 0
+offset_left = 115.0
+offset_top = -63.840088
+offset_right = 381.0
+offset_bottom = 35.159912
+rotation = -0.23984782
+text = "PLAYER 1"
+label_settings = SubResource("LabelSettings_e2lak")
+
+[node name="P2" type="Control" parent="PLAYERS" unique_id=1427532183]
+anchors_preset = 0
+offset_left = 498.0
+offset_top = 540.0
+offset_right = 959.0
+offset_bottom = 982.0
+
+[node name="P2Name" type="Sprite2D" parent="PLAYERS/P2" unique_id=1076467766]
+position = Vector2(1086.0002, -236)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_1bsqy")
+
+[node name="playerWindow" type="Sprite2D" parent="PLAYERS/P2" unique_id=321631289]
+position = Vector2(232, 225)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("8_io2e3")
+
+[node name="selectSprite" type="Sprite2D" parent="PLAYERS/P2" unique_id=1112336881]
+position = Vector2(225, 215)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("11_r8134")
+
+[node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P2" unique_id=679648270]
+position = Vector2(358, 430)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("5_41ep7")
+
+[node name="ReadyIND" type="Sprite2D" parent="PLAYERS/P2" unique_id=1123942315]
+visible = false
+position = Vector2(358.0807, 423.0807)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("6_d5snc")
+
+[node name="NameLabel" type="Label" parent="PLAYERS/P2" unique_id=1330024357]
+layout_mode = 0
+offset_left = 158.0
+offset_top = -65.84009
+offset_right = 567.0
+offset_bottom = 60.159912
+rotation = -0.23984782
+text = "PLAYER 2"
+label_settings = SubResource("LabelSettings_e2lak")
+
+[node name="P3" type="Control" parent="PLAYERS" unique_id=311314930]
+anchors_preset = 0
+offset_left = 951.0
+offset_top = 548.0
+offset_right = 1412.0
+offset_bottom = 980.0
+
+[node name="P3Name" type="Sprite2D" parent="PLAYERS/P3" unique_id=1654863240]
+position = Vector2(996.0001, -224)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_3rtee")
+
+[node name="playerWindow" type="Sprite2D" parent="PLAYERS/P3" unique_id=436205267]
+position = Vector2(229, 217)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("10_30gvx")
+
+[node name="selectSprite" type="Sprite2D" parent="PLAYERS/P3" unique_id=983454339]
+position = Vector2(225, 215)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("14_3xxhd")
+
+[node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P3" unique_id=1081101562]
+position = Vector2(354, 425)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("5_41ep7")
+
+[node name="ReadyIND" type="Sprite2D" parent="PLAYERS/P3" unique_id=201585472]
+visible = false
+position = Vector2(354.0807, 418.0807)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("6_d5snc")
+
+[node name="NameLabel" type="Label" parent="PLAYERS/P3" unique_id=1464808020]
+layout_mode = 0
+offset_left = 161.0
+offset_top = -73.84009
+offset_right = 570.0
+offset_bottom = 52.159912
+rotation = -0.23984782
+text = "PLAYER 3"
+label_settings = SubResource("LabelSettings_e2lak")
+
+[node name="P4" type="Control" parent="PLAYERS" unique_id=1161825767]
+anchors_preset = 0
+offset_left = 1406.0
+offset_top = 551.0
+offset_right = 1858.0
+offset_bottom = 976.0
+
+[node name="P4Name" type="Sprite2D" parent="PLAYERS/P4" unique_id=1112744382]
+position = Vector2(824, -187)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_wailv")
+
+[node name="playerWindow" type="Sprite2D" parent="PLAYERS/P4" unique_id=1872282062]
+position = Vector2(224, 214)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("12_r8134")
+
+[node name="selectSprite" type="Sprite2D" parent="PLAYERS/P4" unique_id=1705377532]
+position = Vector2(225, 215)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("17_iax8c")
+
+[node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P4" unique_id=263797319]
+position = Vector2(357, 422)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("5_41ep7")
+
+[node name="ReadyIND" type="Sprite2D" parent="PLAYERS/P4" unique_id=1621495182]
+visible = false
+position = Vector2(357.0807, 415.0807)
+scale = Vector2(0.59942365, 0.59942365)
+texture = ExtResource("6_d5snc")
+
+[node name="NameLabel" type="Label" parent="PLAYERS/P4" unique_id=367428414]
+layout_mode = 0
+offset_left = 156.0
+offset_top = -76.84009
+offset_right = 565.0
+offset_bottom = 49.159912
+rotation = -0.23984782
+text = "PLAYER 4"
+label_settings = SubResource("LabelSettings_e2lak")
