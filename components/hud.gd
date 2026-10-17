@@ -12,13 +12,13 @@ func _ready() -> void:
 
 func update_player_hud(player: Player) -> void:
     if player.id == 1:
-        # p1_score.text = str(player.score)
+        p1_score.text = str(player.score)
         if player.held_item:
             p1_item.texture = player.held_item.texture
         else:
             p1_item.texture = null
     elif player.id == 2:
-        # p2_score.text = str(player.score)
+        p2_score.text = str(player.score)
         if player.held_item:
             p2_item.texture = player.held_item.texture
         else:

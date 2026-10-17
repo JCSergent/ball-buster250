@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dwket6reb0144"]
 
 [ext_resource type="Script" uid="uid://dmekayaxnrgfv" path="res://pickups/respawning_collectable.gd" id="1_ay5tx"]
+[ext_resource type="Resource" uid="uid://bjtet7qer1tyt" path="res://resources/collectables/point_1.tres" id="2_0nlmw"]
 [ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="3_ivv0r"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="4_iol5t"]
 
@@ -71,7 +72,7 @@ _data = {
 
 [node name="Respawn_Collectable" type="Node3D" unique_id=970564733]
 script = ExtResource("1_ay5tx")
-value = null
+collectable = ExtResource("2_0nlmw")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1894290276]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)

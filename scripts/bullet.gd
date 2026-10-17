@@ -3,6 +3,7 @@ extends Node3D
 
 @export var fire_direction: Vector3
 @export var speed: float = 20.
+@export var fired_by_player: int = 1
 
 @onready var aread_3d: Area3D = $Area3D
 @onready var floor_cast: RayCast3D = $FloorCast

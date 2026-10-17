@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dl18i71dv0gmp" path="res://scripts/bullet.gd" id="1_l5glv"]
 [ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="1_y25gk"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_l5glv"]
+[ext_resource type="Script" uid="uid://x6fl4nrrqeov" path="res://scripts/bullet_area.gd" id="4_eoqba"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eoqba"]
 radius = 0.22058105
@@ -22,6 +23,7 @@ texture = ExtResource("1_y25gk")
 [node name="Area3D" type="Area3D" parent="." unique_id=869026354]
 collision_layer = 8
 collision_mask = 3
+script = ExtResource("4_eoqba")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=179259323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05987549, 0)
@@ -34,3 +36,11 @@ hit_from_inside = true
 [node name="ForwardCast" type="RayCast3D" parent="." unique_id=1486990696]
 target_position = Vector3(1, 0, 0)
 hit_from_inside = true
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=617125146]
+visible = false
+emitting = false
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+gravity = Vector3(0, 1, 0)

@@ -3,14 +3,18 @@
 [ext_resource type="Script" uid="uid://b2brlj7aadmr6" path="res://scenes/sunsucctest.gd" id="1_tcp64"]
 [ext_resource type="Texture2D" uid="uid://cg7f3evcbofm3" path="res://assets/sun.png" id="2_tcp64"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_pa8il"]
+radius = 0.8827295
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2lak"]
 transparency = 1
 albedo_color = Color(0.93155056, 0.919399, 0.66131824, 0.50980395)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tcp64"]
-data = PackedVector3Array(-2.1213205, -3.3688965, -2.1213202, -3, -3.3688965, -2.6226832e-07, 0, -3.3688965, 0, -3, -3.3688965, -2.6226832e-07, -2.1213205, -3.3688965, -2.1213202, 0, 3.3688965, 0, 3.577464e-08, -3.3688965, -3, -2.1213205, -3.3688965, -2.1213202, 0, -3.3688965, 0, -2.1213205, -3.3688965, -2.1213202, 3.577464e-08, -3.3688965, -3, 0, 3.3688965, 0, -3, -3.3688965, -2.6226832e-07, -2.1213202, -3.3688965, 2.1213202, 0, -3.3688965, 0, -2.1213202, -3.3688965, 2.1213202, -3, -3.3688965, -2.6226832e-07, 0, 3.3688965, 0, -2.1213202, -3.3688965, 2.1213202, -1.3113416e-07, -3.3688965, 3, 0, -3.3688965, 0, -1.3113416e-07, -3.3688965, 3, -2.1213202, -3.3688965, 2.1213202, 0, 3.3688965, 0, 2.12132, -3.3688965, -2.1213207, 3.577464e-08, -3.3688965, -3, 0, -3.3688965, 0, 3.577464e-08, -3.3688965, -3, 2.12132, -3.3688965, -2.1213207, 0, 3.3688965, 0, 3, -3.3688965, 0, 2.12132, -3.3688965, -2.1213207, 0, -3.3688965, 0, 2.12132, -3.3688965, -2.1213207, 3, -3.3688965, 0, 0, 3.3688965, 0, -1.3113416e-07, -3.3688965, 3, 2.1213202, -3.3688965, 2.1213202, 0, -3.3688965, 0, 2.1213202, -3.3688965, 2.1213202, -1.3113416e-07, -3.3688965, 3, 0, 3.3688965, 0, 2.1213202, -3.3688965, 2.1213202, 3, -3.3688965, 0, 0, -3.3688965, 0, 3, -3.3688965, 0, 2.1213202, -3.3688965, 2.1213202, 0, 3.3688965, 0)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gipfl"]
+height = 0.6661377
+radius = 2.8139648
 
-[node name="sunsucctest" type="Node3D" unique_id=988882479]
+[node name="sunsucctest" type="Node3D" unique_id=988882479 groups=["SunSucc"]]
 script = ExtResource("1_tcp64")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1984785517]
@@ -19,19 +23,28 @@ modulate = Color(1, 1, 1, 0.9529412)
 billboard = 1
 texture = ExtResource("2_tcp64")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=130804604]
+[node name="CollectArea" type="Area3D" parent="." unique_id=730950253]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectArea" unique_id=2010795107]
+shape = SubResource("SphereShape3D_pa8il")
+
+[node name="Timer" type="Timer" parent="." unique_id=796283899]
+
+[node name="Beam" type="Node3D" parent="." unique_id=905225712]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Beam" unique_id=130804604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7331023, 0)
 radius = 3.0
 height = 6.737793
 cone = true
 material = SubResource("StandardMaterial3D_e2lak")
 
-[node name="Timer" type="Timer" parent="." unique_id=796283899]
-
-[node name="Area3D" type="Area3D" parent="." unique_id=1883218785]
+[node name="Area3D" type="Area3D" parent="Beam" unique_id=1883218785]
 collision_layer = 16
 collision_mask = 2
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=312630198]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7331023, 0)
-shape = SubResource("ConcavePolygonShape3D_tcp64")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Beam/Area3D" unique_id=1817319352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.333007, 0)
+shape = SubResource("CylinderShape3D_gipfl")

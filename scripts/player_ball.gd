@@ -14,7 +14,7 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 @export var min_boost_force := 4
 @export var max_boost_force := 10
 @export var max_boost_duration := 2
-@export var drift_dampening := 8
+@export var drift_dampening := 4
 @export var drift_clamp := 2
 
 @export_group("Grow Stats")
@@ -36,7 +36,8 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 @onready var gun_rotate_point: Node3D = %GunRotatePoint
 @onready var gun_fire_point: Node3D = %GunFirePoint
 
-@onready var sun_beam_checker: Area3D = %SunBeamChecker
+# @onready var sun_beam_checker: Area3D = %SunBeamChecker
+@onready var sun_cast: RayCast3D = %SunCast
 
 @onready var sprite_3d: Sprite3D = %Sprite3D
 @onready var outline: MeshInstance3D = %Outline
@@ -71,13 +72,11 @@ func _ready() -> void:
     ui_color.color = player.color
 
     rigid_body_3d.body_entered.connect(on_body_entered)
-    sun_beam_checker.area_entered.connect(on_enter_sun_beam)
-    sun_beam_checker.area_exited.connect(on_exit_sun_beam)
 
 func _physics_process(delta: float) -> void:
     var is_on_floor := floor_cast.is_colliding()
 
-    # print(sun_beam_checker.has_overlapping_areas())
+    update_sun_state()
 
     # After falling off the map, lose half your stars
     if is_fell_off_map and is_on_floor:
@@ -171,11 +170,19 @@ func rotate_gun(target_rad: float, delta: float) -> void:
         gun_rotate_point.rotation.y = target_rad
 
 func shoot_gun() -> void:
+    var fire_direction := get_gun_direction()
+
+    if is_in_sunbeam:
+        print('shoot towards sun')
+        var sunsucc: SunSucc = get_tree().get_first_node_in_group("SunSucc")
+        fire_direction = gun_rotate_point.global_position.direction_to(sunsucc.global_position)
+
     if current_collectable:
         use_collectable()
     elif  current_stars > 0:
         var bullet: Bullet = BULLET_SCENE.instantiate()
-        bullet.fire_direction = get_gun_direction()
+        bullet.fire_direction = fire_direction
+        bullet.fired_by_player = player_id
         get_parent().add_child(bullet)
         bullet.global_position = gun_fire_point.global_position
 
@@ -260,6 +267,24 @@ func get_shot(direction: Vector3) -> void:
         spew_stars(current_stars, 3, 6, direction)
     elif current_stars > 0:
         spew_stars(randi_range(2, 4), 3, 6, direction)
+
+
+func update_sun_state() -> void:
+    var is_under_sun := sun_cast.is_colliding()
+    if is_under_sun and not is_in_sunbeam:
+        is_in_sunbeam = true
+
+        if sunbeam_tween:
+            sunbeam_tween.stop()
+        sunbeam_tween = get_tree().create_tween()
+        sunbeam_tween.tween_property(gun_rotate_point, "rotation_degrees:z", -90, 0.2)
+    elif not is_under_sun and is_in_sunbeam:
+        is_in_sunbeam = false
+
+        if sunbeam_tween:
+            sunbeam_tween.stop()
+        sunbeam_tween = get_tree().create_tween()
+        sunbeam_tween.tween_property(gun_rotate_point, "rotation:z", 0, 0.2)
     
 func on_body_entered(body: Node3D) -> void:
     if body is PlayerRigidBody:
@@ -269,19 +294,3 @@ func on_body_entered(body: Node3D) -> void:
             spew_stars(current_stars, 3, 6, direction)
         elif current_stars > 0:
             spew_stars(randi_range(2, 4), 3, 6, direction)
-
-func on_enter_sun_beam(_area: Area3D) -> void:
-    print('enter sun beam')
-    is_in_sunbeam = true
-    if sunbeam_tween:
-        sunbeam_tween.stop()
-    sunbeam_tween = get_tree().create_tween()
-    sunbeam_tween.tween_property(gun_rotate_point, "rotation_degrees:z", -90, 0.2)
-
-func on_exit_sun_beam(_area: Area3D) -> void:
-    print('exit sun beam')
-    is_in_sunbeam = false
-    if sunbeam_tween:
-        sunbeam_tween.stop()
-    sunbeam_tween = get_tree().create_tween()
-    sunbeam_tween.tween_property(gun_rotate_point, "rotation:z", 0, 0.2)
