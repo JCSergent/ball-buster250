@@ -1,14 +1,39 @@
 [gd_scene format=3 uid="uid://b74cekrtstofu"]
 
 [ext_resource type="Script" uid="uid://b2brlj7aadmr6" path="res://scenes/sunsucctest.gd" id="1_tcp64"]
-[ext_resource type="Texture2D" uid="uid://cg7f3evcbofm3" path="res://assets/sun.png" id="2_tcp64"]
+[ext_resource type="Texture2D" uid="uid://btvk6ecl2uj33" path="res://art/sprites/sunNmoon.png" id="2_c8yu5"]
+[ext_resource type="Shader" uid="uid://dveyo60ndnqwp" path="res://shaders/sun_beam.gdshader" id="3_hlaqb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pa8il"]
 radius = 0.8827295
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2lak"]
-transparency = 1
-albedo_color = Color(0.93155056, 0.919399, 0.66131824, 0.50980395)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sy4b4"]
+noise_type = 2
+frequency = 0.0205
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qh54k"]
+noise = SubResource("FastNoiseLite_sy4b4")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eoqba"]
+render_priority = 0
+shader = ExtResource("3_hlaqb")
+shader_parameter/color = Color(0.9411765, 0.6784314, 0.24313726, 0.75686276)
+shader_parameter/color_edge = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 4.126000195985
+shader_parameter/rise_progress = 0.0
+shader_parameter/edge_width = 0.08
+shader_parameter/noise_scale = 10.0
+shader_parameter/noise_strength = 0.15
+shader_parameter/time_speed = 1.5
+shader_parameter/fade_softness = 0.1
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_qh54k")
+shader_parameter/top_fade_start = 0.3
+shader_parameter/top_fade_power = 2.0
+shader_parameter/invert_top_fade = false
+shader_parameter/wave_transparency = 1.0
+shader_parameter/wave_frequency = 13.7470006054825
+shader_parameter/wave_speed = 2.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gipfl"]
 height = 0.6661377
@@ -18,10 +43,11 @@ radius = 2.8139648
 script = ExtResource("1_tcp64")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1984785517]
-transform = Transform3D(2.7693233, 0, 0, 0, 2.810371, 0, 0, 0, 1, 0, 0, 0)
 modulate = Color(1, 1, 1, 0.9529412)
 billboard = 1
-texture = ExtResource("2_tcp64")
+texture = ExtResource("2_c8yu5")
+region_enabled = true
+region_rect = Rect2(833, 388, 557, 565)
 
 [node name="CollectArea" type="Area3D" parent="." unique_id=730950253]
 collision_layer = 0
@@ -38,8 +64,9 @@ shape = SubResource("SphereShape3D_pa8il")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7331023, 0)
 radius = 3.0
 height = 6.737793
+sides = 32
 cone = true
-material = SubResource("StandardMaterial3D_e2lak")
+material = SubResource("ShaderMaterial_eoqba")
 
 [node name="Area3D" type="Area3D" parent="Beam" unique_id=1883218785]
 collision_layer = 16
