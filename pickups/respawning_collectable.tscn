@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dmekayaxnrgfv" path="res://pickups/respawning_collectable.gd" id="1_ay5tx"]
 [ext_resource type="Resource" uid="uid://bjtet7qer1tyt" path="res://resources/collectables/point_1.tres" id="2_0nlmw"]
+[ext_resource type="Resource" uid="uid://buf65lhbnr7vn" path="res://resources/collectables/point_5.tres" id="3_0nlmw"]
+[ext_resource type="Resource" uid="uid://dnkklqru2x0d6" path="res://resources/collectables/point_10.tres" id="4_vu5uf"]
 
 [node name="Respawn_Collectable" type="Node3D" unique_id=970564733]
 script = ExtResource("1_ay5tx")
-collectable = ExtResource("2_0nlmw")
+point_1_star = ExtResource("2_0nlmw")
+point_5_star = ExtResource("3_0nlmw")
+point_10_star = ExtResource("4_vu5uf")
 
 [node name="Timer" type="Timer" parent="." unique_id=15718580]
 one_shot = true
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1226586285]

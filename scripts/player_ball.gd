@@ -290,10 +290,10 @@ func update_sun_state() -> void:
 func on_body_entered(body: Node3D) -> void:
     if body is PlayerRigidBody:
         var direction: Vector3 = rigid_body_3d.global_position.direction_to(body.global_position) * -1
-        if current_stars == 0:
-            rigid_body_3d.apply_central_impulse(direction * player_bump_force * 6)
-        else:
-            rigid_body_3d.apply_central_impulse(direction * player_bump_force)
+        # if current_stars == 0:
+        #     rigid_body_3d.apply_central_impulse(direction * player_bump_force * 6)
+        # else:
+        rigid_body_3d.apply_central_impulse(direction * player_bump_force)
         if current_stars > 0 and current_stars < 4:
             spew_stars(current_stars, 3, 6, direction)
         elif current_stars > 0:
