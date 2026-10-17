@@ -1,0 +1,29 @@
+[gd_resource type="Theme" format=3 uid="uid://bgyff2kbudfo0"]
+
+[ext_resource type="StyleBox" uid="uid://cbiv44vouyknk" path="res://menus/new_style_box_flat.tres" id="1_lxfm7"]
+[ext_resource type="FontFile" uid="uid://cymm8p6y71evy" path="res://menus/fonts/Jersey10-Regular.ttf" id="2_e0ilo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxfm7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[resource]
+default_font = ExtResource("2_e0ilo")
+default_font_size = 88
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 0.8235294, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 0.45882353, 0.9843137, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_lxfm7")
+Label/colors/font_color = Color(1, 1, 1, 1)
+PanelContainer/styles/panel = ExtResource("1_lxfm7")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ball-buster250"
-run/main_scene="uid://dsijt7s5byilb"
+run/main_scene="uid://bh1wq7mf7hbur"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0.78933626, 0.15278566, 0.42805234, 1)
 boot_splash/use_filter=false
@@ -40,7 +40,10 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://art/": "orange",
 "res://assets/": "yellow",
+"res://components/": "gray",
+"res://menus/": "green",
 "res://resources/": "blue",
 "res://scenes/": "purple",
 "res://scripts/": "red",

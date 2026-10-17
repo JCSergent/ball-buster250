@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://che7io4704o0o"]
+
+[node name="menuButt" type="Button" unique_id=863919275]
+text = "START"

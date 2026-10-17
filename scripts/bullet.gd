@@ -5,6 +5,7 @@ extends Node3D
 @export var speed: float = 20.
 @export var fired_by_player: int = 1
 
+@onready var sprite: Sprite3D = $Sprite3D
 @onready var aread_3d: Area3D = $Area3D
 @onready var floor_cast: RayCast3D = $FloorCast
 @onready var forward_cast: RayCast3D = $ForwardCast
@@ -12,6 +13,8 @@ extends Node3D
 func _ready() -> void:
     aread_3d.body_entered.connect(on_body_entered)
     forward_cast.target_position = fire_direction * 2
+    var player: Player = GameKeeper.players.get(fired_by_player)
+    sprite.modulate = player.color
     
 func _process(delta: float) -> void:
     if floor_cast.is_colliding():
