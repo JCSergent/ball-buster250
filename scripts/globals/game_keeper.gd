@@ -15,6 +15,10 @@ func _ready() -> void:
     game_state = GameState.new()
     reset_game()
 
+func _input(event: InputEvent) -> void:
+    if event.is_action_pressed("esc"):
+        get_tree().quit()
+
 func reset_game() -> void:
     for player: Player in players.values():
         player.reset_state()
@@ -39,3 +43,4 @@ func remove_item(player_id: int) -> void:
     var player: Player = players.get(player_id)
     player.held_item = null
     player_state_changed.emit(player)
+    
