@@ -6,7 +6,8 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 
 @export var player_id: int = 1
 
-@export var rolling_force := 16
+@export var rolling_force := 40
+@export var change_dir_dampening := 8
 @export var gun_rotate_speed := 1.5
 
 @export_group("Boost")
@@ -58,6 +59,7 @@ var is_drifting: bool = false
 var is_fell_off_map: bool = false
 
 var is_in_sunbeam: bool = false
+var sunbeam_tween: Tween
 
 func _ready() -> void:
     player = GameKeeper.players.get(player_id)
@@ -74,6 +76,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
     var is_on_floor := floor_cast.is_colliding()
+
+    # print(sun_beam_checker.has_overlapping_areas())
 
     # After falling off the map, lose half your stars
     if is_fell_off_map and is_on_floor:
@@ -150,17 +154,21 @@ func _physics_process(delta: float) -> void:
     if roll_direction != Vector2.ZERO:
         rotate_gun(roll_direction.angle(), delta)
 
+    var linear_direction: Vector3 = rigid_body_3d.linear_velocity.normalized()
+    if roll_direction != Vector2.ZERO and not is_drifting and is_on_floor:
+        var deg_offset: float = abs(rad_to_deg(roll_direction.angle_to(Vector2(-linear_direction.x, linear_direction.z))))
+        rigid_body_3d.linear_damp = change_dir_dampening * (deg_offset / 180)
+    elif not is_drifting:
+        rigid_body_3d.linear_damp = 0
+        
+
 func rotate_gun(target_rad: float, delta: float) -> void:
-    if not is_in_sunbeam:
-        var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
-        if abs(angle_diff) > 0.1:
-            gun_rotate_point.rotation.y += delta * TAU * gun_rotate_speed * sign(angle_diff)
-        else:
-            gun_rotate_point.rotation.y = target_rad
-    # else:
-    #     gun_rotate_point.rotate_x(cos(gun_rotate_point.rotation.y))
-    #     gun_rotate_point.rotate_z(sin(gun_rotate_point.rotation.y))
-        # gun_rotate_point.get_global_transform_interpolated()
+    # if not is_in_sunbeam:
+    var angle_diff := wrapf(target_rad - gun_rotate_point.rotation.y, -PI, PI)
+    if abs(angle_diff) > 0.1:
+        gun_rotate_point.rotation.y += delta * TAU * gun_rotate_speed * sign(angle_diff)
+    else:
+        gun_rotate_point.rotation.y = target_rad
 
 func shoot_gun() -> void:
     if current_collectable:
@@ -263,13 +271,17 @@ func on_body_entered(body: Node3D) -> void:
             spew_stars(randi_range(2, 4), 3, 6, direction)
 
 func on_enter_sun_beam(_area: Area3D) -> void:
+    print('enter sun beam')
     is_in_sunbeam = true
-    # gun_rotate_point.rotation.x = cos(gun_rotate_point.rotation.y)
-    # gun_rotate_point.rotation.z = sin(gun_rotate_point.rotation.y)
-    # gun_rotate_point.rotate_x(cos(gun_rotate_point.rotation.y))
-    # gun_rotate_point.rotate_z(sin(gun_rotate_point.rotation.y))
+    if sunbeam_tween:
+        sunbeam_tween.stop()
+    sunbeam_tween = get_tree().create_tween()
+    sunbeam_tween.tween_property(gun_rotate_point, "rotation_degrees:z", -90, 0.2)
 
 func on_exit_sun_beam(_area: Area3D) -> void:
+    print('exit sun beam')
     is_in_sunbeam = false
-    # gun_rotate_point.rotation.z = 0
-    # gun_rotate_point.rotation.x = 0
+    if sunbeam_tween:
+        sunbeam_tween.stop()
+    sunbeam_tween = get_tree().create_tween()
+    sunbeam_tween.tween_property(gun_rotate_point, "rotation:z", 0, 0.2)
