@@ -24,7 +24,8 @@ func reset_game() -> void:
         player.reset_state()
 
     # TODO: Go to Player Select Screen
-     #game_state.phase = GameState.Phase.PlayerSelect
+    # game_state.phase = GameState.Phase.PlayerSelect
+    # SceneKeeper.load_scene(SceneKeeper.Scene.PlayerSelectScene)
 
 func update_score(player_id: int, value: int) -> void:
     var player: Player = players.get(player_id)
