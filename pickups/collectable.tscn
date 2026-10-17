@@ -2,12 +2,22 @@
 
 [ext_resource type="Script" uid="uid://dk0harjn3we0n" path="res://scripts/collectable_node.gd" id="1_te2od"]
 [ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="1_un20x"]
-[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_4v1pg"]
 [ext_resource type="Resource" uid="uid://bjtet7qer1tyt" path="res://resources/collectables/point_1.tres" id="2_v7q7g"]
+[ext_resource type="Script" uid="uid://cl8ayp00lh6ty" path="res://scripts/platformer_shadow_spring_arm.gd" id="4_xuypn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2lak"]
 radius = 0.24267578
 height = 0.508728
+
+[sub_resource type="Gradient" id="Gradient_8nth8"]
+offsets = PackedFloat32Array(0.3724227, 0.6198454)
+colors = PackedColorArray(0, 0, 0, 0.6901961, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8tqfn"]
+gradient = SubResource("Gradient_8nth8")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xuypn"]
 radius = 0.26220703
@@ -90,11 +100,21 @@ shape = SubResource("CapsuleShape3D_e2lak")
 
 [node name="Sprite3D" type="Sprite3D" parent="RigidBody3D" unique_id=1894290276]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 billboard = 1
 texture = ExtResource("1_un20x")
 
-[node name="PlatformerShadowSpringArm" parent="RigidBody3D" unique_id=1024933116 instance=ExtResource("2_4v1pg")]
+[node name="PlatformerShadowSpringArm" type="SpringArm3D" parent="RigidBody3D" unique_id=1024933116]
+transform = Transform3D(1, -1.74846e-07, 1.74846e-07, 1.74846e-07, -4.371139e-08, -1, 1.74846e-07, 1, -4.3711356e-08, 0, 0, 0)
+spring_length = 4.0
+script = ExtResource("4_xuypn")
+
+[node name="ShadowDecal" type="Decal" parent="RigidBody3D/PlatformerShadowSpringArm" unique_id=1332689272]
+transform = Transform3D(1, 1.7484598e-07, 1.7484598e-07, -1.7484598e-07, -4.371139e-08, 1, 1.7484598e-07, -1, -4.3711356e-08, 0, 0, 0)
+size = Vector3(0.6, 0.6, 0.6)
+texture_albedo = SubResource("GradientTexture2D_8tqfn")
+cull_mask = 1048573
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D" unique_id=1891688518]
 collision_layer = 0
