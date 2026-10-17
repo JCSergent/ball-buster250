@@ -2,16 +2,19 @@
 
 [ext_resource type="Script" uid="uid://7ssa1bt4508h" path="res://scripts/map_1.gd" id="1_gpvyf"]
 [ext_resource type="Script" uid="uid://drthts6qlkxol" path="res://scripts/death_zone.gd" id="1_houx3"]
-[ext_resource type="Script" uid="uid://dvjyicbii3adr" path="res://scripts/star_spawn_master.gd" id="2_2ybj2"]
-[ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud/hud.gd" id="3_f8eag"]
-[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_3mjpi"]
-[ext_resource type="Texture2D" uid="uid://ceqg0p3ux5b3g" path="res://assets/GreyboxTextures/greybox_grey_grid.png" id="4_5afa1"]
+[ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud.gd" id="3_f8eag"]
+[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://ART/sprites/lilRatGirl.png" id="4_3mjpi"]
+[ext_resource type="Texture2D" uid="uid://byi1bgfemkqn" path="res://assets/GreyboxTextures/greybox_grey_grid.png" id="4_5afa1"]
 [ext_resource type="PackedScene" uid="uid://cwdr1sddes514" path="res://scenes/graybox_delete_later/base_tile.tscn" id="4_q5vyl"]
-[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_og7nd"]
+[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://ART/sprites/PlaceholderMartin.png" id="5_og7nd"]
 [ext_resource type="PackedScene" uid="uid://dmd302ejceuio" path="res://scenes/graybox_delete_later/graybox_mild_slope.tscn" id="8_j3705"]
 [ext_resource type="PackedScene" uid="uid://jcd7d1k6q018" path="res://scenes/world_elements/bumper.tscn" id="9_houx3"]
 [ext_resource type="PackedScene" uid="uid://dul0pteh3usdk" path="res://scenes/graybox_delete_later/graybox_steep_slope.tscn" id="10_o4xlp"]
 [ext_resource type="PackedScene" uid="uid://d3kk3bxmcawo1" path="res://scenes/world_elements/bounce_pad.tscn" id="11_f8eag"]
+[ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="12_0a58e"]
+[ext_resource type="Resource" uid="uid://buf65lhbnr7vn" path="res://resources/collectables/point_5.tres" id="12_og7nd"]
+[ext_resource type="Resource" uid="uid://ct8yfuwbho6jv" path="res://resources/collectables/spring.tres" id="14_0kca3"]
+[ext_resource type="Resource" uid="uid://dohfrdbpk8hnn" path="res://resources/collectables/speed_boost.tres" id="15_u018e"]
 [ext_resource type="PackedScene" uid="uid://dwket6reb0144" path="res://pickups/respawning_collectable.tscn" id="16_5afa1"]
 [ext_resource type="PackedScene" uid="uid://c7lobu1q5rjk4" path="res://scenes/graybox_delete_later/graybox_large_tall_platform.tscn" id="16_x4ns3"]
 [ext_resource type="PackedScene" uid="uid://c8bugatpauyup" path="res://scenes/graybox_delete_later/graybox_large_platform.tscn" id="17_gpvyf"]
@@ -2280,7 +2283,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 8, -7.2)
 curve = SubResource("Curve3D_oiceo")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="SunStuff/TopRightPath" unique_id=835804]
-transform = Transform3D(0.0694106, 0, -0.9975783, 0, 0.99999994, 0, 0.9975851, 0, 0.06941012, 0.19514894, -0.9998779, 0.08739567)
+transform = Transform3D(0.0694106, 0, -0.99757725, 0, 0.99999994, 0, 0.9975851, 0, 0.06941005, 0.19514894, -0.9998779, 0.08739567)
 cubic_interp = false
 
 [node name="block-grass718" type="MeshInstance3D" parent="SunStuff/TopRightPath" unique_id=769711117]
@@ -3457,6 +3460,9 @@ surface_material_override/0 = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, -1.008008, 8)
 surface_material_override/0 = null
 
+[node name="grass block" parent="Floor" unique_id=1838626697 instance=ExtResource("12_0a58e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, -0.008008003, 8)
+
 [node name="block-grass687" parent="Floor" unique_id=2074399518 instance=ExtResource("4_q5vyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -1.008008, 8)
 surface_material_override/0 = null
@@ -4063,6 +4069,22 @@ surface_material_override/0 = null
 
 [node name="block-grass718" parent="Floor" unique_id=1628918825 instance=ExtResource("4_q5vyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 12)
+surface_material_override/0 = null
+
+[node name="block-grass719" parent="Floor" unique_id=1884736897 instance=ExtResource("4_q5vyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 22)
+surface_material_override/0 = null
+
+[node name="block-grass720" parent="Floor" unique_id=1213890610 instance=ExtResource("4_q5vyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 22)
+surface_material_override/0 = null
+
+[node name="block-grass721" parent="Floor" unique_id=1451407133 instance=ExtResource("4_q5vyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 22)
+surface_material_override/0 = null
+
+[node name="block-grass722" parent="Floor" unique_id=419762882 instance=ExtResource("4_q5vyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 22)
 surface_material_override/0 = null
 
 [node name="block-grass730" parent="Floor" unique_id=175054720 instance=ExtResource("4_q5vyl")]

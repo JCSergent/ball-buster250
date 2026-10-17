@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://fu7g8k7yt3mo"]
+
+[ext_resource type="Texture2D" uid="uid://64vp4ksewp8d" path="res://ART/thangs/pot.png" id="1_jf73b"]
+
+[node name="Sprite3D" type="Sprite3D" unique_id=1059588600]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.70278907, 0)
+billboard = 1
+texture = ExtResource("1_jf73b")

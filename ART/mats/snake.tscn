@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cyoc8h807isow"]
+
+[ext_resource type="Texture2D" uid="uid://beqa2r1v5hc5s" path="res://ART/thangs/snake.png" id="1_mkvlh"]
+
+[node name="Sprite3D" type="Sprite3D" unique_id=1059588600]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.7656268, 0)
+billboard = 1
+texture = ExtResource("1_mkvlh")

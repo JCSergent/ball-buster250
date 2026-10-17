@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dhgc6ft2we01b"]
+
+[ext_resource type="Texture2D" uid="uid://brusbjlgdl6la" path="res://ART/thangs/rock.png" id="1_xfxxa"]
+
+[node name="Sprite3D" type="Sprite3D" unique_id=1059588600]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.71121347, 0)
+billboard = 1
+texture = ExtResource("1_xfxxa")
