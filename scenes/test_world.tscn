@@ -1,15 +1,80 @@
 [gd_scene format=3 uid="uid://dr0bm3jbqey1"]
 
-[ext_resource type="Texture2D" uid="uid://ckbl4avuuqbo4" path="res://art/sprites/map_tiles/grass_3.png" id="1_ynswa"]
+[ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="1_nrstc"]
+[ext_resource type="Texture2D" uid="uid://dwsel3imqliy6" path="res://ART/sprites/map_tiles/grass_6.png" id="2_7448y"]
 [ext_resource type="Script" uid="uid://drthts6qlkxol" path="res://scripts/death_zone.gd" id="2_dvny0"]
+[ext_resource type="Material" uid="uid://dai0lhavoc1v0" path="res://ART/mats/dirt.tres" id="3_ar7ra"]
+[ext_resource type="Material" uid="uid://kkhvq8omlohd" path="res://ART/mats/grass3.tres" id="3_dv75v"]
 [ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud.gd" id="3_xwrkq"]
-[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_nrstc"]
-[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_7448y"]
+[ext_resource type="Material" uid="uid://c7lm75267fxs0" path="res://ART/mats/wood1.tres" id="4_ar7ra"]
+[ext_resource type="Texture2D" uid="uid://bvnuyxyryioya" path="res://ART/sprites/map_tiles/grass_2.png" id="4_ixgyf"]
+[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://ART/sprites/lilRatGirl.png" id="4_nrstc"]
+[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://ART/sprites/PlaceholderMartin.png" id="5_7448y"]
+[ext_resource type="Material" uid="uid://c1nni8yesbrre" path="res://ART/mats/stone.tres" id="5_ixgyf"]
+[ext_resource type="Material" uid="uid://bektusxxcqqqd" path="res://ART/mats/dirt2.tres" id="6_ixgyf"]
+[ext_resource type="Material" uid="uid://bbs4gm0dwn2wj" path="res://ART/mats/grass5.tres" id="7_bn472"]
+[ext_resource type="Material" uid="uid://ccrvqom0tr00c" path="res://ART/mats/sand.tres" id="8_8hcw6"]
+[ext_resource type="Material" uid="uid://bufimfvfrnlvl" path="res://ART/mats/grey.tres" id="8_mjm4b"]
+[ext_resource type="Material" uid="uid://clcd0elomun5c" path="res://ART/mats/grass4.tres" id="8_x05cw"]
+[ext_resource type="Material" uid="uid://mcqdbal30w7a" path="res://ART/mats/grass2.tres" id="9_3xk6l"]
+[ext_resource type="Material" uid="uid://bw10p8qp7bwrg" path="res://ART/mats/grass1.tres" id="9_y60ib"]
+[ext_resource type="Material" uid="uid://b5s8ks28xpwp3" path="res://ART/mats/grass6.tres" id="10_bn472"]
+[ext_resource type="Material" uid="uid://db6fgrahdws8n" path="res://ART/mats/stone2.tres" id="16_lltfd"]
+[ext_resource type="Material" uid="uid://dvrkhc4gie7cl" path="res://ART/mats/grey2.tres" id="16_xp3in"]
+[ext_resource type="PackedScene" uid="uid://b5ifqovaqojeg" path="res://ART/mats/flower_stem.tscn" id="22_abhao"]
+[ext_resource type="PackedScene" uid="uid://pje54qdf2ykn" path="res://ART/mats/tree.tscn" id="23_aoxts"]
+[ext_resource type="PackedScene" uid="uid://fu7g8k7yt3mo" path="res://ART/mats/pot.tscn" id="24_88f7f"]
+[ext_resource type="PackedScene" uid="uid://comsyxwv565oo" path="res://ART/mats/grass.tscn" id="25_r3nqf"]
+[ext_resource type="PackedScene" uid="uid://b4xwhmf07g6n3" path="res://ART/mats/grass2.tscn" id="26_ibygg"]
+[ext_resource type="PackedScene" uid="uid://dhgc6ft2we01b" path="res://ART/mats/rock.tscn" id="27_03cxp"]
+[ext_resource type="PackedScene" uid="uid://c8ch5lotfm224" path="res://ART/mats/scribble.tscn" id="28_jo34v"]
+[ext_resource type="PackedScene" uid="uid://dwlbgm2jmx3o1" path="res://ART/mats/rock2.tscn" id="29_v08nl"]
+[ext_resource type="PackedScene" uid="uid://dj44a2ivdlnne" path="res://ART/mats/flowa.tscn" id="30_ibygg"]
+[ext_resource type="PackedScene" uid="uid://c0kuvku00tq0a" path="res://ART/mats/pickle.tscn" id="31_03cxp"]
+[ext_resource type="PackedScene" uid="uid://c05ty43va5bdr" path="res://ART/mats/sign.tscn" id="32_jo34v"]
+[ext_resource type="PackedScene" uid="uid://cyoc8h807isow" path="res://ART/mats/snake.tscn" id="33_v08nl"]
+[ext_resource type="PackedScene" uid="uid://b5og8br2fhf4" path="res://ART/mats/rug.tscn" id="34_03cxp"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_gipfl"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gknne"]
+albedo_texture = ExtResource("2_7448y")
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(3, 0, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8il"]
-albedo_texture = ExtResource("1_ynswa")
+[sub_resource type="BoxMesh" id="BoxMesh_8hcw6"]
+material = SubResource("StandardMaterial3D_gknne")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mjm4b"]
+material = SubResource("StandardMaterial3D_gknne")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dv75v"]
+load_path = "res://.godot/imported/grass_1.png-a8ea31a31158ba1325c32fe1b0a9d833.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x05cw"]
+albedo_texture = SubResource("CompressedTexture2D_dv75v")
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(3, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bn472"]
+material = SubResource("StandardMaterial3D_x05cw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xk6l"]
+albedo_texture = ExtResource("4_ixgyf")
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(3, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ko4od"]
+material = SubResource("StandardMaterial3D_3xk6l")
+
+[sub_resource type="BoxMesh" id="BoxMesh_y60ib"]
+material = ExtResource("3_ar7ra")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xp3in"]
+material = ExtResource("3_ar7ra")
+
+[sub_resource type="BoxMesh" id="BoxMesh_lltfd"]
+material = SubResource("StandardMaterial3D_gknne")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kfauq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ar7ra"]
 sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
@@ -40,79 +105,434 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1543927756]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1402226410]
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block" parent="." unique_id=1838626697 instance=ExtResource("1_nrstc")]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=977684105]
+[node name="grass block2" parent="." unique_id=1808611601 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block3" parent="." unique_id=1978957377 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, 0)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block4" parent="." unique_id=342259166 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, 1)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_mjm4b")
+
+[node name="grass block5" parent="." unique_id=1820606889 instance=ExtResource("1_nrstc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+material_override = ExtResource("3_ar7ra")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=850932814]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block6" parent="." unique_id=815880749 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+material_override = ExtResource("4_ar7ra")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1330880117]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block7" parent="." unique_id=275514545 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, 2)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_bn472")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1412069067]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block97" parent="." unique_id=288301151 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, -1)
+mesh = SubResource("BoxMesh_bn472")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1768057686]
+[node name="grass block8" parent="." unique_id=550874917 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, 3)
+material_override = ExtResource("5_ixgyf")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block9" parent="." unique_id=1789179899 instance=ExtResource("1_nrstc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+material_override = ExtResource("7_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=977340576]
+[node name="grass block10" parent="." unique_id=164599103 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+material_override = ExtResource("9_y60ib")
+mesh = SubResource("BoxMesh_ko4od")
+
+[node name="grass block11" parent="." unique_id=515961898 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9980674, 0, 0)
+material_override = ExtResource("10_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block12" parent="." unique_id=1890805289 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9980674, 0, 1)
+material_override = ExtResource("9_3xk6l")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block13" parent="." unique_id=222689860 instance=ExtResource("1_nrstc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+mesh = SubResource("BoxMesh_y60ib")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=2055759348]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block14" parent="." unique_id=1671579640 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=962500793]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block98" parent="." unique_id=164899784 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=1119566293]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block15" parent="." unique_id=1391637937 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9980674, 0, 2)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=122639861]
+[node name="grass block16" parent="." unique_id=1234204173 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9980674, 0, 3)
+material_override = ExtResource("10_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block17" parent="." unique_id=217943870 instance=ExtResource("1_nrstc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+material_override = ExtResource("7_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=1106044660]
+[node name="grass block18" parent="." unique_id=838212474 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block19" parent="." unique_id=753310937 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 0)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block20" parent="." unique_id=73869658 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 1)
+material_override = ExtResource("9_y60ib")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block21" parent="." unique_id=671214098 instance=ExtResource("1_nrstc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+material_override = ExtResource("9_y60ib")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="." unique_id=264439958]
+[node name="grass block22" parent="." unique_id=1014808681 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block23" parent="." unique_id=1421207919 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 2)
+material_override = ExtResource("9_3xk6l")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block24" parent="." unique_id=157732769 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 3)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block25" parent="." unique_id=1839773884 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block26" parent="." unique_id=1559960673 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+material_override = ExtResource("6_ixgyf")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block27" parent="." unique_id=1314980613 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9980674, 0, 0)
+material_override = ExtResource("10_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block28" parent="." unique_id=1620734117 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9980674, 0, 1)
+material_override = ExtResource("8_8hcw6")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block29" parent="." unique_id=885554776 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+material_override = ExtResource("9_y60ib")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block30" parent="." unique_id=1497833349 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+material_override = ExtResource("8_mjm4b")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block31" parent="." unique_id=1009421729 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9980674, 0, 2)
+material_override = ExtResource("3_ar7ra")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block35" parent="." unique_id=1580142420 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9980674, 0, 0)
+material_override = ExtResource("3_ar7ra")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block36" parent="." unique_id=1763851819 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9980674, 0, 1)
+material_override = ExtResource("5_ixgyf")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block38" parent="." unique_id=1431103558 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block39" parent="." unique_id=1724356613 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9980674, 0, 2)
+material_override = ExtResource("8_mjm4b")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block40" parent="." unique_id=1658696846 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9980674, 0, 3)
+material_override = ExtResource("16_lltfd")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block41" parent="." unique_id=338972438 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+material_override = ExtResource("5_ixgyf")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block42" parent="." unique_id=1999573093 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+material_override = ExtResource("8_mjm4b")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block43" parent="." unique_id=757668012 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.998068, 0, 0)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block44" parent="." unique_id=2110783769 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.998068, 0, 1)
+material_override = ExtResource("8_8hcw6")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block45" parent="." unique_id=382201691 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
+material_override = ExtResource("16_xp3in")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block46" parent="." unique_id=664430000 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+material_override = ExtResource("9_3xk6l")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block47" parent="." unique_id=1758617940 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.998068, 0, 2)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block48" parent="." unique_id=882561819 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.998068, 0, 3)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block49" parent="." unique_id=1501359253 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+material_override = ExtResource("6_ixgyf")
+mesh = SubResource("BoxMesh_xp3in")
+
+[node name="grass block50" parent="." unique_id=756591476 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block51" parent="." unique_id=537092728 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, 4)
+material_override = ExtResource("8_mjm4b")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block52" parent="." unique_id=1472458447 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, 5)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block53" parent="." unique_id=1477956073 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block54" parent="." unique_id=1367218601 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block55" parent="." unique_id=1477920007 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, 6)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block56" parent="." unique_id=6909406 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9980674, 0, 7)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block57" parent="." unique_id=363911095 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_lltfd")
+
+[node name="grass block58" parent="." unique_id=1111177246 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block59" parent="." unique_id=1207942522 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9980674, 0, 4)
+material_override = ExtResource("7_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block60" parent="." unique_id=1223728700 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9980674, 0, 5)
+material_override = ExtResource("10_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block61" parent="." unique_id=64211559 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+material_override = ExtResource("10_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block62" parent="." unique_id=482386000 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block63" parent="." unique_id=1650552360 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9980674, 0, 6)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block64" parent="." unique_id=1022559028 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9980674, 0, 7)
+material_override = ExtResource("9_y60ib")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block65" parent="." unique_id=87980085 instance=ExtResource("1_nrstc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="." unique_id=11936941]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block66" parent="." unique_id=1427021894 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+material_override = ExtResource("10_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="." unique_id=746194581]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
-mesh = SubResource("PlaneMesh_gipfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pa8il")
+[node name="grass block67" parent="." unique_id=2044760258 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 4)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block68" parent="." unique_id=383050020 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 5)
+material_override = ExtResource("5_ixgyf")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block69" parent="." unique_id=421718906 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+material_override = ExtResource("4_ar7ra")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block70" parent="." unique_id=1863335479 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+material_override = ExtResource("9_3xk6l")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block71" parent="." unique_id=1455008286 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 6)
+material_override = ExtResource("4_ar7ra")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block72" parent="." unique_id=2138669747 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 7)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block73" parent="." unique_id=597375550 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+material_override = ExtResource("4_ar7ra")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block74" parent="." unique_id=1585246978 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block75" parent="." unique_id=1672120338 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9980674, 0, 4)
+material_override = ExtResource("8_mjm4b")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block77" parent="." unique_id=1331728299 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block78" parent="." unique_id=1688334519 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 7)
+material_override = ExtResource("7_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block79" parent="." unique_id=712944486 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9980674, 0, 6)
+material_override = ExtResource("10_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block80" parent="." unique_id=2054904606 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9980674, 0, 7)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block82" parent="." unique_id=1972341970 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+material_override = ExtResource("7_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block83" parent="." unique_id=2018608171 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9980674, 0, 4)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block84" parent="." unique_id=500792348 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9980674, 0, 5)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block85" parent="." unique_id=2010088992 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+mesh = SubResource("PlaneMesh_kfauq")
+
+[node name="grass block86" parent="." unique_id=50301056 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block87" parent="." unique_id=953201234 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9980674, 0, 6)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block88" parent="." unique_id=190238724 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9980674, 0, 7)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block89" parent="." unique_id=1144951593 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4)
+material_override = ExtResource("16_xp3in")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block90" parent="." unique_id=1038003248 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block91" parent="." unique_id=1780963491 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.998068, 0, 4)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block92" parent="." unique_id=1537348631 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.998068, 0, 5)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block93" parent="." unique_id=1483102216 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block94" parent="." unique_id=789810895 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block95" parent="." unique_id=1895763872 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.998068, 0, 6)
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block96" parent="." unique_id=784129214 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.998068, 0, 7)
+mesh = SubResource("BoxMesh_8hcw6")
 
 [node name="ReusableElements" type="Node3D" parent="." unique_id=1253713553]
 
@@ -280,3 +700,78 @@ text = "   /
 	            250"
 label_settings = SubResource("LabelSettings_mjm4b")
 horizontal_alignment = 1
+
+[node name="Sprite3D2" parent="." unique_id=1059588600 instance=ExtResource("22_abhao")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 0.77846146, 5)
+
+[node name="Sprite3D3" parent="." unique_id=712671714 instance=ExtResource("22_abhao")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3, 0.77846146, 1)
+
+[node name="Sprite3D4" parent="." unique_id=1773534315 instance=ExtResource("22_abhao")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.4155998, 0.77846146, 0.69900036)
+
+[node name="Sprite3D5" parent="." unique_id=379155382 instance=ExtResource("23_aoxts")]
+transform = Transform3D(0.5, 0, 0, 0, 0.48296297, 0.12940954, 0, -0.12940954, 0.48296297, -2.6952133, 2.9519053, 6)
+
+[node name="Sprite3D6" parent="." unique_id=884728308 instance=ExtResource("23_aoxts")]
+transform = Transform3D(0.5, 0, 0, 0, 0.48296297, 0.12940954, 0, -0.12940954, 0.48296297, -2.0554729, 2.9519053, 5)
+
+[node name="Sprite3D7" parent="." unique_id=2121409797 instance=ExtResource("24_88f7f")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.5272548, 0.70278907, 5.435501)
+
+[node name="Sprite3D8" parent="." unique_id=690821755 instance=ExtResource("25_r3nqf")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.5758958, 0.70278907, 4)
+
+[node name="Sprite3D9" parent="." unique_id=1522589143 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3, 0.70278907, 2)
+
+[node name="Sprite3D10" parent="." unique_id=241331167 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.5572581, 0.70278907, 2.3145938)
+
+[node name="Sprite3D11" parent="." unique_id=776438014 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, 0.8344765, 4)
+
+[node name="Sprite3D12" parent="." unique_id=1480841653 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.6695385, 0.8344765, 4.3006806)
+
+[node name="Sprite3D" parent="." unique_id=1779764922 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5, 0.8344765, 6.37049)
+
+[node name="Sprite3D13" parent="." unique_id=1081642866 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.5959482, 0.8997283, 6.4756384)
+
+[node name="Sprite3D14" parent="." unique_id=84511837 instance=ExtResource("27_03cxp")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 5.581069, 0.71121347, 5)
+
+[node name="Sprite3D16" parent="." unique_id=1724725050 instance=ExtResource("28_jo34v")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6.9192333, 0.90901315, 2.97019)
+
+[node name="Sprite3D15" parent="." unique_id=1604339276 instance=ExtResource("29_v08nl")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 5.7396603, 0.71121347, 5.1758432)
+
+[node name="Sprite3D17" parent="." unique_id=1634149745 instance=ExtResource("29_v08nl")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.3366356, 0.8117589, 3.2229152)
+
+[node name="Sprite3D18" parent="." unique_id=408141592 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.15975, 0.8344765, 2.778706)
+
+[node name="Sprite3D19" parent="." unique_id=491244349 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.4634585, 0.8344765, 3.2386842)
+
+[node name="Sprite3D20" parent="." unique_id=1352456675 instance=ExtResource("30_ibygg")]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 4.67402, 0.51755273, 4.539314)
+
+[node name="Sprite3D21" parent="." unique_id=2092950279 instance=ExtResource("30_ibygg")]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 5.589305, 0.51755273, 5.4422507)
+
+[node name="Sprite3D22" parent="." unique_id=1291565126 instance=ExtResource("31_03cxp")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 5.632614, 0.77846146, 3.4459648)
+
+[node name="Sprite3D23" parent="." unique_id=608085363 instance=ExtResource("32_jo34v")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8.712809, 0.8742372, 2.759107)
+
+[node name="Sprite3D24" parent="." unique_id=1758355746 instance=ExtResource("33_v08nl")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 7.410778, 0.7656268, 4.6200953)
+
+[node name="Sprite3D25" parent="." unique_id=1333628262 instance=ExtResource("34_03cxp")]
+transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, 0.3, 0, -0.3, -1.3113417e-08, 2.8161683, 0.51755273, 3.1197796)

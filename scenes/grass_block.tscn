@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ceemhopf08mcp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8hcw6"]
+
+[node name="grass block" type="MeshInstance3D" unique_id=1838626697]
+mesh = SubResource("BoxMesh_8hcw6")

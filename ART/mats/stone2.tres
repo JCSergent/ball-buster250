@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://db6fgrahdws8n"]
+
+[ext_resource type="Texture2D" uid="uid://cdowu6w71opor" path="res://ART/sprites/map_tiles/stone_1.png" id="1_cv3ny"]
+
+[resource]
+albedo_color = Color(0.67160004, 0.67549336, 0.73, 1)
+albedo_texture = ExtResource("1_cv3ny")
+uv1_scale = Vector3(3, 2, 3)
+uv1_offset = Vector3(3, 5, 0)

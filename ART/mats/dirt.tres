@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dai0lhavoc1v0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hhir3"]
+load_path = "res://.godot/imported/dirt_1.png-34e72bb2bbe323b37b63337887eae921.s3tc.ctex"
+
+[resource]
+albedo_texture = SubResource("CompressedTexture2D_hhir3")
+uv1_scale = Vector3(3, 2, 3)
+uv1_offset = Vector3(3, 0, 0)

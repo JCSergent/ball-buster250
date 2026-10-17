@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsvhmvh4t8gk6"]
+
+[ext_resource type="Texture2D" uid="uid://cmypwj2o0y8b3" path="res://ART/mats/cartoon_grass.png" id="1_uai0a"]
+
+[resource]
+albedo_color = Color(0.73, 0.67160004, 0.68912, 1)
+albedo_texture = ExtResource("1_uai0a")
+uv1_scale = Vector3(3, 2, 2)
+uv1_offset = Vector3(1, 1, 1)
