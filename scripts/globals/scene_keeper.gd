@@ -7,7 +7,7 @@ signal done_loading
 
 @onready var loading_screen: CanvasLayer = $LoadingScreen
 
-enum Scene { PlayerSelectScene, GameScene }
+enum Scene { PlayerSelectScene, GameScene, MainMenuScene, VictoryScene }
 
 func load_scene(scene: Scene) -> void:
     if loadable_scenes.has(scene):
