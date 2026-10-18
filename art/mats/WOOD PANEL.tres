@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dbkwneqpm11vy"]
+
+[ext_resource type="Texture2D" uid="uid://cri6qmc6m0ekp" path="res://art/thangs/brick.png" id="1_imj2w"]
+[ext_resource type="Texture2D" uid="uid://b5uxyq413v5xk" path="res://art/thangs/hardwood_normal.jpg" id="2_yxexs"]
+
+[resource]
+albedo_color = Color(0.76, 0.646, 0.532, 1)
+albedo_texture = ExtResource("1_imj2w")
+normal_enabled = true
+normal_scale = -8.5
+normal_texture = ExtResource("2_yxexs")
+uv1_scale = Vector3(3, 2, 3)
+uv1_offset = Vector3(3, 0, 0)

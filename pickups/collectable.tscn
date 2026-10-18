@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dk0harjn3we0n" path="res://scripts/collectable_node.gd" id="1_te2od"]
 [ext_resource type="Resource" uid="uid://bjtet7qer1tyt" path="res://resources/collectables/point_1.tres" id="2_v7q7g"]
+[ext_resource type="Script" uid="uid://dxs38can6f3bc" path="res://scripts/collectable_rigid_body.gd" id="3_v7q7g"]
 [ext_resource type="Texture2D" uid="uid://8ira3hx73na8" path="res://art/sprites/star.png" id="3_xuypn"]
 [ext_resource type="Script" uid="uid://cl8ayp00lh6ty" path="res://scripts/platformer_shadow_spring_arm.gd" id="4_xuypn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2lak"]
-radius = 0.32910156
-height = 0.6582031
+radius = 0.42333984
+height = 0.8466797
 
 [sub_resource type="Gradient" id="Gradient_8nth8"]
 offsets = PackedFloat32Array(0.3724227, 0.6198454)
@@ -90,10 +91,11 @@ script = ExtResource("1_te2od")
 collectable = ExtResource("2_v7q7g")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1565925072]
-collision_layer = 0
+collision_layer = 4
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+script = ExtResource("3_v7q7g")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D" unique_id=607547958]
 shape = SubResource("CapsuleShape3D_e2lak")
@@ -124,7 +126,7 @@ shape = SubResource("CapsuleShape3D_xuypn")
 
 [node name="FloorCast" type="RayCast3D" parent="RigidBody3D" unique_id=928073777]
 unique_name_in_owner = true
-target_position = Vector3(0, -0.4, 0)
+target_position = Vector3(0, -0.55, 0)
 debug_shape_thickness = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1370209357]

@@ -5,5 +5,6 @@
 [resource]
 albedo_color = Color(0.47569996, 0.65533006, 0.71, 1)
 albedo_texture = ExtResource("1_hikom")
+normal_enabled = true
 uv1_scale = Vector3(3, 3, 3)
 uv1_offset = Vector3(3, 5, 0)

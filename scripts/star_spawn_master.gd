@@ -3,6 +3,7 @@ extends Node3D
 
 @export var min_spawn_time: float = 2.
 @export var max_spawn_time: float = 3.
+@export var max_stars: int = 100
 
 @export var big_boi_rate: int = 10
 
@@ -23,6 +24,25 @@ func _ready() -> void:
     respawn_timer.start(randf_range(min_spawn_time, max_spawn_time))
 
 func spawn_new_star() -> void:
+
+    var star_count: int = 0
+    for child in bottom_left.get_children():
+        if child is StarSpawner and not child.can_spawn():
+            star_count += 1
+    for child in bottom_right.get_children():
+        if child is StarSpawner and not child.can_spawn():
+            star_count += 1
+    for child in top_left.get_children():
+        if child is StarSpawner and not child.can_spawn():
+            star_count += 1
+    for child in top_right.get_children():
+        if child is StarSpawner and not child.can_spawn():
+            star_count += 1
+
+    if star_count > max_stars:
+        respawn_timer.start(randf_range(min_spawn_time, max_spawn_time))
+        return
+        
 
     # Soft quadrants by where the ones with the least amount of players
     var quadrants: Dictionary[Node3D, int] = {}

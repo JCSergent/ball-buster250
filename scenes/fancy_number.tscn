@@ -17,7 +17,6 @@ script = ExtResource("1_rufar")
 number_sprites = [NodePath("0"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4"), NodePath("5"), NodePath("6"), NodePath("7"), NodePath("8"), NodePath("9")]
 
 [node name="0" type="Sprite2D" parent="." unique_id=1839080473]
-visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_6jb6s")
 

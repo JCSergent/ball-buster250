@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cwxptneysqnnc"]
+
+[ext_resource type="Texture2D" path="res://art/sprites/map_tiles/cool_stone_1.png" id="1_2gv0e"]
+[ext_resource type="Texture2D" uid="uid://dmuyd7cxxdkfi" path="res://art/thangs/TILE NORM.jpg" id="2_pxqqu"]
+
+[resource]
+albedo_color = Color(0.9, 0.82979995, 0.738, 1)
+albedo_texture = ExtResource("1_2gv0e")
+normal_enabled = true
+normal_texture = ExtResource("2_pxqqu")
+uv1_scale = Vector3(3, 2, 3)
+uv1_offset = Vector3(3, 5, 0)

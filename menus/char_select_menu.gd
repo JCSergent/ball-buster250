@@ -32,9 +32,9 @@ extends PanelContainer
 @onready var sprite_array : Array = [rat_sprite, frog_sprite, cat_sprite, bunny_sprite]
 
 var player_1_sprite_id: int = 0
-var player_2_sprite_id: int = 0
-var player_3_sprite_id: int = 0
-var player_4_sprite_id: int = 0
+var player_2_sprite_id: int = 1
+var player_3_sprite_id: int = 2
+var player_4_sprite_id: int = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,6 +62,51 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+# P1 ===================================================================     
+    if Input.is_action_just_pressed("shoot_p1") || Input.is_action_just_pressed("charge_p1"):
+        toggle_player_ready("P1")
+
+    
+    elif Input.is_action_just_pressed("forward_p1"):
+        if !rdy_p1:
+            if player_1_sprite_id == 3:
+                player_1_sprite_id = 0
+            else:
+                player_1_sprite_id += 1 
+        
+        
+        sprite_p1.sprite_frames = sprite_array[player_1_sprite_id]       
+    
+    elif Input.is_action_just_pressed("back_p1"):
+        if !rdy_p1:
+            if player_1_sprite_id == 0:
+                player_1_sprite_id = 3
+            else:
+                player_1_sprite_id -= 1 
+    
+        sprite_p1.sprite_frames = sprite_array[player_1_sprite_id] 
+
+# P2 ===================================================================     
+    elif Input.is_action_just_pressed("shoot_p2") || Input.is_action_just_pressed("charge_p2"):
+        toggle_player_ready("P2")
+        
+    elif Input.is_action_just_pressed("forward_p2"):
+        if !rdy_p2:
+            if player_2_sprite_id == 3:
+                player_2_sprite_id = 0
+            else:
+                player_2_sprite_id += 1 
+    
+        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id]       
+    
+    elif Input.is_action_just_pressed("back_p2"):
+        if !rdy_p2:
+            if player_2_sprite_id == 0:
+                player_2_sprite_id = 3
+            else:
+                player_2_sprite_id -= 1 
+    
+        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id] 
         
 #sprite playing ================ 
     if rdy_p1:
@@ -78,56 +123,6 @@ func _process(delta: float) -> void:
         #sprite_p3.speed_scale = 1.0
     #elif !rdy_p3:
         #sprite_p3.speed_scale = 0.0
-
-func _input(event: InputEvent) -> void:
-# all =================================================================
-    if event.is_action_pressed("item_p1") || event.is_action_pressed("item_p2") :
-        SceneKeeper.load_scene(SceneKeeper.Scene.MainMenuScene)
-  
-# P1 ================================================================     
-    elif event.is_action_pressed("jump_p1"):
-        toggle_player_ready("P1")
-    
-    elif event.is_action_pressed("forward_p1"):
-        if !rdy_p1:
-            if player_1_sprite_id == 3:
-                player_1_sprite_id = 0
-            else:
-                player_1_sprite_id += 1 
-        
-        
-            sprite_p1.sprite_frames = sprite_array[player_1_sprite_id]       
-    
-    elif event.is_action_pressed("back_p1"):
-        if !rdy_p1:
-            if player_1_sprite_id == 0:
-                player_1_sprite_id = 3
-            else:
-                player_1_sprite_id -= 1 
-    
-        sprite_p1.sprite_frames = sprite_array[player_1_sprite_id] 
-
-# P2 ===================================================================     
-    elif event.is_action_pressed("jump_p2"):
-        toggle_player_ready("P2")
-        
-    elif event.is_action_pressed("forward_p2"):
-        if !rdy_p2:
-            if player_2_sprite_id == 3:
-                player_2_sprite_id = 0
-            else:
-                player_2_sprite_id += 1 
-    
-        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id]       
-    
-    elif event.is_action_pressed("back_p2"):
-        if !rdy_p2:
-            if player_2_sprite_id == 0:
-                player_2_sprite_id = 3
-            else:
-                player_2_sprite_id -= 1 
-    
-        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id] 
 
 func toggle_player_ready(player : String):
     match player:
