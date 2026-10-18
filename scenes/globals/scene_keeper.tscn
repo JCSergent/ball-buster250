@@ -24,7 +24,6 @@ loadable_scenes = Dictionary[int, PackedScene]({
 
 [node name="LoadingScreen" type="CanvasLayer" parent="." unique_id=1869791386]
 process_mode = 4
-layer = 0
 visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="LoadingScreen" unique_id=1196866946]
