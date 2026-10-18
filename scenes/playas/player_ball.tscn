@@ -265,7 +265,7 @@ alpha_cut = 1
 texture_filter = 0
 sprite_frames = ExtResource("5_52f4h")
 animation = &"run"
-frame_progress = 0.89069015
+frame_progress = 0.35537466
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="RigidBody3D" unique_id=1609265345]
 remote_path = NodePath("../../NonRotatingNodes")

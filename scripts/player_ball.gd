@@ -78,6 +78,8 @@ func _physics_process(delta: float) -> void:
     var is_on_floor := floor_cast.is_colliding()
 
     update_sun_state()
+    
+    update_sprite_speed_scale()
 
     # After falling off the map, lose half your stars
     if is_fell_off_map and is_on_floor:
@@ -280,6 +282,9 @@ func flip_sprite(dir : String):
             sprite_3d.flip_h = true
         "right":
             sprite_3d.flip_h = false
+            
+func update_sprite_speed_scale():
+    sprite_3d.speed_scale = rigid_body_3d.linear_velocity.length() * 0.3
 
 func update_sun_state() -> void:
     var is_under_sun := sun_cast.is_colliding()
