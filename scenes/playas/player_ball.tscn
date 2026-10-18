@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/player_ball.gd" id="1_bsyiq"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://scenes/platformer_shadow_spring_arm.tscn" id="2_4sqf5"]
+[ext_resource type="Texture2D" uid="uid://btsyc6dr0yn32" path="res://art/ui/red_starbanner.png" id="2_af7he"]
 [ext_resource type="Script" uid="uid://d2fmo76m4fgfg" path="res://scripts/player_rigid_body.gd" id="2_g3k4b"]
-[ext_resource type="Texture2D" uid="uid://b5663j3johnwt" path="res://art/ui/blue_starbanner.png" id="2_s0vvj"]
-[ext_resource type="Texture2D" uid="uid://cfvjdquo18x76" path="res://art/ui/yellow_starbanner.png" id="3_i7gku"]
-[ext_resource type="Texture2D" uid="uid://cp6bajeh48ukm" path="res://art/ui/green_starbanner.png" id="4_af7he"]
+[ext_resource type="Texture2D" uid="uid://cjav1fcfafooy" path="res://art/ui/blue_starbanner.png" id="3_gea3y"]
+[ext_resource type="Texture2D" uid="uid://b0byiep2q7rp8" path="res://art/ui/green_starbanner.png" id="4_hcxxk"]
 [ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://art/mats/BOTTOM.tres" id="4_oel5b"]
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="5_52f4h"]
-[ext_resource type="Texture2D" uid="uid://c3yyklua08n7f" path="res://art/ui/red_starbanner.png" id="6_k48vh"]
+[ext_resource type="Texture2D" uid="uid://bqbdvt3s60cio" path="res://art/ui/yellow_starbanner.png" id="5_dtqmr"]
 [ext_resource type="PackedScene" uid="uid://dqlolhtbxgbqm" path="res://scenes/fancy_count.tscn" id="7_w1s8w"]
 [ext_resource type="Shader" uid="uid://rhy4c6xwomdh" path="res://shaders/smoke_outline.gdshader" id="8_52f4h"]
 [ext_resource type="Shader" uid="uid://cuqv17vikbreu" path="res://shaders/smoke.gdshader" id="8_oel5b"]
@@ -200,13 +200,16 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_pa8il")
 size = Vector2(2, 1)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vihqf"]
+load_path = "res://.godot/imported/red_starbanner.png-1df45e2748c2450fa7f2962304ac15bd.ctex"
+
 [node name="PlayerBall" type="Node3D" unique_id=149867139]
 script = ExtResource("1_bsyiq")
 hud_dictionary = Dictionary[int, Texture2D]({
-1: ExtResource("2_s0vvj"),
-2: ExtResource("3_i7gku"),
-3: ExtResource("4_af7he"),
-4: ExtResource("6_k48vh")
+1: ExtResource("2_af7he"),
+2: ExtResource("3_gea3y"),
+3: ExtResource("4_hcxxk"),
+4: ExtResource("5_dtqmr")
 })
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=324011426]
@@ -328,7 +331,7 @@ scale = Vector2(1.2, 1.2)
 [node name="HUDBanner" type="Sprite2D" parent="NonScaling/UIMesh/SubViewport/Node2D" unique_id=634885382]
 unique_name_in_owner = true
 position = Vector2(84, 29)
-texture = ExtResource("6_k48vh")
+texture = SubResource("CompressedTexture2D_vihqf")
 
 [node name="StarCount" parent="NonScaling/UIMesh/SubViewport/Node2D" unique_id=1445329250 instance=ExtResource("7_w1s8w")]
 unique_name_in_owner = true
