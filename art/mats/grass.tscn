@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://comsyxwv565oo"]
 
-[ext_resource type="Texture2D" uid="uid://byrtbfnywxahn" path="res://art/thangs/grass.png" id="1_t2pvd"]
+[ext_resource type="Texture2D" uid="uid://byrtbfnywxahn" path="res://ART/thangs/grass.png" id="1_t2pvd"]
 
 [node name="Sprite3D" type="Sprite3D" unique_id=1059588600]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.70278907, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.1571882, 0)
 billboard = 1
 texture = ExtResource("1_t2pvd")

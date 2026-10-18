@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dx4m8rpydnncg"
-path.s3tc="res://.godot/imported/lilRatGirl.png-b436570536d2bb2fd16c25a5da4cbe0e.s3tc.ctex"
+path.s3tc="res://.godot/imported/lilRatGirl.png-6b1c8e45ef650266b7c623590126a470.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/sprites/lilRatGirl.png"
-dest_files=["res://.godot/imported/lilRatGirl.png-b436570536d2bb2fd16c25a5da4cbe0e.s3tc.ctex"]
+source_file="res://ART/sprites/lilRatGirl.png"
+dest_files=["res://.godot/imported/lilRatGirl.png-6b1c8e45ef650266b7c623590126a470.s3tc.ctex"]
 
 [params]
 

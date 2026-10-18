@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buwehadwfcvid"
-path="res://.godot/imported/BlobShadow1.png-db2cb24a1c6282d59c8805573571a7d8.ctex"
+path="res://.godot/imported/BlobShadow1.png-ddc8839ce8233d17aba7a63f2e768087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/BlobShadow1.png"
-dest_files=["res://.godot/imported/BlobShadow1.png-db2cb24a1c6282d59c8805573571a7d8.ctex"]
+source_file="res://ART/sprites/BlobShadow1.png"
+dest_files=["res://.godot/imported/BlobShadow1.png-ddc8839ce8233d17aba7a63f2e768087.ctex"]
 
 [params]
 
