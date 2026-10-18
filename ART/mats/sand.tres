@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://ccrvqom0tr00c"]
 
-[ext_resource type="Texture2D" uid="uid://dwlp3ldo34t5q" path="res://ART/sprites/map_tiles/sand_2.png" id="1_12yko"]
+[ext_resource type="Texture2D" uid="uid://dwlp3ldo34t5q" path="res://art/sprites/map_tiles/sand_2.png" id="1_12yko"]
 
 [resource]
 albedo_color = Color(0.89, 0.696425, 0.48950002, 1)
