@@ -2,21 +2,21 @@
 
 [ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_jkv6f"]
 [ext_resource type="Script" uid="uid://crx8qu4rxmxwl" path="res://menus/char_select_menu.gd" id="2_3rtee"]
-[ext_resource type="Texture2D" uid="uid://cux0rij71771s" path="res://menus/menu items/instructions.png" id="2_f2qo7"]
+[ext_resource type="Texture2D" uid="uid://c307834sxpqoe" path="res://menus/menu items/instructions.png" id="2_f2qo7"]
 [ext_resource type="Texture2D" uid="uid://l086vhqkqpdl" path="res://menus/menu items/frog_namebar.png" id="3_e5o7i"]
-[ext_resource type="Texture2D" uid="uid://bc3266ljxq0hs" path="res://menus/menu items/frog_playercard.png" id="3_emvu2"]
+[ext_resource type="Texture2D" uid="uid://sttr45qnfqt6" path="res://menus/menu items/frog_playercard.png" id="3_emvu2"]
 [ext_resource type="Texture2D" uid="uid://cst3l7irv3d8p" path="res://menus/menu items/bunny_namebar_RED.png" id="4_3rtee"]
 [ext_resource type="Texture2D" uid="uid://rtl0divp0dhb" path="res://menus/menu items/mouse_playercard_RED.png" id="5_30gvx"]
 [ext_resource type="Texture2D" uid="uid://cj8s0dfqse7cv" path="res://menus/menu items/notready_indicator.png" id="5_41ep7"]
-[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="6_30gvx"]
+[ext_resource type="Texture2D" uid="uid://dj81lnt1113t8" path="res://art/sprites/rat1.png" id="6_3rtee"]
 [ext_resource type="Texture2D" uid="uid://m1apilypje5v" path="res://menus/menu items/ready_indicator.png" id="6_d5snc"]
-[ext_resource type="Texture2D" uid="uid://ojy2f6vsl4f7" path="res://art/sprites/lilRatGirl_2.png" id="11_r8134"]
+[ext_resource type="Texture2D" uid="uid://8f4e8ml2bxrf" path="res://art/sprites/fro1.png" id="11_30gvx"]
 [ext_resource type="Texture2D" uid="uid://bfng6ouo7wmr8" path="res://menus/menu items/cat_namebar.png" id="11_wailv"]
-[ext_resource type="Texture2D" uid="uid://cvqfq2tcamm4p" path="res://menus/menu items/cat_playercard.png" id="12_r8134"]
-[ext_resource type="Texture2D" uid="uid://dcymvl3dr4otq" path="res://art/sprites/lilRatGirl_3.png" id="14_3xxhd"]
+[ext_resource type="Texture2D" uid="uid://08q01a3unugd" path="res://menus/menu items/cat_playercard.png" id="12_r8134"]
+[ext_resource type="Texture2D" uid="uid://c5fk1ik18ayc2" path="res://art/sprites/cat1.png" id="14_wailv"]
 [ext_resource type="Texture2D" uid="uid://flvaqvgpuw55" path="res://menus/menu items/cat_namebar_YELLOW.png" id="15_wailv"]
 [ext_resource type="Texture2D" uid="uid://chjn2v0kh2eck" path="res://menus/menu items/mouse_playercard_YELLOW.png" id="16_r8134"]
-[ext_resource type="Texture2D" uid="uid://bqok0b245ey8" path="res://art/sprites/lilRatGirl_4.png" id="17_iax8c"]
+[ext_resource type="Texture2D" uid="uid://dmemmliu6ab3m" path="res://art/sprites/bun1.png" id="17_r8134"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
 font_size = 92
@@ -67,8 +67,7 @@ texture = ExtResource("5_30gvx")
 
 [node name="selectSprite" type="Sprite2D" parent="PLAYERS/P1" unique_id=1878855475]
 position = Vector2(225, 215)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("6_30gvx")
+texture = ExtResource("6_3rtee")
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P1" unique_id=1105686691]
 position = Vector2(354, 420)
@@ -110,8 +109,7 @@ texture = ExtResource("12_r8134")
 
 [node name="selectSprite" type="Sprite2D" parent="PLAYERS/P2" unique_id=1112336881]
 position = Vector2(225, 215)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("11_r8134")
+texture = ExtResource("11_30gvx")
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P2" unique_id=679648270]
 position = Vector2(358, 430)
@@ -153,8 +151,7 @@ texture = ExtResource("3_emvu2")
 
 [node name="selectSprite" type="Sprite2D" parent="PLAYERS/P3" unique_id=983454339]
 position = Vector2(225, 215)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("14_3xxhd")
+texture = ExtResource("14_wailv")
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P3" unique_id=1081101562]
 position = Vector2(354, 425)
@@ -196,8 +193,7 @@ texture = ExtResource("16_r8134")
 
 [node name="selectSprite" type="Sprite2D" parent="PLAYERS/P4" unique_id=1705377532]
 position = Vector2(225, 215)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("17_iax8c")
+texture = ExtResource("17_r8134")
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P4" unique_id=263797319]
 position = Vector2(357, 422)

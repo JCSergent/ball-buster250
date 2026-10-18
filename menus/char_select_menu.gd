@@ -18,10 +18,10 @@ extends PanelContainer
 
 @onready var rdy_all : bool = false
 
-@onready var rat_sprite = preload("res://art/sprites/lilRatGirl.png")
-@onready var frog_sprite = preload("res://art/sprites/lilRatGirl_2.png")
-@onready var cat_sprite = preload("res://art/sprites/lilRatGirl_3.png")
-@onready var bunny_sprite = preload("res://art/sprites/lilRatGirl_4.png")
+@onready var rat_sprite = preload("res://art/sprites/rat1.png")
+@onready var frog_sprite = preload("res://art/sprites/fro1.png")
+@onready var cat_sprite = preload("res://art/sprites/cat1.png")
+@onready var bunny_sprite = preload("res://art/sprites/bun1.png")
 
 @onready var sprite_array : Array = [rat_sprite, frog_sprite, cat_sprite, bunny_sprite]
 
