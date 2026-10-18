@@ -143,6 +143,11 @@ func _physics_process(delta: float) -> void:
 
     var roll_direction = Input.get_vector("right_" + player.string_id, "left_" + player.string_id, "forward_" + player.string_id, "back_" + player.string_id)
 
+    if Input.is_action_just_pressed("right_" + player.string_id):
+        flip_sprite("right")
+    if Input.is_action_just_pressed("left_" + player.string_id):
+        flip_sprite("left")
+
     if is_on_floor:
         rigid_body_3d.angular_velocity.x += roll_direction.y * rolling_velocity
         rigid_body_3d.angular_velocity.z += roll_direction.x * rolling_velocity
@@ -270,6 +275,12 @@ func get_shot(direction: Vector3) -> void:
     elif current_stars > 0:
         spew_stars(randi_range(2, 4), 3, 6, direction)
 
+func flip_sprite(dir : String):
+    match dir:
+        "left":
+            sprite_3d.flip_h = true
+        "right":
+            sprite_3d.flip_h = false
 
 func update_sun_state() -> void:
     var is_under_sun := sun_cast.is_colliding()
