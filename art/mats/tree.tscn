@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://pje54qdf2ykn"]
 
-[ext_resource type="Texture2D" uid="uid://4t8r2ejywdg7" path="res://ART/thangs/tree.png" id="1_vlpw8"]
+[ext_resource type="Texture2D" uid="uid://4t8r2ejywdg7" path="res://art/thangs/tree.png" id="1_vlpw8"]
 
 [node name="Sprite3D" type="Sprite3D" unique_id=1059588600]
 transform = Transform3D(0.5, 0, 0, 0, 0.4829629, 0.12940952, 0, -0.12940952, 0.4829629, -0.6952132, 1.9519053, 0)

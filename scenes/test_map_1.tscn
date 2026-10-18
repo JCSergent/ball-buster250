@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://c7lobu1q5rjk4" path="res://scenes/graybox_delete_later/graybox_large_tall_platform.tscn" id="16_x4ns3"]
 [ext_resource type="PackedScene" uid="uid://c8bugatpauyup" path="res://scenes/graybox_delete_later/graybox_large_platform.tscn" id="17_gpvyf"]
 [ext_resource type="PackedScene" uid="uid://b74cekrtstofu" path="res://scenes/sunsucctest.tscn" id="19_gpvyf"]
-[ext_resource type="Texture2D" uid="uid://4t8r2ejywdg7" path="res://ART/thangs/tree.png" id="22_0a58e"]
+[ext_resource type="Texture2D" uid="uid://4t8r2ejywdg7" path="res://art/thangs/tree.png" id="22_0a58e"]
 
 [sub_resource type="Curve3D" id="Curve3D_oiceo"]
 closed = true
@@ -2288,7 +2288,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 8, -7.2)
 curve = SubResource("Curve3D_oiceo")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="SunStuff/TopRightPath" unique_id=835804]
-transform = Transform3D(0.0694106, 0, -0.9975768, 0, 0.99999994, 0, 0.9975851, 0, 0.06941002, 0.19514894, -0.9998779, 0.08739567)
+transform = Transform3D(0.0694106, 0, -0.9975767, 0, 0.99999994, 0, 0.9975851, 0, 0.06941001, 0.19514894, -0.9998779, 0.08739567)
 cubic_interp = false
 
 [node name="block-grass718" type="MeshInstance3D" parent="SunStuff/TopRightPath" unique_id=769711117]

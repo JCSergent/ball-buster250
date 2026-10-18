@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/player_ball.gd" id="1_bsyiq"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_4sqf5"]
 [ext_resource type="Script" uid="uid://d2fmo76m4fgfg" path="res://scripts/player_rigid_body.gd" id="2_g3k4b"]
-[ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://ART/mats/BOTTOM.tres" id="4_oel5b"]
+[ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://art/mats/BOTTOM.tres" id="4_oel5b"]
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="5_52f4h"]
 [ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="7_k48vh"]
 [ext_resource type="Shader" uid="uid://rhy4c6xwomdh" path="res://shaders/smoke_outline.gdshader" id="8_52f4h"]
