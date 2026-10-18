@@ -3,15 +3,17 @@
 [ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/player_ball.gd" id="1_bsyiq"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://scenes/platformer_shadow_spring_arm.tscn" id="2_4sqf5"]
 [ext_resource type="Script" uid="uid://d2fmo76m4fgfg" path="res://scripts/player_rigid_body.gd" id="2_g3k4b"]
-[ext_resource type="Texture2D" uid="uid://b5663j3johnwt" path="res://art/ui/blue_starbanner.png" id="2_s0vvj"]
-[ext_resource type="Texture2D" uid="uid://cfvjdquo18x76" path="res://art/ui/yellow_starbanner.png" id="3_i7gku"]
-[ext_resource type="Texture2D" uid="uid://cp6bajeh48ukm" path="res://art/ui/green_starbanner.png" id="4_af7he"]
+[ext_resource type="Texture2D" uid="uid://d17fct37vnvq1" path="res://art/ui/blue_starbanner.png" id="2_s0vvj"]
+[ext_resource type="Texture2D" uid="uid://dlgjssi4nm668" path="res://art/ui/yellow_starbanner.png" id="3_i7gku"]
+[ext_resource type="Texture2D" uid="uid://bkwt0y6tmbeqq" path="res://art/ui/green_starbanner.png" id="4_af7he"]
 [ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://art/mats/BOTTOM.tres" id="4_oel5b"]
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="5_52f4h"]
-[ext_resource type="Texture2D" uid="uid://c3yyklua08n7f" path="res://art/ui/red_starbanner.png" id="6_k48vh"]
+[ext_resource type="Texture2D" uid="uid://dgrly80qx1ib3" path="res://art/ui/red_starbanner.png" id="6_k48vh"]
 [ext_resource type="PackedScene" uid="uid://dqlolhtbxgbqm" path="res://scenes/fancy_count.tscn" id="7_w1s8w"]
 [ext_resource type="Shader" uid="uid://rhy4c6xwomdh" path="res://shaders/smoke_outline.gdshader" id="8_52f4h"]
 [ext_resource type="Shader" uid="uid://cuqv17vikbreu" path="res://shaders/smoke.gdshader" id="8_oel5b"]
+[ext_resource type="Material" uid="uid://dgocohy4s7cq4" path="res://art/mats/cartoon_RING.tres" id="13_i7gku"]
+[ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="14_af7he"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gipfl"]
 
@@ -192,8 +194,11 @@ radial_segments = 100
 rings = 64
 
 [sub_resource type="TorusMesh" id="TorusMesh_eoqba"]
+material = ExtResource("13_i7gku")
 inner_radius = 0.335
 outer_radius = 0.206
+rings = 8
+ring_segments = 4
 
 [node name="PlayerBall" type="Node3D" unique_id=149867139]
 script = ExtResource("1_bsyiq")
@@ -306,6 +311,11 @@ unique_name_in_owner = true
 [node name="pipe" type="MeshInstance3D" parent="NonRotatingNodes/GunRotatePoint" unique_id=1483379387]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.6058159, 0, 0)
 mesh = SubResource("TorusMesh_eoqba")
+
+[node name="Sprite3D" type="Sprite3D" parent="NonRotatingNodes/GunRotatePoint/pipe" unique_id=2041553424]
+transform = Transform3D(-4.0389324e-08, 0.84000003, 0, 4.0389324e-08, 0, 1, 0.924, 3.6717566e-08, -4.3711385e-08, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("14_af7he")
 
 [node name="GunFirePoint" type="Marker3D" parent="NonRotatingNodes/GunRotatePoint" unique_id=1301492511]
 unique_name_in_owner = true
