@@ -18,5 +18,3 @@ func _ready() -> void:
     player_2.global_position.x += 1.
 
     GameKeeper.new_game_started.emit(GameKeeper.players.values())
-
-
