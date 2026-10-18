@@ -19,6 +19,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
     if floor_cast.is_colliding():
         global_position.y = floor_cast.get_collision_point().y + 0.4
+    else:
+        global_position.y -= speed * 1/6 * delta
     global_position += fire_direction * speed * delta
 
 func on_body_entered(body: Node3D) -> void:
