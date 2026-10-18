@@ -73,3 +73,5 @@ func on_area_entered(area: Area3D) -> void:
         time_since_bullet = 0
         if sprite.animation != 'succ':
             sprite.play("succ")
+            
+        $pulseObj.pulse_this()

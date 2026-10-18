@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7344gku3c37o"]
 
-[ext_resource type="Script" uid="uid://tma0ehy5ejye" path="res://pulse_obj.gd" id="1_gka8v"]
+[ext_resource type="Script" uid="uid://tma0ehy5ejye" path="res://scripts/pulse_obj.gd" id="1_gka8v"]
 
 [node name="pulseObj" type="Node" unique_id=1652883855]
 script = ExtResource("1_gka8v")

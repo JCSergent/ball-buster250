@@ -214,6 +214,7 @@ func shoot_gun() -> void:
         pass
 
 func get_collectable(collectable: Collectable) -> bool:
+    $pulseObj.pulse_this()
     if collectable.type == Collectable.Type.Point1:
         if  current_stars >= max_star_capacity:
             return false

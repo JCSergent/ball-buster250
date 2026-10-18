@@ -11,7 +11,7 @@ signal new_game_started(players: Array[Player])
 @export var players: Dictionary[int, Player]
 
 
-@export var win_score : int = 1
+@export var win_score : int = 5
 
 var game_state: GameState
 
