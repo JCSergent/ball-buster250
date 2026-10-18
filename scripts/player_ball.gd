@@ -113,6 +113,7 @@ func _physics_process(delta: float) -> void:
                 drift_particles.emitting = true
 
     elif is_boosting and Input.is_action_pressed("item_" + player.string_id):
+        sprite_3d.speed_scale = 1.5
         rigid_body_3d.angular_velocity = get_gun_direction() * 100
         if boost_duration < max_boost_duration:
             drift_particles.speed_scale += 2. * delta
@@ -126,6 +127,7 @@ func _physics_process(delta: float) -> void:
             rigid_body_3d.linear_damp = 0.
             rigid_body_3d.linear_velocity.y = 0.
         elif is_boosting:
+            sprite_3d.speed_scale = 1.
             drift_particles.emitting = false
             rigid_body_3d.freeze = false
             rigid_body_3d.angular_velocity = Vector3.ZERO

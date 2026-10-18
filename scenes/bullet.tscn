@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdyqv1qrycbk1"]
 
 [ext_resource type="Script" uid="uid://dl18i71dv0gmp" path="res://scripts/bullet.gd" id="1_l5glv"]
-[ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="1_y25gk"]
+[ext_resource type="Texture2D" uid="uid://dxcm3tv0pkd3f" path="res://art/sprites/star_white.png" id="2_eoqba"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_l5glv"]
 [ext_resource type="Script" uid="uid://x6fl4nrrqeov" path="res://scripts/bullet_area.gd" id="4_eoqba"]
 
@@ -13,10 +13,10 @@ height = 0.4411621
 script = ExtResource("1_l5glv")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1887527983]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 billboard = 1
-texture = ExtResource("1_y25gk")
+texture = ExtResource("2_eoqba")
 
 [node name="PlatformerShadowSpringArm" parent="." unique_id=1024933116 instance=ExtResource("2_l5glv")]
 
