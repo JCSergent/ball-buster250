@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cj8s0dfqse7cv" path="res://menus/menu items/notready_indicator.png" id="5_41ep7"]
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="6_3rtee"]
 [ext_resource type="Texture2D" uid="uid://m1apilypje5v" path="res://menus/menu items/ready_indicator.png" id="6_d5snc"]
-[ext_resource type="FontFile" uid="uid://cymm8p6y71evy" path="res://menus/fonts/Jersey10-Regular.ttf" id="7_30gvx"]
 [ext_resource type="SpriteFrames" uid="uid://b3f8hq1gxucd4" path="res://art/animatedsprites/frog_frames.tres" id="11_30gvx"]
 [ext_resource type="Texture2D" uid="uid://bfng6ouo7wmr8" path="res://menus/menu items/cat_namebar.png" id="11_wailv"]
 [ext_resource type="Texture2D" uid="uid://cvqfq2tcamm4p" path="res://menus/menu items/cat_playercard.png" id="12_r8134"]
@@ -71,16 +70,6 @@ position = Vector2(225, 215)
 sprite_frames = ExtResource("6_3rtee")
 animation = &"run"
 speed_scale = 0.0
-
-[node name="Label" type="Label" parent="PLAYERS/P1/selectSprite" unique_id=1012660404]
-offset_left = 54.0
-offset_top = 35.0
-offset_right = 98.0
-offset_bottom = 74.0
-theme_override_fonts/font = ExtResource("7_30gvx")
-text = "No
-Player"
-horizontal_alignment = 1
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P1" unique_id=1105686691]
 position = Vector2(354, 420)

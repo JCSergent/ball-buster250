@@ -99,14 +99,14 @@ func _physics_process(delta: float) -> void:
             spew_stars(quart_of_stars, 6, 10)
 
     # Shoot Gun
-    if Input.is_action_just_pressed("jump_" + player.string_id):
+    if Input.is_action_just_pressed("shoot_" + player.string_id):
         shoot_gun()
 
     # DRIFT & BOOST
-    if Input.is_action_just_pressed("item_" + player.string_id):
+    if Input.is_action_just_pressed("charge_" + player.string_id):
         is_drifting = true
 
-    elif is_drifting and Input.is_action_pressed("item_" + player.string_id):
+    elif is_drifting and Input.is_action_pressed("charge_" + player.string_id):
         if not is_on_floor:
             rigid_body_3d.linear_damp = 0.
         else:
@@ -124,7 +124,7 @@ func _physics_process(delta: float) -> void:
                 drift_particles.speed_scale = 5.
                 drift_particles.emitting = true
 
-    elif is_boosting and Input.is_action_pressed("item_" + player.string_id):
+    elif is_boosting and Input.is_action_pressed("charge_" + player.string_id):
         sprite_3d.speed_scale = 1.5
         rigid_body_3d.angular_velocity = get_gun_direction() * 100
         if boost_duration < max_boost_duration:
@@ -134,7 +134,7 @@ func _physics_process(delta: float) -> void:
         else:
             boost_duration = max_boost_duration
 
-    if Input.is_action_just_released("item_" + player.string_id):
+    if Input.is_action_just_released("charge_" + player.string_id):
         if is_drifting:
             rigid_body_3d.linear_damp = 0.
             rigid_body_3d.linear_velocity.y = 0.
