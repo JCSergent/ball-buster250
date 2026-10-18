@@ -8,14 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://ceqg0p3ux5b3g" path="res://assets/GreyboxTextures/greybox_grey_grid.png" id="4_5afa1"]
 [ext_resource type="PackedScene" uid="uid://cwdr1sddes514" path="res://scenes/graybox_delete_later/base_tile.tscn" id="4_q5vyl"]
 [ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_og7nd"]
+[ext_resource type="Texture2D" uid="uid://dvjhs8dwqhain" path="res://components/hud/blue_playerbanner.png" id="8_2enst"]
 [ext_resource type="PackedScene" uid="uid://dmd302ejceuio" path="res://scenes/graybox_delete_later/graybox_mild_slope.tscn" id="8_j3705"]
+[ext_resource type="FontFile" uid="uid://cymm8p6y71evy" path="res://menus/fonts/Jersey10-Regular.ttf" id="9_5afa1"]
 [ext_resource type="PackedScene" uid="uid://jcd7d1k6q018" path="res://scenes/world_elements/bumper.tscn" id="9_houx3"]
+[ext_resource type="Texture2D" uid="uid://cc6v1uky14jtj" path="res://components/hud/yellow_playerbanner.png" id="10_gpvyf"]
 [ext_resource type="PackedScene" uid="uid://dul0pteh3usdk" path="res://scenes/graybox_delete_later/graybox_steep_slope.tscn" id="10_o4xlp"]
 [ext_resource type="PackedScene" uid="uid://d3kk3bxmcawo1" path="res://scenes/world_elements/bounce_pad.tscn" id="11_f8eag"]
+[ext_resource type="Texture2D" uid="uid://btttws8tjprnp" path="res://components/hud/green_playerbanner.png" id="12_5afa1"]
+[ext_resource type="Texture2D" uid="uid://ckex1fh2owv02" path="res://components/hud/red_playerbanner.png" id="12_oiceo"]
 [ext_resource type="PackedScene" uid="uid://dwket6reb0144" path="res://pickups/respawning_collectable.tscn" id="16_5afa1"]
 [ext_resource type="PackedScene" uid="uid://c7lobu1q5rjk4" path="res://scenes/graybox_delete_later/graybox_large_tall_platform.tscn" id="16_x4ns3"]
 [ext_resource type="PackedScene" uid="uid://c8bugatpauyup" path="res://scenes/graybox_delete_later/graybox_large_platform.tscn" id="17_gpvyf"]
 [ext_resource type="PackedScene" uid="uid://b74cekrtstofu" path="res://scenes/sunsucctest.tscn" id="19_gpvyf"]
+[ext_resource type="Texture2D" uid="uid://4t8r2ejywdg7" path="res://ART/thangs/tree.png" id="22_0a58e"]
 
 [sub_resource type="Curve3D" id="Curve3D_oiceo"]
 closed = true
@@ -2280,7 +2286,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 8, -7.2)
 curve = SubResource("Curve3D_oiceo")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="SunStuff/TopRightPath" unique_id=835804]
-transform = Transform3D(0.0694106, 0, -0.997577, 0, 0.99999994, 0, 0.9975851, 0, 0.06941003, 0.19514894, -0.9998779, 0.08739567)
+transform = Transform3D(0.0694106, 0, -0.99757683, 0, 0.99999994, 0, 0.9975851, 0, 0.06941002, 0.19514894, -0.9998779, 0.08739567)
 cubic_interp = false
 
 [node name="block-grass718" type="MeshInstance3D" parent="SunStuff/TopRightPath" unique_id=769711117]
@@ -2328,7 +2334,7 @@ environment = SubResource("Environment_u018e")
 transform = Transform3D(0.7071068, -0.35355338, 0.61237246, 0, 0.8660254, 0.50000006, -0.7071068, -0.35355338, 0.61237246, 19, 16.994, 17.657001)
 projection = 1
 fov = 15.0
-size = 22.0
+size = 20.0
 
 [node name="DeathZone" type="Area3D" parent="ReusableElements" unique_id=1524002741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
@@ -2342,15 +2348,154 @@ shape = SubResource("WorldBoundaryShape3D_2ybj2")
 
 [node name="HUD" type="CanvasLayer" parent="ReusableElements" unique_id=1030654862]
 script = ExtResource("3_f8eag")
+number_sprites = Array[Texture2D]([null])
 
-[node name="P1" type="Control" parent="ReusableElements/HUD" unique_id=832363812]
+[node name="P1" type="Control" parent="ReusableElements/HUD" unique_id=615685526]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="ReusableElements/HUD/P1" unique_id=420224821]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_2enst")
+
+[node name="Label" type="Label" parent="ReusableElements/HUD/P1/TextureRect" unique_id=2136801253]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 109.0
+offset_right = 167.0
+offset_bottom = 144.0
+offset_transform_enabled = true
+offset_transform_rotation = -0.2617994
+theme_override_fonts/font = ExtResource("9_5afa1")
+theme_override_font_sizes/font_size = 32
+text = "Player 1"
+
+[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P1/TextureRect" unique_id=816388954]
+position = Vector2(83.00001, 65.99999)
+rotation = -0.2617994
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("4_3mjpi")
+region_enabled = true
+region_rect = Rect2(0, 0, 792.9804, 822.5656)
+
+[node name="P2" type="Control" parent="ReusableElements/HUD" unique_id=376067068]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1651.0
+offset_right = 1691.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="ReusableElements/HUD/P2" unique_id=142819137]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_gpvyf")
+
+[node name="Label" type="Label" parent="ReusableElements/HUD/P2/TextureRect" unique_id=1321454007]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 113.0
+offset_right = 194.0
+offset_bottom = 148.0
+offset_transform_enabled = true
+offset_transform_rotation = 0.2617994
+theme_override_fonts/font = ExtResource("9_5afa1")
+theme_override_font_sizes/font_size = 32
+text = "Player 2"
+
+[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P2/TextureRect" unique_id=500285537]
+position = Vector2(184.00003, 69)
+rotation = 0.2617994
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("4_3mjpi")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 792.9804, 822.5656)
+
+[node name="P4" type="Control" parent="ReusableElements/HUD" unique_id=882730628]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1651.0
+offset_top = 887.0
+offset_right = 1691.0
+offset_bottom = 927.0
+
+[node name="TextureRect" type="TextureRect" parent="ReusableElements/HUD/P4" unique_id=168169951]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_oiceo")
+
+[node name="Label" type="Label" parent="ReusableElements/HUD/P4/TextureRect" unique_id=813174358]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 78.435974
+offset_right = 194.0
+offset_bottom = 113.435974
+offset_transform_enabled = true
+offset_transform_rotation = 0.2617994
+theme_override_fonts/font = ExtResource("9_5afa1")
+theme_override_font_sizes/font_size = 32
+text = "Player 4"
+
+[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P4/TextureRect" unique_id=1136425067]
+position = Vector2(184.00003, 34.43597)
+rotation = 0.2617994
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("4_3mjpi")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 792.9804, 822.5656)
+
+[node name="P3" type="Control" parent="ReusableElements/HUD" unique_id=1821687076]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 785.0
+offset_right = 40.0
+offset_bottom = 825.0
+
+[node name="TextureRect" type="TextureRect" parent="ReusableElements/HUD/P3" unique_id=1532084720]
+layout_mode = 0
+offset_top = 102.0
+offset_right = 272.0
+offset_bottom = 295.0
+texture = ExtResource("12_5afa1")
+
+[node name="Label" type="Label" parent="ReusableElements/HUD/P3/TextureRect" unique_id=1708752139]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 76.0
+offset_right = 174.0
+offset_bottom = 111.0
+offset_transform_enabled = true
+offset_transform_rotation = -0.2617994
+theme_override_fonts/font = ExtResource("9_5afa1")
+theme_override_font_sizes/font_size = 32
+text = "Player 3"
+
+[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P3/TextureRect" unique_id=1385625886]
+position = Vector2(96, 29.999989)
+rotation = -0.2617994
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("4_3mjpi")
+region_enabled = true
+region_rect = Rect2(0, 0, 792.9804, 822.5656)
+
+[node name="P1_old" type="Control" parent="ReusableElements/HUD" unique_id=832363812]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 349.99997
+offset_top = 511.99997
+offset_right = 389.99997
+offset_bottom = 552.0
 scale = Vector2(5, 5)
 
-[node name="Player Color" type="ColorRect" parent="ReusableElements/HUD/P1" unique_id=1243121675]
+[node name="Player Color" type="ColorRect" parent="ReusableElements/HUD/P1_old" unique_id=1243121675]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 12.0
@@ -2358,12 +2503,12 @@ offset_right = 30.0
 offset_bottom = 24.0
 color = Color(1, 0.43137255, 0.38039216, 1)
 
-[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P1" unique_id=1111234408]
+[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P1_old" unique_id=1111234408]
 position = Vector2(15.000002, 16.000002)
 scale = Vector2(0.025, 0.025)
 texture = ExtResource("4_3mjpi")
 
-[node name="Score" type="Label" parent="ReusableElements/HUD/P1" unique_id=649924856]
+[node name="Score" type="Label" parent="ReusableElements/HUD/P1_old" unique_id=649924856]
 layout_mode = 0
 offset_left = -16.6
 offset_top = 27.4
@@ -2373,7 +2518,7 @@ text = "0"
 label_settings = SubResource("LabelSettings_2enst")
 horizontal_alignment = 1
 
-[node name="Score2" type="Label" parent="ReusableElements/HUD/P1" unique_id=1534558119]
+[node name="Score2" type="Label" parent="ReusableElements/HUD/P1_old" unique_id=1534558119]
 layout_mode = 0
 offset_left = -9.199999
 offset_top = 29.4
@@ -2384,7 +2529,7 @@ text = "   /
 label_settings = SubResource("LabelSettings_2enst")
 horizontal_alignment = 1
 
-[node name="Player" type="Label" parent="ReusableElements/HUD/P1" unique_id=270310168]
+[node name="Player" type="Label" parent="ReusableElements/HUD/P1_old" unique_id=270310168]
 layout_mode = 0
 offset_top = 7.0
 offset_right = 14.0
@@ -2393,7 +2538,7 @@ text = "P1"
 label_settings = SubResource("LabelSettings_2enst")
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="ReusableElements/HUD/P1" unique_id=52139144]
+[node name="ColorRect" type="ColorRect" parent="ReusableElements/HUD/P1_old" unique_id=52139144]
 layout_mode = 0
 offset_left = 26.199999
 offset_top = 3.2000046
@@ -2401,7 +2546,7 @@ offset_right = 37.399998
 offset_bottom = 14.400003
 color = Color(0, 0, 0, 1)
 
-[node name="StoredItem" type="TextureRect" parent="ReusableElements/HUD/P1" unique_id=1845210955]
+[node name="StoredItem" type="TextureRect" parent="ReusableElements/HUD/P1_old" unique_id=1845210955]
 custom_minimum_size = Vector2(16, 16)
 custom_maximum_size = Vector2(16, 16)
 layout_mode = 0
@@ -2411,7 +2556,8 @@ offset_right = 39.8
 offset_bottom = 16.2
 offset_transform_enabled = true
 
-[node name="P2" type="Control" parent="ReusableElements/HUD" unique_id=2137199275]
+[node name="P2_new" type="Control" parent="ReusableElements/HUD" unique_id=2137199275]
+visible = false
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -2423,7 +2569,7 @@ offset_bottom = 49.0
 grow_horizontal = 0
 scale = Vector2(5, 5)
 
-[node name="Player Color" type="ColorRect" parent="ReusableElements/HUD/P2" unique_id=1808400034]
+[node name="Player Color" type="ColorRect" parent="ReusableElements/HUD/P2_new" unique_id=1808400034]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 12.0
@@ -2431,13 +2577,13 @@ offset_right = 30.0
 offset_bottom = 24.0
 color = Color(0.087181844, 0.6755854, 0.9999998, 1)
 
-[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P2" unique_id=1055340752]
+[node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P2_new" unique_id=1055340752]
 texture_filter = 1
 position = Vector2(16.000002, 17)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_og7nd")
 
-[node name="Player" type="Label" parent="ReusableElements/HUD/P2" unique_id=561586896]
+[node name="Player" type="Label" parent="ReusableElements/HUD/P2_new" unique_id=561586896]
 layout_mode = 0
 offset_top = 7.0
 offset_right = 14.0
@@ -2446,7 +2592,7 @@ text = "P2"
 label_settings = SubResource("LabelSettings_2enst")
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="ReusableElements/HUD/P2" unique_id=1653534551]
+[node name="ColorRect" type="ColorRect" parent="ReusableElements/HUD/P2_new" unique_id=1653534551]
 layout_mode = 0
 offset_left = 26.199999
 offset_top = 3.2000046
@@ -2454,7 +2600,7 @@ offset_right = 37.399998
 offset_bottom = 14.400003
 color = Color(0, 0, 0, 1)
 
-[node name="StoredItem" type="TextureRect" parent="ReusableElements/HUD/P2" unique_id=285827827]
+[node name="StoredItem" type="TextureRect" parent="ReusableElements/HUD/P2_new" unique_id=285827827]
 custom_minimum_size = Vector2(16, 16)
 custom_maximum_size = Vector2(16, 16)
 layout_mode = 0
@@ -2464,7 +2610,7 @@ offset_right = 39.8
 offset_bottom = 16.2
 offset_transform_enabled = true
 
-[node name="Score" type="Label" parent="ReusableElements/HUD/P2" unique_id=717496441]
+[node name="Score" type="Label" parent="ReusableElements/HUD/P2_new" unique_id=717496441]
 layout_mode = 0
 offset_left = -16.6
 offset_top = 27.4
@@ -2474,7 +2620,7 @@ text = "0"
 label_settings = SubResource("LabelSettings_2enst")
 horizontal_alignment = 1
 
-[node name="Score2" type="Label" parent="ReusableElements/HUD/P2" unique_id=1898687437]
+[node name="Score2" type="Label" parent="ReusableElements/HUD/P2_new" unique_id=1898687437]
 layout_mode = 0
 offset_left = -9.199999
 offset_top = 29.4
@@ -5870,3 +6016,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2, -5.5)
 
 [node name="BouncePad10" parent="." unique_id=33461289 instance=ExtResource("11_f8eag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1, -3.5)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1623461508]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14, 5, 2)
+texture = ExtResource("22_0a58e")
+region_rect = Rect2(440, 524, 322, 338)
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=758588840]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14, 5, 3)
+texture = ExtResource("22_0a58e")
+region_rect = Rect2(440, 524, 322, 338)
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1199813629]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14, 5, 4)
+texture = ExtResource("22_0a58e")
+region_rect = Rect2(440, 524, 322, 338)
+
+[node name="Sprite3D4" type="Sprite3D" parent="." unique_id=1678007282]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14, 5, 6)
+texture = ExtResource("22_0a58e")
+region_rect = Rect2(440, 524, 322, 338)

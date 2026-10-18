@@ -142,6 +142,7 @@ func _physics_process(delta: float) -> void:
         speed_boost_duration -= delta
 
     var roll_direction = Input.get_vector("right_" + player.string_id, "left_" + player.string_id, "forward_" + player.string_id, "back_" + player.string_id)
+    roll_direction = roll_direction.rotated(deg_to_rad(45))
 
     if Input.is_action_just_pressed("right_" + player.string_id):
         flip_sprite("right")
@@ -179,7 +180,6 @@ func shoot_gun() -> void:
     var fire_direction := get_gun_direction()
 
     if is_in_sunbeam:
-        print('shoot towards sun')
         var sunsucc: SunSucc = get_tree().get_first_node_in_group("SunSucc")
         fire_direction = gun_rotate_point.global_position.direction_to(sunsucc.global_position)
 
@@ -232,7 +232,6 @@ func use_collectable() -> void:
 func increase_stars(amount: int) -> void:
     current_stars = clampi(current_stars + amount, 0, max_star_capacity)
     var new_scale: float = ((float(current_stars) / max_star_capacity) * (max_scale_increase - 1.)) + 1.
-    print(new_scale)
     rigid_body_3d.scale = Vector3.ONE * new_scale
     star_count.text = str(current_stars)
 
