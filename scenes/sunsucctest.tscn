@@ -2,7 +2,31 @@
 
 [ext_resource type="Script" uid="uid://b2brlj7aadmr6" path="res://scenes/sunsucctest.gd" id="1_tcp64"]
 [ext_resource type="Texture2D" uid="uid://btvk6ecl2uj33" path="res://art/sprites/sunNmoon.png" id="2_c8yu5"]
+[ext_resource type="Texture2D" uid="uid://mjbjnxs2w137" path="res://art/sprites/sun/sun_0.png" id="2_qh54k"]
 [ext_resource type="Shader" uid="uid://dveyo60ndnqwp" path="res://shaders/sun_beam.gdshader" id="3_hlaqb"]
+[ext_resource type="Texture2D" uid="uid://c4yq2e2wsjwyw" path="res://art/sprites/sun/sun_1.png" id="3_sy4b4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gipfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qh54k")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_qh54k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sy4b4")
+}],
+"loop": 1,
+"name": &"succ",
+"speed": 5.0
+}]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pa8il"]
 radius = 0.8827295
@@ -42,7 +66,15 @@ radius = 2.8139648
 [node name="sunsucctest" type="Node3D" unique_id=988882479 groups=["SunSucc"]]
 script = ExtResource("1_tcp64")
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=598218723]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_gipfl")
+frame_progress = 0.3341747
+
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1984785517]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+visible = false
 modulate = Color(1, 1, 1, 0.9529412)
 billboard = 1
 texture = ExtResource("2_c8yu5")

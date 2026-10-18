@@ -4,6 +4,7 @@ extends Node
 # Stores what phase the game is in, and the state of every player
 
 signal player_state_changed(player: Player)
+signal new_game_started(players: Array[Player])
 
 @export var players: Dictionary[int, Player]
 
@@ -23,17 +24,9 @@ func reset_game() -> void:
     for player: Player in players.values():
         player.reset_state()
 
-    # TODO: Go to Player Select Screen
-    # game_state.phase = GameState.Phase.PlayerSelect
-    # SceneKeeper.load_scene(SceneKeeper.Scene.PlayerSelectScene)
-
 func update_score(player_id: int, value: int) -> void:
     var player: Player = players.get(player_id)
-    print('value')
-    print(value)
     player.score += value
-    print('score')
-    print(player.score)
     if player.score < 0:
         player.score = 0
     player_state_changed.emit(player)

@@ -16,3 +16,7 @@ func _ready() -> void:
     players.add_child(player_2)
     player_2.global_position = Vector3.UP * 6
     player_2.global_position.x += 1.
+
+    GameKeeper.new_game_started.emit(GameKeeper.players.values())
+
+

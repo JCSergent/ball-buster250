@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl18i71dv0gmp" path="res://scripts/bullet.gd" id="1_l5glv"]
 [ext_resource type="Texture2D" uid="uid://dxcm3tv0pkd3f" path="res://art/sprites/star_white.png" id="2_eoqba"]
-[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_l5glv"]
+[ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://scenes/platformer_shadow_spring_arm.tscn" id="2_l5glv"]
 [ext_resource type="Script" uid="uid://x6fl4nrrqeov" path="res://scripts/bullet_area.gd" id="4_eoqba"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eoqba"]

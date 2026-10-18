@@ -2,9 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_jkv6f"]
 [ext_resource type="Script" uid="uid://crx8qu4rxmxwl" path="res://menus/char_select_menu.gd" id="2_3rtee"]
-[ext_resource type="Texture2D" uid="uid://c307834sxpqoe" path="res://menus/menu items/instructions.png" id="2_f2qo7"]
+[ext_resource type="Texture2D" uid="uid://cux0rij71771s" path="res://menus/menu items/instructions.png" id="2_f2qo7"]
+[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="3_30gvx"]
 [ext_resource type="Texture2D" uid="uid://l086vhqkqpdl" path="res://menus/menu items/frog_namebar.png" id="3_e5o7i"]
-[ext_resource type="Texture2D" uid="uid://sttr45qnfqt6" path="res://menus/menu items/frog_playercard.png" id="3_emvu2"]
+[ext_resource type="Texture2D" uid="uid://bc3266ljxq0hs" path="res://menus/menu items/frog_playercard.png" id="3_emvu2"]
 [ext_resource type="Texture2D" uid="uid://cst3l7irv3d8p" path="res://menus/menu items/bunny_namebar_RED.png" id="4_3rtee"]
 [ext_resource type="Texture2D" uid="uid://rtl0divp0dhb" path="res://menus/menu items/mouse_playercard_RED.png" id="5_30gvx"]
 [ext_resource type="Texture2D" uid="uid://cj8s0dfqse7cv" path="res://menus/menu items/notready_indicator.png" id="5_41ep7"]
@@ -12,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://m1apilypje5v" path="res://menus/menu items/ready_indicator.png" id="6_d5snc"]
 [ext_resource type="SpriteFrames" uid="uid://b3f8hq1gxucd4" path="res://art/animatedsprites/frog_frames.tres" id="11_30gvx"]
 [ext_resource type="Texture2D" uid="uid://bfng6ouo7wmr8" path="res://menus/menu items/cat_namebar.png" id="11_wailv"]
-[ext_resource type="Texture2D" uid="uid://08q01a3unugd" path="res://menus/menu items/cat_playercard.png" id="12_r8134"]
+[ext_resource type="Texture2D" uid="uid://cvqfq2tcamm4p" path="res://menus/menu items/cat_playercard.png" id="12_r8134"]
 [ext_resource type="SpriteFrames" uid="uid://deaq8rmvcuj04" path="res://art/animatedsprites/cat_frames.tres" id="14_wailv"]
 [ext_resource type="Texture2D" uid="uid://flvaqvgpuw55" path="res://menus/menu items/cat_namebar_YELLOW.png" id="15_wailv"]
 [ext_resource type="Texture2D" uid="uid://chjn2v0kh2eck" path="res://menus/menu items/mouse_playercard_YELLOW.png" id="16_r8134"]
@@ -34,6 +35,7 @@ grow_vertical = 2
 size_flags_horizontal = 0
 theme = ExtResource("1_jkv6f")
 script = ExtResource("2_3rtee")
+static_sprite_array = Array[Texture2D]([ExtResource("3_30gvx"), null])
 
 [node name="FlowContainer" type="VBoxContainer" parent="." unique_id=1719006581]
 layout_mode = 2

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://drthts6qlkxol" path="res://scripts/death_zone.gd" id="2_dvny0"]
 [ext_resource type="Material" uid="uid://dai0lhavoc1v0" path="res://art/mats/dirt.tres" id="3_ar7ra"]
 [ext_resource type="Material" uid="uid://kkhvq8omlohd" path="res://art/mats/grass3.tres" id="3_dv75v"]
-[ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://components/hud/hud.gd" id="3_xwrkq"]
+[ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://scripts/hud.gd" id="3_xwrkq"]
 [ext_resource type="Material" uid="uid://c7lm75267fxs0" path="res://art/mats/wood1.tres" id="4_ar7ra"]
 [ext_resource type="Texture2D" uid="uid://0edei5oiri3o" path="res://art/sprites/map_tiles/grass_2.png" id="4_ixgyf"]
 [ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_nrstc"]

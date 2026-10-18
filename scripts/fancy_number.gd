@@ -4,7 +4,6 @@ extends Node2D
 @export var number_sprites: Array[Sprite2D]
 
 func show_number(number: int) -> void:
-    # print(str(number))
     if number >= 0:
         for i in number_sprites.size():
             if i == number:

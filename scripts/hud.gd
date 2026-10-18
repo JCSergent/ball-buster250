@@ -7,13 +7,26 @@ extends CanvasLayer
 @onready var p2_score: FancyCount = %P2Score
 @onready var p3_score: FancyCount = %P3Score
 @onready var p4_score: FancyCount = %P4Score
-# @onready var p1_item: TextureRect = $P1/StoredItem
 
-# @onready var p2_score := $P2/Score
-# @onready var p2_item: TextureRect = $P2/StoredItem
+@onready var p1_sprite: Sprite2D = %P1Sprite
+@onready var p2_sprite: Sprite2D = %P2Sprite
+@onready var p3_sprite: Sprite2D = %P3Sprite
+@onready var p4_sprite: Sprite2D = %P4Sprite
 
 func _ready() -> void:
     GameKeeper.player_state_changed.connect(update_player_hud)
+    GameKeeper.new_game_started.connect(on_new_game_start)
+
+func on_new_game_start(players: Array[Player]) -> void:
+    for player in players:
+        if player.id == 1:
+            p1_sprite.texture = player.sprite.get_frame_texture('run', 0)
+        elif player.id == 2:
+            p2_sprite.texture = player.sprite.get_frame_texture('run', 0)
+        elif player.id == 3:
+            p3_sprite.texture = player.sprite.get_frame_texture('run', 0)
+        elif player.id == 4:
+            p4_sprite.texture = player.sprite.get_frame_texture('run', 0)
 
 func update_player_hud(player: Player) -> void:
     if player.id == 1:

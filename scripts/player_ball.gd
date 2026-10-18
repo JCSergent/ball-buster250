@@ -31,6 +31,12 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 @export var player_bump_force: float = 3.
 @export var star_projectile_force: float = 2.
 
+@export_group("HUD")
+@export var hud_dictionary: Dictionary[int, Texture2D]
+
+@onready var hud_banner: Sprite2D = %HUDBanner
+@onready var star_count: FancyCount = %StarCount
+
 @onready var rigid_body_3d: RigidBody3D = $RigidBody3D
 @onready var floor_cast: RayCast3D = %FloorCast
 @onready var gun_rotate_point: Node3D = %GunRotatePoint
@@ -42,8 +48,6 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 @onready var sprite_3d: AnimatedSprite3D = %PlayerSprite
 @onready var outline: MeshInstance3D = %Outline
 @onready var ball: MeshInstance3D = %Ball
-@onready var star_count: Label = %StarCount
-@onready var ui_color: ColorRect = %UIColor
 
 @onready var drift_particles: GPUParticles3D = %DriftParticles
 
@@ -70,7 +74,10 @@ func _ready() -> void:
     ball_color.a = 0.5
     ball.mesh.surface_get_material(1).albedo_color = ball_color
     outline.mesh.surface_get_material(1).set_shader_parameter("outline_color", ball_color)
-    ui_color.color = player.color
+
+    # HUD
+    star_count.show_count(0)
+    hud_banner.texture = hud_dictionary.get(player_id)
 
     rigid_body_3d.body_entered.connect(on_body_entered)
 
@@ -237,7 +244,7 @@ func increase_stars(amount: int) -> void:
     current_stars = clampi(current_stars + amount, 0, max_star_capacity)
     var new_scale: float = ((float(current_stars) / max_star_capacity) * (max_scale_increase - 1.)) + 1.
     rigid_body_3d.scale = Vector3.ONE * new_scale
-    star_count.text = str(current_stars)
+    star_count.show_count(current_stars)
 
 func get_gun_direction() -> Vector3:
     return gun_rotate_point.global_position.direction_to(gun_fire_point.global_position)

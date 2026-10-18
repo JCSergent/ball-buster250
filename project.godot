@@ -42,7 +42,6 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://art/": "orange",
 "res://assets/": "yellow",
-"res://components/": "gray",
 "res://menus/": "green",
 "res://resources/": "blue",
 "res://scenes/": "purple",

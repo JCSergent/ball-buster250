@@ -23,6 +23,7 @@ extends PanelContainer
 @onready var cat_sprite = preload("res://art/animatedsprites/cat_frames.tres")
 @onready var bunny_sprite = preload("res://art/animatedsprites/bunny_frames.tres")
 
+
 @onready var sprite_array : Array = [rat_sprite, frog_sprite, cat_sprite, bunny_sprite]
 
 var player_1_sprite_id: int = 0
