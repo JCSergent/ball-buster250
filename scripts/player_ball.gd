@@ -260,7 +260,9 @@ func fall_off_map() -> void:
     is_fell_off_map = true
 
 func spew_stars(amount: int, min_force: float, max_force: float, spew_direction: Vector3 = Vector3.ZERO) -> void:
-    for i in amount:
+    var spew_amount: int = int(float(amount) / 2.)
+
+    for i in spew_amount:
         var direction := spew_direction
         if direction == Vector3.ZERO:
             direction = Vector3(0.4, 0.6, 0)

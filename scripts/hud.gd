@@ -20,12 +20,16 @@ func _ready() -> void:
 func on_new_game_start(players: Array[Player]) -> void:
     for player in players:
         if player.id == 1:
+            p1_score.show_count(0)
             p1_sprite.texture = player.sprite.get_frame_texture('run', 0)
         elif player.id == 2:
+            p2_score.show_count(0)
             p2_sprite.texture = player.sprite.get_frame_texture('run', 0)
         elif player.id == 3:
+            p3_score.show_count(0)
             p3_sprite.texture = player.sprite.get_frame_texture('run', 0)
         elif player.id == 4:
+            p4_score.show_count(0)
             p4_sprite.texture = player.sprite.get_frame_texture('run', 0)
 
 func update_player_hud(player: Player) -> void:

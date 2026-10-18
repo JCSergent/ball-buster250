@@ -128,22 +128,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_htsnb")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cveut"]
-viewport_path = NodePath("NonRotatingNodes/UIMesh/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8il"]
-resource_local_to_scene = true
-transparency = 1
-shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_cveut")
-billboard_mode = 1
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_gipfl"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_pa8il")
-size = Vector2(2, 1)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_52f4h"]
 radius = 0.26832014
 
@@ -200,6 +184,22 @@ outer_radius = 0.206
 rings = 8
 ring_segments = 4
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_cveut"]
+viewport_path = NodePath("NonScaling/UIMesh/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8il"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_cveut")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_gipfl"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_pa8il")
+size = Vector2(2, 1)
+
 [node name="PlayerBall" type="Node3D" unique_id=149867139]
 script = ExtResource("1_bsyiq")
 hud_dictionary = Dictionary[int, Texture2D]({
@@ -250,32 +250,12 @@ frame_progress = 0.35537466
 remote_path = NodePath("../../NonRotatingNodes")
 update_rotation = false
 
+[node name="HUD" type="RemoteTransform3D" parent="RigidBody3D" unique_id=1062199623]
+remote_path = NodePath("../../NonScaling")
+update_rotation = false
+update_scale = false
+
 [node name="NonRotatingNodes" type="Node3D" parent="." unique_id=323607809]
-
-[node name="UIMesh" type="MeshInstance3D" parent="NonRotatingNodes" unique_id=1900480407]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8956833, 1.2991714, 0.0019922256)
-mesh = SubResource("QuadMesh_gipfl")
-
-[node name="SubViewport" type="SubViewport" parent="NonRotatingNodes/UIMesh" unique_id=417810589]
-disable_3d = true
-transparent_bg = true
-size_2d_override = Vector2i(128, 64)
-size_2d_override_stretch = true
-
-[node name="Node2D" type="Node2D" parent="NonRotatingNodes/UIMesh/SubViewport" unique_id=1707428702]
-position = Vector2(-20, 0)
-scale = Vector2(1.2, 1.2)
-
-[node name="HUDBanner" type="Sprite2D" parent="NonRotatingNodes/UIMesh/SubViewport/Node2D" unique_id=634885382]
-unique_name_in_owner = true
-position = Vector2(84, 29)
-texture = ExtResource("6_k48vh")
-
-[node name="StarCount" parent="NonRotatingNodes/UIMesh/SubViewport/Node2D" unique_id=1445329250 instance=ExtResource("7_w1s8w")]
-unique_name_in_owner = true
-position = Vector2(-27, 3)
-rotation = -0.17453295
-scale = Vector2(0.4, 0.4)
 
 [node name="SunBeamChecker" type="Area3D" parent="NonRotatingNodes" unique_id=434022337]
 unique_name_in_owner = true
@@ -328,3 +308,30 @@ collision_mask = 16
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="NonScaling" type="Node3D" parent="." unique_id=820223756]
+
+[node name="UIMesh" type="MeshInstance3D" parent="NonScaling" unique_id=1900480407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9146042, 2.001381, 0.7895899)
+mesh = SubResource("QuadMesh_gipfl")
+
+[node name="SubViewport" type="SubViewport" parent="NonScaling/UIMesh" unique_id=417810589]
+disable_3d = true
+transparent_bg = true
+size_2d_override = Vector2i(128, 64)
+size_2d_override_stretch = true
+
+[node name="Node2D" type="Node2D" parent="NonScaling/UIMesh/SubViewport" unique_id=1707428702]
+position = Vector2(-20, 0)
+scale = Vector2(1.2, 1.2)
+
+[node name="HUDBanner" type="Sprite2D" parent="NonScaling/UIMesh/SubViewport/Node2D" unique_id=634885382]
+unique_name_in_owner = true
+position = Vector2(84, 29)
+texture = ExtResource("6_k48vh")
+
+[node name="StarCount" parent="NonScaling/UIMesh/SubViewport/Node2D" unique_id=1445329250 instance=ExtResource("7_w1s8w")]
+unique_name_in_owner = true
+position = Vector2(-27, 3)
+rotation = -0.17453295
+scale = Vector2(0.4, 0.4)

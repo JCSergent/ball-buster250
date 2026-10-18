@@ -27,9 +27,9 @@ extends PanelContainer
 @onready var sprite_array : Array = [rat_sprite, frog_sprite, cat_sprite, bunny_sprite]
 
 var player_1_sprite_id: int = 0
-var player_2_sprite_id: int = 0
-var player_3_sprite_id: int = 0
-var player_4_sprite_id: int = 0
+var player_2_sprite_id: int = 1
+var player_3_sprite_id: int = 2
+var player_4_sprite_id: int = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
