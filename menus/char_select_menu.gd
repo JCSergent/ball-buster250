@@ -1,5 +1,10 @@
 extends PanelContainer
 
+@onready var timer : Timer = $Timer
+@export var wait_time := 3.0
+
+@onready var allReadyInd : Label = $PLAYERS/Ready
+
 @onready var rdy_ind_P1 : Sprite2D = $PLAYERS/P1/ReadyIND
 @onready var rdy_p1 : bool = false
 @onready var sprite_p1 : AnimatedSprite2D = $PLAYERS/P1/selectSprite
@@ -33,6 +38,8 @@ var player_4_sprite_id: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+    allReadyInd.visible = false
+    
     sprite_p1.sprite_frames = sprite_array[0]
     sprite_p1.speed_scale = 0.0
     
@@ -51,13 +58,10 @@ func _ready() -> void:
 
     !rdy_ind_P1.visible
     !rdy_ind_P2.visible
+    
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    if rdy_p1 && rdy_p2:
-        rdy_all = true
-    else:
-        !rdy_all
         
 #sprite playing ================ 
     if rdy_p1:
@@ -74,11 +78,6 @@ func _process(delta: float) -> void:
         #sprite_p3.speed_scale = 1.0
     #elif !rdy_p3:
         #sprite_p3.speed_scale = 0.0
-
-#start game ================ 
-    if rdy_all:
-        set_ingame_sprites()
-        SceneKeeper.load_scene(SceneKeeper.Scene.GameScene)
 
 func _input(event: InputEvent) -> void:
 # all =================================================================
@@ -141,7 +140,22 @@ func toggle_player_ready(player : String):
             rdy_p2 = !rdy_p2
             rdy_ind_P2.visible = !rdy_ind_P2.visible
             sprite_p2.play()
+            
+    if rdy_p1 && rdy_p2:
+        allReadyInd.visible = true
+        timer.stop()
+        timer.wait_time = wait_time
+        timer.one_shot = true
+        timer.start()
     
+        await timer.timeout
+        
+        set_ingame_sprites()
+        SceneKeeper.load_scene(SceneKeeper.Scene.GameScene)
+        
+    else:
+        timer.stop()
+        allReadyInd.visible = false
             
 func set_ingame_sprites():
     GameKeeper.players.get(1).sprite = sprite_array[player_1_sprite_id]
