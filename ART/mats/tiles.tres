@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://c53m3j8s4w2sl"]
-
-[ext_resource type="Texture2D" uid="uid://vv7xo525r5l2" path="res://ART/thangs/tiles.png" id="1_r8fdt"]
-
-[resource]
-albedo_color = Color(0.74, 0.6808, 0.6808, 1)
-albedo_texture = ExtResource("1_r8fdt")
-uv1_scale = Vector3(2, 2, 2)
-uv1_offset = Vector3(3, 5, 0)
