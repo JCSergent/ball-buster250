@@ -82,14 +82,16 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 # all =================================================================
-    if event.is_action_pressed("item_p1") || event.is_action_pressed("item_p2") :
-        SceneKeeper.load_scene(SceneKeeper.Scene.MainMenuScene)
+    # if event.is_action_pressed("item_p1") || event.is_action_pressed("item_p2") :
+        # SceneKeeper.load_scene(SceneKeeper.Scene.MainMenuScene)
   
 # P1 ================================================================     
-    elif event.is_action_pressed("jump_p1"):
+    if event.is_action_pressed("jump_p1") || event.is_action_pressed("item_p1"):
         toggle_player_ready("P1")
+
     
-    elif event.is_action_pressed("forward_p1"):
+    elif Input.is_action_just_pressed("forward_p1"):
+        print(event)
         if !rdy_p1:
             if player_1_sprite_id == 3:
                 player_1_sprite_id = 0
@@ -109,7 +111,7 @@ func _input(event: InputEvent) -> void:
         sprite_p1.sprite_frames = sprite_array[player_1_sprite_id] 
 
 # P2 ===================================================================     
-    elif event.is_action_pressed("jump_p2"):
+    elif event.is_action_pressed("jump_p2") || event.is_action_pressed("item_p2"):
         toggle_player_ready("P2")
         
     elif event.is_action_pressed("forward_p2"):

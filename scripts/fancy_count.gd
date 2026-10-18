@@ -3,6 +3,8 @@ extends Node2D
 
 # NOTE: Only supports 3 digits or less
 
+@export var default_count: int = 0
+
 @onready var hundred: FancyNumber = $Hundred
 @onready var ten: FancyNumber = $Ten
 @onready var one: FancyNumber = $One
@@ -12,6 +14,9 @@ extends Node2D
 @onready var center: Node2D = $Center
 @onready var center_right: Node2D = $CenterRight
 @onready var right: Node2D = $Right
+
+func _ready() -> void:
+    show_count(default_count)
 
 func show_count(number: int) -> void:
     var number_str: String = str(number)

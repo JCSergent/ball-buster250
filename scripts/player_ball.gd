@@ -91,7 +91,12 @@ func _physics_process(delta: float) -> void:
     # After falling off the map, lose half your stars
     if is_fell_off_map and is_on_floor:
         is_fell_off_map = false
-        spew_stars(int((float(current_stars)/2)), 6, 10)
+        if current_stars <= 7:
+            spew_stars(current_stars, 6, 10)
+        else:
+            var quart_of_stars: int = int(float(current_stars)/4)
+            increase_stars(-quart_of_stars)
+            spew_stars(quart_of_stars, 6, 10)
 
     # Shoot Gun
     if Input.is_action_just_pressed("jump_" + player.string_id):
@@ -259,9 +264,7 @@ func fall_off_map() -> void:
     rigid_body_3d.apply_central_impulse(Vector3.DOWN * 50.)
     is_fell_off_map = true
 
-func spew_stars(amount: int, min_force: float, max_force: float, spew_direction: Vector3 = Vector3.ZERO) -> void:
-    var spew_amount: int = int(float(amount) / 2.)
-
+func spew_stars(spew_amount: int, min_force: float, max_force: float, spew_direction: Vector3 = Vector3.ZERO) -> void:
     for i in spew_amount:
         var direction := spew_direction
         if direction == Vector3.ZERO:
@@ -277,7 +280,7 @@ func spew_stars(amount: int, min_force: float, max_force: float, spew_direction:
         star.fling(direction * randf_range(min_force, max_force))
         add_child(star)
 
-    increase_stars(amount * -1)
+    increase_stars(spew_amount * -1)
 
 func get_shot(direction: Vector3) -> void:
     rigid_body_3d.apply_central_impulse(direction * star_projectile_force)
