@@ -5,6 +5,7 @@ extends Node
 
 signal player_state_changed(player: Player)
 signal new_game_started(players: Array[Player])
+signal game_ended()
 
 @onready var timer : Timer = $Timer
 
@@ -50,6 +51,7 @@ func remove_item(player_id: int) -> void:
     player_state_changed.emit(player)
     
 func end_game():
+    game_ended.emit()
     get_tree().paused = true
     
     timer.stop()
