@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cnivdkbjtit6y" path="res://scripts/resources/collectable.gd" id="1_urtef"]
 [ext_resource type="Resource" uid="uid://dfaxn1v51ft50" path="res://resources/SFX/point_1.tres" id="2_o1x0a"]
-[ext_resource type="Texture2D" uid="uid://bfihi6wdymd4c" path="res://art/sprites/star_5.png" id="2_urtef"]
+[ext_resource type="Texture2D" uid="uid://cvrrlnyqtwewk" path="res://art/sprites/star_pink.png" id="3_o1x0a"]
 
 [resource]
 script = ExtResource("1_urtef")
 type = 1
-texture = ExtResource("2_urtef")
+texture = ExtResource("3_o1x0a")
 pickup_sound_effect = ExtResource("2_o1x0a")
 metadata/_custom_type_script = "uid://cnivdkbjtit6y"

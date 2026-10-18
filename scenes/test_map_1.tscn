@@ -2348,6 +2348,7 @@ shape = SubResource("WorldBoundaryShape3D_2ybj2")
 
 [node name="HUD" type="CanvasLayer" parent="ReusableElements" unique_id=1030654862]
 script = ExtResource("3_f8eag")
+number_sprites = Array[Texture2D]([null])
 
 [node name="P1" type="Control" parent="ReusableElements/HUD" unique_id=615685526]
 layout_mode = 3
