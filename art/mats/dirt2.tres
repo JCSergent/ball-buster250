@@ -1,8 +1,14 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bektusxxcqqqd"]
 
-[ext_resource type="Texture2D" uid="uid://4m6yt0aq766q" path="res://art/sprites/map_tiles/dirt_3.png" id="1_1v8fe"]
+[ext_resource type="Texture2D" path="res://art/sprites/map_tiles/dirt_3.png" id="1_1v8fe"]
+[ext_resource type="Texture2D" uid="uid://tkvojdcltwoy" path="res://art/thangs/gravel nrm.jpg" id="2_p83w8"]
 
 [resource]
+albedo_color = Color(0.95, 0.8800166, 0.78849995, 1)
 albedo_texture = ExtResource("1_1v8fe")
+metallic_specular = 0.0
+normal_enabled = true
+normal_scale = 0.68
+normal_texture = ExtResource("2_p83w8")
 uv1_scale = Vector3(3, 2, 3)
 uv1_offset = Vector3(3, 3, 3)

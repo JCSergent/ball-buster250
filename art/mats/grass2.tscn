@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://d1hdvy30qeo3m" path="res://art/thangs/grass2.png" id="1_nvt4d"]
 
 [node name="Sprite3D" type="Sprite3D" unique_id=1059588600]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.8344765, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.70140874, 0)
 billboard = 1
 texture = ExtResource("1_nvt4d")

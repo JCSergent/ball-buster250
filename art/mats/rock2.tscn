@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bb4c4ypblms0w" path="res://art/thangs/rock2.png" id="1_bov1u"]
 
 [node name="Sprite3D" type="Sprite3D" unique_id=1059588600]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.71121347, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.71121347, 0)
 billboard = 1
 texture = ExtResource("1_bov1u")

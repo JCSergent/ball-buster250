@@ -1,8 +1,13 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dai0lhavoc1v0"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hhir3"]
+[ext_resource type="Texture2D" uid="uid://bpg5m24v4n4gr" path="res://art/thangs/dirt_1.png" id="1_qksb2"]
+[ext_resource type="Texture2D" uid="uid://c3almvijfi61e" path="res://art/thangs/soil nrm.jpg" id="2_x7lac"]
 
 [resource]
-albedo_texture = SubResource("CompressedTexture2D_hhir3")
+albedo_color = Color(0.84, 0.84, 0.84, 1)
+albedo_texture = ExtResource("1_qksb2")
+normal_enabled = true
+normal_scale = 5.44
+normal_texture = ExtResource("2_x7lac")
 uv1_scale = Vector3(3, 2, 3)
 uv1_offset = Vector3(3, 0, 0)
