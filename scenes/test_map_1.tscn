@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://jcd7d1k6q018" path="res://scenes/world_elements/bumper.tscn" id="9_houx3"]
 [ext_resource type="PackedScene" uid="uid://dul0pteh3usdk" path="res://scenes/graybox_delete_later/graybox_steep_slope.tscn" id="10_o4xlp"]
 [ext_resource type="PackedScene" uid="uid://d3kk3bxmcawo1" path="res://scenes/world_elements/bounce_pad.tscn" id="11_f8eag"]
-[ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="12_0a58e"]
 [ext_resource type="PackedScene" uid="uid://dwket6reb0144" path="res://pickups/respawning_collectable.tscn" id="16_5afa1"]
 [ext_resource type="PackedScene" uid="uid://c7lobu1q5rjk4" path="res://scenes/graybox_delete_later/graybox_large_tall_platform.tscn" id="16_x4ns3"]
 [ext_resource type="PackedScene" uid="uid://c8bugatpauyup" path="res://scenes/graybox_delete_later/graybox_large_platform.tscn" id="17_gpvyf"]
@@ -2281,7 +2280,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 8, -7.2)
 curve = SubResource("Curve3D_oiceo")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="SunStuff/TopRightPath" unique_id=835804]
-transform = Transform3D(0.0694106, 0, -0.9975772, 0, 0.99999994, 0, 0.9975851, 0, 0.06941005, 0.19514894, -0.9998779, 0.08739567)
+transform = Transform3D(0.0694106, 0, -0.997577, 0, 0.99999994, 0, 0.9975851, 0, 0.06941003, 0.19514894, -0.9998779, 0.08739567)
 cubic_interp = false
 
 [node name="block-grass718" type="MeshInstance3D" parent="SunStuff/TopRightPath" unique_id=769711117]
@@ -2326,8 +2325,10 @@ transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.1
 environment = SubResource("Environment_u018e")
 
 [node name="Camera3D" type="Camera3D" parent="ReusableElements" unique_id=1193460740]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 35.194, 59.657)
+transform = Transform3D(0.7071068, -0.35355338, 0.61237246, 0, 0.8660254, 0.50000006, -0.7071068, -0.35355338, 0.61237246, 19, 16.994, 17.657001)
+projection = 1
 fov = 15.0
+size = 22.0
 
 [node name="DeathZone" type="Area3D" parent="ReusableElements" unique_id=1524002741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
@@ -3458,9 +3459,6 @@ surface_material_override/0 = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, -1.008008, 8)
 surface_material_override/0 = null
 
-[node name="grass block" parent="Floor" unique_id=1838626697 instance=ExtResource("12_0a58e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, -0.008008003, 8)
-
 [node name="block-grass687" parent="Floor" unique_id=2074399518 instance=ExtResource("4_q5vyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -1.008008, 8)
 surface_material_override/0 = null
@@ -4067,22 +4065,6 @@ surface_material_override/0 = null
 
 [node name="block-grass718" parent="Floor" unique_id=1628918825 instance=ExtResource("4_q5vyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 12)
-surface_material_override/0 = null
-
-[node name="block-grass719" parent="Floor" unique_id=1884736897 instance=ExtResource("4_q5vyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 22)
-surface_material_override/0 = null
-
-[node name="block-grass720" parent="Floor" unique_id=1213890610 instance=ExtResource("4_q5vyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 22)
-surface_material_override/0 = null
-
-[node name="block-grass721" parent="Floor" unique_id=1451407133 instance=ExtResource("4_q5vyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 22)
-surface_material_override/0 = null
-
-[node name="block-grass722" parent="Floor" unique_id=419762882 instance=ExtResource("4_q5vyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 22)
 surface_material_override/0 = null
 
 [node name="block-grass730" parent="Floor" unique_id=175054720 instance=ExtResource("4_q5vyl")]
@@ -5845,63 +5827,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.108663, -0.7475765, 7.394
 
 [node name="graybox_mild_slope108" parent="Floor" unique_id=1229748093 instance=ExtResource("8_j3705")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.108663, -0.7475765, 7.394717)
-
-[node name="graybox_mild_slope76" parent="Floor" unique_id=824987753 instance=ExtResource("8_j3705")]
-transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -21.457031, 0.25484973, 10.61707)
-
-[node name="graybox_mild_slope95" parent="Floor" unique_id=1761739371 instance=ExtResource("8_j3705")]
-transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -20.457031, 0.25484973, 10.61707)
-
-[node name="graybox_mild_slope77" parent="Floor" unique_id=797796425 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 8.629919)
-
-[node name="graybox_mild_slope78" parent="Floor" unique_id=1743591724 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 9.629919)
-
-[node name="graybox_mild_slope79" parent="Floor" unique_id=1189740773 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 10.629919)
-
-[node name="graybox_mild_slope80" parent="Floor" unique_id=520034436 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 7.629919)
-
-[node name="graybox_mild_slope81" parent="Floor" unique_id=1318781345 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 6.629919)
-
-[node name="graybox_mild_slope82" parent="Floor" unique_id=743492727 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 5.629919)
-
-[node name="graybox_mild_slope83" parent="Floor" unique_id=2036026926 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 4.629919)
-
-[node name="graybox_mild_slope84" parent="Floor" unique_id=1623048788 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 3.629919)
-
-[node name="graybox_mild_slope85" parent="Floor" unique_id=697661896 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -21.467121, 0.24116206, 2.629919)
-
-[node name="graybox_mild_slope86" parent="Floor" unique_id=1656195446 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -19.56712, -0.258838, 8.629919)
-
-[node name="graybox_mild_slope96" parent="Floor" unique_id=914164917 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -19.56712, -0.258838, 9.629919)
-
-[node name="graybox_mild_slope87" parent="Floor" unique_id=1148671202 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -19.56712, -0.258838, 7.629919)
-
-[node name="graybox_mild_slope88" parent="Floor" unique_id=1993072040 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -19.56712, -0.258838, 6.629919)
-
-[node name="graybox_mild_slope89" parent="Floor" unique_id=1883785281 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -19.56712, -0.258838, 5.629919)
-
-[node name="graybox_mild_slope90" parent="Floor" unique_id=1258863035 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -19.56712, -0.258838, 4.629919)
-
-[node name="graybox_mild_slope91" parent="Floor" unique_id=1062538796 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -19.56712, -0.258838, 3.629919)
-
-[node name="graybox_mild_slope92" parent="Floor" unique_id=841177261 instance=ExtResource("8_j3705")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -19.56712, -0.258838, 2.629919)
 
 [node name="Slants" type="Node3D" parent="." unique_id=662390292]
 
