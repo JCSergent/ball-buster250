@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dqlolhtbxgbqm"]
+
+[ext_resource type="Script" uid="uid://cs5uemtk8gmn" path="res://scripts/fancy_count.gd" id="1_d8kam"]
+[ext_resource type="PackedScene" uid="uid://b5e8nwux2ip1w" path="res://scenes/fancy_number.tscn" id="1_kwajm"]
+
+[node name="FancyCount" type="Node2D" unique_id=1445329250]
+script = ExtResource("1_d8kam")
+
+[node name="Hundred" parent="." unique_id=118518373 instance=ExtResource("1_kwajm")]
+position = Vector2(164, 111)
+
+[node name="Ten" parent="." unique_id=353312404 instance=ExtResource("1_kwajm")]
+position = Vector2(207.50836, 106.490776)
+
+[node name="One" parent="." unique_id=742991571 instance=ExtResource("1_kwajm")]
+position = Vector2(251.12914, 101.27271)

@@ -29,7 +29,11 @@ func reset_game() -> void:
 
 func update_score(player_id: int, value: int) -> void:
     var player: Player = players.get(player_id)
+    print('value')
+    print(value)
     player.score += value
+    print('score')
+    print(player.score)
     if player.score < 0:
         player.score = 0
     player_state_changed.emit(player)

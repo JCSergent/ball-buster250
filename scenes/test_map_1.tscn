@@ -14,9 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://jcd7d1k6q018" path="res://scenes/world_elements/bumper.tscn" id="9_houx3"]
 [ext_resource type="Texture2D" uid="uid://cc6v1uky14jtj" path="res://components/hud/yellow_playerbanner.png" id="10_gpvyf"]
 [ext_resource type="PackedScene" uid="uid://d3kk3bxmcawo1" path="res://scenes/world_elements/bounce_pad.tscn" id="11_f8eag"]
-[ext_resource type="Texture2D" uid="uid://bqed2hb7q02u7" path="res://ui/1.png" id="11_tt4fo"]
+[ext_resource type="PackedScene" uid="uid://dqlolhtbxgbqm" path="res://scenes/fancy_count.tscn" id="11_oiceo"]
 [ext_resource type="Texture2D" uid="uid://btttws8tjprnp" path="res://components/hud/green_playerbanner.png" id="12_5afa1"]
-[ext_resource type="Texture2D" uid="uid://cjb32rm8kdu84" path="res://ui/0.png" id="12_kmx7e"]
 [ext_resource type="Texture2D" uid="uid://ckex1fh2owv02" path="res://components/hud/red_playerbanner.png" id="12_oiceo"]
 [ext_resource type="PackedScene" uid="uid://dwket6reb0144" path="res://pickups/respawning_collectable.tscn" id="16_5afa1"]
 [ext_resource type="PackedScene" uid="uid://c8bugatpauyup" path="res://scenes/graybox_delete_later/graybox_large_platform.tscn" id="17_gpvyf"]
@@ -2285,7 +2284,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 8, -7.2)
 curve = SubResource("Curve3D_oiceo")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="SunStuff/TopRightPath" unique_id=835804]
-transform = Transform3D(0.0694106, 0, -0.99757653, 0, 0.99999994, 0, 0.9975851, 0, 0.06941, 0.19514894, -0.9998779, 0.08739567)
+transform = Transform3D(0.0694106, 0, -0.9975758, 0, 0.99999994, 0, 0.9975851, 0, 0.06940995, 0.19514894, -0.9998779, 0.08739567)
 cubic_interp = false
 
 [node name="block-grass718" type="MeshInstance3D" parent="SunStuff/TopRightPath" unique_id=769711117]
@@ -2381,20 +2380,10 @@ texture = ExtResource("4_3mjpi")
 region_enabled = true
 region_rect = Rect2(0, 0, 792.9804, 822.5656)
 
-[node name="1" type="Sprite2D" parent="ReusableElements/HUD/P1/TextureRect" unique_id=1676853741]
-position = Vector2(164.75, 119.25)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_tt4fo")
-
-[node name="0" type="Sprite2D" parent="ReusableElements/HUD/P1/TextureRect" unique_id=1736965517]
-position = Vector2(200, 117)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_kmx7e")
-
-[node name="2" type="Sprite2D" parent="ReusableElements/HUD/P1/TextureRect" unique_id=746164417]
-position = Vector2(239, 113)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_kmx7e")
+[node name="P1Score" parent="ReusableElements/HUD/P1/TextureRect" unique_id=1445329250 instance=ExtResource("11_oiceo")]
+unique_name_in_owner = true
+position = Vector2(-22.000002, 16)
+rotation = -0.08726646
 
 [node name="P2" type="Control" parent="ReusableElements/HUD" unique_id=376067068]
 layout_mode = 3
@@ -2411,10 +2400,10 @@ texture = ExtResource("10_gpvyf")
 
 [node name="Label" type="Label" parent="ReusableElements/HUD/P2/TextureRect" unique_id=1321454007]
 layout_mode = 0
-offset_left = 103.0
-offset_top = 113.0
-offset_right = 194.0
-offset_bottom = 148.0
+offset_left = 154.0
+offset_top = 123.0
+offset_right = 245.0
+offset_bottom = 158.0
 offset_transform_enabled = true
 offset_transform_rotation = 0.2617994
 theme_override_fonts/font = ExtResource("9_5afa1")
@@ -2429,6 +2418,12 @@ texture = ExtResource("4_3mjpi")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(0, 0, 792.9804, 822.5656)
+
+[node name="P2Score" parent="ReusableElements/HUD/P2/TextureRect" unique_id=1359248905 instance=ExtResource("11_oiceo")]
+unique_name_in_owner = true
+position = Vector2(-101, -46)
+rotation = 0.2617994
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="P4" type="Control" parent="ReusableElements/HUD" unique_id=882730628]
 layout_mode = 3
@@ -2446,10 +2441,10 @@ texture = ExtResource("12_oiceo")
 
 [node name="Label" type="Label" parent="ReusableElements/HUD/P4/TextureRect" unique_id=813174358]
 layout_mode = 0
-offset_left = 103.0
-offset_top = 78.435974
-offset_right = 194.0
-offset_bottom = 113.435974
+offset_left = 156.0
+offset_top = 88.0
+offset_right = 247.0
+offset_bottom = 123.0
 offset_transform_enabled = true
 offset_transform_rotation = 0.2617994
 theme_override_fonts/font = ExtResource("9_5afa1")
@@ -2464,6 +2459,12 @@ texture = ExtResource("4_3mjpi")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(0, 0, 792.9804, 822.5656)
+
+[node name="P4Score" parent="ReusableElements/HUD/P4/TextureRect" unique_id=1597845761 instance=ExtResource("11_oiceo")]
+unique_name_in_owner = true
+position = Vector2(-101, -95)
+rotation = 0.26179937
+scale = Vector2(0.9999999, 0.9999999)
 
 [node name="P3" type="Control" parent="ReusableElements/HUD" unique_id=1821687076]
 layout_mode = 3
@@ -2481,10 +2482,10 @@ texture = ExtResource("12_5afa1")
 
 [node name="Label" type="Label" parent="ReusableElements/HUD/P3/TextureRect" unique_id=1708752139]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 76.0
-offset_right = 174.0
-offset_bottom = 111.0
+offset_left = 37.0
+offset_top = 85.0
+offset_right = 128.0
+offset_bottom = 120.0
 offset_transform_enabled = true
 offset_transform_rotation = -0.2617994
 theme_override_fonts/font = ExtResource("9_5afa1")
@@ -2492,12 +2493,17 @@ theme_override_font_sizes/font_size = 28
 text = "Player 3"
 
 [node name="Character" type="Sprite2D" parent="ReusableElements/HUD/P3/TextureRect" unique_id=1385625886]
-position = Vector2(96, 29.999989)
+position = Vector2(82.99999, 33.99999)
 rotation = -0.2617994
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("4_3mjpi")
 region_enabled = true
 region_rect = Rect2(0, 0, 792.9804, 822.5656)
+
+[node name="P3Score" parent="ReusableElements/HUD/P3/TextureRect" unique_id=341763574 instance=ExtResource("11_oiceo")]
+unique_name_in_owner = true
+position = Vector2(-22.000002, -28)
+rotation = -0.08726645
 
 [node name="P1_old" type="Control" parent="ReusableElements/HUD" unique_id=832363812]
 visible = false

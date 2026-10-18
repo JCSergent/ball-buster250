@@ -3,19 +3,27 @@ extends CanvasLayer
 
 @export var number_sprites: Array[Texture2D]
 
-@onready var p1_score := $P1/Score
-@onready var p1_item: TextureRect = $P1/StoredItem
+@onready var p1_score: FancyCount = %P1Score
+@onready var p2_score: FancyCount = %P2Score
+@onready var p3_score: FancyCount = %P3Score
+@onready var p4_score: FancyCount = %P4Score
+# @onready var p1_item: TextureRect = $P1/StoredItem
 
-@onready var p2_score := $P2/Score
-@onready var p2_item: TextureRect = $P2/StoredItem
+# @onready var p2_score := $P2/Score
+# @onready var p2_item: TextureRect = $P2/StoredItem
 
 func _ready() -> void:
     GameKeeper.player_state_changed.connect(update_player_hud)
 
 func update_player_hud(player: Player) -> void:
-    pass
-    # if player.id == 1:
-    #     p1_score.text = str(player.score)
+    if player.id == 1:
+        p1_score.show_count(player.score)
+    elif player.id == 2:
+        p2_score.show_count(player.score)
+    elif player.id == 3:
+        p3_score.show_count(player.score)
+    elif player.id == 4:
+        p4_score.show_count(player.score)
     #     if player.held_item:
     #         p1_item.texture = player.held_item.texture
     #     else:
