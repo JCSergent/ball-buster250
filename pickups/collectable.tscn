@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://7u2xyb61s6bu"]
 
 [ext_resource type="Script" uid="uid://dk0harjn3we0n" path="res://scripts/collectable_node.gd" id="1_te2od"]
-[ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="1_un20x"]
 [ext_resource type="Resource" uid="uid://bjtet7qer1tyt" path="res://resources/collectables/point_1.tres" id="2_v7q7g"]
+[ext_resource type="Texture2D" uid="uid://8ira3hx73na8" path="res://art/sprites/star.png" id="3_xuypn"]
 [ext_resource type="Script" uid="uid://cl8ayp00lh6ty" path="res://scripts/platformer_shadow_spring_arm.gd" id="4_xuypn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2lak"]
-radius = 0.24267578
-height = 0.508728
+radius = 0.32910156
+height = 0.6582031
 
 [sub_resource type="Gradient" id="Gradient_8nth8"]
 offsets = PackedFloat32Array(0.3724227, 0.6198454)
@@ -99,11 +99,10 @@ axis_lock_angular_z = true
 shape = SubResource("CapsuleShape3D_e2lak")
 
 [node name="Sprite3D" type="Sprite3D" parent="RigidBody3D" unique_id=1894290276]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
 cast_shadow = 0
 billboard = 1
-texture = ExtResource("1_un20x")
+texture = ExtResource("3_xuypn")
 
 [node name="PlatformerShadowSpringArm" type="SpringArm3D" parent="RigidBody3D" unique_id=1024933116]
 transform = Transform3D(1, -1.74846e-07, 1.74846e-07, 1.74846e-07, -4.371139e-08, -1, 1.74846e-07, 1, -4.3711356e-08, 0, 0, 0)
@@ -125,7 +124,7 @@ shape = SubResource("CapsuleShape3D_xuypn")
 
 [node name="FloorCast" type="RayCast3D" parent="RigidBody3D" unique_id=928073777]
 unique_name_in_owner = true
-target_position = Vector3(0, -0.3, 0)
+target_position = Vector3(0, -0.4, 0)
 debug_shape_thickness = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1370209357]
