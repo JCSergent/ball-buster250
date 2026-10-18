@@ -286,9 +286,9 @@ func get_shot(direction: Vector3) -> void:
     rigid_body_3d.apply_central_impulse(direction * star_projectile_force)
 
     if current_stars > 0 and current_stars < 4:
-        spew_stars(current_stars, 3, 6, direction)
+        spew_stars(current_stars, 6, 10, direction)
     elif current_stars > 0:
-        spew_stars(randi_range(2, 4), 3, 6, direction)
+        spew_stars(randi_range(2, 4), 6, 10, direction)
 
 func flip_sprite(dir : String):
     match dir:
@@ -325,6 +325,6 @@ func on_body_entered(body: Node3D) -> void:
         # else:
         rigid_body_3d.apply_central_impulse(direction * player_bump_force)
         if current_stars > 0 and current_stars < 4:
-            spew_stars(current_stars, 3, 6, direction)
+            spew_stars(current_stars, 6, 10, direction)
         elif current_stars > 0:
-            spew_stars(randi_range(2, 4), 3, 6, direction)
+            spew_stars(randi_range(2, 4), 6, 10, direction)

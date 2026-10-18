@@ -10,10 +10,12 @@
 [ext_resource type="FontFile" uid="uid://cymm8p6y71evy" path="res://menus/fonts/Jersey10-Regular.ttf" id="9_5afa1"]
 [ext_resource type="PackedScene" uid="uid://jcd7d1k6q018" path="res://scenes/world_elements/bumper.tscn" id="9_houx3"]
 [ext_resource type="Texture2D" uid="uid://pja3pgh5bhss" path="res://art/ui/whiteline.png" id="10_ymjmh"]
+[ext_resource type="Texture2D" uid="uid://de2b00go47ojj" path="res://art/ui/red_itembanner.png" id="11_3xlb7"]
 [ext_resource type="PackedScene" uid="uid://d3kk3bxmcawo1" path="res://scenes/world_elements/bounce_pad.tscn" id="11_f8eag"]
 [ext_resource type="PackedScene" uid="uid://dqlolhtbxgbqm" path="res://scenes/fancy_count.tscn" id="11_oiceo"]
 [ext_resource type="Texture2D" uid="uid://dunq65hjfq8ha" path="res://art/ui/blue_playerbanner.png" id="11_ymjmh"]
 [ext_resource type="Texture2D" uid="uid://b3hj8vdve3bwr" path="res://art/ui/yellow_playerbanner.png" id="12_3xlb7"]
+[ext_resource type="Texture2D" uid="uid://btapyhwsd5s0r" path="res://art/items/rocket.png" id="12_nyq07"]
 [ext_resource type="Texture2D" uid="uid://dj81lnt1113t8" path="res://art/sprites/rat1.png" id="13_0a58e"]
 [ext_resource type="Texture2D" uid="uid://c1e5mx3yarc61" path="res://art/ui/green_playerbanner.png" id="13_nyq07"]
 [ext_resource type="PackedScene" uid="uid://dwket6reb0144" path="res://pickups/respawning_collectable.tscn" id="16_5afa1"]
@@ -6581,6 +6583,15 @@ region_rect = Rect2(-0.91241455, -4.735321, 499.0808, 386.6477)
 unique_name_in_owner = true
 position = Vector2(-22.000002, 16)
 rotation = -0.08726646
+
+[node name="RedItembanner" type="Sprite2D" parent="ReusableElements/HUD/P1/TextureRect" unique_id=209010638]
+position = Vector2(379, 56)
+texture = ExtResource("11_3xlb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="ReusableElements/HUD/P1/TextureRect/RedItembanner" unique_id=1740718635]
+position = Vector2(-60, -5)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("12_nyq07")
 
 [node name="Node2D" type="Node2D" parent="ReusableElements/HUD/P1/TextureRect" unique_id=1290061970]
 
