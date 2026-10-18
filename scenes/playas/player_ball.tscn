@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/player_ball.gd" id="1_bsyiq"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://components/platformer_shadow_spring_arm.tscn" id="2_4sqf5"]
 [ext_resource type="Script" uid="uid://d2fmo76m4fgfg" path="res://scripts/player_rigid_body.gd" id="2_g3k4b"]
-[ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://ART/mats/BOTTOM.tres" id="4_oel5b"]
-[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="5_4sqf5"]
+[ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://art/mats/BOTTOM.tres" id="4_oel5b"]
+[ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="5_52f4h"]
 [ext_resource type="Texture2D" uid="uid://i6v6wbpfytru" path="res://assets/kenney_platformer-kit/Models/GLB format/Textures/colormap.png" id="7_fxi12"]
 [ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="7_k48vh"]
 [ext_resource type="Shader" uid="uid://rhy4c6xwomdh" path="res://shaders/smoke_outline.gdshader" id="8_52f4h"]
@@ -255,14 +255,17 @@ unique_name_in_owner = true
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_kf4vv")
 
-[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/GFX" unique_id=1998351604]
+[node name="PlayerSprite" type="AnimatedSprite3D" parent="RigidBody3D/GFX" unique_id=1212252609]
 unique_name_in_owner = true
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0, 0)
 cast_shadow = 0
+pixel_size = 0.022
 billboard = 1
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("5_4sqf5")
+sprite_frames = ExtResource("5_52f4h")
+animation = &"run"
+frame_progress = 0.83038473
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="RigidBody3D" unique_id=1609265345]
 remote_path = NodePath("../../NonRotatingNodes")

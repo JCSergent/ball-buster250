@@ -2,26 +2,26 @@ extends PanelContainer
 
 @onready var rdy_ind_P1 : Sprite2D = $PLAYERS/P1/ReadyIND
 @onready var rdy_p1 : bool = false
-@onready var sprite_p1 : Sprite2D = $PLAYERS/P1/selectSprite
+@onready var sprite_p1 : AnimatedSprite2D = $PLAYERS/P1/selectSprite
 
 @onready var rdy_ind_P2 : Sprite2D = $PLAYERS/P2/ReadyIND
 @onready var rdy_p2 : bool = false
-@onready var sprite_p2 : Sprite2D = $PLAYERS/P2/selectSprite
+@onready var sprite_p2 : AnimatedSprite2D = $PLAYERS/P2/selectSprite
 
 @onready var rdy_ind_P3 : Sprite2D = $PLAYERS/P3/ReadyIND
 @onready var rdy_p3 : bool = false
-@onready var sprite_p3 : Sprite2D = $PLAYERS/P3/selectSprite
+@onready var sprite_p3 : AnimatedSprite2D = $PLAYERS/P3/selectSprite
 
 @onready var rdy_ind_P4 : Sprite2D = $PLAYERS/P4/ReadyIND
 @onready var rdy_p4 : bool = false
-@onready var sprite_p4 : Sprite2D = $PLAYERS/P4/selectSprite
+@onready var sprite_p4 : AnimatedSprite2D = $PLAYERS/P4/selectSprite
 
 @onready var rdy_all : bool = false
 
-@onready var rat_sprite = preload("res://art/sprites/rat1.png")
-@onready var frog_sprite = preload("res://art/sprites/fro1.png")
-@onready var cat_sprite = preload("res://art/sprites/cat1.png")
-@onready var bunny_sprite = preload("res://art/sprites/bun1.png")
+@onready var rat_sprite = preload("res://art/animatedsprites/rat_frames.tres")
+@onready var frog_sprite = preload("res://art/animatedsprites/frog_frames.tres")
+@onready var cat_sprite = preload("res://art/animatedsprites/cat_frames.tres")
+@onready var bunny_sprite = preload("res://art/animatedsprites/bunny_frames.tres")
 
 @onready var sprite_array : Array = [rat_sprite, frog_sprite, cat_sprite, bunny_sprite]
 
@@ -32,10 +32,17 @@ var player_4_sprite_id: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    sprite_p1.texture = sprite_array[0]
-    sprite_p2.texture = sprite_array[1]
-    sprite_p3.texture = sprite_array[2]
-    sprite_p4.texture = sprite_array[3]
+    sprite_p1.sprite_frames = sprite_array[0]
+    sprite_p1.speed_scale = 0.0
+    
+    sprite_p2.sprite_frames = sprite_array[1]
+    sprite_p2.speed_scale = 0.0
+    
+    sprite_p3.sprite_frames = sprite_array[2]
+    sprite_p3.speed_scale = 0.0
+    
+    sprite_p4.sprite_frames = sprite_array[3]
+    sprite_p4.speed_scale = 0.0
     
     !rdy_p1
     !rdy_p2
@@ -50,7 +57,24 @@ func _process(delta: float) -> void:
         rdy_all = true
     else:
         !rdy_all
-    
+        
+#sprite playing ================ 
+    if rdy_p1:
+        sprite_p1.speed_scale = 1.0
+    else:
+        sprite_p1.speed_scale = 0.0
+        
+    if rdy_p2:
+        sprite_p2.speed_scale = 1.0
+    else:
+        sprite_p2.speed_scale = 0.0
+
+    #if rdy_p3:
+        #sprite_p3.speed_scale = 1.0
+    #elif !rdy_p3:
+        #sprite_p3.speed_scale = 0.0
+
+#start game ================ 
     if rdy_all:
         set_ingame_sprites()
         SceneKeeper.load_scene(SceneKeeper.Scene.GameScene)
@@ -63,52 +87,60 @@ func _input(event: InputEvent) -> void:
 # P1 ================================================================     
     elif event.is_action_pressed("jump_p1"):
         toggle_player_ready("P1")
-        
-    elif event.is_action_pressed("forward_p1"):
-        if player_1_sprite_id == 3:
-            player_1_sprite_id = 0
-        else:
-           player_1_sprite_id += 1 
     
-        sprite_p1.texture = sprite_array[player_1_sprite_id]       
+    elif event.is_action_pressed("forward_p1"):
+        if !rdy_p1:
+            if player_1_sprite_id == 3:
+                player_1_sprite_id = 0
+            else:
+                player_1_sprite_id += 1 
+        
+        
+            sprite_p1.sprite_frames = sprite_array[player_1_sprite_id]       
     
     elif event.is_action_pressed("back_p1"):
-        if player_1_sprite_id == 0:
-            player_1_sprite_id = 3
-        else:
-           player_1_sprite_id -= 1 
+        if !rdy_p1:
+            if player_1_sprite_id == 0:
+                player_1_sprite_id = 3
+            else:
+                player_1_sprite_id -= 1 
     
-        sprite_p1.texture = sprite_array[player_1_sprite_id] 
+        sprite_p1.sprite_frames = sprite_array[player_1_sprite_id] 
 
 # P2 ===================================================================     
     elif event.is_action_pressed("jump_p2"):
         toggle_player_ready("P2")
         
     elif event.is_action_pressed("forward_p2"):
-        if player_2_sprite_id == 3:
-            player_2_sprite_id = 0
-        else:
-           player_2_sprite_id += 1 
+        if !rdy_p2:
+            if player_2_sprite_id == 3:
+                player_2_sprite_id = 0
+            else:
+                player_2_sprite_id += 1 
     
-        sprite_p2.texture = sprite_array[player_2_sprite_id]       
+        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id]       
     
     elif event.is_action_pressed("back_p2"):
-        if player_2_sprite_id == 0:
-            player_2_sprite_id = 3
-        else:
-           player_2_sprite_id -= 1 
+        if !rdy_p2:
+            if player_2_sprite_id == 0:
+                player_2_sprite_id = 3
+            else:
+                player_2_sprite_id -= 1 
     
-        sprite_p2.texture = sprite_array[player_2_sprite_id] 
+        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id] 
 
 func toggle_player_ready(player : String):
     match player:
         "P1":
             rdy_p1 = !rdy_p1
             rdy_ind_P1.visible = !rdy_ind_P1.visible
+            sprite_p1.play()
             
         "P2":
             rdy_p2 = !rdy_p2
             rdy_ind_P2.visible = !rdy_ind_P2.visible
+            sprite_p2.play()
+    
             
 func set_ingame_sprites():
     GameKeeper.players.get(1).sprite = sprite_array[player_1_sprite_id]

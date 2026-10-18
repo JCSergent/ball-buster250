@@ -3,7 +3,7 @@ extends Resource
 
 @export var id: int = 1 # 1, 2, 3, or 4
 @export var color: Color
-@export var sprite: Texture2D
+@export var sprite: SpriteFrames
 
 var score: int = 0
 var held_item: Collectable

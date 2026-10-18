@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ccqw16hq2c01r"]
+
+[ext_resource type="Texture2D" uid="uid://dmemmliu6ab3m" path="res://art/sprites/bun1.png" id="1_8lns0"]
+[ext_resource type="Texture2D" uid="uid://dc3v8yrncni44" path="res://art/sprites/bun2.png" id="2_butka"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8lns0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_butka")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 12.0
+}]

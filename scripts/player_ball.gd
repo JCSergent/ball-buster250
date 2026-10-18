@@ -39,7 +39,7 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 # @onready var sun_beam_checker: Area3D = %SunBeamChecker
 @onready var sun_cast: RayCast3D = %SunCast
 
-@onready var sprite_3d: Sprite3D = %Sprite3D
+@onready var sprite_3d: AnimatedSprite3D = %PlayerSprite
 @onready var outline: MeshInstance3D = %Outline
 @onready var ball: MeshInstance3D = %Ball
 @onready var star_count: Label = %StarCount
@@ -64,7 +64,8 @@ var sunbeam_tween: Tween
 
 func _ready() -> void:
     player = GameKeeper.players.get(player_id)
-    sprite_3d.texture = player.sprite
+    sprite_3d.sprite_frames = player.sprite
+    sprite_3d.play()
     var ball_color: Color = player.color
     ball_color.a = 0.5
     ball.mesh.surface_get_material(1).albedo_color = ball_color

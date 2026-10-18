@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://p37aa3b5lekb"]
+
+[ext_resource type="Texture2D" uid="uid://dj81lnt1113t8" path="res://art/sprites/rat1.png" id="1_a0ybc"]
+[ext_resource type="Texture2D" uid="uid://dharj6hasalis" path="res://art/sprites/rat2.png" id="2_228b3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a0ybc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_228b3")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 12.0
+}]

@@ -8,15 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://cst3l7irv3d8p" path="res://menus/menu items/bunny_namebar_RED.png" id="4_3rtee"]
 [ext_resource type="Texture2D" uid="uid://rtl0divp0dhb" path="res://menus/menu items/mouse_playercard_RED.png" id="5_30gvx"]
 [ext_resource type="Texture2D" uid="uid://cj8s0dfqse7cv" path="res://menus/menu items/notready_indicator.png" id="5_41ep7"]
-[ext_resource type="Texture2D" uid="uid://dj81lnt1113t8" path="res://art/sprites/rat1.png" id="6_3rtee"]
+[ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="6_3rtee"]
 [ext_resource type="Texture2D" uid="uid://m1apilypje5v" path="res://menus/menu items/ready_indicator.png" id="6_d5snc"]
-[ext_resource type="Texture2D" uid="uid://8f4e8ml2bxrf" path="res://art/sprites/fro1.png" id="11_30gvx"]
+[ext_resource type="SpriteFrames" uid="uid://b3f8hq1gxucd4" path="res://art/animatedsprites/frog_frames.tres" id="11_30gvx"]
 [ext_resource type="Texture2D" uid="uid://bfng6ouo7wmr8" path="res://menus/menu items/cat_namebar.png" id="11_wailv"]
 [ext_resource type="Texture2D" uid="uid://08q01a3unugd" path="res://menus/menu items/cat_playercard.png" id="12_r8134"]
-[ext_resource type="Texture2D" uid="uid://c5fk1ik18ayc2" path="res://art/sprites/cat1.png" id="14_wailv"]
+[ext_resource type="SpriteFrames" uid="uid://deaq8rmvcuj04" path="res://art/animatedsprites/cat_frames.tres" id="14_wailv"]
 [ext_resource type="Texture2D" uid="uid://flvaqvgpuw55" path="res://menus/menu items/cat_namebar_YELLOW.png" id="15_wailv"]
 [ext_resource type="Texture2D" uid="uid://chjn2v0kh2eck" path="res://menus/menu items/mouse_playercard_YELLOW.png" id="16_r8134"]
-[ext_resource type="Texture2D" uid="uid://dmemmliu6ab3m" path="res://art/sprites/bun1.png" id="17_r8134"]
+[ext_resource type="SpriteFrames" uid="uid://ccqw16hq2c01r" path="res://art/animatedsprites/bunny_frames.tres" id="17_r8134"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
 font_size = 92
@@ -65,9 +65,11 @@ position = Vector2(225, 215)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("5_30gvx")
 
-[node name="selectSprite" type="Sprite2D" parent="PLAYERS/P1" unique_id=1878855475]
+[node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/P1" unique_id=422360472]
 position = Vector2(225, 215)
-texture = ExtResource("6_3rtee")
+sprite_frames = ExtResource("6_3rtee")
+animation = &"run"
+speed_scale = 0.0
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P1" unique_id=1105686691]
 position = Vector2(354, 420)
@@ -107,9 +109,11 @@ position = Vector2(232, 225)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("12_r8134")
 
-[node name="selectSprite" type="Sprite2D" parent="PLAYERS/P2" unique_id=1112336881]
+[node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/P2" unique_id=1699210232]
 position = Vector2(225, 215)
-texture = ExtResource("11_30gvx")
+sprite_frames = ExtResource("11_30gvx")
+animation = &"run"
+speed_scale = 0.0
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P2" unique_id=679648270]
 position = Vector2(358, 430)
@@ -149,9 +153,11 @@ position = Vector2(229, 217)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("3_emvu2")
 
-[node name="selectSprite" type="Sprite2D" parent="PLAYERS/P3" unique_id=983454339]
+[node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/P3" unique_id=1239297900]
 position = Vector2(225, 215)
-texture = ExtResource("14_wailv")
+sprite_frames = ExtResource("14_wailv")
+animation = &"run"
+speed_scale = 0.0
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P3" unique_id=1081101562]
 position = Vector2(354, 425)
@@ -191,9 +197,11 @@ position = Vector2(224, 214)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("16_r8134")
 
-[node name="selectSprite" type="Sprite2D" parent="PLAYERS/P4" unique_id=1705377532]
+[node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/P4" unique_id=108609292]
 position = Vector2(225, 215)
-texture = ExtResource("17_r8134")
+sprite_frames = ExtResource("17_r8134")
+animation = &"run"
+speed_scale = 0.0
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P4" unique_id=263797319]
 position = Vector2(357, 422)
