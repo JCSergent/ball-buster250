@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c2agjv16xfriu" path="res://art/mats/cover guys.tscn" id="18_i03to"]
 [ext_resource type="PackedScene" uid="uid://c7vujixx72l3e" path="res://art/mats/moo.tscn" id="19_cxr1j"]
 [ext_resource type="Texture2D" uid="uid://bexxhkvxc7rvt" path="res://art/sprites/cloud.png" id="19_dde2g"]
+[ext_resource type="PackedScene" uid="uid://dvuvb4304u3uk" path="res://art/models/TestBall.glb" id="20_dde2g"]
 [ext_resource type="Texture2D" uid="uid://cejrux3mf0wi3" path="res://art/sprites/background_stars.png" id="20_sefr5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
@@ -33,6 +34,51 @@ uv1_offset = Vector3(3, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8hcw6"]
 material = SubResource("StandardMaterial3D_gknne")
+
+[sub_resource type="Animation" id="Animation_2imga"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.35491753, 0, 0.30402756)]
+}
+
+[sub_resource type="Animation" id="Animation_dde2g"]
+resource_name = "float"
+length = 16.933332
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.99, 16.932848),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.35491753, 0, 0.30402756), Vector3(-0.35491753, -0.31755495, 0.30402756), Vector3(-0.35491753, 0, 0.30402756)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sefr5"]
+_data = {
+&"RESET": SubResource("Animation_2imga"),
+&"float": SubResource("Animation_dde2g")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihqqk"]
 transparency = 1
@@ -106,79 +152,86 @@ label_settings = SubResource("LabelSettings_e2lak")
 [node name="JoyceMenu" type="Node3D" parent="." unique_id=1070236186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6867132, 0, 16.784008)
 
-[node name="Node3D" type="Node3D" parent="JoyceMenu" unique_id=339420468]
+[node name="Island" type="Node3D" parent="JoyceMenu" unique_id=339420468]
 transform = Transform3D(0.9993062, 0, -0.03724415, 0, 1, 0, 0.03724415, 0, 0.9993062, -0.35491753, 0, 0.30402756)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="JoyceMenu/Node3D" unique_id=1604617342]
+[node name="OmniLight3D" type="OmniLight3D" parent="JoyceMenu/Island" unique_id=1604617342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1761093, 0.79875183, -16.924038)
 light_color = Color(1, 0.76566666, 0.26, 1)
 light_energy = 8.111
 light_indirect_energy = 9.0
 light_volumetric_fog_energy = 1.296
 
-[node name="grass block32" parent="JoyceMenu/Node3D" unique_id=1838626697 instance=ExtResource("7_bk6k3")]
+[node name="grass block32" parent="JoyceMenu/Island" unique_id=1838626697 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -17.556164)
 material_override = ExtResource("8_owq6c")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block33" parent="JoyceMenu/Node3D" unique_id=1605629812 instance=ExtResource("7_bk6k3")]
+[node name="grass block33" parent="JoyceMenu/Island" unique_id=1605629812 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -16.556164)
 material_override = ExtResource("10_3fy1q")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block34" parent="JoyceMenu/Node3D" unique_id=722017421 instance=ExtResource("7_bk6k3")]
+[node name="grass block34" parent="JoyceMenu/Island" unique_id=722017421 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -15.556165)
 material_override = ExtResource("11_qeff8")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block37" parent="JoyceMenu/Node3D" unique_id=233596974 instance=ExtResource("7_bk6k3")]
+[node name="grass block37" parent="JoyceMenu/Island" unique_id=233596974 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -17.556164)
 material_override = ExtResource("12_qmwfu")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block76" parent="JoyceMenu/Node3D" unique_id=1974578837 instance=ExtResource("7_bk6k3")]
+[node name="grass block76" parent="JoyceMenu/Island" unique_id=1974578837 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -16.556164)
 material_override = ExtResource("13_duvfj")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block81" parent="JoyceMenu/Node3D" unique_id=800726744 instance=ExtResource("7_bk6k3")]
+[node name="grass block81" parent="JoyceMenu/Island" unique_id=800726744 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -17.556164)
 material_override = ExtResource("14_a82cm")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block99" parent="JoyceMenu/Node3D" unique_id=1172046469 instance=ExtResource("7_bk6k3")]
+[node name="grass block99" parent="JoyceMenu/Island" unique_id=1172046469 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -16.556164)
 material_override = ExtResource("11_qeff8")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block100" parent="JoyceMenu/Node3D" unique_id=1164570256 instance=ExtResource("7_bk6k3")]
+[node name="grass block100" parent="JoyceMenu/Island" unique_id=1164570256 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -15.556165)
 material_override = ExtResource("14_a82cm")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block101" parent="JoyceMenu/Node3D" unique_id=845600287 instance=ExtResource("7_bk6k3")]
+[node name="grass block101" parent="JoyceMenu/Island" unique_id=845600287 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -15.556165)
 material_override = ExtResource("10_3fy1q")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="Sprite3D8" parent="JoyceMenu/Node3D" unique_id=1059588600 instance=ExtResource("15_ebkg7")]
+[node name="Sprite3D8" parent="JoyceMenu/Island" unique_id=1059588600 instance=ExtResource("15_ebkg7")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.3380084, 0.70278907, -16.24742)
 
-[node name="Sprite3D26" parent="JoyceMenu/Node3D" unique_id=34844868 instance=ExtResource("16_3mgp7")]
+[node name="Sprite3D26" parent="JoyceMenu/Island" unique_id=34844868 instance=ExtResource("16_3mgp7")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.395485, 0.88979673, -17.560131)
 
-[node name="Sprite3D27" parent="JoyceMenu/Node3D" unique_id=1809370745 instance=ExtResource("16_3mgp7")]
+[node name="Sprite3D27" parent="JoyceMenu/Island" unique_id=1809370745 instance=ExtResource("16_3mgp7")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.797513, 0.77846146, -15.503194)
 
-[node name="Sprite3D28" parent="JoyceMenu/Node3D" unique_id=556739787 instance=ExtResource("17_2y17y")]
+[node name="Sprite3D28" parent="JoyceMenu/Island" unique_id=556739787 instance=ExtResource("17_2y17y")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.3193707, 1.0116574, -15.65403)
 
-[node name="Sprite3D30" parent="JoyceMenu/Node3D" unique_id=417271412 instance=ExtResource("17_2y17y")]
+[node name="Sprite3D30" parent="JoyceMenu/Island" unique_id=417271412 instance=ExtResource("17_2y17y")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.037303, 1.0116574, -17.924582)
 
-[node name="Sprite3D29" parent="JoyceMenu/Node3D" unique_id=1352456675 instance=ExtResource("18_i03to")]
+[node name="Sprite3D29" parent="JoyceMenu/Island" unique_id=1352456675 instance=ExtResource("18_i03to")]
 transform = Transform3D(0.3, 0, 0, 0, 0.28977776, 0.077645734, 0, -0.077645734, 0.28977776, 4.1865454, 0.9096714, -16.965496)
 gi_lightmap_texel_scale = 0.01
+
+[node name="TestBall" parent="JoyceMenu/Island/Sprite3D29" unique_id=1654792206 instance=ExtResource("20_dde2g")]
+transform = Transform3D(1.9936185, -0.7690332, 0.35849208, 0.7594268, 1.2089989, -1.6297348, 0.3784173, 1.6252241, 1.381988, -5.1187286, -0.57634854, 4.0062437)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="JoyceMenu/Island" unique_id=721898356]
+libraries/ = SubResource("AnimationLibrary_sefr5")
+speed_scale = 3.0
 
 [node name="Sprite3D31" parent="JoyceMenu" unique_id=727139373 instance=ExtResource("19_cxr1j")]
 transform = Transform3D(-3.5331864, 0, 9.808986, 0, 18.16365, 0, -17.8167, 0, -1.9451962, -9.502043, 3.2603276, -20.048086)
