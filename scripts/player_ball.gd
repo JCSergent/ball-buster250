@@ -202,6 +202,7 @@ func shoot_gun() -> void:
     if current_collectable:
         use_collectable()
     elif  current_stars > 0:
+        $NonRotatingNodes/GunRotatePoint/pipe/pulseObj.pulse_this()
         var bullet: Bullet = BULLET_SCENE.instantiate()
         bullet.fire_direction = fire_direction
         bullet.fired_by_player = player_id

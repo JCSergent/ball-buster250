@@ -15,6 +15,7 @@
 [ext_resource type="Shader" uid="uid://cuqv17vikbreu" path="res://shaders/smoke.gdshader" id="8_oel5b"]
 [ext_resource type="Material" uid="uid://dgocohy4s7cq4" path="res://art/mats/cartoon_RING.tres" id="13_i7gku"]
 [ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="14_af7he"]
+[ext_resource type="Script" uid="uid://tma0ehy5ejye" path="res://scripts/pulse_obj.gd" id="15_hcxxk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gipfl"]
 
@@ -303,6 +304,11 @@ mesh = SubResource("TorusMesh_eoqba")
 transform = Transform3D(-4.0389324e-08, 0.84000003, 0, 4.0389324e-08, 0, 1, 0.924, 3.6717566e-08, -4.3711385e-08, 0, 0, 0)
 texture_filter = 0
 texture = ExtResource("14_af7he")
+
+[node name="pulseObj" type="Node" parent="NonRotatingNodes/GunRotatePoint/pipe" unique_id=1109405326 node_paths=PackedStringArray("pulsable")]
+script = ExtResource("15_hcxxk")
+pulsable = NodePath("..")
+metadata/_custom_type_script = "uid://tma0ehy5ejye"
 
 [node name="GunFirePoint" type="Marker3D" parent="NonRotatingNodes/GunRotatePoint" unique_id=1301492511]
 unique_name_in_owner = true
