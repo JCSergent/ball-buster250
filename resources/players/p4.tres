@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Player" format=3 uid="uid://biuxhc06ij717"]
+
+[ext_resource type="Script" uid="uid://l17mp3lfii6e" path="res://scripts/resources/player.gd" id="1_ostg0"]
+[ext_resource type="SpriteFrames" uid="uid://ccqw16hq2c01r" path="res://art/animatedsprites/bunny_frames.tres" id="2_ostg0"]
+
+[resource]
+script = ExtResource("1_ostg0")
+id = 4
+color = Color(0.16078432, 0.7607843, 0.2901961, 1)
+sprite = ExtResource("2_ostg0")
+metadata/_custom_type_script = "uid://l17mp3lfii6e"
