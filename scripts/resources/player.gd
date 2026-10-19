@@ -5,6 +5,7 @@ extends Resource
 @export var color: Color
 @export var sprite: SpriteFrames
 
+var is_playing: bool = true
 var score: int = 0
 var held_item: Collectable
 

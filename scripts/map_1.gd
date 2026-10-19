@@ -21,6 +21,20 @@ func _ready() -> void:
     player_2.global_position = Vector3.UP * 6
     player_2.global_position.x += 1.
 
+    if GameKeeper.players.get(3).is_playing:
+        var player_3: PlayerBall = PLAYER_BALL.instantiate()
+        player_3.player_id = 3
+        players.add_child(player_3)
+        player_3.global_position = Vector3.UP * 6
+        player_3.global_position.x -= 2.
+
+    if GameKeeper.players.get(4).is_playing:
+        var player_4: PlayerBall = PLAYER_BALL.instantiate()
+        player_4.player_id = 4
+        players.add_child(player_4)
+        player_4.global_position = Vector3.UP * 6
+        player_4.global_position.x += 2.
+
     GameKeeper.new_game_started.emit(GameKeeper.players.values())
 
 func show_end_screen():
