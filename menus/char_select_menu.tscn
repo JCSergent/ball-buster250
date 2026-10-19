@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://pnc5ccrbcfgf" path="res://menus/menu items/player_namebar_4.png" id="15_wailv"]
 [ext_resource type="Texture2D" uid="uid://d3jwep54av3xq" path="res://menus/menu items/player_card_4.png" id="16_r8134"]
 [ext_resource type="SpriteFrames" uid="uid://ccqw16hq2c01r" path="res://art/animatedsprites/bunny_frames.tres" id="17_r8134"]
+[ext_resource type="PackedScene" uid="uid://b7344gku3c37o" path="res://components/pulse_obj.tscn" id="22_iax8c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
 font_size = 92
@@ -33,8 +34,9 @@ outline_size = 28
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ryyb2"]
-font_size = 360
-outline_size = 120
+font_size = 280
+outline_size = 100
+outline_color = Color(0, 0, 0, 1)
 
 [node name="MenuPanel" type="PanelContainer" unique_id=496272823]
 anchors_preset = 15
@@ -108,6 +110,9 @@ sprite_frames = ExtResource("6_3rtee")
 animation = &"run"
 speed_scale = 0.0
 
+[node name="pulseObj" parent="PLAYERS/P1/selectSprite" unique_id=1652883855 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")
+
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P1" unique_id=1105686691]
 position = Vector2(354, 420)
 scale = Vector2(0.59942365, 0.59942365)
@@ -118,6 +123,9 @@ visible = false
 position = Vector2(354.0807, 413.0807)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("6_d5snc")
+
+[node name="pulseObj" parent="PLAYERS/P1/ReadyIND" unique_id=957503066 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")
 
 [node name="NameLabel" type="Label" parent="PLAYERS/P1" unique_id=650195581]
 layout_mode = 0
@@ -218,6 +226,9 @@ sprite_frames = ExtResource("11_30gvx")
 animation = &"run"
 speed_scale = 0.0
 
+[node name="pulseObj" parent="PLAYERS/P2/selectSprite" unique_id=479431792 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")
+
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P2" unique_id=679648270]
 position = Vector2(358, 430)
 scale = Vector2(0.59942365, 0.59942365)
@@ -228,6 +239,9 @@ visible = false
 position = Vector2(358.0807, 423.0807)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("6_d5snc")
+
+[node name="pulseObj" parent="PLAYERS/P2/ReadyIND" unique_id=566278579 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")
 
 [node name="NameLabel" type="Label" parent="PLAYERS/P2" unique_id=1330024357]
 layout_mode = 0
@@ -328,11 +342,13 @@ text = "PLAYER 4"
 label_settings = SubResource("LabelSettings_e2lak")
 
 [node name="Ready" type="Label" parent="PLAYERS" unique_id=171686630]
-visible = false
 layout_mode = 0
-offset_left = 872.0
-offset_top = -12.0
-offset_right = 2791.6104
-offset_bottom = 375.0
+offset_left = 641.0
+offset_top = -14.0
+offset_right = 2560.6104
+offset_bottom = 373.0
 text = "READY..."
 label_settings = SubResource("LabelSettings_ryyb2")
+
+[node name="pulseObj" parent="PLAYERS/Ready" unique_id=939815356 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")

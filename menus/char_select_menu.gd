@@ -65,10 +65,12 @@ func _process(delta: float) -> void:
 # P1 ===================================================================     
     if Input.is_action_just_pressed("shoot_p1") || Input.is_action_just_pressed("charge_p1"):
         toggle_player_ready("P1")
-
+        $PLAYERS/P1/selectSprite/pulseObj.pulse_this()
+        $PLAYERS/P1/ReadyIND/pulseObj.pulse_this()
     
     elif Input.is_action_just_pressed("forward_p1"):
         if !rdy_p1:
+            $PLAYERS/P1/selectSprite/pulseObj.pulse_this()
             if player_1_sprite_id == 3:
                 player_1_sprite_id = 0
             else:
@@ -79,6 +81,7 @@ func _process(delta: float) -> void:
     
     elif Input.is_action_just_pressed("back_p1"):
         if !rdy_p1:
+            $PLAYERS/P1/selectSprite/pulseObj.pulse_this()
             if player_1_sprite_id == 0:
                 player_1_sprite_id = 3
             else:
@@ -89,24 +92,30 @@ func _process(delta: float) -> void:
 # P2 ===================================================================     
     elif Input.is_action_just_pressed("shoot_p2") || Input.is_action_just_pressed("charge_p2"):
         toggle_player_ready("P2")
+        $PLAYERS/P2/selectSprite/pulseObj.pulse_this()
+        $PLAYERS/P2/ReadyIND/pulseObj.pulse_this()
+        
         
     elif Input.is_action_just_pressed("forward_p2"):
         if !rdy_p2:
+            $PLAYERS/P2/selectSprite/pulseObj.pulse_this()
             if player_2_sprite_id == 3:
                 player_2_sprite_id = 0
             else:
                 player_2_sprite_id += 1 
     
-        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id]       
+        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id]    
+        
     
     elif Input.is_action_just_pressed("back_p2"):
         if !rdy_p2:
+            $PLAYERS/P2/selectSprite/pulseObj.pulse_this()
             if player_2_sprite_id == 0:
                 player_2_sprite_id = 3
             else:
                 player_2_sprite_id -= 1 
     
-        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id] 
+        sprite_p2.sprite_frames = sprite_array[player_2_sprite_id]
         
 #sprite playing ================ 
     if rdy_p1:
@@ -138,6 +147,7 @@ func toggle_player_ready(player : String):
             
     if rdy_p1 && rdy_p2:
         allReadyInd.visible = true
+        $PLAYERS/Ready/pulseObj.pulse_this()
         timer.stop()
         timer.wait_time = wait_time
         timer.one_shot = true
