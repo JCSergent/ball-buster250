@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://cru80mydiwxk8" path="res://scripts/player_ball.gd" id="1_bsyiq"]
 [ext_resource type="PackedScene" uid="uid://0b6g5jc4sunn" path="res://scenes/platformer_shadow_spring_arm.tscn" id="2_4sqf5"]
 [ext_resource type="Texture2D" uid="uid://dgrly80qx1ib3" path="res://art/ui/red_starbanner.png" id="2_af7he"]
+[ext_resource type="Resource" uid="uid://b85vbt2jllioq" path="res://resources/SFX/shoot_sound.tres" id="2_dtqmr"]
 [ext_resource type="Script" uid="uid://d2fmo76m4fgfg" path="res://scripts/player_rigid_body.gd" id="2_g3k4b"]
 [ext_resource type="Texture2D" uid="uid://d17fct37vnvq1" path="res://art/ui/blue_starbanner.png" id="3_gea3y"]
+[ext_resource type="Resource" uid="uid://cl7c6t1aorfx8" path="res://resources/SFX/explode_sfx.tres" id="3_vihqf"]
 [ext_resource type="Texture2D" uid="uid://bkwt0y6tmbeqq" path="res://art/ui/green_starbanner.png" id="4_hcxxk"]
 [ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://art/mats/BOTTOM.tres" id="4_oel5b"]
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="5_52f4h"]
@@ -207,6 +209,8 @@ load_path = "res://.godot/imported/red_starbanner.png-1df45e2748c2450fa7f2962304
 
 [node name="PlayerBall" type="Node3D" unique_id=149867139]
 script = ExtResource("1_bsyiq")
+shoot_sound = ExtResource("2_dtqmr")
+die_sound = ExtResource("3_vihqf")
 hud_dictionary = Dictionary[int, Texture2D]({
 1: ExtResource("2_af7he"),
 2: ExtResource("3_gea3y"),

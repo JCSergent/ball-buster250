@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://b85vbt2jllioq"]
+
+[ext_resource type="Script" uid="uid://egntisbqign7" path="res://scripts/resources/sound_effect.gd" id="1_73ik0"]
+[ext_resource type="AudioStream" uid="uid://o23xpebofbc3" path="res://art/sound/blunted.wav" id="1_m2fp3"]
+
+[resource]
+script = ExtResource("1_73ik0")
+audio_stream = ExtResource("1_m2fp3")
+metadata/_custom_type_script = "uid://egntisbqign7"

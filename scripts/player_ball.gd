@@ -4,6 +4,9 @@ extends Node3D
 const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 const STAR_SCENE = preload("res://pickups/collectable.tscn")
 
+@export var shoot_sound : SoundEffect
+@export var die_sound : SoundEffect
+
 @export var player_id: int = 1
 
 @export var rolling_force := 40
@@ -202,6 +205,7 @@ func shoot_gun() -> void:
     if current_collectable:
         use_collectable()
     elif  current_stars > 0:
+        AudioKeeper.play_sfx(shoot_sound)
         $NonRotatingNodes/GunRotatePoint/pipe/pulseObj.pulse_this()
         var bullet: Bullet = BULLET_SCENE.instantiate()
         bullet.fire_direction = fire_direction
@@ -265,6 +269,7 @@ func fall_off_map() -> void:
     rigid_body_3d.linear_velocity = Vector3.DOWN * 10
     rigid_body_3d.apply_central_impulse(Vector3.DOWN * 50.)
     is_fell_off_map = true
+    AudioKeeper.play_sfx(die_sound)
 
 func spew_stars(spew_amount: int, min_force: float, max_force: float, spew_direction: Vector3 = Vector3.ZERO) -> void:
     for i in spew_amount:

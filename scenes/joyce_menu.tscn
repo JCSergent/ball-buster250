@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://2c1yy0fvh8s3"]
+
+[ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="1_sva7x"]
+[ext_resource type="Material" uid="uid://b5s8ks28xpwp3" path="res://art/mats/grass6.tres" id="2_7x23v"]
+[ext_resource type="Texture2D" uid="uid://dwsel3imqliy6" path="res://art/sprites/map_tiles/grass_6.png" id="3_vfvi0"]
+[ext_resource type="Material" uid="uid://mcqdbal30w7a" path="res://art/mats/grass2.tres" id="4_kotu8"]
+[ext_resource type="Material" uid="uid://kkhvq8omlohd" path="res://art/mats/grass3.tres" id="5_0ufe7"]
+[ext_resource type="Material" uid="uid://bbs4gm0dwn2wj" path="res://art/mats/grass5.tres" id="6_ibff2"]
+[ext_resource type="Material" uid="uid://clcd0elomun5c" path="res://art/mats/grass4.tres" id="7_rtjv4"]
+[ext_resource type="Material" uid="uid://bw10p8qp7bwrg" path="res://art/mats/grass1.tres" id="8_kdul8"]
+[ext_resource type="PackedScene" uid="uid://comsyxwv565oo" path="res://art/mats/grass.tscn" id="9_03biy"]
+[ext_resource type="PackedScene" uid="uid://b5ifqovaqojeg" path="res://art/mats/flower_stem.tscn" id="10_yalts"]
+[ext_resource type="PackedScene" uid="uid://b4xwhmf07g6n3" path="res://art/mats/grass2.tscn" id="11_d8ryv"]
+[ext_resource type="PackedScene" uid="uid://c2agjv16xfriu" path="res://art/mats/cover guys.tscn" id="12_qjp7f"]
+[ext_resource type="PackedScene" uid="uid://c7vujixx72l3e" path="res://art/mats/moo.tscn" id="13_koynl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gknne"]
+albedo_texture = ExtResource("3_vfvi0")
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(3, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8hcw6"]
+material = SubResource("StandardMaterial3D_gknne")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ar7ra"]
+sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
+sky_horizon_color = Color(0.5644964, 0.26980805, 0.83794004, 1)
+ground_bottom_color = Color(0.2425, 0.448625, 0.97, 1)
+ground_horizon_color = Color(0.22495992, 0.1628, 0.37, 1)
+ground_curve = 9.461558
+
+[sub_resource type="Sky" id="Sky_pa8il"]
+sky_material = SubResource("ProceduralSkyMaterial_ar7ra")
+
+[sub_resource type="Environment" id="Environment_ixgyf"]
+background_mode = 2
+sky = SubResource("Sky_pa8il")
+ambient_light_source = 2
+ambient_light_color = Color(0.36722502, 0.37, 0.3367, 1)
+tonemap_exposure = 0.65
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.3562303, 0.37680197, 0.6202689, 1)
+volumetric_fog_emission_energy = 3.25
+
+[node name="JoyceMenu" type="Node3D" unique_id=1070236186]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1604617342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1761093, 0.79875183, -16.924038)
+light_color = Color(1, 0.76566666, 0.26, 1)
+light_energy = 8.111
+light_indirect_energy = 9.0
+light_volumetric_fog_energy = 1.296
+
+[node name="grass block32" parent="." unique_id=1838626697 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -17.556164)
+material_override = ExtResource("2_7x23v")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block33" parent="." unique_id=1605629812 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -16.556164)
+material_override = ExtResource("4_kotu8")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block34" parent="." unique_id=722017421 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -15.556165)
+material_override = ExtResource("5_0ufe7")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block37" parent="." unique_id=233596974 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -17.556164)
+material_override = ExtResource("6_ibff2")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block76" parent="." unique_id=1974578837 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -16.556164)
+material_override = ExtResource("7_rtjv4")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block81" parent="." unique_id=800726744 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -17.556164)
+material_override = ExtResource("8_kdul8")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block99" parent="." unique_id=1172046469 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -16.556164)
+material_override = ExtResource("5_0ufe7")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block100" parent="." unique_id=1164570256 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -15.556165)
+material_override = ExtResource("8_kdul8")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block101" parent="." unique_id=845600287 instance=ExtResource("1_sva7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -15.556165)
+material_override = ExtResource("4_kotu8")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="Sprite3D8" parent="." unique_id=1059588600 instance=ExtResource("9_03biy")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.3380084, 0.70278907, -16.24742)
+
+[node name="Sprite3D26" parent="." unique_id=34844868 instance=ExtResource("10_yalts")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.395485, 0.88979673, -17.560131)
+
+[node name="Sprite3D27" parent="." unique_id=1809370745 instance=ExtResource("10_yalts")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.797513, 0.77846146, -15.503194)
+
+[node name="Sprite3D28" parent="." unique_id=556739787 instance=ExtResource("11_d8ryv")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.3193707, 1.0116574, -15.65403)
+
+[node name="Sprite3D30" parent="." unique_id=417271412 instance=ExtResource("11_d8ryv")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.037303, 1.0116574, -17.924582)
+
+[node name="Sprite3D29" parent="." unique_id=1352456675 instance=ExtResource("12_qjp7f")]
+transform = Transform3D(0.3, 0, 0, 0, 0.28977776, 0.077645734, 0, -0.077645734, 0.28977776, 4.1865454, 0.9096714, -16.965496)
+gi_lightmap_texel_scale = 0.01
+
+[node name="Sprite3D31" parent="." unique_id=727139373 instance=ExtResource("13_koynl")]
+transform = Transform3D(-4.7210426, 0, 8.815428, 0, 10, 0, -8.815428, 0, -4.7210426, -2.3648944, -0.3571446, -14.018903)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=101020582]
+transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.16382037, 0, 41.609707, 56.6689)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1431478749]
+environment = SubResource("Environment_ixgyf")

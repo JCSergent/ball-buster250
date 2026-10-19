@@ -2,6 +2,7 @@ extends Node3D
 
 const PLAYER_BALL = preload("res://scenes/playas/player_ball.tscn")
 
+@export var end_sound : SoundEffect
 @onready var players: Node3D = $Players
 
 func _ready() -> void:
@@ -25,3 +26,4 @@ func _ready() -> void:
 func show_end_screen():
     $ReusableElements/HUD/GAME_Screen.visible = true
     $ReusableElements/HUD/GAME_Screen/pulseObj.pulse_this()
+    AudioKeeper.play_sfx(end_sound)

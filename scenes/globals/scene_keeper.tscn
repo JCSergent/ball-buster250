@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cdudhlbpb7tk8" path="res://scripts/globals/scene_keeper.gd" id="1_oo7j1"]
 [ext_resource type="PackedScene" uid="uid://bpcpq8qhf518v" path="res://menus/char_select_menu.tscn" id="2_3om11"]
 [ext_resource type="PackedScene" uid="uid://dsijt7s5byilb" path="res://scenes/test_map_1.tscn" id="3_ibihc"]
-[ext_resource type="PackedScene" uid="uid://bh1wq7mf7hbur" path="res://menus/main_menu.tscn" id="4_o6sfw"]
 [ext_resource type="PackedScene" uid="uid://dv3tb1onfdapr" path="res://menus/victory_menu.tscn" id="5_ibihc"]
+[ext_resource type="PackedScene" uid="uid://cdwfm5sw3e8gw" path="res://menus/main_menu_3d.tscn" id="5_o6sfw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gipfl"]
 bg_color = Color(0, 0, 0, 1)
@@ -20,7 +20,7 @@ script = ExtResource("1_oo7j1")
 loadable_scenes = Dictionary[int, PackedScene]({
 0: ExtResource("2_3om11"),
 1: ExtResource("3_ibihc"),
-2: ExtResource("4_o6sfw"),
+2: ExtResource("5_o6sfw"),
 3: ExtResource("5_ibihc")
 })
 

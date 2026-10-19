@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://cdwfm5sw3e8gw"]
+
+[ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_2imga"]
+[ext_resource type="Script" uid="uid://dbg1e3286ev5x" path="res://menus/main_menu_3d.gd" id="1_dde2g"]
+[ext_resource type="Texture2D" uid="uid://djcodwds51p1r" path="res://menus/menu items/celestiball_logo.png" id="3_sefr5"]
+[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_q4131"]
+[ext_resource type="AudioStream" uid="uid://cojncurjtoe86" path="res://art/music/short loop.wav" id="6_a4gyb"]
+[ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="7_bk6k3"]
+[ext_resource type="Material" uid="uid://b5s8ks28xpwp3" path="res://art/mats/grass6.tres" id="8_owq6c"]
+[ext_resource type="Texture2D" uid="uid://dwsel3imqliy6" path="res://art/sprites/map_tiles/grass_6.png" id="9_q300n"]
+[ext_resource type="Material" uid="uid://mcqdbal30w7a" path="res://art/mats/grass2.tres" id="10_3fy1q"]
+[ext_resource type="Material" uid="uid://kkhvq8omlohd" path="res://art/mats/grass3.tres" id="11_qeff8"]
+[ext_resource type="Material" uid="uid://bbs4gm0dwn2wj" path="res://art/mats/grass5.tres" id="12_qmwfu"]
+[ext_resource type="Material" uid="uid://clcd0elomun5c" path="res://art/mats/grass4.tres" id="13_duvfj"]
+[ext_resource type="Material" uid="uid://bw10p8qp7bwrg" path="res://art/mats/grass1.tres" id="14_a82cm"]
+[ext_resource type="PackedScene" uid="uid://comsyxwv565oo" path="res://art/mats/grass.tscn" id="15_ebkg7"]
+[ext_resource type="PackedScene" uid="uid://b5ifqovaqojeg" path="res://art/mats/flower_stem.tscn" id="16_3mgp7"]
+[ext_resource type="PackedScene" uid="uid://b4xwhmf07g6n3" path="res://art/mats/grass2.tscn" id="17_2y17y"]
+[ext_resource type="PackedScene" uid="uid://c2agjv16xfriu" path="res://art/mats/cover guys.tscn" id="18_i03to"]
+[ext_resource type="PackedScene" uid="uid://c7vujixx72l3e" path="res://art/mats/moo.tscn" id="19_cxr1j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gknne"]
+albedo_texture = ExtResource("9_q300n")
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(3, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8hcw6"]
+material = SubResource("StandardMaterial3D_gknne")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ar7ra"]
+sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
+sky_horizon_color = Color(0.5644964, 0.26980805, 0.83794004, 1)
+ground_bottom_color = Color(0.2425, 0.448625, 0.97, 1)
+ground_horizon_color = Color(0.22495992, 0.1628, 0.37, 1)
+ground_curve = 9.461558
+
+[sub_resource type="Sky" id="Sky_pa8il"]
+sky_material = SubResource("ProceduralSkyMaterial_ar7ra")
+
+[sub_resource type="Environment" id="Environment_ixgyf"]
+background_mode = 2
+sky = SubResource("Sky_pa8il")
+ambient_light_source = 2
+ambient_light_color = Color(0.36722502, 0.37, 0.3367, 1)
+tonemap_exposure = 0.65
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.3562303, 0.37680197, 0.6202689, 1)
+volumetric_fog_emission_energy = 3.25
+
+[node name="MainMenu3D" type="Node3D" unique_id=675731537]
+script = ExtResource("1_dde2g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654610823]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=810114317]
+texture_filter = 1
+position = Vector2(471, 230.00002)
+scale = Vector2(9.25, 9.25)
+texture = ExtResource("5_q4131")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1386022531]
+offset_left = 70.0
+offset_top = 47.0
+offset_right = 1169.0
+offset_bottom = 488.0
+texture = ExtResource("3_sefr5")
+
+[node name="StartButt" type="Button" parent="CanvasLayer" unique_id=863919275]
+offset_left = 112.0
+offset_top = 432.0
+offset_right = 612.0
+offset_bottom = 535.0
+theme = ExtResource("1_2imga")
+text = "START"
+
+[node name="QuitButt" type="Button" parent="CanvasLayer" unique_id=617201877]
+offset_left = 112.0
+offset_top = 549.0
+offset_right = 612.0
+offset_bottom = 652.0
+theme = ExtResource("1_2imga")
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1617487207]
+stream = ExtResource("6_a4gyb")
+volume_db = -10.0
+autoplay = true
+
+[node name="JoyceMenu" type="Node3D" parent="." unique_id=1070236186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6867132, 0, 16.784008)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="JoyceMenu" unique_id=1604617342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1761093, 0.79875183, -16.924038)
+light_color = Color(1, 0.76566666, 0.26, 1)
+light_energy = 8.111
+light_indirect_energy = 9.0
+light_volumetric_fog_energy = 1.296
+
+[node name="grass block32" parent="JoyceMenu" unique_id=1838626697 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -17.556164)
+material_override = ExtResource("8_owq6c")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block33" parent="JoyceMenu" unique_id=1605629812 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -16.556164)
+material_override = ExtResource("10_3fy1q")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block34" parent="JoyceMenu" unique_id=722017421 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -15.556165)
+material_override = ExtResource("11_qeff8")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block37" parent="JoyceMenu" unique_id=233596974 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -17.556164)
+material_override = ExtResource("12_qmwfu")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block76" parent="JoyceMenu" unique_id=1974578837 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -16.556164)
+material_override = ExtResource("13_duvfj")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block81" parent="JoyceMenu" unique_id=800726744 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -17.556164)
+material_override = ExtResource("14_a82cm")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block99" parent="JoyceMenu" unique_id=1172046469 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -16.556164)
+material_override = ExtResource("11_qeff8")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block100" parent="JoyceMenu" unique_id=1164570256 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -15.556165)
+material_override = ExtResource("14_a82cm")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block101" parent="JoyceMenu" unique_id=845600287 instance=ExtResource("7_bk6k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -15.556165)
+material_override = ExtResource("10_3fy1q")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="Sprite3D8" parent="JoyceMenu" unique_id=1059588600 instance=ExtResource("15_ebkg7")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.3380084, 0.70278907, -16.24742)
+
+[node name="Sprite3D26" parent="JoyceMenu" unique_id=34844868 instance=ExtResource("16_3mgp7")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.395485, 0.88979673, -17.560131)
+
+[node name="Sprite3D27" parent="JoyceMenu" unique_id=1809370745 instance=ExtResource("16_3mgp7")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.797513, 0.77846146, -15.503194)
+
+[node name="Sprite3D28" parent="JoyceMenu" unique_id=556739787 instance=ExtResource("17_2y17y")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.3193707, 1.0116574, -15.65403)
+
+[node name="Sprite3D30" parent="JoyceMenu" unique_id=417271412 instance=ExtResource("17_2y17y")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.037303, 1.0116574, -17.924582)
+
+[node name="Sprite3D29" parent="JoyceMenu" unique_id=1352456675 instance=ExtResource("18_i03to")]
+transform = Transform3D(0.3, 0, 0, 0, 0.28977776, 0.077645734, 0, -0.077645734, 0.28977776, 4.1865454, 0.9096714, -16.965496)
+gi_lightmap_texel_scale = 0.01
+
+[node name="Sprite3D31" parent="JoyceMenu" unique_id=727139373 instance=ExtResource("19_cxr1j")]
+transform = Transform3D(-4.7210426, 0, 8.815428, 0, 10, 0, -8.815428, 0, -4.7210426, -2.3648944, -0.3571446, -14.018903)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="JoyceMenu" unique_id=101020582]
+transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.16382037, 0, 41.609707, 56.6689)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="JoyceMenu" unique_id=1431478749]
+environment = SubResource("Environment_ixgyf")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1222035302]
+transform = Transform3D(-0.49181843, -0.3285443, 0.8063333, 0.0038613572, 0.925245, 0.3793506, -0.8706893, 0.18968518, -0.45378387, 3.9136333, 3.3204267, 0.0922358)
+size = 4.633
+
+[connection signal="pressed" from="CanvasLayer/StartButt" to="." method="_on_start_butt_pressed"]
+[connection signal="pressed" from="CanvasLayer/QuitButt" to="." method="_on_quit_butt_pressed"]
