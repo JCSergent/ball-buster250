@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Player" format=3 uid="uid://dml1ufdssfbpp"]
 
 [ext_resource type="Script" uid="uid://l17mp3lfii6e" path="res://scripts/resources/player.gd" id="1_qr44l"]
-[ext_resource type="SpriteFrames" uid="uid://b3f8hq1gxucd4" path="res://ART/animatedsprites/frog_frames.tres" id="2_qr44l"]
+[ext_resource type="SpriteFrames" uid="uid://b3f8hq1gxucd4" path="res://art/animatedsprites/frog_frames.tres" id="2_qr44l"]
 
 [resource]
 script = ExtResource("1_qr44l")

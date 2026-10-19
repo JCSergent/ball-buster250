@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d25ygwjc4dcwu"
-path="res://.godot/imported/PlaceholderMartin.png-4337639436b122596029479f46970a40.ctex"
+path="res://.godot/imported/PlaceholderMartin.png-3456b9cc4c40f18ab354519628ea98a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ART/sprites/PlaceholderMartin.png"
-dest_files=["res://.godot/imported/PlaceholderMartin.png-4337639436b122596029479f46970a40.ctex"]
+source_file="res://art/sprites/PlaceholderMartin.png"
+dest_files=["res://.godot/imported/PlaceholderMartin.png-3456b9cc4c40f18ab354519628ea98a2.ctex"]
 
 [params]
 

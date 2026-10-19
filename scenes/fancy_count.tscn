@@ -10,7 +10,22 @@ script = ExtResource("1_d8kam")
 position = Vector2(164, 111)
 
 [node name="Ten" parent="." unique_id=353312404 instance=ExtResource("1_kwajm")]
-position = Vector2(207.50836, 106.490776)
+position = Vector2(208, 106)
 
 [node name="One" parent="." unique_id=742991571 instance=ExtResource("1_kwajm")]
-position = Vector2(251.12914, 101.27271)
+position = Vector2(252.129, 101.273)
+
+[node name="Left" type="Node2D" parent="." unique_id=669816968]
+position = Vector2(164, 111)
+
+[node name="CenterLeft" type="Node2D" parent="." unique_id=659963117]
+position = Vector2(186, 108)
+
+[node name="Center" type="Node2D" parent="." unique_id=2064209988]
+position = Vector2(208, 106)
+
+[node name="CenterRight" type="Node2D" parent="." unique_id=228030983]
+position = Vector2(230, 104)
+
+[node name="Right" type="Node2D" parent="." unique_id=906083410]
+position = Vector2(252.129, 101.273)

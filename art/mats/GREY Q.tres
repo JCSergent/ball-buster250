@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bgemlr4cig81s"]
 
-[ext_resource type="Texture2D" uid="uid://bkbjc3paukwr2" path="res://ART/thangs/grey QUAD.png" id="1_6pxlx"]
+[ext_resource type="Texture2D" uid="uid://bkbjc3paukwr2" path="res://art/thangs/grey QUAD.png" id="1_6pxlx"]
 
 [resource]
 albedo_color = Color(0.87041336, 0.8633, 0.97, 1)

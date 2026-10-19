@@ -91,17 +91,22 @@ func _physics_process(delta: float) -> void:
     # After falling off the map, lose half your stars
     if is_fell_off_map and is_on_floor:
         is_fell_off_map = false
-        spew_stars(int((float(current_stars)/2)), 6, 10)
+        if current_stars <= 7:
+            spew_stars(current_stars, 6, 10)
+        else:
+            var quart_of_stars: int = int(float(current_stars)/4)
+            increase_stars(-quart_of_stars)
+            spew_stars(quart_of_stars, 6, 10)
 
     # Shoot Gun
-    if Input.is_action_just_pressed("jump_" + player.string_id):
+    if Input.is_action_just_pressed("shoot_" + player.string_id):
         shoot_gun()
 
     # DRIFT & BOOST
-    if Input.is_action_just_pressed("item_" + player.string_id):
+    if Input.is_action_just_pressed("charge_" + player.string_id):
         is_drifting = true
 
-    elif is_drifting and Input.is_action_pressed("item_" + player.string_id):
+    elif is_drifting and Input.is_action_pressed("charge_" + player.string_id):
         if not is_on_floor:
             rigid_body_3d.linear_damp = 0.
         else:
@@ -119,7 +124,7 @@ func _physics_process(delta: float) -> void:
                 drift_particles.speed_scale = 5.
                 drift_particles.emitting = true
 
-    elif is_boosting and Input.is_action_pressed("item_" + player.string_id):
+    elif is_boosting and Input.is_action_pressed("charge_" + player.string_id):
         sprite_3d.speed_scale = 1.5
         rigid_body_3d.angular_velocity = get_gun_direction() * 100
         if boost_duration < max_boost_duration:
@@ -129,7 +134,7 @@ func _physics_process(delta: float) -> void:
         else:
             boost_duration = max_boost_duration
 
-    if Input.is_action_just_released("item_" + player.string_id):
+    if Input.is_action_just_released("charge_" + player.string_id):
         if is_drifting:
             rigid_body_3d.linear_damp = 0.
             rigid_body_3d.linear_velocity.y = 0.
@@ -259,9 +264,7 @@ func fall_off_map() -> void:
     rigid_body_3d.apply_central_impulse(Vector3.DOWN * 50.)
     is_fell_off_map = true
 
-func spew_stars(amount: int, min_force: float, max_force: float, spew_direction: Vector3 = Vector3.ZERO) -> void:
-    var spew_amount: int = int(float(amount) / 2.)
-
+func spew_stars(spew_amount: int, min_force: float, max_force: float, spew_direction: Vector3 = Vector3.ZERO) -> void:
     for i in spew_amount:
         var direction := spew_direction
         if direction == Vector3.ZERO:
@@ -277,15 +280,15 @@ func spew_stars(amount: int, min_force: float, max_force: float, spew_direction:
         star.fling(direction * randf_range(min_force, max_force))
         add_child(star)
 
-    increase_stars(amount * -1)
+    increase_stars(spew_amount * -1)
 
 func get_shot(direction: Vector3) -> void:
     rigid_body_3d.apply_central_impulse(direction * star_projectile_force)
 
     if current_stars > 0 and current_stars < 4:
-        spew_stars(current_stars, 3, 6, direction)
+        spew_stars(current_stars, 6, 10, direction)
     elif current_stars > 0:
-        spew_stars(randi_range(2, 4), 3, 6, direction)
+        spew_stars(randi_range(2, 4), 6, 10, direction)
 
 func flip_sprite(dir : String):
     match dir:
@@ -322,6 +325,6 @@ func on_body_entered(body: Node3D) -> void:
         # else:
         rigid_body_3d.apply_central_impulse(direction * player_bump_force)
         if current_stars > 0 and current_stars < 4:
-            spew_stars(current_stars, 3, 6, direction)
+            spew_stars(current_stars, 6, 10, direction)
         elif current_stars > 0:
-            spew_stars(randi_range(2, 4), 3, 6, direction)
+            spew_stars(randi_range(2, 4), 6, 10, direction)

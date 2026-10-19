@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cfyg22mxi842t"]
 
-[ext_resource type="Texture2D" uid="uid://bpg5m24v4n4gr" path="res://ART/thangs/dirt_1.png" id="1_c4tsv"]
-[ext_resource type="Texture2D" uid="uid://msrq0bpujcef" path="res://ART/thangs/BRICK NORMA.jpg" id="2_c4tsv"]
+[ext_resource type="Texture2D" uid="uid://bpg5m24v4n4gr" path="res://art/thangs/dirt_1.png" id="1_c4tsv"]
+[ext_resource type="Texture2D" uid="uid://msrq0bpujcef" path="res://art/thangs/BRICK NORMA.jpg" id="2_c4tsv"]
 
 [resource]
 albedo_color = Color(0.6572434, 0.5402, 0.73, 1)
