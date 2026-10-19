@@ -21,7 +21,7 @@ config/windows_native_icon="res://art/sprites/lilRatGirl-export.ico"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://v1ohy2huih3q"
 
 [autoload]
 
