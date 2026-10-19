@@ -22,12 +22,14 @@ extends PanelContainer
 @onready var twoLabel : Label = $"PLAYERS/2nd/PlayerLabel"
 @onready var twoScore : FancyCount = $"PLAYERS/2nd/FancyCount"
 
+@onready var third: Control = $"PLAYERS/3rd"
 @onready var three_sprite : AnimatedSprite2D = $"PLAYERS/3rd/selectSprite"
 @onready var threeWindow : Sprite2D = $"PLAYERS/3rd/playerWindow"
 @onready var threeNamePlate : Sprite2D = $"PLAYERS/3rd/playerNameSpace"
 @onready var threeLabel : Label = $"PLAYERS/3rd/PlayerLabel"
 @onready var threeScore : FancyCount = $"PLAYERS/3rd/FancyCount"
 
+@onready var fourth: Control = $"PLAYERS/4th"
 @onready var four_sprite : AnimatedSprite2D = $"PLAYERS/4th/selectSprite"
 @onready var fourWindow : Sprite2D = $"PLAYERS/4th/playerWindow"
 @onready var fourNamePlate : Sprite2D = $"PLAYERS/4th/playerNameSpace"
@@ -36,7 +38,14 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    player_score_array = GameKeeper.players.values()
+    # player_score_array = GameKeeper.players.values()
+    player_score_array.push_back(GameKeeper.players.get(1))
+    player_score_array.push_back(GameKeeper.players.get(2))
+    if GameKeeper.players.get(3).is_playing:
+        player_score_array.push_back(GameKeeper.players.get(3))
+    if GameKeeper.players.get(4).is_playing:
+        player_score_array.push_back(GameKeeper.players.get(4))
+
     sort_scores()
     set_portraits()
     
@@ -66,6 +75,26 @@ func set_portraits():
     twoWindow.texture = load(str("res://menus/menu items/player_card_",player_score_array[1].id,".png"))
     twoNamePlate.texture = load(str("res://menus/menu items/player_nameplate_",player_score_array[1].id,".png"))
     twoLabel.text = str("Player ",player_score_array[1].id)
+
+    if player_score_array.size() > 2:
+        threeScore.show_count(player_score_array[2].score)
+        three_sprite.sprite_frames = player_score_array[2].sprite
+        three_sprite.speed_scale = 0.5
+        threeWindow.texture = load(str("res://menus/menu items/player_card_",player_score_array[2].id,".png"))
+        threeNamePlate.texture = load(str("res://menus/menu items/player_nameplate_",player_score_array[2].id,".png"))
+        threeLabel.text = str("Player ", player_score_array[2].id)
+    else:
+        third.visible = false
+
+    if player_score_array.size() > 3:
+        fourScore.show_count(player_score_array[3].score)
+        four_sprite.sprite_frames = player_score_array[3].sprite
+        four_sprite.speed_scale = 0.5
+        fourWindow.texture = load(str("res://menus/menu items/player_card_",player_score_array[3].id,".png"))
+        fourNamePlate.texture = load(str("res://menus/menu items/player_nameplate_",player_score_array[3].id,".png"))
+        fourLabel.text = str("Player ", player_score_array[3].id)
+    else:
+        fourth.visible = false
 
 func countdown_reset():
     timer.stop()

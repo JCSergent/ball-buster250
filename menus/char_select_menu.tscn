@@ -33,6 +33,11 @@ font_size = 36
 outline_size = 28
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_r5w7b"]
+font_size = 48
+outline_size = 28
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_ryyb2"]
 font_size = 280
 outline_size = 100
@@ -271,21 +276,39 @@ scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("3_emvu2")
 
 [node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/P3" unique_id=1239297900]
+visible = false
 position = Vector2(225, 215)
 sprite_frames = ExtResource("14_wailv")
 animation = &"run"
 speed_scale = 0.0
+
+[node name="pulseObj" parent="PLAYERS/P3/selectSprite" unique_id=871413161 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P3" unique_id=1081101562]
 position = Vector2(354, 425)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("5_41ep7")
 
+[node name="NoP3" type="Label" parent="PLAYERS/P3" unique_id=2094931422]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 230.0
+offset_right = 381.0
+offset_bottom = 337.0
+text = "Connect Controller
+to Join"
+label_settings = SubResource("LabelSettings_r5w7b")
+horizontal_alignment = 1
+
 [node name="ReadyIND" type="Sprite2D" parent="PLAYERS/P3" unique_id=201585472]
 visible = false
 position = Vector2(354.0807, 418.0807)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("6_d5snc")
+
+[node name="pulseObj" parent="PLAYERS/P3/ReadyIND" unique_id=1743843944 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")
 
 [node name="NameLabel" type="Label" parent="PLAYERS/P3" unique_id=1464808020]
 layout_mode = 0
@@ -315,10 +338,14 @@ scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("16_r8134")
 
 [node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/P4" unique_id=108609292]
+visible = false
 position = Vector2(225, 215)
 sprite_frames = ExtResource("17_r8134")
 animation = &"run"
 speed_scale = 0.0
+
+[node name="pulseObj" parent="PLAYERS/P4/selectSprite" unique_id=1969605289 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")
 
 [node name="ReadyBK" type="Sprite2D" parent="PLAYERS/P4" unique_id=263797319]
 position = Vector2(357, 422)
@@ -331,6 +358,9 @@ position = Vector2(357.0807, 415.0807)
 scale = Vector2(0.59942365, 0.59942365)
 texture = ExtResource("6_d5snc")
 
+[node name="pulseObj" parent="PLAYERS/P4/ReadyIND" unique_id=1914864277 node_paths=PackedStringArray("pulsable") instance=ExtResource("22_iax8c")]
+pulsable = NodePath("..")
+
 [node name="NameLabel" type="Label" parent="PLAYERS/P4" unique_id=367428414]
 layout_mode = 0
 offset_left = 156.0
@@ -340,6 +370,17 @@ offset_bottom = 49.159912
 rotation = -0.23984782
 text = "PLAYER 4"
 label_settings = SubResource("LabelSettings_e2lak")
+
+[node name="NoP4" type="Label" parent="PLAYERS/P4" unique_id=835486977]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 230.0
+offset_right = 381.0
+offset_bottom = 337.0
+text = "Connect Controller
+to Join"
+label_settings = SubResource("LabelSettings_r5w7b")
+horizontal_alignment = 1
 
 [node name="Ready" type="Label" parent="PLAYERS" unique_id=171686630]
 layout_mode = 0
