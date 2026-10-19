@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2brlj7aadmr6" path="res://scenes/sunsucctest.gd" id="1_tcp64"]
 [ext_resource type="Texture2D" uid="uid://btvk6ecl2uj33" path="res://art/sprites/sunNmoon.png" id="2_c8yu5"]
+[ext_resource type="Resource" uid="uid://ccsmlrpfqh7kj" path="res://resources/SFX/succ_sound.tres" id="2_patki"]
 [ext_resource type="Texture2D" uid="uid://mjbjnxs2w137" path="res://art/sprites/sun/sun_0.png" id="2_qh54k"]
 [ext_resource type="PackedScene" uid="uid://b7344gku3c37o" path="res://components/pulse_obj.tscn" id="2_sy4b4"]
 [ext_resource type="Shader" uid="uid://dveyo60ndnqwp" path="res://shaders/sun_beam.gdshader" id="3_hlaqb"]
@@ -66,6 +67,7 @@ radius = 2.8139648
 
 [node name="sunsucctest" type="Node3D" unique_id=988882479 groups=["SunSucc"]]
 script = ExtResource("1_tcp64")
+succ_sound = ExtResource("2_patki")
 
 [node name="pulseObj" parent="." unique_id=1652883855 node_paths=PackedStringArray("pulsable") instance=ExtResource("2_sy4b4")]
 pulsable = NodePath("../AnimatedSprite3D")

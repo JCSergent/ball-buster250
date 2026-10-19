@@ -1,5 +1,9 @@
 extends PanelContainer
 
+@export var ready_sound : SoundEffect
+@export var select_sound : SoundEffect
+@export var go_sound : SoundEffect
+
 @onready var timer : Timer = $Timer
 @export var wait_time := 3.0
 
@@ -68,9 +72,11 @@ func _process(_delta: float) -> void:
         toggle_player_ready("P1")
         $PLAYERS/P1/selectSprite/pulseObj.pulse_this()
         $PLAYERS/P1/ReadyIND/pulseObj.pulse_this()
+        AudioKeeper.play_sfx(ready_sound)
     
     if Input.is_action_just_pressed("forward_p1"):
         if !rdy_p1:
+            AudioKeeper.play_sfx(select_sound)
             $PLAYERS/P1/selectSprite/pulseObj.pulse_this()
             if player_1_sprite_id == 3:
                 player_1_sprite_id = 0
@@ -81,6 +87,7 @@ func _process(_delta: float) -> void:
     
     if Input.is_action_just_pressed("back_p1"):
         if !rdy_p1:
+            AudioKeeper.play_sfx(select_sound)
             $PLAYERS/P1/selectSprite/pulseObj.pulse_this()
             if player_1_sprite_id == 0:
                 player_1_sprite_id = 3
@@ -94,10 +101,11 @@ func _process(_delta: float) -> void:
         toggle_player_ready("P2")
         $PLAYERS/P2/selectSprite/pulseObj.pulse_this()
         $PLAYERS/P2/ReadyIND/pulseObj.pulse_this()
-        
+        AudioKeeper.play_sfx(ready_sound)
         
     if Input.is_action_just_pressed("forward_p2"):
         if !rdy_p2:
+            AudioKeeper.play_sfx(select_sound)
             $PLAYERS/P2/selectSprite/pulseObj.pulse_this()
             if player_2_sprite_id == 3:
                 player_2_sprite_id = 0
@@ -109,6 +117,7 @@ func _process(_delta: float) -> void:
     
     if Input.is_action_just_pressed("back_p2"):
         if !rdy_p2:
+            AudioKeeper.play_sfx(select_sound)
             $PLAYERS/P2/selectSprite/pulseObj.pulse_this()
             if player_2_sprite_id == 0:
                 player_2_sprite_id = 3
@@ -215,6 +224,7 @@ func toggle_player_ready(player : String):
             
     if rdy_p1 and rdy_p2 and (rdy_p3 or no_p3) and (rdy_p4 or no_p4):
         allReadyInd.visible = true
+        AudioKeeper.play_sfx(go_sound)
         $PLAYERS/Ready/pulseObj.pulse_this()
         timer.stop()
         timer.wait_time = wait_time
@@ -222,7 +232,7 @@ func toggle_player_ready(player : String):
         timer.start()
     
         await timer.timeout
-        
+        AudioKeeper.play_sfx(go_sound)
         set_ingame_sprites()
         SceneKeeper.load_scene(SceneKeeper.Scene.GameScene)
         

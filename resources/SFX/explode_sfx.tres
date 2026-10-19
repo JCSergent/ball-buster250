@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cl7c6t1aorfx8"]
+
+[ext_resource type="Script" uid="uid://egntisbqign7" path="res://scripts/resources/sound_effect.gd" id="1_t62nl"]
+[ext_resource type="AudioStream" uid="uid://dabqkcwijg1g1" path="res://art/sound/explosion.wav" id="1_v1ysy"]
+
+[resource]
+script = ExtResource("1_t62nl")
+audio_stream = ExtResource("1_v1ysy")
+pitch_randomness = 0.2
+metadata/_custom_type_script = "uid://egntisbqign7"

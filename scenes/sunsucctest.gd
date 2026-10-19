@@ -15,6 +15,8 @@ extends Node3D
 @onready var swap_timer : Timer = $Timer
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
 
+@export var succ_sound : SoundEffect
+
 var current_target : PathFollow3D
 var changing_zone: bool = false
 var current_zone_duration: float = 0.
@@ -75,3 +77,4 @@ func on_area_entered(area: Area3D) -> void:
             sprite.play("succ")
             
         $pulseObj.pulse_this()
+        AudioKeeper.play_sfx(succ_sound)
