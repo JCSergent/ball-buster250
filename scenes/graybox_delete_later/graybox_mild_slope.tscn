@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dmd302ejceuio"]
 
-[ext_resource type="Texture2D" uid="uid://0fpumn05mj5a" path="res://assets/GreyboxTextures/greybox_light_solid.png" id="1_0n72v"]
+[ext_resource type="Texture2D" uid="uid://d18t8pe7pugtr" path="res://assets/GreyboxTextures/greybox_light_solid.png" id="1_0n72v"]
 [ext_resource type="Material" uid="uid://bsvhmvh4t8gk6" path="res://art/mats/grasscartoon.tres" id="2_jjvkr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_144qp"]

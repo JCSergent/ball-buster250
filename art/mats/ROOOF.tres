@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://caj30d8itgtwg"]
 
-[ext_resource type="Texture2D" uid="uid://cri6qmc6m0ekp" path="res://art/thangs/brick.png" id="1_hk6dg"]
+[ext_resource type="Texture2D" uid="uid://ccyqb1vdulme5" path="res://art/thangs/brick.png" id="1_hk6dg"]
 [ext_resource type="Texture2D" uid="uid://come5d7fw5qqo" path="res://art/thangs/ROOF NORM.jpg" id="2_hk6dg"]
 
 [resource]
