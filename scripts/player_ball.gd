@@ -17,7 +17,7 @@ const STAR_SCENE = preload("res://pickups/collectable.tscn")
 @export var min_boost_force := 4
 @export var max_boost_force := 10
 @export var max_boost_duration := 2
-@export var drift_dampening := 4
+@export var drift_dampening := 6
 @export var drift_clamp := 2
 
 @export_group("Grow Stats")
