@@ -11,7 +11,7 @@
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="6_3rtee"]
 [ext_resource type="Texture2D" uid="uid://m1apilypje5v" path="res://menus/menu items/ready_indicator.png" id="6_d5snc"]
 [ext_resource type="Texture2D" uid="uid://byrf7opc5si1h" path="res://art/ui/wasd.png" id="9_30gvx"]
-[ext_resource type="Texture2D" uid="uid://bthvbyd162af4" path="res://art/ui/joy_stick.png" id="10_wailv"]
+[ext_resource type="Texture2D" uid="uid://djuaqv3t48mre" path="res://art/ui/joy_stick.png" id="10_wailv"]
 [ext_resource type="SpriteFrames" uid="uid://b3f8hq1gxucd4" path="res://art/animatedsprites/frog_frames.tres" id="11_30gvx"]
 [ext_resource type="Texture2D" uid="uid://bfng6ouo7wmr8" path="res://menus/menu items/cat_namebar.png" id="11_wailv"]
 [ext_resource type="Texture2D" uid="uid://cvqfq2tcamm4p" path="res://menus/menu items/cat_playercard.png" id="12_r8134"]

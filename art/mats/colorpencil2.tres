@@ -1,9 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b8mpqyxyw7iad"]
 
-[ext_resource type="Texture2D" path="res://art/thangs/300 square 2.png" id="1_ck3p7"]
-
 [resource]
 albedo_color = Color(0.72800004, 0.89180005, 0.91, 1)
-albedo_texture = ExtResource("1_ck3p7")
 uv1_scale = Vector3(3, 2, 2)
 uv1_offset = Vector3(3, 5, 0)

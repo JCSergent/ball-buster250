@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_yjgyn"]
 [ext_resource type="Script" uid="uid://ghtdhdi1m8ta" path="res://menus/main_menu.gd" id="2_oblsv"]
-[ext_resource type="Texture2D" uid="uid://djcodwds51p1r" path="res://menus/menu items/celestiball_logo.png" id="2_rqbgu"]
+[ext_resource type="Texture2D" uid="uid://cayt8g7qb881o" path="res://menus/menu items/celestiball_logo.png" id="2_rqbgu"]
 [ext_resource type="PackedScene" uid="uid://che7io4704o0o" path="res://menus/menu_butt.tscn" id="3_oblsv"]
 [ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="4_rqbgu"]
 
