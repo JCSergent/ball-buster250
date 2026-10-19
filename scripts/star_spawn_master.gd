@@ -5,7 +5,8 @@ extends Node3D
 @export var max_spawn_time: float = 3.
 @export var max_stars: int = 100
 
-@export var big_boi_rate: int = 10
+@export var big_boi_rate: int = 8
+@export var bigger_boi_rate: int = 20
 
 @export var players: Node3D
 
@@ -18,6 +19,7 @@ extends Node3D
 
 
 var count_since_big_boi: int = 0
+var count_since_bigger_boi: int = 0
 
 func _ready() -> void:
     respawn_timer.timeout.connect(spawn_new_star)
@@ -82,12 +84,16 @@ func spawn_in_quad(quadrant: Node3D) -> bool:
 
     for child in children:
         if child is StarSpawner and child.can_spawn():
-            if count_since_big_boi > big_boi_rate and (randi() % 4 == 1):
+            if count_since_bigger_boi > bigger_boi_rate and (randi() % 4 == 1):
+                child.spawn_star(10)
+                count_since_bigger_boi = 0
+            elif count_since_big_boi > big_boi_rate and (randi() % 4 == 1):
                 child.spawn_star(5)
                 count_since_big_boi = 0
             else:
                 child.spawn_star()
                 count_since_big_boi += 1
+                count_since_bigger_boi += 1
             return true
         
     return false
