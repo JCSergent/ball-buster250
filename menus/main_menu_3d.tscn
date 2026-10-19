@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cdwfm5sw3e8gw"]
 
-[ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_2imga"]
 [ext_resource type="Script" uid="uid://dbg1e3286ev5x" path="res://menus/main_menu_3d.gd" id="1_dde2g"]
 [ext_resource type="Texture2D" uid="uid://dxdenu0513hqi" path="res://menus/menu items/Title.png" id="3_dde2g"]
+[ext_resource type="FontFile" uid="uid://cymm8p6y71evy" path="res://menus/fonts/Jersey10-Regular.ttf" id="4_2imga"]
 [ext_resource type="AudioStream" uid="uid://cojncurjtoe86" path="res://art/music/short loop.wav" id="6_a4gyb"]
 [ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="7_bk6k3"]
 [ext_resource type="Material" uid="uid://b5s8ks28xpwp3" path="res://art/mats/grass6.tres" id="8_owq6c"]
@@ -19,6 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://c7vujixx72l3e" path="res://art/mats/moo.tscn" id="19_cxr1j"]
 [ext_resource type="Texture2D" uid="uid://bexxhkvxc7rvt" path="res://art/sprites/cloud.png" id="19_dde2g"]
 [ext_resource type="Texture2D" uid="uid://cejrux3mf0wi3" path="res://art/sprites/background_stars.png" id="20_sefr5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
+font = ExtResource("4_2imga")
+font_size = 80
+outline_size = 40
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gknne"]
 albedo_texture = ExtResource("9_q300n")
@@ -84,18 +90,18 @@ offset_bottom = 488.0
 scale = Vector2(0.58403766, 0.58403766)
 texture = ExtResource("3_dde2g")
 
-[node name="StartButt" type="Button" parent="CanvasLayer" unique_id=863919275]
-offset_left = 231.0
-offset_top = 615.0
-offset_right = 731.0
-offset_bottom = 718.0
-theme = ExtResource("1_2imga")
-text = "START"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1617487207]
 stream = ExtResource("6_a4gyb")
 volume_db = -10.0
 autoplay = true
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=840514454]
+offset_left = 169.0
+offset_top = 600.0
+offset_right = 838.0
+offset_bottom = 687.0
+text = "Press anything to start!"
+label_settings = SubResource("LabelSettings_e2lak")
 
 [node name="JoyceMenu" type="Node3D" parent="." unique_id=1070236186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6867132, 0, 16.784008)
@@ -234,5 +240,3 @@ environment = SubResource("Environment_ixgyf")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1222035302]
 transform = Transform3D(-0.49044296, -0.16543968, 0.8556258, 0, 0.9818152, 0.18983908, -0.8714733, 0.093105234, -0.48152438, 3.4856637, 2.0813236, 0.15423833)
 size = 4.633
-
-[connection signal="pressed" from="CanvasLayer/StartButt" to="." method="_on_start_butt_pressed"]
