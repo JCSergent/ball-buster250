@@ -1,39 +1,41 @@
 [gd_scene format=3 uid="uid://dr0bm3jbqey1"]
 
 [ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="1_nrstc"]
-[ext_resource type="Texture2D" uid="uid://bsx81s6rq3ak8" path="res://art/sprites/map_tiles/grass_6.png" id="2_7448y"]
+[ext_resource type="Texture2D" uid="uid://dwsel3imqliy6" path="res://art/sprites/map_tiles/grass_6.png" id="2_7448y"]
 [ext_resource type="Script" uid="uid://drthts6qlkxol" path="res://scripts/death_zone.gd" id="2_dvny0"]
-[ext_resource type="Material" uid="uid://dai0lhavoc1v0" path="res://art/mats/dirt.tres" id="3_ar7ra"]
-[ext_resource type="Material" uid="uid://kkhvq8omlohd" path="res://art/mats/grass3.tres" id="3_dv75v"]
+[ext_resource type="Material" uid="uid://dai0lhavoc1v0" path="res://ART/mats/dirt.tres" id="3_ar7ra"]
+[ext_resource type="Material" uid="uid://kkhvq8omlohd" path="res://ART/mats/grass3.tres" id="3_dv75v"]
 [ext_resource type="Script" uid="uid://cd5btqd7tudrm" path="res://scripts/hud.gd" id="3_xwrkq"]
-[ext_resource type="Material" uid="uid://c7lm75267fxs0" path="res://art/mats/wood1.tres" id="4_ar7ra"]
-[ext_resource type="Texture2D" uid="uid://0edei5oiri3o" path="res://art/sprites/map_tiles/grass_2.png" id="4_ixgyf"]
-[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://art/sprites/lilRatGirl.png" id="4_nrstc"]
-[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_7448y"]
-[ext_resource type="Material" uid="uid://c1nni8yesbrre" path="res://art/mats/stone.tres" id="5_ixgyf"]
-[ext_resource type="Material" uid="uid://bektusxxcqqqd" path="res://art/mats/dirt2.tres" id="6_ixgyf"]
-[ext_resource type="Material" uid="uid://bbs4gm0dwn2wj" path="res://art/mats/grass5.tres" id="7_bn472"]
-[ext_resource type="Material" uid="uid://ccrvqom0tr00c" path="res://art/mats/sand.tres" id="8_8hcw6"]
-[ext_resource type="Material" uid="uid://bufimfvfrnlvl" path="res://art/mats/grey.tres" id="8_mjm4b"]
-[ext_resource type="Material" uid="uid://clcd0elomun5c" path="res://art/mats/grass4.tres" id="8_x05cw"]
-[ext_resource type="Material" uid="uid://mcqdbal30w7a" path="res://art/mats/grass2.tres" id="9_3xk6l"]
-[ext_resource type="Material" uid="uid://bw10p8qp7bwrg" path="res://art/mats/grass1.tres" id="9_y60ib"]
-[ext_resource type="Material" uid="uid://b5s8ks28xpwp3" path="res://art/mats/grass6.tres" id="10_bn472"]
-[ext_resource type="Material" uid="uid://db6fgrahdws8n" path="res://art/mats/stone2.tres" id="16_lltfd"]
-[ext_resource type="Material" uid="uid://dvrkhc4gie7cl" path="res://art/mats/grey2.tres" id="16_xp3in"]
-[ext_resource type="PackedScene" uid="uid://b5ifqovaqojeg" path="res://art/mats/flower_stem.tscn" id="22_abhao"]
-[ext_resource type="PackedScene" uid="uid://pje54qdf2ykn" path="res://art/mats/tree.tscn" id="23_aoxts"]
-[ext_resource type="PackedScene" uid="uid://fu7g8k7yt3mo" path="res://art/mats/pot.tscn" id="24_88f7f"]
-[ext_resource type="PackedScene" uid="uid://comsyxwv565oo" path="res://art/mats/grass.tscn" id="25_r3nqf"]
-[ext_resource type="PackedScene" uid="uid://b4xwhmf07g6n3" path="res://art/mats/grass2.tscn" id="26_ibygg"]
-[ext_resource type="PackedScene" uid="uid://dhgc6ft2we01b" path="res://art/mats/rock.tscn" id="27_03cxp"]
-[ext_resource type="PackedScene" uid="uid://c8ch5lotfm224" path="res://art/mats/scribble.tscn" id="28_jo34v"]
-[ext_resource type="PackedScene" uid="uid://dwlbgm2jmx3o1" path="res://art/mats/rock2.tscn" id="29_v08nl"]
-[ext_resource type="PackedScene" uid="uid://dj44a2ivdlnne" path="res://art/mats/flowa.tscn" id="30_ibygg"]
-[ext_resource type="PackedScene" uid="uid://c0kuvku00tq0a" path="res://art/mats/pickle.tscn" id="31_03cxp"]
-[ext_resource type="PackedScene" uid="uid://c05ty43va5bdr" path="res://art/mats/sign.tscn" id="32_jo34v"]
-[ext_resource type="PackedScene" uid="uid://cyoc8h807isow" path="res://art/mats/snake.tscn" id="33_v08nl"]
-[ext_resource type="PackedScene" uid="uid://b5og8br2fhf4" path="res://art/mats/rug.tscn" id="34_03cxp"]
+[ext_resource type="Material" uid="uid://c7lm75267fxs0" path="res://ART/mats/wood1.tres" id="4_ar7ra"]
+[ext_resource type="Texture2D" uid="uid://bvnuyxyryioya" path="res://art/sprites/map_tiles/grass_2.png" id="4_ixgyf"]
+[ext_resource type="Texture2D" uid="uid://dx4m8rpydnncg" path="res://ART/sprites/lilRatGirl.png" id="4_nrstc"]
+[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://ART/sprites/PlaceholderMartin.png" id="5_7448y"]
+[ext_resource type="Material" uid="uid://c1nni8yesbrre" path="res://ART/mats/stone.tres" id="5_ixgyf"]
+[ext_resource type="Material" uid="uid://bektusxxcqqqd" path="res://ART/mats/dirt2.tres" id="6_ixgyf"]
+[ext_resource type="Material" uid="uid://bbs4gm0dwn2wj" path="res://ART/mats/grass5.tres" id="7_bn472"]
+[ext_resource type="Material" uid="uid://ccrvqom0tr00c" path="res://ART/mats/sand.tres" id="8_8hcw6"]
+[ext_resource type="Material" uid="uid://bufimfvfrnlvl" path="res://ART/mats/grey.tres" id="8_mjm4b"]
+[ext_resource type="Material" uid="uid://clcd0elomun5c" path="res://ART/mats/grass4.tres" id="8_x05cw"]
+[ext_resource type="Material" uid="uid://mcqdbal30w7a" path="res://ART/mats/grass2.tres" id="9_3xk6l"]
+[ext_resource type="Material" uid="uid://bw10p8qp7bwrg" path="res://ART/mats/grass1.tres" id="9_y60ib"]
+[ext_resource type="Material" uid="uid://b5s8ks28xpwp3" path="res://ART/mats/grass6.tres" id="10_bn472"]
+[ext_resource type="Material" uid="uid://db6fgrahdws8n" path="res://ART/mats/stone2.tres" id="16_lltfd"]
+[ext_resource type="Material" uid="uid://dvrkhc4gie7cl" path="res://ART/mats/grey2.tres" id="16_xp3in"]
+[ext_resource type="PackedScene" uid="uid://b5ifqovaqojeg" path="res://ART/mats/flower_stem.tscn" id="22_abhao"]
+[ext_resource type="PackedScene" uid="uid://pje54qdf2ykn" path="res://ART/mats/tree.tscn" id="23_aoxts"]
+[ext_resource type="PackedScene" uid="uid://fu7g8k7yt3mo" path="res://ART/mats/pot.tscn" id="24_88f7f"]
+[ext_resource type="PackedScene" uid="uid://comsyxwv565oo" path="res://ART/mats/grass.tscn" id="25_r3nqf"]
+[ext_resource type="PackedScene" uid="uid://b4xwhmf07g6n3" path="res://ART/mats/grass2.tscn" id="26_ibygg"]
+[ext_resource type="PackedScene" uid="uid://dhgc6ft2we01b" path="res://ART/mats/rock.tscn" id="27_03cxp"]
+[ext_resource type="PackedScene" uid="uid://c8ch5lotfm224" path="res://ART/mats/scribble.tscn" id="28_jo34v"]
+[ext_resource type="PackedScene" uid="uid://dwlbgm2jmx3o1" path="res://ART/mats/rock2.tscn" id="29_v08nl"]
+[ext_resource type="PackedScene" uid="uid://dj44a2ivdlnne" path="res://ART/mats/flowa.tscn" id="30_ibygg"]
+[ext_resource type="PackedScene" uid="uid://c0kuvku00tq0a" path="res://ART/mats/pickle.tscn" id="31_03cxp"]
+[ext_resource type="PackedScene" uid="uid://c05ty43va5bdr" path="res://ART/mats/sign.tscn" id="32_jo34v"]
+[ext_resource type="PackedScene" uid="uid://cyoc8h807isow" path="res://ART/mats/snake.tscn" id="33_v08nl"]
+[ext_resource type="PackedScene" uid="uid://b5og8br2fhf4" path="res://ART/mats/rug.tscn" id="34_03cxp"]
+[ext_resource type="PackedScene" uid="uid://c2agjv16xfriu" path="res://ART/mats/cover guys.tscn" id="35_jo34v"]
+[ext_resource type="PackedScene" uid="uid://c7vujixx72l3e" path="res://ART/mats/moo.tscn" id="36_v08nl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gknne"]
 albedo_texture = ExtResource("2_7448y")
@@ -77,10 +79,10 @@ material = SubResource("StandardMaterial3D_gknne")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ar7ra"]
 sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
-sky_horizon_color = Color(0.48235294, 0.99607843, 1, 1)
-ground_bottom_color = Color(0, 0.76862746, 0.627451, 1)
-ground_horizon_color = Color(0.48235294, 0.99607843, 1, 1)
-ground_curve = 0.7802891
+sky_horizon_color = Color(0.5644964, 0.26980805, 0.83794004, 1)
+ground_bottom_color = Color(0.2425, 0.448625, 0.97, 1)
+ground_horizon_color = Color(0.22495992, 0.1628, 0.37, 1)
+ground_curve = 9.461558
 
 [sub_resource type="Sky" id="Sky_pa8il"]
 sky_material = SubResource("ProceduralSkyMaterial_ar7ra")
@@ -89,7 +91,12 @@ sky_material = SubResource("ProceduralSkyMaterial_ar7ra")
 background_mode = 2
 sky = SubResource("Sky_pa8il")
 ambient_light_source = 2
-ambient_light_color = Color(0.98039216, 0.9882353, 0.9019608, 1)
+ambient_light_color = Color(0.36722502, 0.37, 0.3367, 1)
+tonemap_exposure = 0.65
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.3562303, 0.37680197, 0.6202689, 1)
+volumetric_fog_emission_energy = 3.25
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8hcw6"]
 
@@ -217,6 +224,58 @@ mesh = SubResource("BoxMesh_8hcw6")
 
 [node name="grass block23" parent="." unique_id=1421207919 instance=ExtResource("1_nrstc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9980674, 0, 2)
+material_override = ExtResource("9_3xk6l")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block32" parent="." unique_id=509929688 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -17.556164)
+material_override = ExtResource("10_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block33" parent="." unique_id=146221177 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -16.556164)
+material_override = ExtResource("9_3xk6l")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block34" parent="." unique_id=963718532 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -15.556165)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block37" parent="." unique_id=1717475368 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -17.556164)
+material_override = ExtResource("7_bn472")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block76" parent="." unique_id=422879433 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -16.556164)
+material_override = ExtResource("8_x05cw")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block81" parent="." unique_id=292591144 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -17.556164)
+material_override = ExtResource("9_y60ib")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="grass block81" unique_id=1056155544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5840707, 0.79875183, 0.63212585)
+light_color = Color(1, 0.76566666, 0.26, 1)
+light_energy = 8.111
+light_indirect_energy = 9.0
+light_volumetric_fog_energy = 1.296
+
+[node name="grass block99" parent="." unique_id=1171306448 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -16.556164)
+material_override = ExtResource("3_dv75v")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block100" parent="." unique_id=1703389389 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -15.556165)
+material_override = ExtResource("9_y60ib")
+mesh = SubResource("BoxMesh_8hcw6")
+
+[node name="grass block101" parent="." unique_id=919737756 instance=ExtResource("1_nrstc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -15.556165)
 material_override = ExtResource("9_3xk6l")
 mesh = SubResource("BoxMesh_8hcw6")
 
@@ -719,13 +778,25 @@ transform = Transform3D(0.5, 0, 0, 0, 0.48296297, 0.12940954, 0, -0.12940954, 0.
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.5272548, 0.70278907, 5.435501)
 
 [node name="Sprite3D8" parent="." unique_id=690821755 instance=ExtResource("25_r3nqf")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.5758958, 0.70278907, 4)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.3380084, 0.70278907, -16.24742)
 
 [node name="Sprite3D9" parent="." unique_id=1522589143 instance=ExtResource("26_ibygg")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3, 0.70278907, 2)
 
 [node name="Sprite3D10" parent="." unique_id=241331167 instance=ExtResource("26_ibygg")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.5572581, 0.70278907, 2.3145938)
+
+[node name="Sprite3D26" parent="." unique_id=832221465 instance=ExtResource("22_abhao")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.395485, 0.88979673, -17.560131)
+
+[node name="Sprite3D27" parent="." unique_id=2004674422 instance=ExtResource("22_abhao")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.797513, 0.77846146, -15.503194)
+
+[node name="Sprite3D28" parent="." unique_id=2025978168 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.3193707, 1.0116574, -15.65403)
+
+[node name="Sprite3D30" parent="." unique_id=139739714 instance=ExtResource("26_ibygg")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.037303, 1.0116574, -17.924582)
 
 [node name="Sprite3D11" parent="." unique_id=776438014 instance=ExtResource("26_ibygg")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, 0.8344765, 4)
@@ -774,3 +845,10 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 7.410778, 0.7656268,
 
 [node name="Sprite3D25" parent="." unique_id=1333628262 instance=ExtResource("34_03cxp")]
 transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, 0.3, 0, -0.3, -1.3113417e-08, 2.8161683, 0.51755273, 3.1197796)
+
+[node name="Sprite3D29" parent="." unique_id=1604265865 instance=ExtResource("35_jo34v")]
+transform = Transform3D(0.3, 0, 0, 0, 0.28977776, 0.077645734, 0, -0.077645734, 0.28977776, 4.1865454, 0.9096714, -16.965496)
+gi_lightmap_texel_scale = 0.01
+
+[node name="Sprite3D31" parent="." unique_id=727139373 instance=ExtResource("36_v08nl")]
+transform = Transform3D(-4.7210426, 0, 8.815428, 0, 10, 0, -8.815428, 0, -4.7210426, -2.3648944, -0.3571446, -14.018903)

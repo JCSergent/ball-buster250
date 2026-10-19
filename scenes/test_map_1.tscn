@@ -6472,7 +6472,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 11)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 11)
 
 [node name="SunStuff" type="Node3D" parent="." unique_id=1385526795]
-visible = false
 
 [node name="BottomRightPath" type="Path3D" parent="SunStuff" unique_id=1857468285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, 8, 6.8)
