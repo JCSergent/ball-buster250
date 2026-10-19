@@ -2,14 +2,15 @@
 
 [ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_11j33"]
 [ext_resource type="Script" uid="uid://4wjvep4gajme" path="res://menus/victory_menu.gd" id="2_tffrd"]
+[ext_resource type="AudioStream" uid="uid://cojncurjtoe86" path="res://art/music/short loop.wav" id="3_4p1es"]
 [ext_resource type="Texture2D" uid="uid://cqfom873hg75m" path="res://menus/menu items/background.png" id="3_b1hmn"]
 [ext_resource type="Texture2D" uid="uid://cst3l7irv3d8p" path="res://menus/menu items/bunny_namebar_RED.png" id="5_23x3t"]
-[ext_resource type="Texture2D" uid="uid://4nuxeum2p67b" path="res://menus/menu items/player_nameplate_1.png" id="5_q6stc"]
-[ext_resource type="Texture2D" uid="uid://rtl0divp0dhb" path="res://menus/menu items/player_card_1.png" id="6_n4d7v"]
+[ext_resource type="Texture2D" uid="uid://5sbgk0kaw0jo" path="res://menus/menu items/player_nameplate_1.png" id="5_q6stc"]
+[ext_resource type="Texture2D" uid="uid://be678t7ssjsm3" path="res://menus/menu items/player_card_1.png" id="6_n4d7v"]
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="7_q7ur4"]
 [ext_resource type="PackedScene" uid="uid://dqlolhtbxgbqm" path="res://scenes/fancy_count.tscn" id="7_tffrd"]
-[ext_resource type="Texture2D" uid="uid://bchht8yfgwt6u" path="res://menus/menu items/player_nameplate_2.png" id="9_4p1es"]
-[ext_resource type="Texture2D" uid="uid://08q01a3unugd" path="res://menus/menu items/player_card_2.png" id="11_0gg7c"]
+[ext_resource type="Texture2D" uid="uid://7of1ikj0e4lp" path="res://menus/menu items/player_nameplate_2.png" id="9_4p1es"]
+[ext_resource type="Texture2D" uid="uid://br7gqlst1thnc" path="res://menus/menu items/player_card_2.png" id="11_0gg7c"]
 [ext_resource type="SpriteFrames" uid="uid://b3f8hq1gxucd4" path="res://art/animatedsprites/frog_frames.tres" id="12_ibjb3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
@@ -43,6 +44,11 @@ grow_vertical = 2
 size_flags_horizontal = 0
 theme = ExtResource("1_11j33")
 script = ExtResource("2_tffrd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=667760761]
+stream = ExtResource("3_4p1es")
+volume_db = -10.0
+autoplay = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1030873574]
 

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://djcodwds51p1r" path="res://menus/menu items/celestiball_logo.png" id="2_rqbgu"]
 [ext_resource type="PackedScene" uid="uid://che7io4704o0o" path="res://menus/menu_butt.tscn" id="3_oblsv"]
 [ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="4_rqbgu"]
+[ext_resource type="AudioStream" uid="uid://cojncurjtoe86" path="res://art/music/short loop.wav" id="6_a63lr"]
 
 [node name="MenuPanel" type="PanelContainer" unique_id=496272823]
 anchors_preset = 15
@@ -39,6 +40,11 @@ texture_filter = 1
 position = Vector2(923, 221)
 scale = Vector2(9.25, 9.25)
 texture = ExtResource("4_rqbgu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1617487207]
+stream = ExtResource("6_a63lr")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="FlowContainer/StartButt" to="." method="_on_start_butt_pressed"]
 [connection signal="pressed" from="FlowContainer/QuitButt" to="." method="_on_quit_butt_pressed"]
