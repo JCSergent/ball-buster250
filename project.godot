@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0.78933626, 0.15278566, 0.42805234, 1)
 boot_splash/use_filter=false
 boot_splash/image="uid://d25ygwjc4dcwu"
-config/icon="uid://dx4m8rpydnncg"
+config/icon="uid://mjbjnxs2w137"
 config/windows_native_icon="res://art/sprites/lilRatGirl-export.ico"
 
 [audio]

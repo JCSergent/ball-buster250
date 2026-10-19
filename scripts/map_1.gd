@@ -5,6 +5,9 @@ const PLAYER_BALL = preload("res://scenes/playas/player_ball.tscn")
 @onready var players: Node3D = $Players
 
 func _ready() -> void:
+    GameKeeper.connect("game_ended", show_end_screen)
+    $ReusableElements/HUD/GAME_Screen.visible = false
+    
     var player_1: PlayerBall = PLAYER_BALL.instantiate()
     player_1.player_id = 1
     players.add_child(player_1)
@@ -19,4 +22,6 @@ func _ready() -> void:
 
     GameKeeper.new_game_started.emit(GameKeeper.players.values())
 
-
+func show_end_screen():
+    $ReusableElements/HUD/GAME_Screen.visible = true
+    $ReusableElements/HUD/GAME_Screen/pulseObj.pulse_this()

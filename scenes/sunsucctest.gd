@@ -9,7 +9,7 @@ extends Node3D
 @export var smile_ani_duration : float = 1.
 
 @export var swap_threshold := 0.2
-@export var time_until_swap : float = 10.
+@export var time_until_swap : float = 30.
 
 @onready var collect_area: Area3D = $CollectArea
 @onready var swap_timer : Timer = $Timer
@@ -73,3 +73,5 @@ func on_area_entered(area: Area3D) -> void:
         time_since_bullet = 0
         if sprite.animation != 'succ':
             sprite.play("succ")
+            
+        $pulseObj.pulse_this()

@@ -9,11 +9,13 @@
 [ext_resource type="Material" uid="uid://bjh5sd1h3myb6" path="res://art/mats/BOTTOM.tres" id="4_oel5b"]
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="5_52f4h"]
 [ext_resource type="Texture2D" uid="uid://dlgjssi4nm668" path="res://art/ui/yellow_starbanner.png" id="5_dtqmr"]
+[ext_resource type="PackedScene" uid="uid://b7344gku3c37o" path="res://components/pulse_obj.tscn" id="6_gea3y"]
 [ext_resource type="PackedScene" uid="uid://dqlolhtbxgbqm" path="res://scenes/fancy_count.tscn" id="7_w1s8w"]
 [ext_resource type="Shader" uid="uid://rhy4c6xwomdh" path="res://shaders/smoke_outline.gdshader" id="8_52f4h"]
 [ext_resource type="Shader" uid="uid://cuqv17vikbreu" path="res://shaders/smoke.gdshader" id="8_oel5b"]
 [ext_resource type="Material" uid="uid://dgocohy4s7cq4" path="res://art/mats/cartoon_RING.tres" id="13_i7gku"]
 [ext_resource type="Texture2D" uid="uid://clxj86teadjdq" path="res://art/sprites/star_1.png" id="14_af7he"]
+[ext_resource type="Script" uid="uid://tma0ehy5ejye" path="res://scripts/pulse_obj.gd" id="15_hcxxk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gipfl"]
 
@@ -212,6 +214,9 @@ hud_dictionary = Dictionary[int, Texture2D]({
 4: ExtResource("5_dtqmr")
 })
 
+[node name="pulseObj" parent="." unique_id=1652883855 node_paths=PackedStringArray("pulsable") instance=ExtResource("6_gea3y")]
+pulsable = NodePath("../RigidBody3D/GFX")
+
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=324011426]
 collision_layer = 2
 collision_mask = 3
@@ -299,6 +304,12 @@ mesh = SubResource("TorusMesh_eoqba")
 transform = Transform3D(-4.0389324e-08, 0.84000003, 0, 4.0389324e-08, 0, 1, 0.924, 3.6717566e-08, -4.3711385e-08, 0, 0, 0)
 texture_filter = 0
 texture = ExtResource("14_af7he")
+
+[node name="pulseObj" type="Node" parent="NonRotatingNodes/GunRotatePoint/pipe" unique_id=1109405326 node_paths=PackedStringArray("pulsable")]
+script = ExtResource("15_hcxxk")
+pulsable = NodePath("..")
+pulse_coefficient = 1.7
+metadata/_custom_type_script = "uid://tma0ehy5ejye"
 
 [node name="GunFirePoint" type="Marker3D" parent="NonRotatingNodes/GunRotatePoint" unique_id=1301492511]
 unique_name_in_owner = true

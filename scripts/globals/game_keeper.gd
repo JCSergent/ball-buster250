@@ -5,8 +5,14 @@ extends Node
 
 signal player_state_changed(player: Player)
 signal new_game_started(players: Array[Player])
+signal game_ended()
+
+@onready var timer : Timer = $Timer
 
 @export var players: Dictionary[int, Player]
+
+
+@export var win_score : int = 5
 
 var game_state: GameState
 
@@ -30,6 +36,9 @@ func update_score(player_id: int, value: int) -> void:
     if player.score < 0:
         player.score = 0
     player_state_changed.emit(player)
+    
+    if player.score >= win_score:
+        end_game()
 
 func add_item(player_id: int, collectable: Collectable) -> void:
     var player: Player = players.get(player_id)
@@ -41,3 +50,15 @@ func remove_item(player_id: int) -> void:
     player.held_item = null
     player_state_changed.emit(player)
     
+func end_game():
+    game_ended.emit()
+    get_tree().paused = true
+    
+    timer.stop()
+    timer.wait_time = 3.0
+    timer.one_shot = true
+    timer.start()
+    
+    await timer.timeout
+    get_tree().paused = false
+    SceneKeeper.load_scene(SceneKeeper.Scene.VictoryScene)

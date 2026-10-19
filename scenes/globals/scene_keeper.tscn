@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bpcpq8qhf518v" path="res://menus/char_select_menu.tscn" id="2_3om11"]
 [ext_resource type="PackedScene" uid="uid://dsijt7s5byilb" path="res://scenes/test_map_1.tscn" id="3_ibihc"]
 [ext_resource type="PackedScene" uid="uid://bh1wq7mf7hbur" path="res://menus/main_menu.tscn" id="4_o6sfw"]
+[ext_resource type="PackedScene" uid="uid://dv3tb1onfdapr" path="res://menus/victory_menu.tscn" id="5_ibihc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gipfl"]
 bg_color = Color(0, 0, 0, 1)
@@ -19,7 +20,8 @@ script = ExtResource("1_oo7j1")
 loadable_scenes = Dictionary[int, PackedScene]({
 0: ExtResource("2_3om11"),
 1: ExtResource("3_ibihc"),
-2: ExtResource("4_o6sfw")
+2: ExtResource("4_o6sfw"),
+3: ExtResource("5_ibihc")
 })
 
 [node name="LoadingScreen" type="CanvasLayer" parent="." unique_id=1869791386]
@@ -47,5 +49,6 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="LoadingScreen/MarginContainer/CenterContainer" unique_id=729116532]
+visible = false
 layout_mode = 2
 text = "COOL SCENE TRANSITION"

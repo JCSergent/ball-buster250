@@ -6,8 +6,11 @@
 [ext_resource type="Resource" uid="uid://dml1ufdssfbpp" path="res://resources/players/p2.tres" id="4_wj4ra"]
 
 [node name="GameKeeper" type="Node" unique_id=883638504]
+process_mode = 3
 script = ExtResource("1_wvkm2")
 players = Dictionary[int, ExtResource("2_rpv4d")]({
 1: ExtResource("3_gyo81"),
 2: ExtResource("4_wj4ra")
 })
+
+[node name="Timer" type="Timer" parent="." unique_id=1182447790]

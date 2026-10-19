@@ -202,6 +202,7 @@ func shoot_gun() -> void:
     if current_collectable:
         use_collectable()
     elif  current_stars > 0:
+        $NonRotatingNodes/GunRotatePoint/pipe/pulseObj.pulse_this()
         var bullet: Bullet = BULLET_SCENE.instantiate()
         bullet.fire_direction = fire_direction
         bullet.fired_by_player = player_id
@@ -214,6 +215,7 @@ func shoot_gun() -> void:
         pass
 
 func get_collectable(collectable: Collectable) -> bool:
+    $pulseObj.pulse_this()
     if collectable.type == Collectable.Type.Point1:
         if  current_stars >= max_star_capacity:
             return false

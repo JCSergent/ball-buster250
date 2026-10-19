@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://dv3tb1onfdapr"]
+
+[ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_11j33"]
+[ext_resource type="Script" uid="uid://4wjvep4gajme" path="res://menus/victory_menu.gd" id="2_tffrd"]
+[ext_resource type="AudioStream" uid="uid://cojncurjtoe86" path="res://art/music/short loop.wav" id="3_4p1es"]
+[ext_resource type="Texture2D" uid="uid://cqfom873hg75m" path="res://menus/menu items/background.png" id="3_b1hmn"]
+[ext_resource type="Texture2D" uid="uid://cst3l7irv3d8p" path="res://menus/menu items/bunny_namebar_RED.png" id="5_23x3t"]
+[ext_resource type="Texture2D" uid="uid://5sbgk0kaw0jo" path="res://menus/menu items/player_nameplate_1.png" id="5_q6stc"]
+[ext_resource type="Texture2D" uid="uid://be678t7ssjsm3" path="res://menus/menu items/player_card_1.png" id="6_n4d7v"]
+[ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="7_q7ur4"]
+[ext_resource type="PackedScene" uid="uid://dqlolhtbxgbqm" path="res://scenes/fancy_count.tscn" id="7_tffrd"]
+[ext_resource type="Texture2D" uid="uid://7of1ikj0e4lp" path="res://menus/menu items/player_nameplate_2.png" id="9_4p1es"]
+[ext_resource type="Texture2D" uid="uid://br7gqlst1thnc" path="res://menus/menu items/player_card_2.png" id="11_0gg7c"]
+[ext_resource type="SpriteFrames" uid="uid://b3f8hq1gxucd4" path="res://art/animatedsprites/frog_frames.tres" id="12_ibjb3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
+font_size = 92
+outline_size = 28
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tffrd"]
+font_size = 60
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bt0ct"]
+font_size = 72
+outline_size = 28
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1hmn"]
+font_size = 52
+outline_size = 28
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MenuPanel" type="PanelContainer" unique_id=496272823]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -0.38952637
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_11j33")
+script = ExtResource("2_tffrd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=667760761]
+stream = ExtResource("3_4p1es")
+volume_db = -10.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1030873574]
+
+[node name="backdrop" type="Sprite2D" parent="." unique_id=1011857574]
+position = Vector2(959.0454, 539)
+scale = Vector2(0.6172839, 0.617284)
+texture = ExtResource("3_b1hmn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=105839217]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-0.17, 0)
+offset_transform_position_ratio = Vector2(-0.465, 0)
+offset_transform_scale = Vector2(0.335, 1.35)
+offset_transform_rotation = 0.17453292
+color = Color(0.32941177, 0.09411765, 0.09803922, 1)
+
+[node name="PLAYERS" type="Control" parent="." unique_id=1451655675]
+layout_mode = 2
+
+[node name="WinnerPannel" type="Sprite2D" parent="PLAYERS" unique_id=1285438851]
+position = Vector2(1905, 224.99997)
+rotation = 0.22506389
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_23x3t")
+
+[node name="WinnerLabel" type="Label" parent="PLAYERS" unique_id=650195581]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 183.0
+offset_right = 1286.0
+offset_bottom = 309.0
+text = "PLAYER 1 WINS!!"
+label_settings = SubResource("LabelSettings_e2lak")
+
+[node name="returnLabel" type="Label" parent="PLAYERS" unique_id=10526047]
+layout_mode = 0
+offset_left = 1441.0
+offset_top = 982.0
+offset_right = 2082.0
+offset_bottom = 1108.0
+text = "Returning to menu..."
+label_settings = SubResource("LabelSettings_tffrd")
+
+[node name="1st" type="Control" parent="PLAYERS" unique_id=1385218573]
+anchors_preset = 0
+offset_left = -114.0
+offset_top = 332.0
+offset_right = 341.0
+offset_bottom = 766.0
+scale = Vector2(0.895521, 0.895521)
+
+[node name="playerWindow" type="Sprite2D" parent="PLAYERS/1st" unique_id=132767287]
+position = Vector2(568.37415, 124.374115)
+scale = Vector2(0.84728324, 0.84728324)
+texture = ExtResource("6_n4d7v")
+
+[node name="playerNameSpace" type="Sprite2D" parent="PLAYERS/1st" unique_id=990986799]
+position = Vector2(472, 478)
+scale = Vector2(0.84728324, 0.84728324)
+texture = ExtResource("5_q6stc")
+
+[node name="PlayerLabel" type="Label" parent="PLAYERS/1st" unique_id=447587746]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 441.0
+offset_right = 763.0
+offset_bottom = 567.0
+text = "PLAYER 1"
+label_settings = SubResource("LabelSettings_bt0ct")
+
+[node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/1st" unique_id=422360472]
+position = Vector2(568.3741, 124.37412)
+scale = Vector2(1.4134965, 1.4134965)
+sprite_frames = ExtResource("7_q7ur4")
+animation = &"run"
+speed_scale = 0.0
+
+[node name="FancyCount" parent="PLAYERS/1st" unique_id=1445329250 instance=ExtResource("7_tffrd")]
+position = Vector2(-20.100033, 358.45056)
+scale = Vector2(2.5, 2.5)
+
+[node name="2nd" type="Control" parent="PLAYERS" unique_id=1427532183]
+anchors_preset = 0
+offset_left = 749.0
+offset_top = 309.0
+offset_right = 1210.0
+offset_bottom = 751.0
+
+[node name="playerWindow" type="Sprite2D" parent="PLAYERS/2nd" unique_id=321631289]
+position = Vector2(232, 225)
+scale = Vector2(0.45672315, 0.45672315)
+texture = ExtResource("11_0gg7c")
+
+[node name="playerNameSpace" type="Sprite2D" parent="PLAYERS/2nd" unique_id=2002569861]
+position = Vector2(190, 428)
+scale = Vector2(0.4589264, 0.5004653)
+texture = ExtResource("9_4p1es")
+
+[node name="PlayerLabel" type="Label" parent="PLAYERS/2nd" unique_id=246284395]
+layout_mode = 0
+offset_left = 86.00001
+offset_top = 408.0
+offset_right = 554.0
+offset_bottom = 534.0
+scale = Vector2(0.7667932, 0.76193714)
+text = "PLAYER 2"
+label_settings = SubResource("LabelSettings_b1hmn")
+
+[node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/2nd" unique_id=1699210232]
+position = Vector2(225, 215)
+scale = Vector2(0.76193714, 0.76193714)
+sprite_frames = ExtResource("12_ibjb3")
+animation = &"run"
+speed_scale = 0.0
+
+[node name="FancyCount" parent="PLAYERS/2nd" unique_id=1591623041 instance=ExtResource("7_tffrd")]
+position = Vector2(-47, 388)
+scale = Vector2(1.2, 1.2)
+
+[node name="3rd" type="Control" parent="PLAYERS" unique_id=2012356519]
+anchors_preset = 0
+offset_left = 1088.0
+offset_top = 309.0
+offset_right = 1549.0
+offset_bottom = 751.0
+
+[node name="playerWindow" type="Sprite2D" parent="PLAYERS/3rd" unique_id=1025436047]
+position = Vector2(232, 225)
+scale = Vector2(0.45672315, 0.45672315)
+texture = ExtResource("11_0gg7c")
+
+[node name="playerNameSpace" type="Sprite2D" parent="PLAYERS/3rd" unique_id=1040449135]
+position = Vector2(190, 428)
+scale = Vector2(0.4589264, 0.5004653)
+texture = ExtResource("9_4p1es")
+
+[node name="PlayerLabel" type="Label" parent="PLAYERS/3rd" unique_id=1711974515]
+layout_mode = 0
+offset_left = 86.00001
+offset_top = 408.0
+offset_right = 554.0
+offset_bottom = 534.0
+scale = Vector2(0.7667932, 0.76193714)
+text = "PLAYER 2"
+label_settings = SubResource("LabelSettings_b1hmn")
+
+[node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/3rd" unique_id=1040797649]
+position = Vector2(225, 215)
+scale = Vector2(0.76193714, 0.76193714)
+sprite_frames = ExtResource("12_ibjb3")
+animation = &"run"
+speed_scale = 0.0
+
+[node name="FancyCount" parent="PLAYERS/3rd" unique_id=1230451 instance=ExtResource("7_tffrd")]
+position = Vector2(-56, 388)
+scale = Vector2(1.2, 1.2)
+
+[node name="4th" type="Control" parent="PLAYERS" unique_id=396317508]
+anchors_preset = 0
+offset_left = 1420.0
+offset_top = 309.0
+offset_right = 1881.0
+offset_bottom = 751.0
+
+[node name="playerWindow" type="Sprite2D" parent="PLAYERS/4th" unique_id=323024685]
+position = Vector2(232, 225)
+scale = Vector2(0.45672315, 0.45672315)
+texture = ExtResource("11_0gg7c")
+
+[node name="playerNameSpace" type="Sprite2D" parent="PLAYERS/4th" unique_id=312380474]
+position = Vector2(190, 428)
+scale = Vector2(0.4589264, 0.5004653)
+texture = ExtResource("9_4p1es")
+
+[node name="PlayerLabel" type="Label" parent="PLAYERS/4th" unique_id=1980691479]
+layout_mode = 0
+offset_left = 86.00001
+offset_top = 408.0
+offset_right = 554.0
+offset_bottom = 534.0
+scale = Vector2(0.7667932, 0.76193714)
+text = "PLAYER 2"
+label_settings = SubResource("LabelSettings_b1hmn")
+
+[node name="selectSprite" type="AnimatedSprite2D" parent="PLAYERS/4th" unique_id=244543359]
+position = Vector2(225, 215)
+scale = Vector2(0.76193714, 0.76193714)
+sprite_frames = ExtResource("12_ibjb3")
+animation = &"run"
+speed_scale = 0.0
+
+[node name="FancyCount" parent="PLAYERS/4th" unique_id=1451905121 instance=ExtResource("7_tffrd")]
+position = Vector2(-57, 388)
+scale = Vector2(1.2, 1.2)
