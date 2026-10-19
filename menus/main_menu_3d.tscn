@@ -2,8 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bgyff2kbudfo0" path="res://menus/menu_theme.tres" id="1_2imga"]
 [ext_resource type="Script" uid="uid://dbg1e3286ev5x" path="res://menus/main_menu_3d.gd" id="1_dde2g"]
-[ext_resource type="Texture2D" uid="uid://djcodwds51p1r" path="res://menus/menu items/celestiball_logo.png" id="3_sefr5"]
-[ext_resource type="Texture2D" uid="uid://d25ygwjc4dcwu" path="res://art/sprites/PlaceholderMartin.png" id="5_q4131"]
+[ext_resource type="Texture2D" uid="uid://dxdenu0513hqi" path="res://menus/menu items/Title.png" id="3_dde2g"]
 [ext_resource type="AudioStream" uid="uid://cojncurjtoe86" path="res://art/music/short loop.wav" id="6_a4gyb"]
 [ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="7_bk6k3"]
 [ext_resource type="Material" uid="uid://b5s8ks28xpwp3" path="res://art/mats/grass6.tres" id="8_owq6c"]
@@ -18,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://b4xwhmf07g6n3" path="res://art/mats/grass2.tscn" id="17_2y17y"]
 [ext_resource type="PackedScene" uid="uid://c2agjv16xfriu" path="res://art/mats/cover guys.tscn" id="18_i03to"]
 [ext_resource type="PackedScene" uid="uid://c7vujixx72l3e" path="res://art/mats/moo.tscn" id="19_cxr1j"]
+[ext_resource type="Texture2D" uid="uid://bexxhkvxc7rvt" path="res://art/sprites/cloud.png" id="19_dde2g"]
+[ext_resource type="Texture2D" uid="uid://cejrux3mf0wi3" path="res://art/sprites/background_stars.png" id="20_sefr5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gknne"]
 albedo_texture = ExtResource("9_q300n")
@@ -26,6 +27,28 @@ uv1_offset = Vector3(3, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8hcw6"]
 material = SubResource("StandardMaterial3D_gknne")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihqqk"]
+transparency = 1
+albedo_texture = ExtResource("19_dde2g")
+emission_enabled = true
+emission = Color(0.37492585, 0.44107914, 0.69882697, 1)
+emission_energy_multiplier = 1.52
+emission_texture = ExtResource("19_dde2g")
+
+[sub_resource type="QuadMesh" id="QuadMesh_q4131"]
+material = SubResource("StandardMaterial3D_ihqqk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4gyb"]
+transparency = 1
+albedo_texture = ExtResource("20_sefr5")
+emission_enabled = true
+emission = Color(0.92805994, 0.84988856, 0.7655944, 1)
+emission_energy_multiplier = 1.52
+emission_texture = ExtResource("20_sefr5")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bk6k3"]
+material = SubResource("StandardMaterial3D_a4gyb")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ar7ra"]
 sky_top_color = Color(0.7411765, 0.9607843, 0.72156864, 1)
@@ -53,34 +76,21 @@ script = ExtResource("1_dde2g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654610823]
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=810114317]
-texture_filter = 1
-position = Vector2(471, 230.00002)
-scale = Vector2(9.25, 9.25)
-texture = ExtResource("5_q4131")
-
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1386022531]
 offset_left = 70.0
 offset_top = 47.0
 offset_right = 1169.0
 offset_bottom = 488.0
-texture = ExtResource("3_sefr5")
+scale = Vector2(0.58403766, 0.58403766)
+texture = ExtResource("3_dde2g")
 
 [node name="StartButt" type="Button" parent="CanvasLayer" unique_id=863919275]
-offset_left = 112.0
-offset_top = 432.0
-offset_right = 612.0
-offset_bottom = 535.0
+offset_left = 231.0
+offset_top = 615.0
+offset_right = 731.0
+offset_bottom = 718.0
 theme = ExtResource("1_2imga")
 text = "START"
-
-[node name="QuitButt" type="Button" parent="CanvasLayer" unique_id=617201877]
-offset_left = 112.0
-offset_top = 549.0
-offset_right = 612.0
-offset_bottom = 652.0
-theme = ExtResource("1_2imga")
-text = "QUIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1617487207]
 stream = ExtResource("6_a4gyb")
@@ -90,79 +100,130 @@ autoplay = true
 [node name="JoyceMenu" type="Node3D" parent="." unique_id=1070236186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6867132, 0, 16.784008)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="JoyceMenu" unique_id=1604617342]
+[node name="Node3D" type="Node3D" parent="JoyceMenu" unique_id=339420468]
+transform = Transform3D(0.9993062, 0, -0.03724415, 0, 1, 0, 0.03724415, 0, 0.9993062, -0.35491753, 0, 0.30402756)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="JoyceMenu/Node3D" unique_id=1604617342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1761093, 0.79875183, -16.924038)
 light_color = Color(1, 0.76566666, 0.26, 1)
 light_energy = 8.111
 light_indirect_energy = 9.0
 light_volumetric_fog_energy = 1.296
 
-[node name="grass block32" parent="JoyceMenu" unique_id=1838626697 instance=ExtResource("7_bk6k3")]
+[node name="grass block32" parent="JoyceMenu/Node3D" unique_id=1838626697 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -17.556164)
 material_override = ExtResource("8_owq6c")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block33" parent="JoyceMenu" unique_id=1605629812 instance=ExtResource("7_bk6k3")]
+[node name="grass block33" parent="JoyceMenu/Node3D" unique_id=1605629812 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -16.556164)
 material_override = ExtResource("10_3fy1q")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block34" parent="JoyceMenu" unique_id=722017421 instance=ExtResource("7_bk6k3")]
+[node name="grass block34" parent="JoyceMenu/Node3D" unique_id=722017421 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76018, 0, -15.556165)
 material_override = ExtResource("11_qeff8")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block37" parent="JoyceMenu" unique_id=233596974 instance=ExtResource("7_bk6k3")]
+[node name="grass block37" parent="JoyceMenu/Node3D" unique_id=233596974 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -17.556164)
 material_override = ExtResource("12_qmwfu")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block76" parent="JoyceMenu" unique_id=1974578837 instance=ExtResource("7_bk6k3")]
+[node name="grass block76" parent="JoyceMenu/Node3D" unique_id=1974578837 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -16.556164)
 material_override = ExtResource("13_duvfj")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block81" parent="JoyceMenu" unique_id=800726744 instance=ExtResource("7_bk6k3")]
+[node name="grass block81" parent="JoyceMenu/Node3D" unique_id=800726744 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -17.556164)
 material_override = ExtResource("14_a82cm")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block99" parent="JoyceMenu" unique_id=1172046469 instance=ExtResource("7_bk6k3")]
+[node name="grass block99" parent="JoyceMenu/Node3D" unique_id=1172046469 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -16.556164)
 material_override = ExtResource("11_qeff8")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block100" parent="JoyceMenu" unique_id=1164570256 instance=ExtResource("7_bk6k3")]
+[node name="grass block100" parent="JoyceMenu/Node3D" unique_id=1164570256 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7621126, 0, -15.556165)
 material_override = ExtResource("14_a82cm")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="grass block101" parent="JoyceMenu" unique_id=845600287 instance=ExtResource("7_bk6k3")]
+[node name="grass block101" parent="JoyceMenu/Node3D" unique_id=845600287 instance=ExtResource("7_bk6k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76018, 0, -15.556165)
 material_override = ExtResource("10_3fy1q")
 mesh = SubResource("BoxMesh_8hcw6")
 
-[node name="Sprite3D8" parent="JoyceMenu" unique_id=1059588600 instance=ExtResource("15_ebkg7")]
+[node name="Sprite3D8" parent="JoyceMenu/Node3D" unique_id=1059588600 instance=ExtResource("15_ebkg7")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.3380084, 0.70278907, -16.24742)
 
-[node name="Sprite3D26" parent="JoyceMenu" unique_id=34844868 instance=ExtResource("16_3mgp7")]
+[node name="Sprite3D26" parent="JoyceMenu/Node3D" unique_id=34844868 instance=ExtResource("16_3mgp7")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.395485, 0.88979673, -17.560131)
 
-[node name="Sprite3D27" parent="JoyceMenu" unique_id=1809370745 instance=ExtResource("16_3mgp7")]
+[node name="Sprite3D27" parent="JoyceMenu/Node3D" unique_id=1809370745 instance=ExtResource("16_3mgp7")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.797513, 0.77846146, -15.503194)
 
-[node name="Sprite3D28" parent="JoyceMenu" unique_id=556739787 instance=ExtResource("17_2y17y")]
+[node name="Sprite3D28" parent="JoyceMenu/Node3D" unique_id=556739787 instance=ExtResource("17_2y17y")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.3193707, 1.0116574, -15.65403)
 
-[node name="Sprite3D30" parent="JoyceMenu" unique_id=417271412 instance=ExtResource("17_2y17y")]
+[node name="Sprite3D30" parent="JoyceMenu/Node3D" unique_id=417271412 instance=ExtResource("17_2y17y")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.037303, 1.0116574, -17.924582)
 
-[node name="Sprite3D29" parent="JoyceMenu" unique_id=1352456675 instance=ExtResource("18_i03to")]
+[node name="Sprite3D29" parent="JoyceMenu/Node3D" unique_id=1352456675 instance=ExtResource("18_i03to")]
 transform = Transform3D(0.3, 0, 0, 0, 0.28977776, 0.077645734, 0, -0.077645734, 0.28977776, 4.1865454, 0.9096714, -16.965496)
 gi_lightmap_texel_scale = 0.01
 
 [node name="Sprite3D31" parent="JoyceMenu" unique_id=727139373 instance=ExtResource("19_cxr1j")]
-transform = Transform3D(-4.7210426, 0, 8.815428, 0, 10, 0, -8.815428, 0, -4.7210426, -2.3648944, -0.3571446, -14.018903)
+transform = Transform3D(-3.5331864, 0, 9.808986, 0, 18.16365, 0, -17.8167, 0, -1.9451962, -9.502043, 3.2603276, -20.048086)
+
+[node name="Sprite3D32" type="MeshInstance3D" parent="JoyceMenu" unique_id=412468786]
+transform = Transform3D(-25.294748, 0, 7.522233, 0, 38.388878, 0, -28.877007, 0, -6.5890822, -4.425274, 9.356564, 18.209753)
+mesh = SubResource("QuadMesh_q4131")
+
+[node name="Sprite3D35" type="MeshInstance3D" parent="JoyceMenu" unique_id=1024970549]
+transform = Transform3D(2.533039, 0, 9.978207, 0, 38.388878, 0, -38.305214, 0, 0.65983725, -36.520287, 3.9250898, -21.908552)
+mesh = SubResource("QuadMesh_q4131")
+
+[node name="Sprite3D36" type="MeshInstance3D" parent="JoyceMenu" unique_id=141750112]
+transform = Transform3D(5.1974688, 0, 9.978207, 0, 78.76902, 0, -78.59734, 0, 0.65983725, -58.67339, 15.245613, -3.0378566)
+mesh = SubResource("QuadMesh_q4131")
+
+[node name="Sprite3D34" type="MeshInstance3D" parent="JoyceMenu" unique_id=804950046]
+transform = Transform3D(-25.294748, 0, 7.522233, 0, 38.388878, 0, -28.877007, 0, -6.5890822, 3.4187336, -11.013386, 4.564934)
+mesh = SubResource("QuadMesh_q4131")
+
+[node name="Sprite3D43" type="MeshInstance3D" parent="JoyceMenu" unique_id=1080559418]
+transform = Transform3D(10.384358, 0, 9.627188, 0, 38.388878, 0, -36.957687, 0, 2.705044, -58.567345, -32.651283, -45.58084)
+mesh = SubResource("QuadMesh_q4131")
+
+[node name="Sprite3D40" type="MeshInstance3D" parent="JoyceMenu" unique_id=2013366875]
+transform = Transform3D(-25.294748, 0, 7.522233, 0, 38.388878, 0, -28.877007, 0, -6.5890822, 2.7922745, 18.638065, -1.1236172)
+mesh = SubResource("QuadMesh_q4131")
+
+[node name="Sprite3D41" type="MeshInstance3D" parent="JoyceMenu" unique_id=2060529023]
+transform = Transform3D(-32.31004, 0, 5.4002185, 0, 38.388878, 0, -20.730831, 0, -8.41651, 6.5860834, -0.076159954, 44.961)
+mesh = SubResource("QuadMesh_q4131")
+
+[node name="Sprite3D33" type="MeshInstance3D" parent="JoyceMenu" unique_id=20487309]
+transform = Transform3D(-15.20485, 0, 7.522233, 0, 23.075825, 0, -17.358171, 0, -6.5890822, -10.209802, -5.2573957, -1.477705)
+mesh = SubResource("QuadMesh_q4131")
+
+[node name="Sprite3D37" type="MeshInstance3D" parent="JoyceMenu" unique_id=1283128435]
+transform = Transform3D(-9.1229105, 0, 7.522233, 0, 13.845495, 0, -10.414904, 0, -6.5890822, -15.339596, -5.2573957, 3.0157273)
+mesh = SubResource("QuadMesh_bk6k3")
+
+[node name="Sprite3D42" type="MeshInstance3D" parent="JoyceMenu" unique_id=831476004]
+transform = Transform3D(7.9503427, 0, 7.522233, 0, 11.969077, 0, 9.076278, 0, -6.5890822, -3.119184, -26.14592, 38.93338)
+mesh = SubResource("QuadMesh_bk6k3")
+
+[node name="Sprite3D39" type="MeshInstance3D" parent="JoyceMenu" unique_id=316301822]
+transform = Transform3D(7.564451, 0, 5.138688, 0, 9.458319, 0, 8.635734, 0, -4.5012217, -5.7761726, 15.255859, 13.933529)
+mesh = SubResource("QuadMesh_bk6k3")
+
+[node name="Sprite3D38" type="MeshInstance3D" parent="JoyceMenu" unique_id=805559120]
+transform = Transform3D(1.6324652, -1.5383636, 9.699626, 0.9163325, 8.149084, 1.7288275, -10.178785, 0.4868894, 1.7112548, -34.449963, 12.339509, -13.481224)
+mesh = SubResource("QuadMesh_bk6k3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="JoyceMenu" unique_id=101020582]
 transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.16382037, 0, 41.609707, 56.6689)
@@ -171,8 +232,7 @@ transform = Transform3D(1, 0, 0, 0, -0.16382039, 0.9864902, 0, -0.98649025, -0.1
 environment = SubResource("Environment_ixgyf")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1222035302]
-transform = Transform3D(-0.49181843, -0.3285443, 0.8063333, 0.0038613572, 0.925245, 0.3793506, -0.8706893, 0.18968518, -0.45378387, 3.9136333, 3.3204267, 0.0922358)
+transform = Transform3D(-0.49044296, -0.16543968, 0.8556258, 0, 0.9818152, 0.18983908, -0.8714733, 0.093105234, -0.48152438, 3.4856637, 2.0813236, 0.15423833)
 size = 4.633
 
 [connection signal="pressed" from="CanvasLayer/StartButt" to="." method="_on_start_butt_pressed"]
-[connection signal="pressed" from="CanvasLayer/QuitButt" to="." method="_on_quit_butt_pressed"]
