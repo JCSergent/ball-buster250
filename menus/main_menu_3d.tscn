@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cojncurjtoe86" path="res://art/music/short loop.wav" id="6_a4gyb"]
 [ext_resource type="PackedScene" uid="uid://ceemhopf08mcp" path="res://scenes/grass_block.tscn" id="7_bk6k3"]
 [ext_resource type="Material" uid="uid://b5s8ks28xpwp3" path="res://art/mats/grass6.tres" id="8_owq6c"]
-[ext_resource type="Texture2D" uid="uid://dwsel3imqliy6" path="res://art/sprites/map_tiles/grass_6.png" id="9_q300n"]
+[ext_resource type="Texture2D" uid="uid://bsx81s6rq3ak8" path="res://art/sprites/map_tiles/grass_6.png" id="9_q300n"]
 [ext_resource type="Material" uid="uid://mcqdbal30w7a" path="res://art/mats/grass2.tres" id="10_3fy1q"]
 [ext_resource type="Material" uid="uid://kkhvq8omlohd" path="res://art/mats/grass3.tres" id="11_qeff8"]
 [ext_resource type="Material" uid="uid://bbs4gm0dwn2wj" path="res://art/mats/grass5.tres" id="12_qmwfu"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bexxhkvxc7rvt" path="res://art/sprites/cloud.png" id="19_dde2g"]
 [ext_resource type="PackedScene" uid="uid://dvuvb4304u3uk" path="res://art/models/TestBall.glb" id="20_dde2g"]
 [ext_resource type="Texture2D" uid="uid://cejrux3mf0wi3" path="res://art/sprites/background_stars.png" id="20_sefr5"]
+[ext_resource type="Script" uid="uid://dvjyicbii3adr" path="res://scripts/star_spawn_master.gd" id="21_ihqqk"]
+[ext_resource type="PackedScene" uid="uid://dwket6reb0144" path="res://pickups/respawning_collectable.tscn" id="22_q4131"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2lak"]
 font = ExtResource("4_2imga")
@@ -293,3 +295,2121 @@ environment = SubResource("Environment_ixgyf")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1222035302]
 transform = Transform3D(-0.49044296, -0.16543968, 0.8556258, 0, 0.9818152, 0.18983908, -0.8714733, 0.093105234, -0.48152438, 3.4856637, 2.0813236, 0.15423833)
 size = 4.633
+
+[node name="StarSpawnMaster" type="Node3D" parent="." unique_id=1908964633 node_paths=PackedStringArray("players")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, 11)
+script = ExtResource("21_ihqqk")
+min_spawn_time = 0.1
+max_spawn_time = 0.5
+max_stars = 400
+big_boi_rate = 5
+bigger_boi_rate = 12
+players = NodePath("Players")
+
+[node name="Timer" type="Timer" parent="StarSpawnMaster" unique_id=1032538221]
+one_shot = true
+
+[node name="BottomLeft" type="Node3D" parent="StarSpawnMaster" unique_id=372281655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -13, 1)
+
+[node name="Respawn_Collectable" parent="StarSpawnMaster/BottomLeft" unique_id=970564733 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 8)
+
+[node name="Respawn_Collectable2" parent="StarSpawnMaster/BottomLeft" unique_id=1098174115 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 7)
+
+[node name="Respawn_Collectable3" parent="StarSpawnMaster/BottomLeft" unique_id=2080092178 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 6)
+
+[node name="Respawn_Collectable4" parent="StarSpawnMaster/BottomLeft" unique_id=1683576181 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 5)
+
+[node name="Respawn_Collectable5" parent="StarSpawnMaster/BottomLeft" unique_id=1119255806 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 5)
+
+[node name="Respawn_Collectable6" parent="StarSpawnMaster/BottomLeft" unique_id=1196259398 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 6)
+
+[node name="Respawn_Collectable7" parent="StarSpawnMaster/BottomLeft" unique_id=1940477877 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 7)
+
+[node name="Respawn_Collectable8" parent="StarSpawnMaster/BottomLeft" unique_id=1389043128 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 8)
+
+[node name="Respawn_Collectable9" parent="StarSpawnMaster/BottomLeft" unique_id=1442402912 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 9)
+
+[node name="Respawn_Collectable10" parent="StarSpawnMaster/BottomLeft" unique_id=1470546898 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 9)
+
+[node name="Respawn_Collectable11" parent="StarSpawnMaster/BottomLeft" unique_id=352464282 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 10)
+
+[node name="Respawn_Collectable12" parent="StarSpawnMaster/BottomLeft" unique_id=950501236 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 10)
+
+[node name="Respawn_Collectable13" parent="StarSpawnMaster/BottomLeft" unique_id=160643336 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 5)
+
+[node name="Respawn_Collectable14" parent="StarSpawnMaster/BottomLeft" unique_id=1532090242 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 6)
+
+[node name="Respawn_Collectable15" parent="StarSpawnMaster/BottomLeft" unique_id=2048131357 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 7)
+
+[node name="Respawn_Collectable16" parent="StarSpawnMaster/BottomLeft" unique_id=1980144621 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 8)
+
+[node name="Respawn_Collectable17" parent="StarSpawnMaster/BottomLeft" unique_id=1535197781 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 9)
+
+[node name="Respawn_Collectable18" parent="StarSpawnMaster/BottomLeft" unique_id=1422459058 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 10)
+
+[node name="Respawn_Collectable19" parent="StarSpawnMaster/BottomLeft" unique_id=1577148626 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 5)
+
+[node name="Respawn_Collectable20" parent="StarSpawnMaster/BottomLeft" unique_id=1580765982 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 6)
+
+[node name="Respawn_Collectable21" parent="StarSpawnMaster/BottomLeft" unique_id=791713957 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 7)
+
+[node name="Respawn_Collectable22" parent="StarSpawnMaster/BottomLeft" unique_id=2043568342 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 8)
+
+[node name="Respawn_Collectable23" parent="StarSpawnMaster/BottomLeft" unique_id=1922750239 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 9)
+
+[node name="Respawn_Collectable24" parent="StarSpawnMaster/BottomLeft" unique_id=651333750 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 10)
+
+[node name="Respawn_Collectable25" parent="StarSpawnMaster/BottomLeft" unique_id=752919567 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 5)
+
+[node name="Respawn_Collectable26" parent="StarSpawnMaster/BottomLeft" unique_id=1254188044 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 6)
+
+[node name="Respawn_Collectable27" parent="StarSpawnMaster/BottomLeft" unique_id=1481664053 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 7)
+
+[node name="Respawn_Collectable28" parent="StarSpawnMaster/BottomLeft" unique_id=989372389 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 8)
+
+[node name="Respawn_Collectable29" parent="StarSpawnMaster/BottomLeft" unique_id=189678857 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 9)
+
+[node name="Respawn_Collectable30" parent="StarSpawnMaster/BottomLeft" unique_id=254962377 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 10)
+
+[node name="Respawn_Collectable31" parent="StarSpawnMaster/BottomLeft" unique_id=19968211 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 5)
+
+[node name="Respawn_Collectable32" parent="StarSpawnMaster/BottomLeft" unique_id=104433835 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 6)
+
+[node name="Respawn_Collectable33" parent="StarSpawnMaster/BottomLeft" unique_id=52991944 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 7)
+
+[node name="Respawn_Collectable34" parent="StarSpawnMaster/BottomLeft" unique_id=881708296 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 8)
+
+[node name="Respawn_Collectable35" parent="StarSpawnMaster/BottomLeft" unique_id=136231579 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 9)
+
+[node name="Respawn_Collectable36" parent="StarSpawnMaster/BottomLeft" unique_id=610272872 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 10)
+
+[node name="Respawn_Collectable37" parent="StarSpawnMaster/BottomLeft" unique_id=1367331949 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 5)
+
+[node name="Respawn_Collectable38" parent="StarSpawnMaster/BottomLeft" unique_id=1737228897 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 6)
+
+[node name="Respawn_Collectable39" parent="StarSpawnMaster/BottomLeft" unique_id=437369995 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 7)
+
+[node name="Respawn_Collectable40" parent="StarSpawnMaster/BottomLeft" unique_id=1017059291 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 8)
+
+[node name="Respawn_Collectable41" parent="StarSpawnMaster/BottomLeft" unique_id=1815197737 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 9)
+
+[node name="Respawn_Collectable42" parent="StarSpawnMaster/BottomLeft" unique_id=613199415 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 10)
+
+[node name="Respawn_Collectable43" parent="StarSpawnMaster/BottomLeft" unique_id=1468011469 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 5)
+
+[node name="Respawn_Collectable44" parent="StarSpawnMaster/BottomLeft" unique_id=607788911 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 6)
+
+[node name="Respawn_Collectable45" parent="StarSpawnMaster/BottomLeft" unique_id=1887287653 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 7)
+
+[node name="Respawn_Collectable46" parent="StarSpawnMaster/BottomLeft" unique_id=1839504327 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 8)
+
+[node name="Respawn_Collectable47" parent="StarSpawnMaster/BottomLeft" unique_id=2102487511 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 9)
+
+[node name="Respawn_Collectable48" parent="StarSpawnMaster/BottomLeft" unique_id=984115111 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 10)
+
+[node name="Respawn_Collectable49" parent="StarSpawnMaster/BottomLeft" unique_id=1895775691 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 5)
+
+[node name="Respawn_Collectable50" parent="StarSpawnMaster/BottomLeft" unique_id=719417249 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 6)
+
+[node name="Respawn_Collectable51" parent="StarSpawnMaster/BottomLeft" unique_id=527598209 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 7)
+
+[node name="Respawn_Collectable52" parent="StarSpawnMaster/BottomLeft" unique_id=1141820632 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 8)
+
+[node name="Respawn_Collectable53" parent="StarSpawnMaster/BottomLeft" unique_id=2093784180 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 9)
+
+[node name="Respawn_Collectable55" parent="StarSpawnMaster/BottomLeft" unique_id=306451106 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -1)
+
+[node name="Respawn_Collectable56" parent="StarSpawnMaster/BottomLeft" unique_id=1183531110 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 0)
+
+[node name="Respawn_Collectable57" parent="StarSpawnMaster/BottomLeft" unique_id=624476523 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 1)
+
+[node name="Respawn_Collectable58" parent="StarSpawnMaster/BottomLeft" unique_id=927258222 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 2)
+
+[node name="Respawn_Collectable59" parent="StarSpawnMaster/BottomLeft" unique_id=1913772214 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 3)
+
+[node name="Respawn_Collectable60" parent="StarSpawnMaster/BottomLeft" unique_id=1546157895 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 4)
+
+[node name="Respawn_Collectable61" parent="StarSpawnMaster/BottomLeft" unique_id=2126589348 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -1)
+
+[node name="Respawn_Collectable62" parent="StarSpawnMaster/BottomLeft" unique_id=370935093 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 0)
+
+[node name="Respawn_Collectable63" parent="StarSpawnMaster/BottomLeft" unique_id=1426655417 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 1)
+
+[node name="Respawn_Collectable64" parent="StarSpawnMaster/BottomLeft" unique_id=1174528555 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 2)
+
+[node name="Respawn_Collectable65" parent="StarSpawnMaster/BottomLeft" unique_id=1641159856 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 3)
+
+[node name="Respawn_Collectable66" parent="StarSpawnMaster/BottomLeft" unique_id=382593408 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 4)
+
+[node name="Respawn_Collectable67" parent="StarSpawnMaster/BottomLeft" unique_id=1064038959 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -1)
+
+[node name="Respawn_Collectable68" parent="StarSpawnMaster/BottomLeft" unique_id=870829791 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 0)
+
+[node name="Respawn_Collectable69" parent="StarSpawnMaster/BottomLeft" unique_id=1760394848 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 1)
+
+[node name="Respawn_Collectable70" parent="StarSpawnMaster/BottomLeft" unique_id=648412948 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 2)
+
+[node name="Respawn_Collectable71" parent="StarSpawnMaster/BottomLeft" unique_id=281946402 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 3)
+
+[node name="Respawn_Collectable72" parent="StarSpawnMaster/BottomLeft" unique_id=1597445888 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 4)
+
+[node name="Respawn_Collectable73" parent="StarSpawnMaster/BottomLeft" unique_id=1774030955 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -1)
+
+[node name="Respawn_Collectable74" parent="StarSpawnMaster/BottomLeft" unique_id=1938978576 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 0)
+
+[node name="Respawn_Collectable75" parent="StarSpawnMaster/BottomLeft" unique_id=1655604283 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 1)
+
+[node name="Respawn_Collectable76" parent="StarSpawnMaster/BottomLeft" unique_id=2037467453 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 2)
+
+[node name="Respawn_Collectable77" parent="StarSpawnMaster/BottomLeft" unique_id=1864845557 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 3)
+
+[node name="Respawn_Collectable78" parent="StarSpawnMaster/BottomLeft" unique_id=1782264921 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 4)
+
+[node name="Respawn_Collectable79" parent="StarSpawnMaster/BottomLeft" unique_id=217750194 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -1)
+
+[node name="Respawn_Collectable80" parent="StarSpawnMaster/BottomLeft" unique_id=1922037722 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 0)
+
+[node name="Respawn_Collectable81" parent="StarSpawnMaster/BottomLeft" unique_id=197560008 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 1)
+
+[node name="Respawn_Collectable82" parent="StarSpawnMaster/BottomLeft" unique_id=550782727 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 2)
+
+[node name="Respawn_Collectable83" parent="StarSpawnMaster/BottomLeft" unique_id=384359088 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 3)
+
+[node name="Respawn_Collectable84" parent="StarSpawnMaster/BottomLeft" unique_id=1791917157 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 4)
+
+[node name="Respawn_Collectable85" parent="StarSpawnMaster/BottomLeft" unique_id=451462828 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, -1)
+
+[node name="Respawn_Collectable86" parent="StarSpawnMaster/BottomLeft" unique_id=207786282 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 0)
+
+[node name="Respawn_Collectable87" parent="StarSpawnMaster/BottomLeft" unique_id=807697162 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 1)
+
+[node name="Respawn_Collectable88" parent="StarSpawnMaster/BottomLeft" unique_id=1314789133 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 2)
+
+[node name="Respawn_Collectable89" parent="StarSpawnMaster/BottomLeft" unique_id=2008421749 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 3)
+
+[node name="Respawn_Collectable90" parent="StarSpawnMaster/BottomLeft" unique_id=1962339276 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 4)
+
+[node name="Respawn_Collectable91" parent="StarSpawnMaster/BottomLeft" unique_id=1640062927 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -1)
+
+[node name="Respawn_Collectable92" parent="StarSpawnMaster/BottomLeft" unique_id=1037301482 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 0)
+
+[node name="Respawn_Collectable93" parent="StarSpawnMaster/BottomLeft" unique_id=941127593 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 1)
+
+[node name="Respawn_Collectable94" parent="StarSpawnMaster/BottomLeft" unique_id=1781089001 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 2)
+
+[node name="Respawn_Collectable95" parent="StarSpawnMaster/BottomLeft" unique_id=724733055 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 3)
+
+[node name="Respawn_Collectable96" parent="StarSpawnMaster/BottomLeft" unique_id=248371760 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 4)
+
+[node name="Respawn_Collectable97" parent="StarSpawnMaster/BottomLeft" unique_id=1466947316 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -1)
+
+[node name="Respawn_Collectable98" parent="StarSpawnMaster/BottomLeft" unique_id=2045419644 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="Respawn_Collectable99" parent="StarSpawnMaster/BottomLeft" unique_id=999407281 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1)
+
+[node name="Respawn_Collectable100" parent="StarSpawnMaster/BottomLeft" unique_id=1422741672 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 2)
+
+[node name="Respawn_Collectable101" parent="StarSpawnMaster/BottomLeft" unique_id=1289105214 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 3)
+
+[node name="Respawn_Collectable102" parent="StarSpawnMaster/BottomLeft" unique_id=1467720584 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 4)
+
+[node name="Respawn_Collectable103" parent="StarSpawnMaster/BottomLeft" unique_id=1977517470 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -1)
+
+[node name="Respawn_Collectable104" parent="StarSpawnMaster/BottomLeft" unique_id=1775935116 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 0)
+
+[node name="Respawn_Collectable105" parent="StarSpawnMaster/BottomLeft" unique_id=382342573 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 1)
+
+[node name="Respawn_Collectable106" parent="StarSpawnMaster/BottomLeft" unique_id=1865305455 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 2)
+
+[node name="Respawn_Collectable107" parent="StarSpawnMaster/BottomLeft" unique_id=1178703076 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 3)
+
+[node name="Respawn_Collectable108" parent="StarSpawnMaster/BottomLeft" unique_id=214643725 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 4)
+
+[node name="Respawn_Collectable109" parent="StarSpawnMaster/BottomLeft" unique_id=543796722 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 5)
+
+[node name="Respawn_Collectable110" parent="StarSpawnMaster/BottomLeft" unique_id=1236251602 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 6)
+
+[node name="Respawn_Collectable111" parent="StarSpawnMaster/BottomLeft" unique_id=2096079296 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 7)
+
+[node name="Respawn_Collectable112" parent="StarSpawnMaster/BottomLeft" unique_id=1843293461 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 8)
+
+[node name="Respawn_Collectable113" parent="StarSpawnMaster/BottomLeft" unique_id=1700080515 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 9)
+
+[node name="Respawn_Collectable114" parent="StarSpawnMaster/BottomLeft" unique_id=1848801579 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 10)
+
+[node name="Respawn_Collectable115" parent="StarSpawnMaster/BottomLeft" unique_id=1151301309 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, -1)
+
+[node name="Respawn_Collectable116" parent="StarSpawnMaster/BottomLeft" unique_id=522714929 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 0)
+
+[node name="Respawn_Collectable117" parent="StarSpawnMaster/BottomLeft" unique_id=328578417 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 1)
+
+[node name="Respawn_Collectable118" parent="StarSpawnMaster/BottomLeft" unique_id=1122885767 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 2)
+
+[node name="Respawn_Collectable119" parent="StarSpawnMaster/BottomLeft" unique_id=1525164159 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 3)
+
+[node name="Respawn_Collectable120" parent="StarSpawnMaster/BottomLeft" unique_id=1994490485 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 4)
+
+[node name="Respawn_Collectable121" parent="StarSpawnMaster/BottomLeft" unique_id=1892867172 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 5)
+
+[node name="Respawn_Collectable122" parent="StarSpawnMaster/BottomLeft" unique_id=1790507269 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 6)
+
+[node name="Respawn_Collectable123" parent="StarSpawnMaster/BottomLeft" unique_id=1622933080 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 7)
+
+[node name="Respawn_Collectable124" parent="StarSpawnMaster/BottomLeft" unique_id=1877778697 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 8)
+
+[node name="Respawn_Collectable125" parent="StarSpawnMaster/BottomLeft" unique_id=385504645 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 9)
+
+[node name="Respawn_Collectable126" parent="StarSpawnMaster/BottomLeft" unique_id=863185468 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 10)
+
+[node name="Respawn_Collectable127" parent="StarSpawnMaster/BottomLeft" unique_id=1973966427 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -1)
+
+[node name="Respawn_Collectable128" parent="StarSpawnMaster/BottomLeft" unique_id=770853444 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 0)
+
+[node name="Respawn_Collectable129" parent="StarSpawnMaster/BottomLeft" unique_id=1657794706 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 1)
+
+[node name="Respawn_Collectable130" parent="StarSpawnMaster/BottomLeft" unique_id=144489775 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 2)
+
+[node name="Respawn_Collectable131" parent="StarSpawnMaster/BottomLeft" unique_id=1308357431 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 3)
+
+[node name="Respawn_Collectable132" parent="StarSpawnMaster/BottomLeft" unique_id=1549685415 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 4)
+
+[node name="Respawn_Collectable133" parent="StarSpawnMaster/BottomLeft" unique_id=1927595120 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 5)
+
+[node name="Respawn_Collectable134" parent="StarSpawnMaster/BottomLeft" unique_id=956542022 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 6)
+
+[node name="Respawn_Collectable135" parent="StarSpawnMaster/BottomLeft" unique_id=1417580869 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 7)
+
+[node name="Respawn_Collectable136" parent="StarSpawnMaster/BottomLeft" unique_id=1830882490 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 8)
+
+[node name="Respawn_Collectable137" parent="StarSpawnMaster/BottomLeft" unique_id=1279147029 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 9)
+
+[node name="Respawn_Collectable138" parent="StarSpawnMaster/BottomLeft" unique_id=412874584 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 10)
+
+[node name="Respawn_Collectable139" parent="StarSpawnMaster/BottomLeft" unique_id=1934239973 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -1)
+
+[node name="Respawn_Collectable140" parent="StarSpawnMaster/BottomLeft" unique_id=589021781 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 0)
+
+[node name="Respawn_Collectable141" parent="StarSpawnMaster/BottomLeft" unique_id=1983417478 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 1)
+
+[node name="Respawn_Collectable142" parent="StarSpawnMaster/BottomLeft" unique_id=696141522 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 2)
+
+[node name="Respawn_Collectable143" parent="StarSpawnMaster/BottomLeft" unique_id=200255700 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 3)
+
+[node name="Respawn_Collectable144" parent="StarSpawnMaster/BottomLeft" unique_id=1823734230 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 4)
+
+[node name="Respawn_Collectable157" parent="StarSpawnMaster/BottomLeft" unique_id=1987520970 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 11)
+
+[node name="Respawn_Collectable158" parent="StarSpawnMaster/BottomLeft" unique_id=131465702 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 11)
+
+[node name="Respawn_Collectable159" parent="StarSpawnMaster/BottomLeft" unique_id=1172554044 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 11)
+
+[node name="Respawn_Collectable160" parent="StarSpawnMaster/BottomLeft" unique_id=507173006 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 11)
+
+[node name="Respawn_Collectable161" parent="StarSpawnMaster/BottomLeft" unique_id=230664592 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 11)
+
+[node name="Respawn_Collectable162" parent="StarSpawnMaster/BottomLeft" unique_id=661310790 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 11)
+
+[node name="Respawn_Collectable163" parent="StarSpawnMaster/BottomLeft" unique_id=2048324137 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 11)
+
+[node name="Respawn_Collectable164" parent="StarSpawnMaster/BottomLeft" unique_id=566510795 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 11)
+
+[node name="Respawn_Collectable170" parent="StarSpawnMaster/BottomLeft" unique_id=527786000 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 5)
+
+[node name="Respawn_Collectable171" parent="StarSpawnMaster/BottomLeft" unique_id=1117360680 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 6)
+
+[node name="Respawn_Collectable172" parent="StarSpawnMaster/BottomLeft" unique_id=1641912011 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 7)
+
+[node name="Respawn_Collectable173" parent="StarSpawnMaster/BottomLeft" unique_id=108096540 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 8)
+
+[node name="Respawn_Collectable174" parent="StarSpawnMaster/BottomLeft" unique_id=1809562381 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 9)
+
+[node name="Respawn_Collectable176" parent="StarSpawnMaster/BottomLeft" unique_id=1647150516 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, -1)
+
+[node name="Respawn_Collectable145" parent="StarSpawnMaster/BottomLeft" unique_id=1473554145 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -2)
+
+[node name="Respawn_Collectable146" parent="StarSpawnMaster/BottomLeft" unique_id=967421395 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -2)
+
+[node name="Respawn_Collectable147" parent="StarSpawnMaster/BottomLeft" unique_id=1127017170 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -2)
+
+[node name="Respawn_Collectable148" parent="StarSpawnMaster/BottomLeft" unique_id=1385374436 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -2)
+
+[node name="Respawn_Collectable149" parent="StarSpawnMaster/BottomLeft" unique_id=352056717 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -2)
+
+[node name="Respawn_Collectable150" parent="StarSpawnMaster/BottomLeft" unique_id=725118270 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, -2)
+
+[node name="Respawn_Collectable151" parent="StarSpawnMaster/BottomLeft" unique_id=1517829795 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -2)
+
+[node name="Respawn_Collectable152" parent="StarSpawnMaster/BottomLeft" unique_id=1499628782 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -2)
+
+[node name="Respawn_Collectable153" parent="StarSpawnMaster/BottomLeft" unique_id=1809863270 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -2)
+
+[node name="Respawn_Collectable154" parent="StarSpawnMaster/BottomLeft" unique_id=1264285846 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, -2)
+
+[node name="Respawn_Collectable155" parent="StarSpawnMaster/BottomLeft" unique_id=369546216 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -2)
+
+[node name="Respawn_Collectable156" parent="StarSpawnMaster/BottomLeft" unique_id=567778952 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -2)
+
+[node name="Respawn_Collectable182" parent="StarSpawnMaster/BottomLeft" unique_id=837609847 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, -2)
+
+[node name="Respawn_Collectable177" parent="StarSpawnMaster/BottomLeft" unique_id=1032996350 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 0)
+
+[node name="Respawn_Collectable178" parent="StarSpawnMaster/BottomLeft" unique_id=1831069540 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 1)
+
+[node name="Respawn_Collectable179" parent="StarSpawnMaster/BottomLeft" unique_id=1664544298 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 2)
+
+[node name="Respawn_Collectable180" parent="StarSpawnMaster/BottomLeft" unique_id=1817148214 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 3)
+
+[node name="Respawn_Collectable181" parent="StarSpawnMaster/BottomLeft" unique_id=1342652957 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 4)
+
+[node name="Respawn_Collectable166" parent="StarSpawnMaster/BottomLeft" unique_id=832194721 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 11)
+
+[node name="Respawn_Collectable167" parent="StarSpawnMaster/BottomLeft" unique_id=1501638875 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 11)
+
+[node name="Respawn_Collectable168" parent="StarSpawnMaster/BottomLeft" unique_id=1645050893 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 11)
+
+[node name="BottomRight" type="Node3D" parent="StarSpawnMaster" unique_id=850117134]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, -13, 4)
+
+[node name="Respawn_Collectable" parent="StarSpawnMaster/BottomRight" unique_id=1387396517 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 8)
+
+[node name="Respawn_Collectable2" parent="StarSpawnMaster/BottomRight" unique_id=1950385668 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 7)
+
+[node name="Respawn_Collectable3" parent="StarSpawnMaster/BottomRight" unique_id=131233383 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 6)
+
+[node name="Respawn_Collectable4" parent="StarSpawnMaster/BottomRight" unique_id=782600093 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 5)
+
+[node name="Respawn_Collectable5" parent="StarSpawnMaster/BottomRight" unique_id=235178149 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 5)
+
+[node name="Respawn_Collectable6" parent="StarSpawnMaster/BottomRight" unique_id=169678294 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 6)
+
+[node name="Respawn_Collectable7" parent="StarSpawnMaster/BottomRight" unique_id=2056680768 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 7)
+
+[node name="Respawn_Collectable8" parent="StarSpawnMaster/BottomRight" unique_id=1060094909 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 8)
+
+[node name="Respawn_Collectable9" parent="StarSpawnMaster/BottomRight" unique_id=1020590595 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 9)
+
+[node name="Respawn_Collectable10" parent="StarSpawnMaster/BottomRight" unique_id=1437685118 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 9)
+
+[node name="Respawn_Collectable11" parent="StarSpawnMaster/BottomRight" unique_id=187205842 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 10)
+
+[node name="Respawn_Collectable12" parent="StarSpawnMaster/BottomRight" unique_id=722657225 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 10)
+
+[node name="Respawn_Collectable13" parent="StarSpawnMaster/BottomRight" unique_id=373138354 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 5)
+
+[node name="Respawn_Collectable14" parent="StarSpawnMaster/BottomRight" unique_id=45851690 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 6)
+
+[node name="Respawn_Collectable15" parent="StarSpawnMaster/BottomRight" unique_id=1203514373 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 7)
+
+[node name="Respawn_Collectable16" parent="StarSpawnMaster/BottomRight" unique_id=690582303 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 8)
+
+[node name="Respawn_Collectable17" parent="StarSpawnMaster/BottomRight" unique_id=554111168 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 9)
+
+[node name="Respawn_Collectable18" parent="StarSpawnMaster/BottomRight" unique_id=887038539 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 10)
+
+[node name="Respawn_Collectable19" parent="StarSpawnMaster/BottomRight" unique_id=886440778 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 5)
+
+[node name="Respawn_Collectable20" parent="StarSpawnMaster/BottomRight" unique_id=453778087 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 6)
+
+[node name="Respawn_Collectable21" parent="StarSpawnMaster/BottomRight" unique_id=228439092 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 7)
+
+[node name="Respawn_Collectable22" parent="StarSpawnMaster/BottomRight" unique_id=1811286606 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 8)
+
+[node name="Respawn_Collectable23" parent="StarSpawnMaster/BottomRight" unique_id=568432142 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 9)
+
+[node name="Respawn_Collectable24" parent="StarSpawnMaster/BottomRight" unique_id=846818615 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 10)
+
+[node name="Respawn_Collectable25" parent="StarSpawnMaster/BottomRight" unique_id=1626513192 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 5)
+
+[node name="Respawn_Collectable26" parent="StarSpawnMaster/BottomRight" unique_id=366956809 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 6)
+
+[node name="Respawn_Collectable27" parent="StarSpawnMaster/BottomRight" unique_id=1569173537 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 7)
+
+[node name="Respawn_Collectable28" parent="StarSpawnMaster/BottomRight" unique_id=2144505377 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 8)
+
+[node name="Respawn_Collectable29" parent="StarSpawnMaster/BottomRight" unique_id=198652860 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 9)
+
+[node name="Respawn_Collectable30" parent="StarSpawnMaster/BottomRight" unique_id=866031497 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 10)
+
+[node name="Respawn_Collectable31" parent="StarSpawnMaster/BottomRight" unique_id=1477123169 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 5)
+
+[node name="Respawn_Collectable32" parent="StarSpawnMaster/BottomRight" unique_id=1227703640 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 6)
+
+[node name="Respawn_Collectable33" parent="StarSpawnMaster/BottomRight" unique_id=747843156 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 7)
+
+[node name="Respawn_Collectable34" parent="StarSpawnMaster/BottomRight" unique_id=1591096428 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 8)
+
+[node name="Respawn_Collectable35" parent="StarSpawnMaster/BottomRight" unique_id=945536549 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 9)
+
+[node name="Respawn_Collectable36" parent="StarSpawnMaster/BottomRight" unique_id=1886805552 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 10)
+
+[node name="Respawn_Collectable37" parent="StarSpawnMaster/BottomRight" unique_id=813215403 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 5)
+
+[node name="Respawn_Collectable38" parent="StarSpawnMaster/BottomRight" unique_id=1562576699 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 6)
+
+[node name="Respawn_Collectable39" parent="StarSpawnMaster/BottomRight" unique_id=1216118419 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 7)
+
+[node name="Respawn_Collectable40" parent="StarSpawnMaster/BottomRight" unique_id=1811263121 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 8)
+
+[node name="Respawn_Collectable41" parent="StarSpawnMaster/BottomRight" unique_id=1082632717 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 9)
+
+[node name="Respawn_Collectable42" parent="StarSpawnMaster/BottomRight" unique_id=500843602 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 10)
+
+[node name="Respawn_Collectable43" parent="StarSpawnMaster/BottomRight" unique_id=910769290 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 5)
+
+[node name="Respawn_Collectable44" parent="StarSpawnMaster/BottomRight" unique_id=1507821360 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 6)
+
+[node name="Respawn_Collectable45" parent="StarSpawnMaster/BottomRight" unique_id=2049458419 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 7)
+
+[node name="Respawn_Collectable46" parent="StarSpawnMaster/BottomRight" unique_id=1797047459 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 8)
+
+[node name="Respawn_Collectable47" parent="StarSpawnMaster/BottomRight" unique_id=1260190979 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 9)
+
+[node name="Respawn_Collectable48" parent="StarSpawnMaster/BottomRight" unique_id=1981900106 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 10)
+
+[node name="Respawn_Collectable49" parent="StarSpawnMaster/BottomRight" unique_id=1533184019 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 5)
+
+[node name="Respawn_Collectable50" parent="StarSpawnMaster/BottomRight" unique_id=383844182 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 6)
+
+[node name="Respawn_Collectable51" parent="StarSpawnMaster/BottomRight" unique_id=1085563673 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 7)
+
+[node name="Respawn_Collectable52" parent="StarSpawnMaster/BottomRight" unique_id=527270046 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 8)
+
+[node name="Respawn_Collectable53" parent="StarSpawnMaster/BottomRight" unique_id=675129158 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 9)
+
+[node name="Respawn_Collectable55" parent="StarSpawnMaster/BottomRight" unique_id=107537403 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -1)
+
+[node name="Respawn_Collectable56" parent="StarSpawnMaster/BottomRight" unique_id=1994362212 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 0)
+
+[node name="Respawn_Collectable57" parent="StarSpawnMaster/BottomRight" unique_id=1619772065 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 1)
+
+[node name="Respawn_Collectable58" parent="StarSpawnMaster/BottomRight" unique_id=1186592421 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 2)
+
+[node name="Respawn_Collectable59" parent="StarSpawnMaster/BottomRight" unique_id=1862108228 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 3)
+
+[node name="Respawn_Collectable60" parent="StarSpawnMaster/BottomRight" unique_id=959443957 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 4)
+
+[node name="Respawn_Collectable61" parent="StarSpawnMaster/BottomRight" unique_id=811952439 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -1)
+
+[node name="Respawn_Collectable62" parent="StarSpawnMaster/BottomRight" unique_id=328690750 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 0)
+
+[node name="Respawn_Collectable63" parent="StarSpawnMaster/BottomRight" unique_id=884768654 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 1)
+
+[node name="Respawn_Collectable64" parent="StarSpawnMaster/BottomRight" unique_id=1938843586 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 2)
+
+[node name="Respawn_Collectable65" parent="StarSpawnMaster/BottomRight" unique_id=1328207877 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 3)
+
+[node name="Respawn_Collectable66" parent="StarSpawnMaster/BottomRight" unique_id=733788939 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 4)
+
+[node name="Respawn_Collectable67" parent="StarSpawnMaster/BottomRight" unique_id=406043379 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -1)
+
+[node name="Respawn_Collectable68" parent="StarSpawnMaster/BottomRight" unique_id=2028173829 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 0)
+
+[node name="Respawn_Collectable69" parent="StarSpawnMaster/BottomRight" unique_id=1364977791 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 1)
+
+[node name="Respawn_Collectable70" parent="StarSpawnMaster/BottomRight" unique_id=1249287206 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 2)
+
+[node name="Respawn_Collectable71" parent="StarSpawnMaster/BottomRight" unique_id=1505759252 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 3)
+
+[node name="Respawn_Collectable72" parent="StarSpawnMaster/BottomRight" unique_id=1510964606 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 4)
+
+[node name="Respawn_Collectable73" parent="StarSpawnMaster/BottomRight" unique_id=1929748834 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -1)
+
+[node name="Respawn_Collectable74" parent="StarSpawnMaster/BottomRight" unique_id=72989180 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 0)
+
+[node name="Respawn_Collectable75" parent="StarSpawnMaster/BottomRight" unique_id=1263923683 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 1)
+
+[node name="Respawn_Collectable76" parent="StarSpawnMaster/BottomRight" unique_id=1948320964 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 2)
+
+[node name="Respawn_Collectable77" parent="StarSpawnMaster/BottomRight" unique_id=1425411422 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 3)
+
+[node name="Respawn_Collectable78" parent="StarSpawnMaster/BottomRight" unique_id=1249686738 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 4)
+
+[node name="Respawn_Collectable79" parent="StarSpawnMaster/BottomRight" unique_id=408256099 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -1)
+
+[node name="Respawn_Collectable80" parent="StarSpawnMaster/BottomRight" unique_id=207401759 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 0)
+
+[node name="Respawn_Collectable81" parent="StarSpawnMaster/BottomRight" unique_id=150341625 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 1)
+
+[node name="Respawn_Collectable82" parent="StarSpawnMaster/BottomRight" unique_id=1080619225 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 2)
+
+[node name="Respawn_Collectable83" parent="StarSpawnMaster/BottomRight" unique_id=2040755875 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 3)
+
+[node name="Respawn_Collectable84" parent="StarSpawnMaster/BottomRight" unique_id=604897673 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 4)
+
+[node name="Respawn_Collectable85" parent="StarSpawnMaster/BottomRight" unique_id=71898256 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, -1)
+
+[node name="Respawn_Collectable86" parent="StarSpawnMaster/BottomRight" unique_id=705838803 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 0)
+
+[node name="Respawn_Collectable87" parent="StarSpawnMaster/BottomRight" unique_id=1035136797 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 1)
+
+[node name="Respawn_Collectable88" parent="StarSpawnMaster/BottomRight" unique_id=1500387434 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 2)
+
+[node name="Respawn_Collectable89" parent="StarSpawnMaster/BottomRight" unique_id=1128652384 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 3)
+
+[node name="Respawn_Collectable90" parent="StarSpawnMaster/BottomRight" unique_id=1252500782 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 4)
+
+[node name="Respawn_Collectable91" parent="StarSpawnMaster/BottomRight" unique_id=42288282 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -1)
+
+[node name="Respawn_Collectable92" parent="StarSpawnMaster/BottomRight" unique_id=1304294369 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 0)
+
+[node name="Respawn_Collectable93" parent="StarSpawnMaster/BottomRight" unique_id=1597041266 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 1)
+
+[node name="Respawn_Collectable94" parent="StarSpawnMaster/BottomRight" unique_id=1245067656 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 2)
+
+[node name="Respawn_Collectable95" parent="StarSpawnMaster/BottomRight" unique_id=233524247 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 3)
+
+[node name="Respawn_Collectable96" parent="StarSpawnMaster/BottomRight" unique_id=1565161625 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 4)
+
+[node name="Respawn_Collectable97" parent="StarSpawnMaster/BottomRight" unique_id=488511054 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -1)
+
+[node name="Respawn_Collectable98" parent="StarSpawnMaster/BottomRight" unique_id=673673320 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="Respawn_Collectable99" parent="StarSpawnMaster/BottomRight" unique_id=26688762 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1)
+
+[node name="Respawn_Collectable100" parent="StarSpawnMaster/BottomRight" unique_id=399920573 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 2)
+
+[node name="Respawn_Collectable101" parent="StarSpawnMaster/BottomRight" unique_id=664349304 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 3)
+
+[node name="Respawn_Collectable102" parent="StarSpawnMaster/BottomRight" unique_id=1423337868 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 4)
+
+[node name="Respawn_Collectable103" parent="StarSpawnMaster/BottomRight" unique_id=120259457 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -1)
+
+[node name="Respawn_Collectable104" parent="StarSpawnMaster/BottomRight" unique_id=1682758670 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 0)
+
+[node name="Respawn_Collectable105" parent="StarSpawnMaster/BottomRight" unique_id=193189664 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 1)
+
+[node name="Respawn_Collectable106" parent="StarSpawnMaster/BottomRight" unique_id=125995869 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 2)
+
+[node name="Respawn_Collectable107" parent="StarSpawnMaster/BottomRight" unique_id=206916021 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 3)
+
+[node name="Respawn_Collectable108" parent="StarSpawnMaster/BottomRight" unique_id=1128345285 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 4)
+
+[node name="Respawn_Collectable109" parent="StarSpawnMaster/BottomRight" unique_id=1493250539 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 5)
+
+[node name="Respawn_Collectable110" parent="StarSpawnMaster/BottomRight" unique_id=2119552837 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 6)
+
+[node name="Respawn_Collectable111" parent="StarSpawnMaster/BottomRight" unique_id=916166258 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 7)
+
+[node name="Respawn_Collectable112" parent="StarSpawnMaster/BottomRight" unique_id=1739097584 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 8)
+
+[node name="Respawn_Collectable113" parent="StarSpawnMaster/BottomRight" unique_id=925089757 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 9)
+
+[node name="Respawn_Collectable114" parent="StarSpawnMaster/BottomRight" unique_id=804645571 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 10)
+
+[node name="Respawn_Collectable115" parent="StarSpawnMaster/BottomRight" unique_id=512680795 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, -1)
+
+[node name="Respawn_Collectable116" parent="StarSpawnMaster/BottomRight" unique_id=1844910015 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 0)
+
+[node name="Respawn_Collectable117" parent="StarSpawnMaster/BottomRight" unique_id=955902028 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 1)
+
+[node name="Respawn_Collectable118" parent="StarSpawnMaster/BottomRight" unique_id=1025334451 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 2)
+
+[node name="Respawn_Collectable119" parent="StarSpawnMaster/BottomRight" unique_id=198759116 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 3)
+
+[node name="Respawn_Collectable120" parent="StarSpawnMaster/BottomRight" unique_id=1141001232 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 4)
+
+[node name="Respawn_Collectable121" parent="StarSpawnMaster/BottomRight" unique_id=2140294464 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 5)
+
+[node name="Respawn_Collectable122" parent="StarSpawnMaster/BottomRight" unique_id=1859537054 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 6)
+
+[node name="Respawn_Collectable123" parent="StarSpawnMaster/BottomRight" unique_id=704171439 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 7)
+
+[node name="Respawn_Collectable124" parent="StarSpawnMaster/BottomRight" unique_id=1812437456 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 8)
+
+[node name="Respawn_Collectable125" parent="StarSpawnMaster/BottomRight" unique_id=1395135659 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 9)
+
+[node name="Respawn_Collectable126" parent="StarSpawnMaster/BottomRight" unique_id=1558220463 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 10)
+
+[node name="Respawn_Collectable127" parent="StarSpawnMaster/BottomRight" unique_id=1094583612 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -1)
+
+[node name="Respawn_Collectable128" parent="StarSpawnMaster/BottomRight" unique_id=1188326475 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 0)
+
+[node name="Respawn_Collectable129" parent="StarSpawnMaster/BottomRight" unique_id=1109705700 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 1)
+
+[node name="Respawn_Collectable130" parent="StarSpawnMaster/BottomRight" unique_id=1413809975 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 2)
+
+[node name="Respawn_Collectable131" parent="StarSpawnMaster/BottomRight" unique_id=759100678 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 3)
+
+[node name="Respawn_Collectable132" parent="StarSpawnMaster/BottomRight" unique_id=1257626981 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 4)
+
+[node name="Respawn_Collectable133" parent="StarSpawnMaster/BottomRight" unique_id=1502663954 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 5)
+
+[node name="Respawn_Collectable134" parent="StarSpawnMaster/BottomRight" unique_id=1658222497 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 6)
+
+[node name="Respawn_Collectable135" parent="StarSpawnMaster/BottomRight" unique_id=508033053 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 7)
+
+[node name="Respawn_Collectable136" parent="StarSpawnMaster/BottomRight" unique_id=683286483 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 8)
+
+[node name="Respawn_Collectable137" parent="StarSpawnMaster/BottomRight" unique_id=1044817897 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 9)
+
+[node name="Respawn_Collectable138" parent="StarSpawnMaster/BottomRight" unique_id=921795571 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 10)
+
+[node name="Respawn_Collectable139" parent="StarSpawnMaster/BottomRight" unique_id=258501888 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -1)
+
+[node name="Respawn_Collectable140" parent="StarSpawnMaster/BottomRight" unique_id=216665410 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 0)
+
+[node name="Respawn_Collectable141" parent="StarSpawnMaster/BottomRight" unique_id=1807835481 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 1)
+
+[node name="Respawn_Collectable142" parent="StarSpawnMaster/BottomRight" unique_id=1871168751 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 2)
+
+[node name="Respawn_Collectable143" parent="StarSpawnMaster/BottomRight" unique_id=280971814 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 3)
+
+[node name="Respawn_Collectable144" parent="StarSpawnMaster/BottomRight" unique_id=1099189525 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 4)
+
+[node name="Respawn_Collectable157" parent="StarSpawnMaster/BottomRight" unique_id=233777458 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 11)
+
+[node name="Respawn_Collectable158" parent="StarSpawnMaster/BottomRight" unique_id=1698792683 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 11)
+
+[node name="Respawn_Collectable161" parent="StarSpawnMaster/BottomRight" unique_id=1999673933 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 11)
+
+[node name="Respawn_Collectable162" parent="StarSpawnMaster/BottomRight" unique_id=1501119140 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 11)
+
+[node name="Respawn_Collectable163" parent="StarSpawnMaster/BottomRight" unique_id=44089708 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 11)
+
+[node name="Respawn_Collectable164" parent="StarSpawnMaster/BottomRight" unique_id=379443588 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 11)
+
+[node name="Respawn_Collectable170" parent="StarSpawnMaster/BottomRight" unique_id=1247640627 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 5)
+
+[node name="Respawn_Collectable171" parent="StarSpawnMaster/BottomRight" unique_id=781860775 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 6)
+
+[node name="Respawn_Collectable172" parent="StarSpawnMaster/BottomRight" unique_id=2043174279 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 7)
+
+[node name="Respawn_Collectable173" parent="StarSpawnMaster/BottomRight" unique_id=2146008699 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 8)
+
+[node name="Respawn_Collectable174" parent="StarSpawnMaster/BottomRight" unique_id=645541150 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 9)
+
+[node name="Respawn_Collectable176" parent="StarSpawnMaster/BottomRight" unique_id=372010124 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, -1)
+
+[node name="Respawn_Collectable145" parent="StarSpawnMaster/BottomRight" unique_id=1960980077 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -2)
+
+[node name="Respawn_Collectable146" parent="StarSpawnMaster/BottomRight" unique_id=2128202764 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -2)
+
+[node name="Respawn_Collectable147" parent="StarSpawnMaster/BottomRight" unique_id=917327048 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -2)
+
+[node name="Respawn_Collectable148" parent="StarSpawnMaster/BottomRight" unique_id=363365261 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -2)
+
+[node name="Respawn_Collectable149" parent="StarSpawnMaster/BottomRight" unique_id=757012789 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -2)
+
+[node name="Respawn_Collectable150" parent="StarSpawnMaster/BottomRight" unique_id=276042653 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, -2)
+
+[node name="Respawn_Collectable151" parent="StarSpawnMaster/BottomRight" unique_id=2019976747 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -2)
+
+[node name="Respawn_Collectable152" parent="StarSpawnMaster/BottomRight" unique_id=1979858737 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -2)
+
+[node name="Respawn_Collectable153" parent="StarSpawnMaster/BottomRight" unique_id=624684852 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -2)
+
+[node name="Respawn_Collectable154" parent="StarSpawnMaster/BottomRight" unique_id=975245803 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, -2)
+
+[node name="Respawn_Collectable155" parent="StarSpawnMaster/BottomRight" unique_id=81343621 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -2)
+
+[node name="Respawn_Collectable156" parent="StarSpawnMaster/BottomRight" unique_id=1162086410 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -2)
+
+[node name="Respawn_Collectable182" parent="StarSpawnMaster/BottomRight" unique_id=282983518 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, -2)
+
+[node name="Respawn_Collectable177" parent="StarSpawnMaster/BottomRight" unique_id=974694662 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 0)
+
+[node name="Respawn_Collectable178" parent="StarSpawnMaster/BottomRight" unique_id=209642616 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 1)
+
+[node name="Respawn_Collectable179" parent="StarSpawnMaster/BottomRight" unique_id=209576349 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 2)
+
+[node name="Respawn_Collectable180" parent="StarSpawnMaster/BottomRight" unique_id=2035306912 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 3)
+
+[node name="Respawn_Collectable181" parent="StarSpawnMaster/BottomRight" unique_id=734794248 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 4)
+
+[node name="Respawn_Collectable166" parent="StarSpawnMaster/BottomRight" unique_id=628188760 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 11)
+
+[node name="Respawn_Collectable167" parent="StarSpawnMaster/BottomRight" unique_id=2122590798 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 11)
+
+[node name="TopRight" type="Node3D" parent="StarSpawnMaster" unique_id=1412791589]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, -13, -3)
+
+[node name="Respawn_Collectable" parent="StarSpawnMaster/TopRight" unique_id=1258156263 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 8)
+
+[node name="Respawn_Collectable2" parent="StarSpawnMaster/TopRight" unique_id=1730840740 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 7)
+
+[node name="Respawn_Collectable3" parent="StarSpawnMaster/TopRight" unique_id=944536292 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 6)
+
+[node name="Respawn_Collectable4" parent="StarSpawnMaster/TopRight" unique_id=1504883348 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 5)
+
+[node name="Respawn_Collectable5" parent="StarSpawnMaster/TopRight" unique_id=133662845 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 5)
+
+[node name="Respawn_Collectable6" parent="StarSpawnMaster/TopRight" unique_id=1612528310 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 6)
+
+[node name="Respawn_Collectable7" parent="StarSpawnMaster/TopRight" unique_id=1083889001 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 7)
+
+[node name="Respawn_Collectable8" parent="StarSpawnMaster/TopRight" unique_id=712872120 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 8)
+
+[node name="Respawn_Collectable9" parent="StarSpawnMaster/TopRight" unique_id=1879229834 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 9)
+
+[node name="Respawn_Collectable10" parent="StarSpawnMaster/TopRight" unique_id=122004640 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 9)
+
+[node name="Respawn_Collectable11" parent="StarSpawnMaster/TopRight" unique_id=1333881930 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 10)
+
+[node name="Respawn_Collectable12" parent="StarSpawnMaster/TopRight" unique_id=526448172 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 10)
+
+[node name="Respawn_Collectable13" parent="StarSpawnMaster/TopRight" unique_id=1065200290 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 5)
+
+[node name="Respawn_Collectable14" parent="StarSpawnMaster/TopRight" unique_id=1466377769 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 6)
+
+[node name="Respawn_Collectable15" parent="StarSpawnMaster/TopRight" unique_id=1818147908 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 7)
+
+[node name="Respawn_Collectable16" parent="StarSpawnMaster/TopRight" unique_id=1156146432 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 8)
+
+[node name="Respawn_Collectable17" parent="StarSpawnMaster/TopRight" unique_id=833597077 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 9)
+
+[node name="Respawn_Collectable18" parent="StarSpawnMaster/TopRight" unique_id=1612995663 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 10)
+
+[node name="Respawn_Collectable19" parent="StarSpawnMaster/TopRight" unique_id=215976421 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 5)
+
+[node name="Respawn_Collectable20" parent="StarSpawnMaster/TopRight" unique_id=793443691 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 6)
+
+[node name="Respawn_Collectable21" parent="StarSpawnMaster/TopRight" unique_id=331598980 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 7)
+
+[node name="Respawn_Collectable22" parent="StarSpawnMaster/TopRight" unique_id=1489894840 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 8)
+
+[node name="Respawn_Collectable23" parent="StarSpawnMaster/TopRight" unique_id=504483867 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 9)
+
+[node name="Respawn_Collectable24" parent="StarSpawnMaster/TopRight" unique_id=281843848 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 10)
+
+[node name="Respawn_Collectable25" parent="StarSpawnMaster/TopRight" unique_id=427550305 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 5)
+
+[node name="Respawn_Collectable26" parent="StarSpawnMaster/TopRight" unique_id=2042138625 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 6)
+
+[node name="Respawn_Collectable27" parent="StarSpawnMaster/TopRight" unique_id=3210817 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 7)
+
+[node name="Respawn_Collectable28" parent="StarSpawnMaster/TopRight" unique_id=2019375472 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 8)
+
+[node name="Respawn_Collectable29" parent="StarSpawnMaster/TopRight" unique_id=1377042654 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 9)
+
+[node name="Respawn_Collectable30" parent="StarSpawnMaster/TopRight" unique_id=2146438378 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 10)
+
+[node name="Respawn_Collectable31" parent="StarSpawnMaster/TopRight" unique_id=1243089912 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 5)
+
+[node name="Respawn_Collectable32" parent="StarSpawnMaster/TopRight" unique_id=879983823 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 6)
+
+[node name="Respawn_Collectable33" parent="StarSpawnMaster/TopRight" unique_id=1932081026 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 7)
+
+[node name="Respawn_Collectable34" parent="StarSpawnMaster/TopRight" unique_id=353494419 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 8)
+
+[node name="Respawn_Collectable35" parent="StarSpawnMaster/TopRight" unique_id=1945089986 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 9)
+
+[node name="Respawn_Collectable36" parent="StarSpawnMaster/TopRight" unique_id=1096418034 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 10)
+
+[node name="Respawn_Collectable37" parent="StarSpawnMaster/TopRight" unique_id=1716497067 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 5)
+
+[node name="Respawn_Collectable38" parent="StarSpawnMaster/TopRight" unique_id=1124128787 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 6)
+
+[node name="Respawn_Collectable39" parent="StarSpawnMaster/TopRight" unique_id=647287878 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 7)
+
+[node name="Respawn_Collectable40" parent="StarSpawnMaster/TopRight" unique_id=1254813134 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 8)
+
+[node name="Respawn_Collectable41" parent="StarSpawnMaster/TopRight" unique_id=956150610 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 9)
+
+[node name="Respawn_Collectable42" parent="StarSpawnMaster/TopRight" unique_id=625820393 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 10)
+
+[node name="Respawn_Collectable43" parent="StarSpawnMaster/TopRight" unique_id=102392989 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 5)
+
+[node name="Respawn_Collectable44" parent="StarSpawnMaster/TopRight" unique_id=710039914 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 6)
+
+[node name="Respawn_Collectable45" parent="StarSpawnMaster/TopRight" unique_id=698563186 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 7)
+
+[node name="Respawn_Collectable46" parent="StarSpawnMaster/TopRight" unique_id=1069725368 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 8)
+
+[node name="Respawn_Collectable47" parent="StarSpawnMaster/TopRight" unique_id=831360293 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 9)
+
+[node name="Respawn_Collectable48" parent="StarSpawnMaster/TopRight" unique_id=1882637506 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 10)
+
+[node name="Respawn_Collectable49" parent="StarSpawnMaster/TopRight" unique_id=1013069369 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 5)
+
+[node name="Respawn_Collectable50" parent="StarSpawnMaster/TopRight" unique_id=764020822 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 6)
+
+[node name="Respawn_Collectable51" parent="StarSpawnMaster/TopRight" unique_id=1866724225 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 7)
+
+[node name="Respawn_Collectable52" parent="StarSpawnMaster/TopRight" unique_id=1645122911 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 8)
+
+[node name="Respawn_Collectable53" parent="StarSpawnMaster/TopRight" unique_id=513186400 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 9)
+
+[node name="Respawn_Collectable55" parent="StarSpawnMaster/TopRight" unique_id=2028616327 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -1)
+
+[node name="Respawn_Collectable56" parent="StarSpawnMaster/TopRight" unique_id=365719365 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 0)
+
+[node name="Respawn_Collectable57" parent="StarSpawnMaster/TopRight" unique_id=1815344243 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 1)
+
+[node name="Respawn_Collectable58" parent="StarSpawnMaster/TopRight" unique_id=1103911193 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 2)
+
+[node name="Respawn_Collectable59" parent="StarSpawnMaster/TopRight" unique_id=150820592 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 3)
+
+[node name="Respawn_Collectable60" parent="StarSpawnMaster/TopRight" unique_id=665673386 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 4)
+
+[node name="Respawn_Collectable61" parent="StarSpawnMaster/TopRight" unique_id=1700352642 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -1)
+
+[node name="Respawn_Collectable62" parent="StarSpawnMaster/TopRight" unique_id=1950378991 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 0)
+
+[node name="Respawn_Collectable63" parent="StarSpawnMaster/TopRight" unique_id=1312138516 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 1)
+
+[node name="Respawn_Collectable64" parent="StarSpawnMaster/TopRight" unique_id=2067043486 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 2)
+
+[node name="Respawn_Collectable65" parent="StarSpawnMaster/TopRight" unique_id=460020416 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 3)
+
+[node name="Respawn_Collectable66" parent="StarSpawnMaster/TopRight" unique_id=534803486 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 4)
+
+[node name="Respawn_Collectable67" parent="StarSpawnMaster/TopRight" unique_id=786851598 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -1)
+
+[node name="Respawn_Collectable68" parent="StarSpawnMaster/TopRight" unique_id=633423791 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 0)
+
+[node name="Respawn_Collectable69" parent="StarSpawnMaster/TopRight" unique_id=1763485580 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 1)
+
+[node name="Respawn_Collectable70" parent="StarSpawnMaster/TopRight" unique_id=536411980 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 2)
+
+[node name="Respawn_Collectable71" parent="StarSpawnMaster/TopRight" unique_id=248069699 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 3)
+
+[node name="Respawn_Collectable72" parent="StarSpawnMaster/TopRight" unique_id=198722793 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 4)
+
+[node name="Respawn_Collectable73" parent="StarSpawnMaster/TopRight" unique_id=596240370 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -1)
+
+[node name="Respawn_Collectable74" parent="StarSpawnMaster/TopRight" unique_id=1213996940 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 0)
+
+[node name="Respawn_Collectable75" parent="StarSpawnMaster/TopRight" unique_id=1970428168 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 1)
+
+[node name="Respawn_Collectable76" parent="StarSpawnMaster/TopRight" unique_id=273402895 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 2)
+
+[node name="Respawn_Collectable77" parent="StarSpawnMaster/TopRight" unique_id=889253307 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 3)
+
+[node name="Respawn_Collectable78" parent="StarSpawnMaster/TopRight" unique_id=824093739 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 4)
+
+[node name="Respawn_Collectable79" parent="StarSpawnMaster/TopRight" unique_id=1323409607 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -1)
+
+[node name="Respawn_Collectable80" parent="StarSpawnMaster/TopRight" unique_id=245706366 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 0)
+
+[node name="Respawn_Collectable81" parent="StarSpawnMaster/TopRight" unique_id=930528369 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 1)
+
+[node name="Respawn_Collectable82" parent="StarSpawnMaster/TopRight" unique_id=1573390043 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 2)
+
+[node name="Respawn_Collectable83" parent="StarSpawnMaster/TopRight" unique_id=679617356 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 3)
+
+[node name="Respawn_Collectable84" parent="StarSpawnMaster/TopRight" unique_id=618511990 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 4)
+
+[node name="Respawn_Collectable85" parent="StarSpawnMaster/TopRight" unique_id=468818168 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, -1)
+
+[node name="Respawn_Collectable86" parent="StarSpawnMaster/TopRight" unique_id=1938773203 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 0)
+
+[node name="Respawn_Collectable87" parent="StarSpawnMaster/TopRight" unique_id=871017300 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 1)
+
+[node name="Respawn_Collectable88" parent="StarSpawnMaster/TopRight" unique_id=1310402096 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 2)
+
+[node name="Respawn_Collectable89" parent="StarSpawnMaster/TopRight" unique_id=93321241 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 3)
+
+[node name="Respawn_Collectable90" parent="StarSpawnMaster/TopRight" unique_id=204874759 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 4)
+
+[node name="Respawn_Collectable91" parent="StarSpawnMaster/TopRight" unique_id=1096557994 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -1)
+
+[node name="Respawn_Collectable92" parent="StarSpawnMaster/TopRight" unique_id=78010261 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 0)
+
+[node name="Respawn_Collectable93" parent="StarSpawnMaster/TopRight" unique_id=1265627389 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 1)
+
+[node name="Respawn_Collectable94" parent="StarSpawnMaster/TopRight" unique_id=1474802002 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 2)
+
+[node name="Respawn_Collectable95" parent="StarSpawnMaster/TopRight" unique_id=1870117669 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 3)
+
+[node name="Respawn_Collectable96" parent="StarSpawnMaster/TopRight" unique_id=179763326 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 4)
+
+[node name="Respawn_Collectable97" parent="StarSpawnMaster/TopRight" unique_id=788448842 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -1)
+
+[node name="Respawn_Collectable98" parent="StarSpawnMaster/TopRight" unique_id=1229233780 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="Respawn_Collectable99" parent="StarSpawnMaster/TopRight" unique_id=1943605798 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1)
+
+[node name="Respawn_Collectable100" parent="StarSpawnMaster/TopRight" unique_id=476588312 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 2)
+
+[node name="Respawn_Collectable101" parent="StarSpawnMaster/TopRight" unique_id=711123242 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 3)
+
+[node name="Respawn_Collectable102" parent="StarSpawnMaster/TopRight" unique_id=760741467 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 4)
+
+[node name="Respawn_Collectable103" parent="StarSpawnMaster/TopRight" unique_id=1668689897 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -1)
+
+[node name="Respawn_Collectable104" parent="StarSpawnMaster/TopRight" unique_id=1830612862 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 0)
+
+[node name="Respawn_Collectable105" parent="StarSpawnMaster/TopRight" unique_id=940689211 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 1)
+
+[node name="Respawn_Collectable106" parent="StarSpawnMaster/TopRight" unique_id=718472798 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 2)
+
+[node name="Respawn_Collectable107" parent="StarSpawnMaster/TopRight" unique_id=2090585841 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 3)
+
+[node name="Respawn_Collectable108" parent="StarSpawnMaster/TopRight" unique_id=1276332656 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 4)
+
+[node name="Respawn_Collectable109" parent="StarSpawnMaster/TopRight" unique_id=2037158592 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 5)
+
+[node name="Respawn_Collectable110" parent="StarSpawnMaster/TopRight" unique_id=752736651 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 6)
+
+[node name="Respawn_Collectable111" parent="StarSpawnMaster/TopRight" unique_id=1075972562 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 7)
+
+[node name="Respawn_Collectable112" parent="StarSpawnMaster/TopRight" unique_id=1888460322 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 8)
+
+[node name="Respawn_Collectable113" parent="StarSpawnMaster/TopRight" unique_id=614742944 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 9)
+
+[node name="Respawn_Collectable114" parent="StarSpawnMaster/TopRight" unique_id=1446974550 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 10)
+
+[node name="Respawn_Collectable115" parent="StarSpawnMaster/TopRight" unique_id=1930876744 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, -1)
+
+[node name="Respawn_Collectable116" parent="StarSpawnMaster/TopRight" unique_id=1690091860 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 0)
+
+[node name="Respawn_Collectable117" parent="StarSpawnMaster/TopRight" unique_id=1111970031 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 1)
+
+[node name="Respawn_Collectable118" parent="StarSpawnMaster/TopRight" unique_id=636533802 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 2)
+
+[node name="Respawn_Collectable119" parent="StarSpawnMaster/TopRight" unique_id=2107263207 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 3)
+
+[node name="Respawn_Collectable120" parent="StarSpawnMaster/TopRight" unique_id=1814846043 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 4)
+
+[node name="Respawn_Collectable121" parent="StarSpawnMaster/TopRight" unique_id=2005694624 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 5)
+
+[node name="Respawn_Collectable122" parent="StarSpawnMaster/TopRight" unique_id=1011542978 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 6)
+
+[node name="Respawn_Collectable123" parent="StarSpawnMaster/TopRight" unique_id=741287168 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 7)
+
+[node name="Respawn_Collectable124" parent="StarSpawnMaster/TopRight" unique_id=127509018 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 8)
+
+[node name="Respawn_Collectable125" parent="StarSpawnMaster/TopRight" unique_id=253539216 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 9)
+
+[node name="Respawn_Collectable126" parent="StarSpawnMaster/TopRight" unique_id=185374717 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 10)
+
+[node name="Respawn_Collectable127" parent="StarSpawnMaster/TopRight" unique_id=1195949903 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -1)
+
+[node name="Respawn_Collectable128" parent="StarSpawnMaster/TopRight" unique_id=431673522 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 0)
+
+[node name="Respawn_Collectable129" parent="StarSpawnMaster/TopRight" unique_id=72351347 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 1)
+
+[node name="Respawn_Collectable130" parent="StarSpawnMaster/TopRight" unique_id=1941510305 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 2)
+
+[node name="Respawn_Collectable131" parent="StarSpawnMaster/TopRight" unique_id=2085029079 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 3)
+
+[node name="Respawn_Collectable132" parent="StarSpawnMaster/TopRight" unique_id=1710784459 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 4)
+
+[node name="Respawn_Collectable133" parent="StarSpawnMaster/TopRight" unique_id=1719079135 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 5)
+
+[node name="Respawn_Collectable134" parent="StarSpawnMaster/TopRight" unique_id=1330861341 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 6)
+
+[node name="Respawn_Collectable135" parent="StarSpawnMaster/TopRight" unique_id=1983304777 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 7)
+
+[node name="Respawn_Collectable136" parent="StarSpawnMaster/TopRight" unique_id=510549813 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 8)
+
+[node name="Respawn_Collectable137" parent="StarSpawnMaster/TopRight" unique_id=1644948940 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 9)
+
+[node name="Respawn_Collectable138" parent="StarSpawnMaster/TopRight" unique_id=441364340 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 10)
+
+[node name="Respawn_Collectable139" parent="StarSpawnMaster/TopRight" unique_id=1667142796 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -1)
+
+[node name="Respawn_Collectable140" parent="StarSpawnMaster/TopRight" unique_id=1348487283 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 0)
+
+[node name="Respawn_Collectable141" parent="StarSpawnMaster/TopRight" unique_id=979556339 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 1)
+
+[node name="Respawn_Collectable142" parent="StarSpawnMaster/TopRight" unique_id=582816452 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 2)
+
+[node name="Respawn_Collectable143" parent="StarSpawnMaster/TopRight" unique_id=2126501175 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 3)
+
+[node name="Respawn_Collectable144" parent="StarSpawnMaster/TopRight" unique_id=1577468429 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 4)
+
+[node name="Respawn_Collectable157" parent="StarSpawnMaster/TopRight" unique_id=1423322374 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 11)
+
+[node name="Respawn_Collectable158" parent="StarSpawnMaster/TopRight" unique_id=292815857 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 11)
+
+[node name="Respawn_Collectable159" parent="StarSpawnMaster/TopRight" unique_id=210980377 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 11)
+
+[node name="Respawn_Collectable160" parent="StarSpawnMaster/TopRight" unique_id=1384486717 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 11)
+
+[node name="Respawn_Collectable161" parent="StarSpawnMaster/TopRight" unique_id=894639347 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 11)
+
+[node name="Respawn_Collectable162" parent="StarSpawnMaster/TopRight" unique_id=1317113745 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 11)
+
+[node name="Respawn_Collectable163" parent="StarSpawnMaster/TopRight" unique_id=2062387425 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 11)
+
+[node name="Respawn_Collectable164" parent="StarSpawnMaster/TopRight" unique_id=693953571 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 11)
+
+[node name="Respawn_Collectable145" parent="StarSpawnMaster/TopRight" unique_id=654654541 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -2)
+
+[node name="Respawn_Collectable146" parent="StarSpawnMaster/TopRight" unique_id=2033753544 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -2)
+
+[node name="Respawn_Collectable147" parent="StarSpawnMaster/TopRight" unique_id=1499948347 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -2)
+
+[node name="Respawn_Collectable148" parent="StarSpawnMaster/TopRight" unique_id=81359562 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -2)
+
+[node name="Respawn_Collectable149" parent="StarSpawnMaster/TopRight" unique_id=28900177 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -2)
+
+[node name="Respawn_Collectable150" parent="StarSpawnMaster/TopRight" unique_id=2118646771 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, -2)
+
+[node name="Respawn_Collectable151" parent="StarSpawnMaster/TopRight" unique_id=984690698 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -2)
+
+[node name="Respawn_Collectable152" parent="StarSpawnMaster/TopRight" unique_id=429180250 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -2)
+
+[node name="Respawn_Collectable153" parent="StarSpawnMaster/TopRight" unique_id=1682723401 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -2)
+
+[node name="Respawn_Collectable154" parent="StarSpawnMaster/TopRight" unique_id=2059889259 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, -2)
+
+[node name="Respawn_Collectable155" parent="StarSpawnMaster/TopRight" unique_id=976799135 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -2)
+
+[node name="Respawn_Collectable156" parent="StarSpawnMaster/TopRight" unique_id=1496870897 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -2)
+
+[node name="Respawn_Collectable166" parent="StarSpawnMaster/TopRight" unique_id=77368978 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 11)
+
+[node name="Respawn_Collectable167" parent="StarSpawnMaster/TopRight" unique_id=262107969 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 11)
+
+[node name="Respawn_Collectable168" parent="StarSpawnMaster/TopRight" unique_id=1029711315 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 11)
+
+[node name="TopLeft" type="Node3D" parent="StarSpawnMaster" unique_id=906122108]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -2, -13, -6)
+
+[node name="Respawn_Collectable" parent="StarSpawnMaster/TopLeft" unique_id=744890193 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 8)
+
+[node name="Respawn_Collectable2" parent="StarSpawnMaster/TopLeft" unique_id=356764270 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 7)
+
+[node name="Respawn_Collectable3" parent="StarSpawnMaster/TopLeft" unique_id=2070982629 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 6)
+
+[node name="Respawn_Collectable4" parent="StarSpawnMaster/TopLeft" unique_id=1543046159 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 5)
+
+[node name="Respawn_Collectable5" parent="StarSpawnMaster/TopLeft" unique_id=723177038 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 5)
+
+[node name="Respawn_Collectable6" parent="StarSpawnMaster/TopLeft" unique_id=1688941247 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 6)
+
+[node name="Respawn_Collectable7" parent="StarSpawnMaster/TopLeft" unique_id=24834788 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 7)
+
+[node name="Respawn_Collectable8" parent="StarSpawnMaster/TopLeft" unique_id=1448091129 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 8)
+
+[node name="Respawn_Collectable9" parent="StarSpawnMaster/TopLeft" unique_id=2124545608 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 9)
+
+[node name="Respawn_Collectable10" parent="StarSpawnMaster/TopLeft" unique_id=1321997958 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 9)
+
+[node name="Respawn_Collectable11" parent="StarSpawnMaster/TopLeft" unique_id=373591064 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 10)
+
+[node name="Respawn_Collectable12" parent="StarSpawnMaster/TopLeft" unique_id=925727799 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 10)
+
+[node name="Respawn_Collectable13" parent="StarSpawnMaster/TopLeft" unique_id=1079774351 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 5)
+
+[node name="Respawn_Collectable14" parent="StarSpawnMaster/TopLeft" unique_id=645601937 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 6)
+
+[node name="Respawn_Collectable15" parent="StarSpawnMaster/TopLeft" unique_id=671822380 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 7)
+
+[node name="Respawn_Collectable16" parent="StarSpawnMaster/TopLeft" unique_id=33574354 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 8)
+
+[node name="Respawn_Collectable17" parent="StarSpawnMaster/TopLeft" unique_id=34345230 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 9)
+
+[node name="Respawn_Collectable18" parent="StarSpawnMaster/TopLeft" unique_id=101108644 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 10)
+
+[node name="Respawn_Collectable19" parent="StarSpawnMaster/TopLeft" unique_id=309884796 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 5)
+
+[node name="Respawn_Collectable20" parent="StarSpawnMaster/TopLeft" unique_id=1613753678 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 6)
+
+[node name="Respawn_Collectable21" parent="StarSpawnMaster/TopLeft" unique_id=1125408234 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 7)
+
+[node name="Respawn_Collectable22" parent="StarSpawnMaster/TopLeft" unique_id=830876541 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 8)
+
+[node name="Respawn_Collectable23" parent="StarSpawnMaster/TopLeft" unique_id=1927574027 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 9)
+
+[node name="Respawn_Collectable24" parent="StarSpawnMaster/TopLeft" unique_id=1088015291 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 10)
+
+[node name="Respawn_Collectable25" parent="StarSpawnMaster/TopLeft" unique_id=1214735248 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 5)
+
+[node name="Respawn_Collectable26" parent="StarSpawnMaster/TopLeft" unique_id=1592306483 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 6)
+
+[node name="Respawn_Collectable27" parent="StarSpawnMaster/TopLeft" unique_id=1866294309 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 7)
+
+[node name="Respawn_Collectable28" parent="StarSpawnMaster/TopLeft" unique_id=1935969991 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 8)
+
+[node name="Respawn_Collectable29" parent="StarSpawnMaster/TopLeft" unique_id=1617592982 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 9)
+
+[node name="Respawn_Collectable30" parent="StarSpawnMaster/TopLeft" unique_id=1238689068 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 10)
+
+[node name="Respawn_Collectable31" parent="StarSpawnMaster/TopLeft" unique_id=1358571648 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 5)
+
+[node name="Respawn_Collectable32" parent="StarSpawnMaster/TopLeft" unique_id=964149552 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 6)
+
+[node name="Respawn_Collectable33" parent="StarSpawnMaster/TopLeft" unique_id=2133562599 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 7)
+
+[node name="Respawn_Collectable34" parent="StarSpawnMaster/TopLeft" unique_id=1293045871 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 8)
+
+[node name="Respawn_Collectable35" parent="StarSpawnMaster/TopLeft" unique_id=1107972912 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 9)
+
+[node name="Respawn_Collectable36" parent="StarSpawnMaster/TopLeft" unique_id=1651283041 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 10)
+
+[node name="Respawn_Collectable37" parent="StarSpawnMaster/TopLeft" unique_id=1912193937 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 5)
+
+[node name="Respawn_Collectable38" parent="StarSpawnMaster/TopLeft" unique_id=1210846580 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 6)
+
+[node name="Respawn_Collectable39" parent="StarSpawnMaster/TopLeft" unique_id=490112963 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 7)
+
+[node name="Respawn_Collectable40" parent="StarSpawnMaster/TopLeft" unique_id=1230089175 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 8)
+
+[node name="Respawn_Collectable41" parent="StarSpawnMaster/TopLeft" unique_id=1835725776 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 9)
+
+[node name="Respawn_Collectable42" parent="StarSpawnMaster/TopLeft" unique_id=1373371853 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 10)
+
+[node name="Respawn_Collectable43" parent="StarSpawnMaster/TopLeft" unique_id=465555404 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 5)
+
+[node name="Respawn_Collectable44" parent="StarSpawnMaster/TopLeft" unique_id=1092677569 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 6)
+
+[node name="Respawn_Collectable45" parent="StarSpawnMaster/TopLeft" unique_id=1252662733 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 7)
+
+[node name="Respawn_Collectable46" parent="StarSpawnMaster/TopLeft" unique_id=1893004147 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 8)
+
+[node name="Respawn_Collectable47" parent="StarSpawnMaster/TopLeft" unique_id=1544594966 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 9)
+
+[node name="Respawn_Collectable48" parent="StarSpawnMaster/TopLeft" unique_id=1363966927 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 10)
+
+[node name="Respawn_Collectable49" parent="StarSpawnMaster/TopLeft" unique_id=417540152 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 5)
+
+[node name="Respawn_Collectable50" parent="StarSpawnMaster/TopLeft" unique_id=1248252202 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 6)
+
+[node name="Respawn_Collectable51" parent="StarSpawnMaster/TopLeft" unique_id=1685404946 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 7)
+
+[node name="Respawn_Collectable52" parent="StarSpawnMaster/TopLeft" unique_id=2123166966 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 8)
+
+[node name="Respawn_Collectable53" parent="StarSpawnMaster/TopLeft" unique_id=1927934467 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 9)
+
+[node name="Respawn_Collectable55" parent="StarSpawnMaster/TopLeft" unique_id=146713425 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -1)
+
+[node name="Respawn_Collectable56" parent="StarSpawnMaster/TopLeft" unique_id=1894578886 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 0)
+
+[node name="Respawn_Collectable57" parent="StarSpawnMaster/TopLeft" unique_id=2046126485 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 1)
+
+[node name="Respawn_Collectable58" parent="StarSpawnMaster/TopLeft" unique_id=1936579805 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 2)
+
+[node name="Respawn_Collectable59" parent="StarSpawnMaster/TopLeft" unique_id=1984648737 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 3)
+
+[node name="Respawn_Collectable60" parent="StarSpawnMaster/TopLeft" unique_id=205182931 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, 4)
+
+[node name="Respawn_Collectable61" parent="StarSpawnMaster/TopLeft" unique_id=1224452662 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -1)
+
+[node name="Respawn_Collectable62" parent="StarSpawnMaster/TopLeft" unique_id=312228623 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 0)
+
+[node name="Respawn_Collectable63" parent="StarSpawnMaster/TopLeft" unique_id=610519508 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 1)
+
+[node name="Respawn_Collectable64" parent="StarSpawnMaster/TopLeft" unique_id=1567085013 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 2)
+
+[node name="Respawn_Collectable65" parent="StarSpawnMaster/TopLeft" unique_id=1694873339 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 3)
+
+[node name="Respawn_Collectable66" parent="StarSpawnMaster/TopLeft" unique_id=1422833792 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 4)
+
+[node name="Respawn_Collectable67" parent="StarSpawnMaster/TopLeft" unique_id=703142995 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -1)
+
+[node name="Respawn_Collectable68" parent="StarSpawnMaster/TopLeft" unique_id=685792810 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 0)
+
+[node name="Respawn_Collectable69" parent="StarSpawnMaster/TopLeft" unique_id=1592629524 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 1)
+
+[node name="Respawn_Collectable70" parent="StarSpawnMaster/TopLeft" unique_id=1713315395 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 2)
+
+[node name="Respawn_Collectable71" parent="StarSpawnMaster/TopLeft" unique_id=766209791 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 3)
+
+[node name="Respawn_Collectable72" parent="StarSpawnMaster/TopLeft" unique_id=443277647 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 4)
+
+[node name="Respawn_Collectable73" parent="StarSpawnMaster/TopLeft" unique_id=1674009495 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -1)
+
+[node name="Respawn_Collectable74" parent="StarSpawnMaster/TopLeft" unique_id=227621633 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 0)
+
+[node name="Respawn_Collectable75" parent="StarSpawnMaster/TopLeft" unique_id=469013846 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 1)
+
+[node name="Respawn_Collectable76" parent="StarSpawnMaster/TopLeft" unique_id=1937245983 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 2)
+
+[node name="Respawn_Collectable77" parent="StarSpawnMaster/TopLeft" unique_id=225936085 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 3)
+
+[node name="Respawn_Collectable78" parent="StarSpawnMaster/TopLeft" unique_id=1526591730 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 4)
+
+[node name="Respawn_Collectable79" parent="StarSpawnMaster/TopLeft" unique_id=986781928 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -1)
+
+[node name="Respawn_Collectable80" parent="StarSpawnMaster/TopLeft" unique_id=13639018 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 0)
+
+[node name="Respawn_Collectable81" parent="StarSpawnMaster/TopLeft" unique_id=1337800687 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 1)
+
+[node name="Respawn_Collectable82" parent="StarSpawnMaster/TopLeft" unique_id=583313374 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 2)
+
+[node name="Respawn_Collectable83" parent="StarSpawnMaster/TopLeft" unique_id=1671929667 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 3)
+
+[node name="Respawn_Collectable84" parent="StarSpawnMaster/TopLeft" unique_id=112798057 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 4)
+
+[node name="Respawn_Collectable85" parent="StarSpawnMaster/TopLeft" unique_id=1221173315 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, -1)
+
+[node name="Respawn_Collectable86" parent="StarSpawnMaster/TopLeft" unique_id=1865211338 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 0)
+
+[node name="Respawn_Collectable87" parent="StarSpawnMaster/TopLeft" unique_id=974375231 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 1)
+
+[node name="Respawn_Collectable88" parent="StarSpawnMaster/TopLeft" unique_id=757570589 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 2)
+
+[node name="Respawn_Collectable89" parent="StarSpawnMaster/TopLeft" unique_id=1948989228 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 3)
+
+[node name="Respawn_Collectable90" parent="StarSpawnMaster/TopLeft" unique_id=1255011106 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 4)
+
+[node name="Respawn_Collectable91" parent="StarSpawnMaster/TopLeft" unique_id=1293349536 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -1)
+
+[node name="Respawn_Collectable92" parent="StarSpawnMaster/TopLeft" unique_id=1164636301 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 0)
+
+[node name="Respawn_Collectable93" parent="StarSpawnMaster/TopLeft" unique_id=491523008 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 1)
+
+[node name="Respawn_Collectable94" parent="StarSpawnMaster/TopLeft" unique_id=1111691826 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 2)
+
+[node name="Respawn_Collectable95" parent="StarSpawnMaster/TopLeft" unique_id=1916932111 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 3)
+
+[node name="Respawn_Collectable96" parent="StarSpawnMaster/TopLeft" unique_id=1255762586 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 4)
+
+[node name="Respawn_Collectable97" parent="StarSpawnMaster/TopLeft" unique_id=2012654973 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -1)
+
+[node name="Respawn_Collectable98" parent="StarSpawnMaster/TopLeft" unique_id=1418868177 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="Respawn_Collectable99" parent="StarSpawnMaster/TopLeft" unique_id=1493777067 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1)
+
+[node name="Respawn_Collectable100" parent="StarSpawnMaster/TopLeft" unique_id=802973845 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 2)
+
+[node name="Respawn_Collectable101" parent="StarSpawnMaster/TopLeft" unique_id=913169192 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 3)
+
+[node name="Respawn_Collectable102" parent="StarSpawnMaster/TopLeft" unique_id=1918798917 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 4)
+
+[node name="Respawn_Collectable103" parent="StarSpawnMaster/TopLeft" unique_id=2070070666 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -1)
+
+[node name="Respawn_Collectable104" parent="StarSpawnMaster/TopLeft" unique_id=1469209994 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 0)
+
+[node name="Respawn_Collectable105" parent="StarSpawnMaster/TopLeft" unique_id=1392640168 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 1)
+
+[node name="Respawn_Collectable106" parent="StarSpawnMaster/TopLeft" unique_id=527164994 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 2)
+
+[node name="Respawn_Collectable107" parent="StarSpawnMaster/TopLeft" unique_id=32807222 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 3)
+
+[node name="Respawn_Collectable108" parent="StarSpawnMaster/TopLeft" unique_id=1422930852 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 4)
+
+[node name="Respawn_Collectable109" parent="StarSpawnMaster/TopLeft" unique_id=1452267347 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 5)
+
+[node name="Respawn_Collectable110" parent="StarSpawnMaster/TopLeft" unique_id=100708002 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 6)
+
+[node name="Respawn_Collectable111" parent="StarSpawnMaster/TopLeft" unique_id=208971425 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 7)
+
+[node name="Respawn_Collectable112" parent="StarSpawnMaster/TopLeft" unique_id=1930420714 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 8)
+
+[node name="Respawn_Collectable113" parent="StarSpawnMaster/TopLeft" unique_id=1244558287 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 9)
+
+[node name="Respawn_Collectable114" parent="StarSpawnMaster/TopLeft" unique_id=2093327889 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 10)
+
+[node name="Respawn_Collectable115" parent="StarSpawnMaster/TopLeft" unique_id=940340940 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, -1)
+
+[node name="Respawn_Collectable116" parent="StarSpawnMaster/TopLeft" unique_id=420094838 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 0)
+
+[node name="Respawn_Collectable117" parent="StarSpawnMaster/TopLeft" unique_id=300033990 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 1)
+
+[node name="Respawn_Collectable118" parent="StarSpawnMaster/TopLeft" unique_id=1604249875 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 2)
+
+[node name="Respawn_Collectable119" parent="StarSpawnMaster/TopLeft" unique_id=668740969 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 3)
+
+[node name="Respawn_Collectable120" parent="StarSpawnMaster/TopLeft" unique_id=1016835602 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 4)
+
+[node name="Respawn_Collectable121" parent="StarSpawnMaster/TopLeft" unique_id=985509215 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 5)
+
+[node name="Respawn_Collectable122" parent="StarSpawnMaster/TopLeft" unique_id=1201151752 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 6)
+
+[node name="Respawn_Collectable123" parent="StarSpawnMaster/TopLeft" unique_id=1653855902 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 7)
+
+[node name="Respawn_Collectable124" parent="StarSpawnMaster/TopLeft" unique_id=2081388963 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 8)
+
+[node name="Respawn_Collectable125" parent="StarSpawnMaster/TopLeft" unique_id=71783804 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 9)
+
+[node name="Respawn_Collectable126" parent="StarSpawnMaster/TopLeft" unique_id=1484375660 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 10)
+
+[node name="Respawn_Collectable127" parent="StarSpawnMaster/TopLeft" unique_id=1473277208 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -1)
+
+[node name="Respawn_Collectable128" parent="StarSpawnMaster/TopLeft" unique_id=1444735966 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 0)
+
+[node name="Respawn_Collectable129" parent="StarSpawnMaster/TopLeft" unique_id=375930701 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 1)
+
+[node name="Respawn_Collectable130" parent="StarSpawnMaster/TopLeft" unique_id=661999054 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 2)
+
+[node name="Respawn_Collectable131" parent="StarSpawnMaster/TopLeft" unique_id=1047650783 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 3)
+
+[node name="Respawn_Collectable132" parent="StarSpawnMaster/TopLeft" unique_id=613814678 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 4)
+
+[node name="Respawn_Collectable133" parent="StarSpawnMaster/TopLeft" unique_id=89739167 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 5)
+
+[node name="Respawn_Collectable134" parent="StarSpawnMaster/TopLeft" unique_id=1050287759 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 6)
+
+[node name="Respawn_Collectable135" parent="StarSpawnMaster/TopLeft" unique_id=169718300 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 7)
+
+[node name="Respawn_Collectable136" parent="StarSpawnMaster/TopLeft" unique_id=705223895 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 8)
+
+[node name="Respawn_Collectable137" parent="StarSpawnMaster/TopLeft" unique_id=148036567 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 9)
+
+[node name="Respawn_Collectable138" parent="StarSpawnMaster/TopLeft" unique_id=1010330663 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 10)
+
+[node name="Respawn_Collectable139" parent="StarSpawnMaster/TopLeft" unique_id=1048540824 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -1)
+
+[node name="Respawn_Collectable140" parent="StarSpawnMaster/TopLeft" unique_id=2103846079 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 0)
+
+[node name="Respawn_Collectable141" parent="StarSpawnMaster/TopLeft" unique_id=447034296 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 1)
+
+[node name="Respawn_Collectable142" parent="StarSpawnMaster/TopLeft" unique_id=468671230 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 2)
+
+[node name="Respawn_Collectable143" parent="StarSpawnMaster/TopLeft" unique_id=435338404 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 3)
+
+[node name="Respawn_Collectable144" parent="StarSpawnMaster/TopLeft" unique_id=579796659 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 4)
+
+[node name="Respawn_Collectable157" parent="StarSpawnMaster/TopLeft" unique_id=1152199902 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, 11)
+
+[node name="Respawn_Collectable158" parent="StarSpawnMaster/TopLeft" unique_id=1442759768 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 11)
+
+[node name="Respawn_Collectable159" parent="StarSpawnMaster/TopLeft" unique_id=42841050 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 11)
+
+[node name="Respawn_Collectable160" parent="StarSpawnMaster/TopLeft" unique_id=591803500 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 11)
+
+[node name="Respawn_Collectable161" parent="StarSpawnMaster/TopLeft" unique_id=47393988 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 11)
+
+[node name="Respawn_Collectable162" parent="StarSpawnMaster/TopLeft" unique_id=63450348 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 11)
+
+[node name="Respawn_Collectable163" parent="StarSpawnMaster/TopLeft" unique_id=1865829184 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 11)
+
+[node name="Respawn_Collectable164" parent="StarSpawnMaster/TopLeft" unique_id=405517122 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 11)
+
+[node name="Respawn_Collectable170" parent="StarSpawnMaster/TopLeft" unique_id=2001481215 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 5)
+
+[node name="Respawn_Collectable171" parent="StarSpawnMaster/TopLeft" unique_id=754057026 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 6)
+
+[node name="Respawn_Collectable172" parent="StarSpawnMaster/TopLeft" unique_id=1394311059 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 7)
+
+[node name="Respawn_Collectable173" parent="StarSpawnMaster/TopLeft" unique_id=1837881909 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 8)
+
+[node name="Respawn_Collectable174" parent="StarSpawnMaster/TopLeft" unique_id=1216982242 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 9)
+
+[node name="Respawn_Collectable176" parent="StarSpawnMaster/TopLeft" unique_id=1390520228 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, -1)
+
+[node name="Respawn_Collectable145" parent="StarSpawnMaster/TopLeft" unique_id=111839452 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -2)
+
+[node name="Respawn_Collectable146" parent="StarSpawnMaster/TopLeft" unique_id=1545803481 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -2)
+
+[node name="Respawn_Collectable147" parent="StarSpawnMaster/TopLeft" unique_id=1829346064 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -2)
+
+[node name="Respawn_Collectable148" parent="StarSpawnMaster/TopLeft" unique_id=1818655907 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -2)
+
+[node name="Respawn_Collectable149" parent="StarSpawnMaster/TopLeft" unique_id=454035575 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -2)
+
+[node name="Respawn_Collectable150" parent="StarSpawnMaster/TopLeft" unique_id=113279441 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, -2)
+
+[node name="Respawn_Collectable151" parent="StarSpawnMaster/TopLeft" unique_id=757180886 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -2)
+
+[node name="Respawn_Collectable152" parent="StarSpawnMaster/TopLeft" unique_id=634308185 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -2)
+
+[node name="Respawn_Collectable153" parent="StarSpawnMaster/TopLeft" unique_id=574154283 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -2)
+
+[node name="Respawn_Collectable154" parent="StarSpawnMaster/TopLeft" unique_id=101459140 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, -2)
+
+[node name="Respawn_Collectable155" parent="StarSpawnMaster/TopLeft" unique_id=1416404432 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, -2)
+
+[node name="Respawn_Collectable156" parent="StarSpawnMaster/TopLeft" unique_id=1613663255 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -2)
+
+[node name="Respawn_Collectable182" parent="StarSpawnMaster/TopLeft" unique_id=101094763 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, -2)
+
+[node name="Respawn_Collectable177" parent="StarSpawnMaster/TopLeft" unique_id=1752620309 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 0)
+
+[node name="Respawn_Collectable178" parent="StarSpawnMaster/TopLeft" unique_id=488770713 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 1)
+
+[node name="Respawn_Collectable179" parent="StarSpawnMaster/TopLeft" unique_id=719721867 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 2)
+
+[node name="Respawn_Collectable180" parent="StarSpawnMaster/TopLeft" unique_id=2007751386 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 3)
+
+[node name="Respawn_Collectable181" parent="StarSpawnMaster/TopLeft" unique_id=2106053760 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 4)
+
+[node name="Respawn_Collectable166" parent="StarSpawnMaster/TopLeft" unique_id=288723690 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 8, 11)
+
+[node name="Respawn_Collectable167" parent="StarSpawnMaster/TopLeft" unique_id=1431777434 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 11)
+
+[node name="Respawn_Collectable168" parent="StarSpawnMaster/TopLeft" unique_id=1493771494 instance=ExtResource("22_q4131")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 11)
+
+[node name="Players" type="Node3D" parent="StarSpawnMaster" unique_id=88001808]
