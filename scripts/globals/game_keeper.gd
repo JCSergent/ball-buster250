@@ -12,7 +12,7 @@ signal game_ended()
 @export var players: Dictionary[int, Player]
 
 
-@export var win_score : int = 5
+@export var win_score : int = 250
 
 var game_state: GameState
 

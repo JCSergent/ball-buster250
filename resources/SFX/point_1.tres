@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://dfaxn1v51ft50"]
 
-[ext_resource type="AudioStream" uid="uid://dxspckasnwygo" path="res://art/sound/pickupCoin.wav" id="1_8lobv"]
+[ext_resource type="AudioStream" uid="uid://car08qadp06hb" path="res://art/sound/pickupCoin.wav" id="1_8lobv"]
 [ext_resource type="Script" uid="uid://egntisbqign7" path="res://scripts/resources/sound_effect.gd" id="1_m2bvx"]
 
 [resource]
