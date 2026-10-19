@@ -57,7 +57,7 @@ shader_parameter/top_fade_start = 0.3
 shader_parameter/top_fade_power = 2.0
 shader_parameter/invert_top_fade = false
 shader_parameter/wave_transparency = 1.0
-shader_parameter/wave_frequency = 13.7470006054825
+shader_parameter/wave_frequency = 9.3450003963875
 shader_parameter/wave_speed = 2.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gipfl"]
