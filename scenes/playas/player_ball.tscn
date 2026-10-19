@@ -211,6 +211,7 @@ load_path = "res://.godot/imported/red_starbanner.png-1df45e2748c2450fa7f2962304
 script = ExtResource("1_bsyiq")
 shoot_sound = ExtResource("2_dtqmr")
 die_sound = ExtResource("3_vihqf")
+max_star_capacity = 100
 hud_dictionary = Dictionary[int, Texture2D]({
 1: ExtResource("2_af7he"),
 2: ExtResource("3_gea3y"),
