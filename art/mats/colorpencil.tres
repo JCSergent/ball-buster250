@@ -1,10 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://ndeefggraujt"]
 
-[ext_resource type="Texture2D" path="res://art/thangs/300 square.png" id="1_hbo1v"]
-
 [resource]
 albedo_color = Color(0.5159, 0.67, 0.66229504, 1)
-albedo_texture = ExtResource("1_hbo1v")
 emission_enabled = true
 emission_energy_multiplier = 19.35
 emission_on_uv2 = true

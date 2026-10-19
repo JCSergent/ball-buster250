@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cwxptneysqnnc"]
 
-[ext_resource type="Texture2D" path="res://art/sprites/map_tiles/cool_stone_1.png" id="1_2gv0e"]
+[ext_resource type="Texture2D" uid="uid://bxj670no1b537" path="res://art/sprites/map_tiles/cool_stone_1.png" id="1_2gv0e"]
 [ext_resource type="Texture2D" uid="uid://dmuyd7cxxdkfi" path="res://art/thangs/TILE NORM.jpg" id="2_pxqqu"]
 
 [resource]
