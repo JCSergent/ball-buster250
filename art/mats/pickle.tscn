@@ -1,8 +1,31 @@
 [gd_scene format=3 uid="uid://c0kuvku00tq0a"]
 
 [ext_resource type="Texture2D" uid="uid://crjrogpeu4ixc" path="res://art/thangs/pickle.png" id="1_u8wsg"]
+[ext_resource type="Script" uid="uid://cg55a7i0uimir" path="res://art/mats/pickle.gd" id="2_610vg"]
+[ext_resource type="Script" uid="uid://tma0ehy5ejye" path="res://scripts/pulse_obj.gd" id="2_wivqy"]
+[ext_resource type="Resource" uid="uid://blyxa2nkvyv4k" path="res://resources/SFX/pickle_wa.tres" id="3_610vg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e2lak"]
+radius = 2.196412
 
 [node name="Sprite3D" type="Sprite3D" unique_id=1059588600]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.77846146, 0)
 billboard = 1
 texture = ExtResource("1_u8wsg")
+script = ExtResource("2_610vg")
+pickle_sound = ExtResource("3_610vg")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1140057246]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=391389762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27159965, 0)
+shape = SubResource("SphereShape3D_e2lak")
+
+[node name="pulseObj" type="Node" parent="." unique_id=1802702658 node_paths=PackedStringArray("pulsable")]
+script = ExtResource("2_wivqy")
+pulsable = NodePath("..")
+metadata/_custom_type_script = "uid://tma0ehy5ejye"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

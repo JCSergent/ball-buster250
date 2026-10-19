@@ -16041,7 +16041,7 @@ shaded = true
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2, 1.4139903, -5.0337486)
 shaded = true
 
-[node name="Sprite3D9" parent="." unique_id=1262088724 instance=ExtResource("38_6pn5k")]
+[node name="Mr_Pickle" parent="." unique_id=1262088724 instance=ExtResource("38_6pn5k")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.6839216, 1.3895679, -6)
 shaded = true
 

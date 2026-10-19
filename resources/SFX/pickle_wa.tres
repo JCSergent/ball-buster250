@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://blyxa2nkvyv4k"]
+
+[ext_resource type="Script" uid="uid://egntisbqign7" path="res://scripts/resources/sound_effect.gd" id="1_6snyh"]
+[ext_resource type="AudioStream" uid="uid://bcxyrl2qvrig7" path="res://art/sound/packle_wa.wav" id="1_oxcvp"]
+
+[resource]
+script = ExtResource("1_6snyh")
+audio_stream = ExtResource("1_oxcvp")
+volume = -0.7999999999999972
+pitch_randomness = 1.0
+metadata/_custom_type_script = "uid://egntisbqign7"

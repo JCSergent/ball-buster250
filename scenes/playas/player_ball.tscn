@@ -308,6 +308,7 @@ texture = ExtResource("14_af7he")
 [node name="pulseObj" type="Node" parent="NonRotatingNodes/GunRotatePoint/pipe" unique_id=1109405326 node_paths=PackedStringArray("pulsable")]
 script = ExtResource("15_hcxxk")
 pulsable = NodePath("..")
+pulse_coefficient = 1.7
 metadata/_custom_type_script = "uid://tma0ehy5ejye"
 
 [node name="GunFirePoint" type="Marker3D" parent="NonRotatingNodes/GunRotatePoint" unique_id=1301492511]
