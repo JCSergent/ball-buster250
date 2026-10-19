@@ -7,9 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cqfom873hg75m" path="res://menus/menu items/background.png" id="3_30gvx"]
 [ext_resource type="Texture2D" uid="uid://c220ljrg7h2gg" path="res://menus/menu items/player_namebar_3.png" id="3_e5o7i"]
 [ext_resource type="Texture2D" uid="uid://16a63lejq7db" path="res://menus/menu items/player_card_3.png" id="3_emvu2"]
+[ext_resource type="Resource" uid="uid://cvvhwjh7lkdj6" path="res://resources/SFX/ready_sound.tres" id="3_n7t5q"]
 [ext_resource type="Texture2D" uid="uid://cst3l7irv3d8p" path="res://menus/menu items/bunny_namebar_RED.png" id="4_3rtee"]
+[ext_resource type="Resource" uid="uid://bekxgna671cna" path="res://resources/SFX/select_sound.tres" id="4_v28s2"]
 [ext_resource type="Texture2D" uid="uid://be678t7ssjsm3" path="res://menus/menu items/player_card_1.png" id="5_30gvx"]
 [ext_resource type="Texture2D" uid="uid://cj8s0dfqse7cv" path="res://menus/menu items/notready_indicator.png" id="5_41ep7"]
+[ext_resource type="Resource" uid="uid://cl7c6t1aorfx8" path="res://resources/SFX/explode_sfx.tres" id="5_v28s2"]
 [ext_resource type="SpriteFrames" uid="uid://p37aa3b5lekb" path="res://art/animatedsprites/rat_frames.tres" id="6_3rtee"]
 [ext_resource type="Texture2D" uid="uid://m1apilypje5v" path="res://menus/menu items/ready_indicator.png" id="6_d5snc"]
 [ext_resource type="Texture2D" uid="uid://byrf7opc5si1h" path="res://art/ui/wasd.png" id="9_30gvx"]
@@ -50,6 +53,9 @@ grow_vertical = 2
 size_flags_horizontal = 0
 theme = ExtResource("1_jkv6f")
 script = ExtResource("2_3rtee")
+ready_sound = ExtResource("3_n7t5q")
+select_sound = ExtResource("4_v28s2")
+go_sound = ExtResource("5_v28s2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=403021996]
 stream = ExtResource("3_3xxhd")
