@@ -129,6 +129,7 @@ func _physics_process(delta: float) -> void:
 
     elif is_boosting and Input.is_action_pressed("charge_" + player.string_id):
         sprite_3d.speed_scale = 1.5
+
         rigid_body_3d.angular_velocity = get_gun_direction() * 100
         if boost_duration < max_boost_duration:
             drift_particles.speed_scale += 2. * delta

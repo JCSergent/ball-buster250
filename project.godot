@@ -10,12 +10,12 @@ config_version=5
 
 [application]
 
-config/name="ball-buster250"
+config/name="CelestiBall"
 run/main_scene="uid://cdwfm5sw3e8gw"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-boot_splash/bg_color=Color(0.78933626, 0.15278566, 0.42805234, 1)
+boot_splash/bg_color=Color(0.20812076, 0.07696474, 0.29363862, 1)
 boot_splash/use_filter=false
-boot_splash/image="uid://d25ygwjc4dcwu"
+boot_splash/image="uid://dxdenu0513hqi"
 config/icon="uid://mjbjnxs2w137"
 config/windows_native_icon="res://art/sprites/lilRatGirl-export.ico"
 
